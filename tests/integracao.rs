@@ -406,3 +406,106 @@ fn caminhos_windows_e_nul_reprovam_sem_depender_do_host() {
         assert!(tsepack::traverse::validate_manifest_rel(path).is_err());
     }
 }
+
+// ---- Etapa 2: origem v1 congelado, v2 estrito, migração ----
+
+fn sha_hex(data: &[u8]) -> String {
+    tsepack::hash::sha256_bytes(data)
+}
+
+fn v1_json(path: &str, size: u64, sha: &str) -> serde_json::Value {
+    serde_json::json!({
+        "format_version": 1,
+        "tool_version": "teste-e2",
+        "source": "fixture-sintetica",
+        "files": [{"path": path, "size": size, "sha256": sha,
+                   "file_type": "csv", "url": null}]
+    })
+}
+
+#[test]
+fn origem_v2_escrita_por_padrao() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("a.csv"), b"conteudo").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "fixture-sintetica").unwrap();
+    assert_eq!(m.format_version, tsepack::FORMAT_VERSION);
+    assert_eq!(m.format_version, 2);
+}
+
+#[test]
+fn origem_v1_congelado_carrega() {
+    let dir = tempfile::tempdir().unwrap();
+    let data = b"linhagem-v1";
+    std::fs::write(dir.path().join("dado.csv"), data).unwrap();
+    let mp = dir.path().join("m.json");
+    std::fs::write(
+        &mp,
+        serde_json::to_string_pretty(&v1_json("dado.csv", data.len() as u64, &sha_hex(data)))
+            .unwrap(),
+    )
+    .unwrap();
+    let m = Manifest::load(&mp).unwrap();
+    assert_eq!(m.format_version, 1);
+    assert_eq!(m.files.len(), 1);
+    let rep = verify(&mp, dir.path()).unwrap();
+    assert!(rep.approved);
+}
+
+#[test]
+fn origem_rejeita_campo_desconhecido() {
+    let dir = tempfile::tempdir().unwrap();
+    let data = b"conteudo";
+    // Extra no nível do manifesto.
+    let mut doc = v1_json("a.csv", data.len() as u64, &sha_hex(data));
+    doc["garantia_futura"] = serde_json::json!("nao-transportar");
+    let mp = dir.path().join("m.json");
+    std::fs::write(&mp, serde_json::to_string(&doc).unwrap()).unwrap();
+    assert!(Manifest::load(&mp).is_err());
+    // Extra no nível do arquivo.
+    let mut doc2 = v1_json("a.csv", data.len() as u64, &sha_hex(data));
+    doc2["files"][0]["assinatura_nova"] = serde_json::json!("x");
+    std::fs::write(&mp, serde_json::to_string(&doc2).unwrap()).unwrap();
+    assert!(Manifest::load(&mp).is_err());
+}
+
+#[test]
+fn origem_rejeita_versao_nao_suportada() {
+    let dir = tempfile::tempdir().unwrap();
+    for v in [0u32, 3, 999] {
+        let mut doc = v1_json("a.csv", 1, &sha_hex(b"x"));
+        doc["format_version"] = serde_json::json!(v);
+        let mp = dir.path().join("m.json");
+        std::fs::write(&mp, serde_json::to_string(&doc).unwrap()).unwrap();
+        let err = Manifest::load(&mp).unwrap_err();
+        assert!(err.to_string().contains("incompatível"), "v={v}: {err:#}");
+        assert!(verify(&mp, dir.path()).is_err());
+    }
+}
+
+#[test]
+fn migracao_v1_para_v2_preserva_arquivos() {
+    let dir = tempfile::tempdir().unwrap();
+    let data = b"bytes-originais";
+    std::fs::write(dir.path().join("a.csv"), data).unwrap();
+    let mp1 = dir.path().join("m1.json");
+    std::fs::write(
+        &mp1,
+        serde_json::to_string_pretty(&v1_json("a.csv", data.len() as u64, &sha_hex(data))).unwrap(),
+    )
+    .unwrap();
+    let v1 = Manifest::load(&mp1).unwrap();
+    // Migração: mesmos arquivos, versão de escrita atual.
+    let v2 = Manifest {
+        format_version: tsepack::FORMAT_VERSION,
+        tool_version: v1.tool_version.clone(),
+        source: v1.source.clone(),
+        files: v1.files.clone(),
+    };
+    let mp2 = dir.path().join("m2.json");
+    v2.save(&mp2).unwrap();
+    let relido = Manifest::load(&mp2).unwrap();
+    assert_eq!(relido.format_version, 2);
+    assert_eq!(relido.files, v1.files);
+    let rep = verify(&mp2, dir.path()).unwrap();
+    assert!(rep.approved);
+}

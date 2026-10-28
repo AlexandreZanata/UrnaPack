@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AlexandreZanata/UrnaPack/spec/execution.schema.json",
+  "title": "UrnaPack execution receipt",
+  "description": "Recibo de execução (Etapa 2): ferramenta, comando, parâmetros, hashes de entradas e saídas, ambiente e tempos. Generaliza os run.json locais.",
+  "type": "object",
+  "required": [
+    "artifact_kind",
+    "format_version",
+    "tool",
+    "command",
+    "inputs",
+    "outputs",
+    "started_at",
+    "finished_at",
+    "success"
+  ],
+  "properties": {
+    "artifact_kind": { "type": "string", "const": "urnapack_execution" },
+    "format_version": { "type": "integer", "const": 1 },
+    "tool": { "type": "string", "minLength": 1 },
+    "command": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "params": { "type": "object" },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": ["string", "null"], "pattern": "^([0-9a-f]{64})?$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "started_at": { "type": "string", "minLength": 1 },
+    "finished_at": { "type": "string", "minLength": 1 },
+    "elapsed_ms": { "type": "integer", "minimum": 0 },
+    "success": { "type": "boolean" },
+    "errors": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

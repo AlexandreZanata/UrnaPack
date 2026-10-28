@@ -23,6 +23,32 @@ vazios, `.`/`..`, NUL, separador invertido ou prefixo de unidade Windows.
 O construtor e o verificador aplicam a mesma política. A raiz pode ser um link
 resolvido explicitamente; links internos não são aceitos.
 
+## Origem v2 (Etapa 2) — política de campos desconhecidos e migração
+
+- `FORMAT_VERSION = 2`; escrita gera v2; leitura aceita v1 (congelado) e v2 e
+  rejeita outras versões explicitamente.
+- v2 tem os mesmos campos de v1 com `deny_unknown_fields` em manifesto e
+  entradas: campo desconhecido bloqueia a interpretação automática em vez de
+  passar em silêncio. Nenhuma garantia nova viaja em extensões ignoradas.
+- Migração v1→v2 preserva `files[]` idênticos (caminhos, tamanhos, hashes);
+  testada em `tests/integracao.rs` com bytes reais de fixtures.
+
+## Dataset v2 e execução v1 (Etapa 2) — vínculos por hash
+
+- `spec/manifest-v2.schema.json` = v1 + `format_version: const 2` +
+  `source_manifest_sha256` (obrigatório, SHA-256 dos bytes do documento de
+  manifesto de origem usado na aquisição) + `execution` (objeto opcional com
+  `artifact_kind: urnapack_execution` e `format_version: 1`).
+- Raiz e itens de `source_files[]`/`packages[]` com `additionalProperties:
+  false`: desconhecidos bloqueiam. `validate.py` escolhe o schema pela
+  `format_version` declarada (`--schema-version 1|2|auto`) e, em v2 com
+  `--source-manifest`, reconfronta o vínculo com o documento de origem.
+- `spec/execution.schema.json` v1 (`artifact_kind: urnapack_execution`):
+  ferramenta, comando, parâmetros, hashes de entradas/saídas, ambiente e tempos.
+  Generaliza os `run.json`; `fetch_source.py` emite recibos conformes e
+  `validate.py execution` os valida. Recibos futuros com campos novos exigem
+  versão nova.
+
 ## Mapa estrutural local — v1
 
 `scripts/map_raw_data.py` gera `artifact_kind: raw_structure_map` com sua

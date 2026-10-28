@@ -11,9 +11,14 @@ pub mod manifest;
 pub mod traverse;
 pub mod verify;
 
-/// Versão do formato de manifesto/artefatos gerados por esta base.
-/// Incrementar quando houver mudança incompatível no esquema.
-pub const FORMAT_VERSION: u32 = 1;
+/// Versão do formato de manifesto de origem gerado por esta base.
+/// v2 = v1 com rejeição de campos desconhecidos (Etapa 2). Leitura aceita
+/// v1 (congelado) e v2; escrita gera v2. Mudança incompatível exige
+/// versionamento explícito.
+pub const FORMAT_VERSION: u32 = 2;
+
+/// Versões de manifesto de origem aceitas na leitura (migração v1→v2).
+pub const SUPPORTED_FORMAT_VERSIONS: [u32; 2] = [1, 2];
 
 /// Versão da ferramenta (espelha Cargo.toml).
 pub const TOOL_VERSION: &str = env!("CARGO_PKG_VERSION");

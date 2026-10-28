@@ -115,9 +115,11 @@ def check_schema(doc, schema_path, errors, label):
                 fail(f"{label}: campo obrigatório ausente: {key} (diagnóstico parcial)", errors)
 
 
-def validate_manifest_doc(m, errors, label="manifest"):
-    if m.get("format_version") != 1:
-        fail(f"{label}: format_version incompatível: {m.get('format_version')}", errors)
+def validate_manifest_doc(m, errors, label="manifest", schema_version=1):
+    if m.get("format_version") != schema_version:
+        fail(f"{label}: format_version incompatível: {m.get('format_version')} "
+             f"(schema v{schema_version} exige {schema_version})", errors)
+        return errors
     if m.get("state") not in UFS:
         fail(f"{label}: UF inválida: {m.get('state')}", errors)
     pkgs = m.get("packages", [])
@@ -132,12 +134,35 @@ def validate_manifest_doc(m, errors, label="manifest"):
     return errors
 
 
+DATASET_SCHEMAS = {1: "manifest.schema.json", 2: "manifest-v2.schema.json"}
+
+
 def cmd_manifest(args):
     errors = []
     with open(args.manifest) as f:
         m = json.load(f)
-    check_schema(m, os.path.join(ROOT, "spec", "manifest.schema.json"), errors, "manifest")
-    validate_manifest_doc(m, errors)
+    want = getattr(args, "schema_version", "auto")
+    if want == "auto":
+        want = m.get("format_version")
+    try:
+        schema_version = int(want)
+    except (TypeError, ValueError):
+        fail(f"manifest: schema_version inválido: {want!r} (use 1, 2 ou auto)", errors)
+        return errors
+    if schema_version not in DATASET_SCHEMAS:
+        fail(f"manifest: format_version incompatível: {m.get('format_version')} "
+             f"(schemas suportados: 1, 2)", errors)
+        return errors
+    check_schema(m, os.path.join(ROOT, "spec", DATASET_SCHEMAS[schema_version]), errors, "manifest")
+    validate_manifest_doc(m, errors, schema_version=schema_version)
+    if schema_version == 2 and getattr(args, "source_manifest", None):
+        try:
+            actual = sha256_file(args.source_manifest)
+        except OSError as e:
+            fail(f"manifest: ler manifesto de origem {args.source_manifest}: {e}", errors)
+            actual = None
+        if actual is not None and actual != m.get("source_manifest_sha256"):
+            fail("manifest: source_manifest_sha256 não confere com o manifesto de origem", errors)
     if args.require_status and m.get("verification_status") != args.require_status:
         fail(
             f"manifest: verification_status={m.get('verification_status')!r}, "
@@ -164,6 +189,18 @@ def cmd_manifest(args):
             actual = sha256_file(ap)
             if actual != p["sha256"]:
                 fail(f"manifest: SHA-256 diverge em {p['name']}", errors)
+    return errors
+
+
+def cmd_execution(args):
+    errors = []
+    with open(args.receipt) as f:
+        doc = json.load(f)
+    check_schema(doc, os.path.join(ROOT, "spec", "execution.schema.json"), errors, "execution")
+    if doc.get("artifact_kind") != "urnapack_execution":
+        fail(f"execution: artifact_kind inesperado: {doc.get('artifact_kind')!r}", errors)
+    if doc.get("format_version") != 1:
+        fail(f"execution: format_version incompatível: {doc.get('format_version')}", errors)
     return errors
 
 
@@ -332,12 +369,17 @@ def main():
     p_man.add_argument("--max-bytes", type=int, default=10**12)
     p_man.add_argument("--max-assets", type=int, default=1000)
     p_man.add_argument("--require-status", default=None)
+    p_man.add_argument("--schema-version", default="auto", choices=["auto", "1", "2"])
+    p_man.add_argument("--source-manifest", default=None)
     p_idx = sub.add_parser("index", help="valida data/index.json")
     p_idx.add_argument("index")
+    p_exe = sub.add_parser("execution", help="valida um recibo de execução")
+    p_exe.add_argument("receipt")
     sub.add_parser("self-test", help="cenários de falha com fixtures")
     args = ap.parse_args()
 
     errors = {"repo": cmd_repo, "manifest": cmd_manifest, "index": cmd_index,
+              "execution": cmd_execution,
               "self-test": cmd_self_test}[args.cmd](args)
     for e in errors:
         print("ERRO:", e)

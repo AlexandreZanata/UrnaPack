@@ -47,6 +47,57 @@ class TestAcumuloErros(unittest.TestCase):
 
 
 class TestSchemaIndisponivel(unittest.TestCase):
+    def test_dataset_v2_migrado_aprova_e_vincula_origem(self):
+        good = os.path.join(ROOT, "tests", "fixtures", "dataset-v2-good.json")
+        origin = os.path.join(ROOT, "tests", "fixtures", "origin-v2-good.json")
+        ns = argparse.Namespace(manifest=good, data_root=None, max_bytes=10**12,
+                                max_assets=1000, require_status=None,
+                                schema_version="auto", source_manifest=origin)
+        self.assertEqual(V.cmd_manifest(ns), [])
+
+    def test_dataset_v1_nao_passa_em_v2(self):
+        v1 = os.path.join(ROOT, "tests", "fixtures", "manifest-good.json")
+        ns = argparse.Namespace(manifest=v1, data_root=None, max_bytes=10**12,
+                                max_assets=1000, require_status=None,
+                                schema_version="2", source_manifest=None)
+        errs = V.cmd_manifest(ns)
+        self.assertTrue(errs, "v1 deveria reprovar no schema v2")
+
+    def test_dataset_v2_campo_desconhecido_reprova(self):
+        import copy
+        good = os.path.join(ROOT, "tests", "fixtures", "dataset-v2-good.json")
+        with open(good, encoding="utf-8") as f:
+            doc = json.load(f)
+        doc["garantia_futura"] = "nao-transportar"
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(doc, f)
+            tmp = f.name
+        try:
+            ns = argparse.Namespace(manifest=tmp, data_root=None, max_bytes=10**12,
+                                    max_assets=1000, require_status=None,
+                                    schema_version="2", source_manifest=None)
+            errs = V.cmd_manifest(ns)
+            self.assertTrue(any("fora do schema" in e or "obrigatório" in e or "schema" in e for e in errs),
+                            msg=f"erros: {errs}")
+        finally:
+            os.remove(tmp)
+
+    def test_dataset_v2_vinculo_divergente_reprova(self):
+        good = os.path.join(ROOT, "tests", "fixtures", "dataset-v2-good.json")
+        other = os.path.join(ROOT, "tests", "fixtures", "manifest-good.json")
+        ns = argparse.Namespace(manifest=good, data_root=None, max_bytes=10**12,
+                                max_assets=1000, require_status=None,
+                                schema_version="auto", source_manifest=other)
+        errs = V.cmd_manifest(ns)
+        self.assertTrue(any("não confere" in e for e in errs), msg=f"erros: {errs}")
+
+    def test_execution_bom_e_ruim(self):
+        fx = os.path.join(ROOT, "tests", "fixtures")
+        ok = V.cmd_execution(argparse.Namespace(receipt=f"{fx}/execution-good.json"))
+        self.assertEqual(ok, [])
+        bad = V.cmd_execution(argparse.Namespace(receipt=f"{fx}/execution-bad.json"))
+        self.assertTrue(bad, "recibo sem tool deveria reprovar")
+
     def test_sem_jsonschema_reprova_com_instrucao(self):
         prev = V.HAVE_JSONSCHEMA
         V.HAVE_JSONSCHEMA = False

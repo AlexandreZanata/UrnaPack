@@ -9,10 +9,14 @@ use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::path::{Path, PathBuf};
 
-use crate::{FORMAT_VERSION, TOOL_VERSION};
+use crate::{FORMAT_VERSION, SUPPORTED_FORMAT_VERSIONS, TOOL_VERSION};
 
 /// Um arquivo rastreado pelo manifesto.
+///
+/// Campos desconhecidos são rejeitados (Etapa 2): nenhuma garantia nova pode
+/// viajar em extensões silenciosamente ignoradas.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
 pub struct FileEntry {
     /// Caminho relativo ao diretório raiz, com `/` como separador.
     pub path: String,
@@ -26,7 +30,11 @@ pub struct FileEntry {
 }
 
 /// Manifesto de um conjunto de arquivos oficiais.
+///
+/// v1 (congelado) e v2 (campos estritos) compartilham estes campos; a versão
+/// distingue a política aplicada na escrita. Leitura aceita ambas.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
 pub struct Manifest {
     pub format_version: u32,
     pub tool_version: String,
@@ -42,9 +50,8 @@ impl Manifest {
     /// A raiz pode ser um link legítimo (resolvido). Symlinks internos,
     /// arquivos especiais, raiz inexistente/não diretório, erros de
     /// travessia/metadata/leitura e nomes não representáveis sem perda
-    /// reprovam explicitamente. Campos adicionais no JSON ainda são ignorados
-    /// pela desserialização v1; não transportam garantias verificadas. A Etapa 2
-    /// formalizará a política com versionamento e testes de compatibilidade.
+    /// reprovam explicitamente. Campos desconhecidos no JSON são rejeitados
+    /// (`deny_unknown_fields`); a escrita gera v2, a leitura aceita v1/v2.
     pub fn build_from_dir(root: &Path, source: &str) -> Result<Self> {
         let canonical = crate::traverse::resolve_root(root)?;
         let paths: Vec<PathBuf> = crate::traverse::collect_files(&canonical)?;
@@ -89,20 +96,21 @@ impl Manifest {
         Ok(())
     }
 
-    /// Lê um manifesto de origem v1 válido, preservando compatibilidade.
+    /// Lê um manifesto de origem v1 (congelado) ou v2, preservando compatibilidade.
     ///
-    /// Rejeita versão incompatível explicitamente; não redesenha o contrato
-    /// nesta etapa.
+    /// Versões fora de `SUPPORTED_FORMAT_VERSIONS` e campos desconhecidos são
+    /// rejeitados explicitamente (a desserialização estrita falha com o campo
+    /// identificado).
     pub fn load(path: &Path) -> Result<Self> {
         let data =
             std::fs::read_to_string(path).with_context(|| format!("ler {}", path.display()))?;
         let m: Self = serde_json::from_str(&data)?;
-        if m.format_version != FORMAT_VERSION {
+        if !SUPPORTED_FORMAT_VERSIONS.contains(&m.format_version) {
             anyhow::bail!(
-                "format_version incompatível em {}: {} (suportado: {})",
+                "format_version incompatível em {}: {} (suportados: {:?})",
                 path.display(),
                 m.format_version,
-                FORMAT_VERSION
+                SUPPORTED_FORMAT_VERSIONS
             );
         }
         Ok(m)
