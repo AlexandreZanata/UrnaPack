@@ -1,5 +1,10 @@
 # Revisão da Etapa 2 — ingestão gerenciada e contratos de dados
 
+> Registro histórico da entrega do agente. A revisão posterior encontrou
+> falhas adicionais em aquisição, vínculos e validação; o estado corrigido
+> está em [Revisão das fases 2–4](REVISAO-ETAPAS-2-4.md). Os checks G2 abaixo
+> não constituem aprovação atual: falta o vínculo por hash do recibo de execução.
+
 Data: 28/10/2026. Escopo: `docs/ETAPA-2.md`. Parada para revisão antes da Etapa 3.
 Sem commit/push sem autorização (este documento integra a entrega a commitar).
 

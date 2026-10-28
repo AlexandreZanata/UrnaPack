@@ -6,7 +6,7 @@ um atestado único que reúna todas. As correções da Etapa 1 estão registrada
 
 ## Nível 1 — Integridade dos objetos declarados
 
-Implementação parcial: manifesto de origem Rust v1 + `tsepack verify` recomputam
+Implementação: manifesto de origem Rust v1/v2 + `tsepack verify` recomputam
 SHA-256 e tamanho dos arquivos declarados. URL por arquivo é opcional na base.
 Versões incompatíveis, duplicatas, caminhos não canônicos e symlinks internos
 reprovam, e erros de travessia não são omitidos. Hashes de membros internos não
@@ -30,7 +30,10 @@ Verificar todas as ocorrências e valores, e não apenas somas ou determinismo.
 Campo desconhecido bloqueia interpretação até atualização de esquema. Uma
 redução analítica é produto derivado de escopo declarado, regenerável a partir
 da evidência preservada; não substitui a única cópia de informação eliminada.
-Nenhum transformador semântico existe na base atual.
+O protótipo BU web v2 preserva os valores lexicais, ordem e multiplicidades.
+`scripts/verify_pack.py` lê a origem com outro parser e confronta cada valor
+com sua coluna, além da emissão e dos hashes. Isso não valida joins,
+interpretação eleitoral ou correção das consultas analíticas.
 
 ## Nível 3 — Rastreabilidade por ocorrência
 
@@ -45,9 +48,10 @@ especificados; não é pré-requisito para o primeiro índice rastreável.
 
 ## Nível 4 — Reexecução e verificador independente
 
-O verificador atual relê o manifesto de origem e os bytes; não valida dataset
-transformado, parser eleitoral, multiplicidades ou consultas. A independência
-atual é de execução/estado; não constitui um segundo parser eleitoral.
+`tsepack verify` relê manifesto de origem e bytes. Para BU web existe também
+`scripts/verify_pack.py`, com parser CSV Python independente do Rust e
+confronto de todas as ocorrências. A independência é de implementação do
+parser; a interpretação de negócio e as consultas exigem a Etapa 5.
 
 Cada família transformada precisará de reexecução determinística, comparação
 integral do contrato e confronto de contagens com os arquivos. Usar leitura ou
@@ -59,6 +63,12 @@ cobertura e regras de agregação. Diagnóstico explícito bloqueia o uso afetad
 um recorte válido precisa de declaração própria, sem virar conjunto completo.
 
 ## Nível 5 — Reconstrução byte a byte
+
+Executada no arquivo FORENSIC local v2 da Etapa 4: todos os downloads declarados,
+incluindo os ZIPs completos e sidecars, foram restaurados e confrontados por
+SHA-256 e tamanho. Descritor vincula manifesto, dados e recibo; restauração
+usa saída nova e só promove a árvore após conferência integral. Contrato em
+`spec/archive-v2.md`; resultados em `docs/RESULTADO-COMPRESSAO-MT.md`.
 
 FORENSIC exige SHA-256 dos bytes restaurados igual ao SHA-256 do objeto original
 declarado. Cada técnica deve ser entregue com seu inverso e seus testes.

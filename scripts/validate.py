@@ -123,6 +123,12 @@ def validate_manifest_doc(m, errors, label="manifest", schema_version=1):
     if m.get("state") not in UFS:
         fail(f"{label}: UF inválida: {m.get('state')}", errors)
     pkgs = m.get("packages", [])
+    names = [p.get("name") for p in pkgs]
+    if len(set(names)) != len(names):
+        fail(f"{label}: nomes de pacote duplicados", errors)
+    paths = [entry.get("path") for entry in m.get("source_files", [])]
+    if len(set(paths)) != len(paths):
+        fail(f"{label}: caminhos de origem duplicados", errors)
     hashes = m.get("package_hashes", [])
     if [p.get("sha256") for p in pkgs] != hashes:
         fail(f"{label}: package_hashes divergem de packages[]", errors)
@@ -163,6 +169,20 @@ def cmd_manifest(args):
             actual = None
         if actual is not None and actual != m.get("source_manifest_sha256"):
             fail("manifest: source_manifest_sha256 não confere com o manifesto de origem", errors)
+        if actual is not None:
+            try:
+                source = json.loads(Path(args.source_manifest).read_text())
+                paths = [entry["path"] for entry in source["files"]]
+                if len(set(paths)) != len(paths):
+                    fail("manifest: caminhos duplicados no manifesto de origem", errors)
+                original = {(entry["path"], entry["sha256"], entry["size"]): entry.get("url") for entry in source["files"]}
+                declared = {(entry["path"], entry["sha256"], entry["size_bytes"]): entry.get("url") for entry in m["source_files"]}
+                if set(original) != set(declared) or any(url is not None and url != declared.get(key) for key, url in original.items()):
+                    fail("manifest: source_files divergem dos arquivos do manifesto de origem", errors)
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                fail(f"manifest: origem inválida: {error}", errors)
+    if schema_version == 2 and args.require_status in ("validated", "published"):
+        fail("manifest: v2 possui apenas descrição do recibo; falta compromisso SHA-256 de execução. Publicação bloqueada até contrato versionado completo", errors)
     if args.require_status and m.get("verification_status") != args.require_status:
         fail(
             f"manifest: verification_status={m.get('verification_status')!r}, "
@@ -201,6 +221,11 @@ def cmd_execution(args):
         fail(f"execution: artifact_kind inesperado: {doc.get('artifact_kind')!r}", errors)
     if doc.get("format_version") != 1:
         fail(f"execution: format_version incompatível: {doc.get('format_version')}", errors)
+    if doc.get("success") is True:
+        if doc.get("errors"):
+            fail("execution: sucesso contradiz lista de erros", errors)
+        if any(not isinstance(entry.get("sha256"), str) or not HEX64_RE.fullmatch(entry["sha256"]) for entry in doc.get("inputs", [])):
+            fail("execution: execução bem-sucedida exige hashes de entrada completos", errors)
     return errors
 
 

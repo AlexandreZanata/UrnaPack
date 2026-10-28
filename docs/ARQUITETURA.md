@@ -8,13 +8,24 @@ está em `docs/PLANO.md`; a primeira entrega está em `docs/ETAPA-1.md`.
 
 Módulos existentes:
 
-- `main.rs`: CLI; `inspect`, `benchmark` e `verify` implementados; outros
+- `main.rs`: CLI; `inspect`, `benchmark`, `verify`, `pack`/`unpack`, `codec`,
+  `archive`, `optimize`, `restore`, `queries` implementados; outros
   subcomandos falham explicitamente.
 - `hash.rs`: SHA-256 de bytes/arquivos, com leitura de arquivos em streaming.
-- `manifest.rs`: manifesto de origem v1, construção ordenada com Rayon.
+- `manifest.rs`: manifesto de origem v2 (leitura v1/v2), construção ordenada com Rayon.
 - `inspect.rs`: inventário físico por extensão; não interpreta dados eleitorais.
-- `benchmark.rs`: stored/ZSTD por arquivo, round-trip comparando bytes.
-  A leitura atual do arquivo inteiro em memória é limitação da base.
+- `benchmark.rs`: stored/ZSTD/Brotli por arquivo em streaming; BU web colunar/sólido,
+  hashes dos bytes decodificados, artefatos e retomada por método. Relatório v2
+  em `spec/benchmark-v2.md`.
+- `bweb.rs`: pacote experimental v2 e inverso; todos os valores lexicais em
+  colunas, ordinal preservado, emissão conferida contra SHA-256 do CSV original.
+- `codec.rs`: codecs padrão, treinamento de dicionário, streaming e promoção
+  somente após prova de bytes; XZ é subprocesso, demais encoders são bibliotecas Rust.
+- `archive.rs`: arquivo FORENSIC v2, sólido ou por fonte, com recibo vinculado;
+  TAR padrão e arquivos originais opacos preservados, incluindo ZIPs completos.
+- `queries.rs`: Q1/Q2 e recuperação de controle, sem somar contexto por votável.
+- `output.rs` / `limits.rs`: saídas temporárias e limites compartilhados com
+  `scripts/limits.env` (Rust incorpora os valores na compilação).
 - `verify.rs`: confronto dos arquivos declarados com tamanho e SHA-256,
   validação de versão, unicidade de caminhos e rejeição de symlinks internos.
 - `traverse.rs`: política compartilhada de raiz, nomes portáveis, arquivos
@@ -41,22 +52,30 @@ pré-requisito para as camadas canônica e analítica.
 
 ## Contratos de artefato
 
-Hoje coexistem dois contratos distintos, ambos com `format_version: 1`:
+Hoje coexistem contratos distintos, com versões independentes:
 
-- origem Rust: `source`, `files[]`, caminho, tamanho, SHA-256 e URL opcional;
-- dataset de distribuição: `spec/manifest.schema.json`, com `source_files[]`,
-  `packages[]`, perfil e identificação eleitoral.
+- origem Rust v2 (leitura v1/v2): `source`, `files[]`, caminho, tamanho,
+  SHA-256 e URL opcional; campos desconhecidos reprovam;
+- dataset de distribuição v1/v2: `spec/manifest*.schema.json`, com `source_files[]`,
+  `packages[]`, perfil e identificação eleitoral;
+- execução v1: `spec/execution.schema.json`;
+- pacote BU web v2: `spec/bweb-pack-v2.md` (leitura de v1 com compromisso SHA válido).
+- arquivo FORENSIC local v2: `spec/archive-v2.md`; view regenerável v1:
+  `spec/bweb-view-v1.md`. Esses contratos têm escopo e versões próprios.
 
 O `verify` Rust atual aceita o primeiro, não o segundo. Não usar um como se
-fosse o outro. A Etapa 1 preserva o formato de origem válido existente e corrige
-as verificações delimitadas. A Etapa 2 formaliza os tipos/discriminadores,
-versões, política de campos desconhecidos e referências entre os contratos,
-com migração e testes antes de qualquer mudança incompatível.
+fosse o outro. A migração de origem v1→v2 tem testes. O dataset v2 vincula o
+manifesto de origem, porém seu campo `execution` ainda é apenas um descritor.
+Não há compromisso por hash do recibo; `--require-status validated|published`
+bloqueia v2 até um contrato completo e versionado. Validação estrutural
+isolada não comprova reexecução nem libera publicação.
+O arquivo local v2 tem recibo com hash, entradas/saídas reconfrontadas e prova
+do conteúdo restaurado. Isso resolve sua execução local, sem promover o
+manifesto antigo de distribuição nem publicar dados automaticamente.
 
 O mapa estrutural tem seu próprio `artifact_kind` e `format_version`;
 não reutilizar `FORMAT_VERSION` da origem para evoluí-lo. Campos adicionais
-no JSON de origem ainda não têm uma política segura implementada: não usar
-extensões silenciosas para transportar novas garantias durante a Etapa 1.
+no JSON de origem reprovam; novas garantias exigem contrato explícito.
 
 Conteúdo determinístico inclui caminhos relativos ordenados, cabeçalhos em
 ordem original e hashes calculados. Datas/tempos da execução ficam em recibo

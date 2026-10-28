@@ -35,11 +35,12 @@ jobs:
         run: cargo test
 
       - name: testes das automações (unittest)
-        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+        run: |
+          python3 -m pip install --quiet "pyyaml==6.0.2" "jsonschema==4.23.0" -r scripts/requirements-compression.txt
+          python3 -m unittest discover -s scripts -p 'test_*.py'
 
       - name: validar repositorio (limites, nomes, schemas, indice, segredos)
         run: |
-          python3 -m pip install --quiet "pyyaml==6.0.2" "jsonschema==4.23.0"
           python3 scripts/validate.py repo --root .
 
       - name: cenarios de falha com fixtures (hash ruim, ausente, truncado, duplicado...)

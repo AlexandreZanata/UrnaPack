@@ -509,3 +509,60 @@ fn migracao_v1_para_v2_preserva_arquivos() {
     let rep = verify(&mp2, dir.path()).unwrap();
     assert!(rep.approved);
 }
+
+#[test]
+fn benchmark_pack_columns_consistente() {
+    let dir = tempfile::tempdir().unwrap();
+    // Mini CSV bweb válido (cabeçalho + 2 linhas).
+    let mut raw: Vec<u8> = Vec::new();
+    for (i, name) in tsepack::bweb::BWEB_HEADER.iter().enumerate() {
+        if i > 0 {
+            raw.extend_from_slice(b";");
+        }
+        raw.extend_from_slice(b"\"");
+        raw.extend_from_slice(name.as_bytes());
+        raw.extend_from_slice(b"\"");
+    }
+    raw.extend_from_slice(b"\r\n");
+    for r in 0..2 {
+        for (i, _) in tsepack::bweb::BWEB_HEADER.iter().enumerate() {
+            if i > 0 {
+                raw.extend_from_slice(b";");
+            }
+            if tsepack::bweb::BWEB_QUOTED[i] {
+                raw.extend_from_slice(b"\"");
+            }
+            raw.extend_from_slice(format!("v{r}c{i}").as_bytes());
+            if tsepack::bweb::BWEB_QUOTED[i] {
+                raw.extend_from_slice(b"\"");
+            }
+        }
+        raw.extend_from_slice(b"\r\n");
+    }
+    let csv = dir.path().join("mini.csv");
+    std::fs::write(&csv, &raw).unwrap();
+    let pack_dir = dir.path().join("p");
+    tsepack::bweb::pack(&csv, &pack_dir, None).unwrap();
+    let rep = tsepack::benchmark::run_pack_columns(&pack_dir, "quick").unwrap();
+    assert_eq!(rep.columns.len(), 45);
+    assert!(rep.cases.iter().all(|c| c.round_trip_ok));
+    let stored = rep
+        .cases
+        .iter()
+        .find(|c| c.method == "pack-stored")
+        .unwrap();
+    assert_eq!(stored.output_bytes, rep.pack_uncompressed_bytes);
+    assert_eq!(rep.input_bytes, raw.len() as u64);
+    let col3 = rep
+        .cases
+        .iter()
+        .find(|c| c.method == "pack-col-zstd-3")
+        .unwrap();
+    let detail: u64 = rep
+        .columns
+        .iter()
+        .map(|c| c.zstd_bytes["zstd-3"])
+        .sum::<u64>()
+        + rep.pack_json_bytes;
+    assert_eq!(col3.output_bytes, detail);
+}

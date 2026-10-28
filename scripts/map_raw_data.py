@@ -144,7 +144,7 @@ def fail(msg, errors):
     raise MappingError(msg)
 
 
-def load_limits(path):
+def load_limits(path, extra=()):
     if not os.path.isfile(path):
         raise SystemExit(f"limites ausentes: {path}")
     vals = {}
@@ -155,11 +155,12 @@ def load_limits(path):
                 continue
             k, v = line.split("=", 1)
             vals[k.strip()] = v.strip()
-    missing = [k for k in REQUIRED_LIMITS if k not in vals]
+    required = list(dict.fromkeys([*REQUIRED_LIMITS, *extra]))
+    missing = [k for k in required if k not in vals]
     if missing:
         raise SystemExit(f"limite desconhecido/ausente em {path}: {', '.join(missing)}")
     out = {}
-    for k in REQUIRED_LIMITS:
+    for k in required:
         try:
             out[k] = int(vals[k])
         except ValueError:

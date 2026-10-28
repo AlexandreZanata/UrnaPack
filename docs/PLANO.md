@@ -5,11 +5,16 @@
 **Minimizar os bytes totais necessários para preservar a evidência e reproduzir
 as análises, sem comprometer integridade, cobertura ou rastreabilidade.**
 
-Plano refinado em 28/10/2026. A base v0.1 implementa `inspect`, `benchmark`
-(stored/ZSTD) e `verify` de arquivos de origem. A Etapa 1 foi implementada e
-passou por correções adicionais; evidências e limites estão em
-`docs/REVISAO-ETAPA-1.md`. Transformação semântica, formato próprio,
-`restore`, download gerenciado e análise eleitoral ainda não estão implementados.
+Plano refinado em 28/10/2026. A versão v0.2.0 implementa `inspect`, `benchmark`
+em streaming (stored/ZSTD/Brotli), `verify` de arquivos de origem e `pack`/`unpack`
+experimental para BU web. Há aquisição gerenciada em `scripts/fetch_source.py`;
+o subcomando Rust `download` ainda não a integra. Etapa 1 revisada; fases 2–4
+revisadas com correções em `docs/REVISAO-ETAPAS-2-4.md`. G3 passou no membro CSV
+de MT; **G4 concluído para o corpus local baixado**, com resultados em
+`docs/RESULTADO-COMPRESSAO-MT.md`. Arquivo local v2 fecha o vínculo criptográfico
+de execução e implementa `optimize`/`restore`. O manifesto de distribuição v2
+antigo continua bloqueado para publicação; liberação analítica, expansão
+nacional e distribuição permanecem nas etapas seguintes.
 Um plano ou status declarado não constitui evidência de execução.
 
 Documentos de execução:
@@ -102,6 +107,10 @@ verificador reproduzível, com leitura independente onde houver risco de erro co
 
 ## Etapa 4 — Baselines completos e decisão de armazenamento
 
+**Executada em MT.** Matriz e critérios em `docs/ETAPA-4.md`; decisão e evidências
+reais em `docs/RESULTADO-COMPRESSAO-MT.md`. O resultado vale para os arquivos
+locais declarados, preservando a limitação já mapeada de t2.
+
 - Comparar stored, ZSTD, dicionários com treino/ajuste/avaliação separados,
   XZ/LZMA2, Brotli, agrupamentos sólidos/blocos e Parquet+ZSTD quando aplicável.
 - Separar preservação dos bytes de compressão do mesmo modelo canônico.
@@ -113,7 +122,8 @@ verificador reproduzível, com leitura independente onde houver risco de erro co
 - Comparar arquivos individuais e agrupamentos, incluindo os já comprimidos.
   Usar o conjunto disponível e amostras estratificadas identificadas.
 - Medir recuperação por seção/cargo e agregações territoriais, além de bytes.
-  O benchmark atual em memória não comprova viabilidade em escala nacional.
+  O benchmark atual usa streaming; medições locais não comprovam viabilidade
+  nem custo de consultas na escala nacional.
 
 **Saída G4:** experimento reproduzível identifica a melhor alternativa por
 requisito; formato próprio só avança com oportunidade demonstrada. Nenhuma taxa

@@ -1,13 +1,17 @@
-//! tsepack — biblioteca base v0.1.
+//! tsepack — biblioteca de compressão e verificação.
 //!
 //! Escopo da base: proveniência (hash + manifesto), inspeção,
-//! benchmark de baselines reais (ZSTD) e verificação independente.
-//! Formatos especializados (Fase 3) ainda NÃO existem nesta base.
+//! baselines em streaming, pacote BU web, arquivos FORENSIC e consultas de controle.
+//! O pacote é experimental; os demais parsers e a liberação analítica são futuros.
 
+pub mod archive;
 pub mod benchmark;
+pub mod bweb;
+pub mod codec;
 pub mod hash;
 pub mod inspect;
 pub mod manifest;
+pub mod queries;
 pub mod traverse;
 pub mod verify;
 
@@ -22,3 +26,16 @@ pub const SUPPORTED_FORMAT_VERSIONS: [u32; 2] = [1, 2];
 
 /// Versão da ferramenta (espelha Cargo.toml).
 pub const TOOL_VERSION: &str = env!("CARGO_PKG_VERSION");
+
+pub mod limits;
+pub(crate) mod output;
+
+/// Relatórios não podem sobrescrever nem contaminar a entrada do benchmark.
+pub fn output_path_conflicts(
+    input: &std::path::Path,
+    output: &std::path::Path,
+) -> anyhow::Result<bool> {
+    let source = std::fs::canonicalize(input)?;
+    let target = output::resolved_target(output)?;
+    Ok(target == source || (source.is_dir() && target.starts_with(source)))
+}

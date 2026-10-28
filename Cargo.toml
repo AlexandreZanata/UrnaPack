@@ -1,8 +1,8 @@
 [package]
 name = "tsepack"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
-description = "Compressão extrema e verificável dos dados eleitorais do TSE — base v0.1"
+description = "Compressão reversível e verificável dos dados eleitorais do TSE"
 license = "MIT"
 
 [[bin]]
@@ -15,12 +15,15 @@ path = "src/lib.rs"
 
 [dependencies]
 anyhow = "1"
+brotli = "8.0.4"
 clap = { version = "4", features = ["derive"] }
+csv = "1.4.0"
 hex = "0.4"
 rayon = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha2 = "0.10"
+tar = { version = "0.4.46", default-features = false }
 walkdir = "2"
 zstd = "0.14"
 

@@ -32,5 +32,5 @@ fn benchmark_round_trip_zstd() {
     assert!(rep
         .cases
         .iter()
-        .any(|c| c.method != "stored" && c.ratio > 1.0));
+        .any(|c| c.method != "stored" && c.ratio.is_some_and(|r| r > 1.0)));
 }

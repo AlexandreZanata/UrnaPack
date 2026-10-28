@@ -49,16 +49,20 @@ Toda coluna é texto Latin-1 preservado. Padrões verificados por linha:
 | `ANO_ELEICAO` | `2026` | |
 | `CD_TIPO_ELEICAO` / `NM_TIPO_ELEICAO` | `0` / `Eleição Ordinária` | difere da votação (`2`); por fonte |
 | `CD_PLEITO` | `3220` | |
-| `NR_TURNO` | `1` (domínio documental `1`,`2`) | t2 ausente neste arquivo |
+| `NR_TURNO` | `1` | perfil restrito a t1; t2 exige outra versão |
 | `CD_ELEICAO` / `DS_ELEICAO` | `6257`↔`Eleição Geral Federal 2026`, `6259`↔`Eleições Gerais Estaduais 2026` | consistência cruzada verificada |
 | `SG_UF` | `MT` | |
 | `CD_CARGO_PERGUNTA` / `DS_CARGO_PERGUNTA` | `1`↔Presidente, `3`↔Governador, `5`↔Senador, `6`↔Deputado Federal, `7`↔Deputado Estadual | consistência cruzada verificada |
 | `CD_TIPO_URNA` / `DS_TIPO_URNA` | `1`↔`Apurada` | |
 | `CD_TIPO_VOTAVEL` / `DS_TIPO_VOTAVEL` | `1`↔Nominal, `2`↔Branco, `3`↔Nulo, `4`↔Legenda | categorias oficiais; consistência cruzada verificada |
 
+Eleição `6257` exige cargo `1`; eleição `6259` rejeita cargo `1`.
+As datas têm validação lexical, sem promessa de calendário ou fuso.
 Valor fora dos dois níveis reprova com ordinal e coluna (sem normalizar nem
-descartar). Sentinelas lexicais `{#NULO, #NULO#, #NE, -1, -3, ""}` são contadas
+descartar). Sentinelas lexicais `{#NULO, #NULO#, #NE, #NE#, -1, -3, ""}` são contadas
 por coluna como evidência; `DS_SECOES_AGREGADAS` é lista textual opaca nesta etapa.
+O relatório registra `complete` e só inclui `source_sha256` após leitura até
+EOF. Evidências têm teto, contagens totais de erros permanecem explícitas.
 
 ## Chaves candidatas (não verificadas globalmente)
 

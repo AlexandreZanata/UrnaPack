@@ -16,6 +16,11 @@ import argparse
 import hashlib
 import json
 import os
+import ntpath
+import re
+import stat
+import tempfile
+import urllib.parse
 import sys
 import time
 import urllib.error
@@ -30,6 +35,7 @@ REQUIRED_LIMITS = [
     "MAX_FETCH_BYTES",
     "MAX_FETCH_REDIRECTS",
     "FETCH_TIMEOUT_SECS",
+    "IO_BUFFER_BYTES",
 ]
 
 
@@ -64,7 +70,7 @@ def load_limits(path):
 
 
 def check_rel(rel):
-    if not rel or rel.startswith("/") or "\\" in rel:
+    if not isinstance(rel, str) or not rel or "\x00" in rel or rel.startswith("/") or "\\" in rel or ntpath.splitdrive(rel)[0]:
         return f"caminho inválido no manifesto: {rel!r}"
     for seg in rel.split("/"):
         if seg in ("", ".", ".."):
@@ -72,12 +78,26 @@ def check_rel(rel):
     return None
 
 
-def sha256_file(path):
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+from validate import sha256_file
+
+
+def safe_destination(root, rel):
+    problem = check_rel(rel)
+    if problem:
+        raise ValueError(problem)
+    current = root
+    parts = rel.split("/")
+    for index, part in enumerate(parts):
+        current = os.path.join(current, part)
+        if os.path.lexists(current):
+            meta = os.lstat(current)
+            if stat.S_ISLNK(meta.st_mode):
+                raise ValueError(f"symlink interno recusado: {rel}")
+            if index < len(parts)-1 and not stat.S_ISDIR(meta.st_mode):
+                raise ValueError(f"componente não diretório: {rel}")
+            if index == len(parts)-1 and not stat.S_ISREG(meta.st_mode):
+                raise ValueError(f"arquivo especial recusado: {rel}")
+    return current
 
 
 class _RedirectCounter(urllib.request.HTTPRedirectHandler):
@@ -103,6 +123,9 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
     opener, counter, timeout = opener_counter_timeout
     entry = {"url": url, "status": None, "resumed": False, "range_ignored": False,
              "bytes": 0, "sha256": None, "http": {}}
+    if expected_size < 0 or expected_size > limits["MAX_FETCH_BYTES"]:
+        fail("tamanho esperado fora de MAX_FETCH_BYTES", errors)
+        return entry, errors
     # Arquivo final já válido: não baixar de novo.
     if os.path.isfile(dest_final):
         try:
@@ -112,6 +135,9 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
         except OSError as e:
             fail(f"erro de leitura em {dest_final}: {e}", errors)
             return entry, errors
+        fail(f"destino existente divergente; bytes preservados: {dest_final}", errors)
+        entry["status"] = "existing_mismatch"
+        return entry, errors
     partial = dest_final + ".partial"
     offset = 0
     if os.path.isfile(partial):
@@ -120,6 +146,18 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
         except OSError as e:
             fail(f"erro de leitura em {partial}: {e}", errors)
             return entry, errors
+    if os.path.lexists(partial):
+        meta = os.lstat(partial)
+        if not stat.S_ISREG(meta.st_mode) or meta.st_nlink != 1 or offset > expected_size:
+            fail("parcial inseguro ou maior que a origem esperada", errors)
+            return entry, errors
+    if offset == expected_size and os.path.isfile(partial):
+        if sha256_file(partial) != expected_sha:
+            fail("parcial completo divergente; bytes preservados", errors)
+            return entry, errors
+        os.replace(partial, dest_final)
+        entry.update(status="resumed", resumed=True, bytes=offset, sha256=expected_sha)
+        return entry, []
     req = urllib.request.Request(url)
     if offset > 0:
         req.add_header("Range", f"bytes={offset}-")
@@ -128,19 +166,9 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
         resp = opener.open(req, timeout=timeout)
     except urllib.error.HTTPError as e:
         if e.code == 416 and offset > 0:
-            # Parcial além do remoto: recomeçar do zero, registrado.
-            try:
-                os.remove(partial)
-            except OSError:
-                pass
-            entry["resumed"] = False
-            req = urllib.request.Request(url)
-            try:
-                resp = opener.open(req, timeout=timeout)
-            except Exception as e2:  # noqa: BLE001
-                fail(f"HTTP {getattr(e2, 'code', '?')} em {url}: {e2}", errors)
-                entry["status"] = "http_error"
-                return entry, errors
+            fail("HTTP 416: checkpoint não corresponde à origem; parcial preservado", errors)
+            entry["status"] = "range_mismatch"
+            return entry, errors
         else:
             fail(f"HTTP {e.code} em {url}: {e.reason}", errors)
             entry["status"] = "http_error"
@@ -170,26 +198,26 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
             fail(f"resposta inesperada {status} em {url}", errors)
             entry["status"] = "http_error"
             return entry, errors
-        # Teto por arquivo a partir do total conhecido.
-        total = None
-        if "content-range" in headers:
-            try:
-                total = int(headers["content-range"].rsplit("/", 1)[-1])
-            except ValueError:
-                total = None
-        elif "content-length" in headers and status == 200:
-            try:
-                total = int(headers["content-length"])
-            except ValueError:
-                total = None
-        if total is not None and offset + total > limits["MAX_FETCH_BYTES"]:
-            fail(f"limite excedido: {url} ({offset + total} bytes > MAX_FETCH_BYTES)", errors)
-            entry["status"] = "limit_exceeded"
+        if status == 206:
+            match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", headers.get("content-range", ""))
+            if not match:
+                fail("Content-Range ausente ou inválido", errors)
+                return entry, errors
+            start, end, total = map(int, match.groups())
+            if start != offset or end < start or end >= total or total != expected_size:
+                fail("Content-Range não corresponde ao checkpoint/origem", errors)
+                return entry, errors
+        else:
+            total = expected_size
+        if total > limits["MAX_FETCH_BYTES"]:
+            fail("MAX_FETCH_BYTES excedido", errors)
             return entry, errors
-        if expected_size > limits["MAX_FETCH_BYTES"]:
-            fail(f"limite excedido: tamanho esperado ({expected_size} bytes > MAX_FETCH_BYTES)", errors)
-            entry["status"] = "limit_exceeded"
-            return entry, errors
+        if "content-length" in headers:
+            length = int(headers["content-length"])
+            wanted_length = end-start+1 if status == 206 else expected_size
+            if length != wanted_length:
+                fail("Content-Length diverge do tamanho esperado", errors)
+                return entry, errors
         os.makedirs(os.path.dirname(dest_final), exist_ok=True)
         h = hashlib.sha256()
         if offset > 0:
@@ -206,9 +234,12 @@ def fetch_one(opener_counter_timeout, url, dest_final, expected_sha, expected_si
         try:
             with open(partial, mode) as f:
                 while True:
-                    chunk = resp.read(1024 * 1024)
+                    chunk = resp.read(min(limits["IO_BUFFER_BYTES"], expected_size-offset+1))
                     if not chunk:
                         break
+                    if offset + len(chunk) > expected_size:
+                        fail("resposta excede o tamanho esperado", errors)
+                        return entry, errors
                     h.update(chunk)
                     f.write(chunk)
                     offset += len(chunk)
@@ -253,7 +284,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="Aquisição gerenciada de arquivos oficiais.")
     ap.add_argument("--manifest", required=True)
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--only", nargs="*", default=None)
+    ap.add_argument("--only", nargs="+", default=None)
     args = ap.parse_args(argv)
 
     limits_path = os.environ.get("URNAPACK_LIMITS_FILE", DEFAULT_LIMITS)
@@ -261,8 +292,12 @@ def main(argv=None):
     errors = []
 
     try:
-        with open(args.manifest, "r", encoding="utf-8") as f:
-            manifest = json.load(f)
+        with open(args.manifest, "rb") as f:
+            manifest_bytes = f.read()
+        manifest = json.loads(manifest_bytes)
+        manifest_sha = hashlib.sha256(manifest_bytes).hexdigest()
+        if not isinstance(manifest, dict):
+            raise ValueError("manifesto deve ser objeto")
     except (OSError, ValueError) as e:
         print(f"ERRO: ler manifesto {args.manifest}: {e}", file=sys.stderr)
         return 2
@@ -275,7 +310,7 @@ def main(argv=None):
         print(f"ERRO: campo files inválido em {args.manifest}", file=sys.stderr)
         return 2
 
-    out_abs = os.path.abspath(args.out_dir)
+    out_abs = os.path.realpath(args.out_dir)
     try:
         os.makedirs(out_abs, exist_ok=True)
     except OSError as e:
@@ -283,6 +318,41 @@ def main(argv=None):
         return 2
 
     wanted = set(args.only) if args.only else None
+    try:
+        if not isinstance(manifest, dict) or set(manifest) - {"format_version", "tool_version", "source", "files"}:
+            raise ValueError("campos desconhecidos no manifesto")
+        names = []
+        for item in files:
+            if not isinstance(item, dict) or set(item) - {"path","size","sha256","file_type","url"}:
+                raise ValueError("campos desconhecidos na entrada")
+            rel = item.get("path")
+            if check_rel(rel):
+                raise ValueError(check_rel(rel))
+            if rel in names:
+                raise ValueError(f"caminho duplicado: {rel}")
+            if type(item.get("size")) is not int or item["size"] < 0:
+                raise ValueError("tamanho inválido")
+            if item.get("url") is not None and not isinstance(item["url"], str):
+                raise ValueError("URL deve ser string")
+            if not isinstance(item.get("sha256"), str):
+                raise ValueError("SHA-256 deve ser string")
+            names.append(rel)
+        if wanted is not None and not wanted.issubset(set(names)):
+            raise ValueError("--only contém arquivo ausente no manifesto")
+        if not names:
+            raise ValueError("nenhum arquivo para adquirir")
+        reserved = {"fetch-run.json"} | {n+".partial" for n in names}
+        if set(names) & reserved:
+            raise ValueError("colisão entre arquivos e nomes reservados de checkpoint/recibo")
+        for name in names:
+            destination = safe_destination(out_abs, name)
+            safe_destination(out_abs, name+".partial")
+            if os.path.realpath(destination) == os.path.realpath(args.manifest):
+                raise ValueError("destino sobrepõe manifesto de entrada")
+        safe_destination(out_abs, "fetch-run.json")
+    except (ValueError, OSError) as error:
+        print(f"ERRO: {error}", file=sys.stderr)
+        return 2
     entries = {}
     seen = set()
     for item in files:
@@ -301,6 +371,10 @@ def main(argv=None):
         if not url:
             fail(f"sem URL para aquisição: {rel}", errors)
             continue
+        parsed_url = urllib.parse.urlsplit(url)
+        if parsed_url.scheme not in ("http", "https") or not parsed_url.hostname or parsed_url.username or parsed_url.password:
+            fail(f"URL HTTP(S) pública inválida para {rel}", errors)
+            continue
         try:
             expected_size = int(item.get("size", -1))
         except (TypeError, ValueError):
@@ -311,17 +385,17 @@ def main(argv=None):
             fail(f"SHA-256 inválido no manifesto: {rel}", errors)
             continue
         dest = os.path.join(out_abs, *rel.split("/"))
-        entry, _ = fetch_one(build_opener(limits, limits["FETCH_TIMEOUT_SECS"]),
-                             url, dest, expected_sha, expected_size, limits, errors)
+        try:
+            entry, _ = fetch_one(build_opener(limits, limits["FETCH_TIMEOUT_SECS"]),
+                                 url, dest, expected_sha, expected_size, limits, errors)
+        except (OSError, ValueError) as error:
+            fail(f"erro na aquisição {rel}: {error}", errors)
+            entry = {"status": "failed", "url": url}
         entry["path"] = rel
         entry["expected_sha256"] = expected_sha
         entry["expected_size"] = expected_size
         entries[rel] = entry
 
-    try:
-        manifest_sha = sha256_file(args.manifest)
-    except OSError:
-        manifest_sha = None
     outputs = sorted([
         {"path": rel, "sha256": e.get("sha256"), "size_bytes": e.get("bytes")}
         for rel, e in entries.items() if e.get("status") in ("fetched", "resumed", "already_valid")
@@ -342,13 +416,19 @@ def main(argv=None):
         "success": not errors,
         "errors": errors,
     }
+    temporary = None
     try:
-        with open(os.path.join(out_abs, "fetch-run.json"), "w", encoding="utf-8", newline="\n") as f:
-            json.dump(receipt, f, ensure_ascii=False, sort_keys=True, indent=2)
-            f.write("\n")
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=out_abs, delete=False) as stream:
+            temporary = stream.name
+            json.dump(receipt, stream, ensure_ascii=False, sort_keys=True, indent=2)
+            stream.write("\n")
+        os.replace(temporary, os.path.join(out_abs, "fetch-run.json"))
     except OSError as e:
         print(f"ERRO: escrever recibo: {e}", file=sys.stderr)
         return 2
+    finally:
+        if temporary and os.path.exists(temporary):
+            os.unlink(temporary)
 
     if errors:
         print(f"fetch_source: {len(errors)} erro(s); recibo em fetch-run.json", file=sys.stderr)

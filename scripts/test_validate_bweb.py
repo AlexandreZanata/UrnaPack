@@ -162,5 +162,30 @@ class TestValidateBweb(unittest.TestCase):
             self.assertEqual(r.returncode, 0, msg=r.stderr)
 
 
+
+class TestRevisaoBweb(unittest.TestCase):
+    def test_turno_e_eleicao_cargo_incompativeis_reprovam(self):
+        cases=[base_row(NR_TURNO="2"),base_row(CD_ELEICAO="6257",DS_ELEICAO="Eleição Geral Federal 2026")]
+        for row in cases:
+            with tempfile.TemporaryDirectory() as tmp:
+                path=os.path.join(tmp,"a.csv");write_csv(path,[row])
+                self.assertNotEqual(run_bweb("--csv",path).returncode,0)
+
+    def test_saida_nao_pode_sobrescrever_original(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=os.path.join(tmp,"a.csv");write_csv(path,[base_row()])
+            with open(path,"rb") as f:before=f.read()
+            self.assertNotEqual(run_bweb("--csv",path,"--output",path).returncode,0)
+            with open(path,"rb") as f:self.assertEqual(f.read(),before)
+
+    def test_nome_duplicado_no_zip_nao_e_escolhido_silenciosamente(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=os.path.join(tmp,"a.csv");write_csv(path,[base_row()])
+            with open(path,"rb") as f:raw=f.read()
+            zpath=os.path.join(tmp,"a.zip")
+            with zipfile.ZipFile(zpath,"w") as z:
+                z.writestr("a.csv",raw);z.writestr("a.csv",raw)
+            self.assertNotEqual(run_bweb("--zip",zpath,"--member","a.csv").returncode,0)
+
 if __name__ == "__main__":
     unittest.main()

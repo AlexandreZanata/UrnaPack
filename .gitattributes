@@ -5,3 +5,6 @@
 
 # JSON de manifestos e índice: texto, LF sempre.
 *.json text eol=lf
+
+# Fixtures lexicais têm Latin-1/CRLF e hashes dos bytes; Git não pode normalizá-las.
+tests/fixtures/bweb/*.csv binary

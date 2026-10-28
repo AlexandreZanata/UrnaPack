@@ -114,5 +114,43 @@ class TestSchemaIndisponivel(unittest.TestCase):
             V.HAVE_JSONSCHEMA = prev
 
 
+
+class TestVinculosRevisados(unittest.TestCase):
+    def test_duplicatas_nao_sao_ocultadas_por_comparacao_de_conjuntos(self):
+        import copy
+        import pathlib
+        doc=json.loads((pathlib.Path(ROOT)/"tests/fixtures/dataset-v2-good.json").read_text())
+        doc["source_files"].append(copy.deepcopy(doc["source_files"][0]))
+        doc["packages"].append(copy.deepcopy(doc["packages"][0]))
+        errors=[]
+        V.validate_manifest_doc(doc,errors,schema_version=2)
+        self.assertTrue(any("origem duplicados" in error for error in errors))
+        self.assertTrue(any("pacote duplicados" in error for error in errors))
+
+    def test_hash_do_documento_nao_basta_se_source_files_divergem(self):
+        import pathlib
+        root=pathlib.Path(ROOT)/"tests/fixtures"
+        doc=json.loads((root/"dataset-v2-good.json").read_text())
+        doc["source_files"][0]["path"]="outro-arquivo.bin"
+        with tempfile.TemporaryDirectory() as tmp:
+            path=pathlib.Path(tmp)/"manifest.json";path.write_text(json.dumps(doc))
+            args=argparse.Namespace(manifest=str(path),schema_version="auto",source_manifest=str(root/"origin-v2-good.json"),require_status=None,data_root=None)
+            errors=V.cmd_manifest(args)
+            self.assertTrue(any("source_files divergem" in error for error in errors))
+
+    def test_stub_de_execution_nao_libera_publicacao(self):
+        import pathlib
+        root=pathlib.Path(ROOT)/"tests/fixtures"
+        args=argparse.Namespace(manifest=str(root/"dataset-v2-good.json"),schema_version="auto",source_manifest=str(root/"origin-v2-good.json"),require_status="validated",data_root=None)
+        self.assertTrue(any("recibo" in error for error in V.cmd_manifest(args)))
+
+    def test_sucesso_com_erros_nao_e_recibo_aprovado(self):
+        import pathlib
+        doc=json.loads((pathlib.Path(ROOT)/"tests/fixtures/execution-good.json").read_text())
+        doc["errors"]=["falha sintética"]
+        with tempfile.TemporaryDirectory() as tmp:
+            path=pathlib.Path(tmp)/"run.json";path.write_text(json.dumps(doc))
+            self.assertTrue(any("contradiz" in error for error in V.cmd_execution(argparse.Namespace(receipt=str(path)))))
+
 if __name__ == "__main__":
     unittest.main()

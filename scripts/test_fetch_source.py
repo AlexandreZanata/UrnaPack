@@ -66,6 +66,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 self.end_headers()
                 return
             body = PAYLOAD[start:]
+            if self.mode == "bad_range":
+                self._send(206, body, {"Content-Range": f"bytes {start+1}-{len(PAYLOAD)-1}/{len(PAYLOAD)}"})
+                return
             self._send(206, body, {"Accept-Ranges": "bytes",
                                    "Content-Range": f"bytes {start}-{len(PAYLOAD) - 1}/{len(PAYLOAD)}"})
             return
@@ -272,6 +275,96 @@ class TestFetch(unittest.TestCase):
         finally:
             srv.close()
 
+
+
+class TestRevisaoFetch(unittest.TestCase):
+    def test_only_ausente_nao_pode_aprovar_zero_downloads(self):
+        srv=Server()
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                mp=os.path.join(tmp,"m.json");write_manifest(mp,[entry("a.bin",srv.url())])
+                result=run_fetch(mp,os.path.join(tmp,"out"),only=["ausente.bin"])
+                self.assertNotEqual(result.returncode,0);self.assertEqual(Handler.hits,0)
+        finally:srv.close()
+
+    def test_destino_e_parcial_por_symlink_nao_alteram_arquivo_externo(self):
+        srv=Server()
+        try:
+            for partial in [False,True]:
+                with self.subTest(partial=partial),tempfile.TemporaryDirectory() as tmp:
+                    out=os.path.join(tmp,"out");os.mkdir(out)
+                    victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+                    target=os.path.join(out,"a.bin.partial" if partial else "a.bin")
+                    os.symlink(victim,target)
+                    mp=os.path.join(tmp,"m.json");write_manifest(mp,[entry("a.bin",srv.url())])
+                    result=run_fetch(mp,out)
+                    self.assertNotEqual(result.returncode,0)
+                    with open(victim,"rb") as f:self.assertEqual(f.read(),PAYLOAD[:100])
+        finally:srv.close()
+
+    def test_nomes_reservados_e_colisao_de_partial_reprovam_antes_da_rede(self):
+        srv=Server()
+        try:
+            for names in [["fetch-run.json"],["a.bin","a.bin.partial"]]:
+                with self.subTest(names=names),tempfile.TemporaryDirectory() as tmp:
+                    mp=os.path.join(tmp,"m.json");write_manifest(mp,[entry(n,srv.url()) for n in names])
+                    result=run_fetch(mp,os.path.join(tmp,"out"))
+                    self.assertNotEqual(result.returncode,0)
+            self.assertEqual(Handler.hits,0)
+        finally:srv.close()
+
+    def test_final_existente_divergente_e_preservado(self):
+        srv=Server()
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                out=os.path.join(tmp,"out");os.mkdir(out);final=os.path.join(out,"a.bin")
+                with open(final,"wb") as f:f.write(PAYLOAD[:100])
+                mp=os.path.join(tmp,"m.json");write_manifest(mp,[entry("a.bin",srv.url())])
+                result=run_fetch(mp,out);self.assertNotEqual(result.returncode,0)
+                with open(final,"rb") as f:self.assertEqual(f.read(),PAYLOAD[:100])
+        finally:srv.close()
+
+    def test_retomada_no_limite_nao_soma_offset_duas_vezes(self):
+        srv=Server()
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                out=os.path.join(tmp,"out");os.mkdir(out)
+                with open(os.path.join(out,"a.bin.partial"),"wb") as f:f.write(PAYLOAD[:100])
+                config=os.path.join(tmp,"limits.env")
+                from pathlib import Path
+                import re
+                Path(config).write_text(re.sub(r"MAX_FETCH_BYTES=\d+","MAX_FETCH_BYTES="+str(len(PAYLOAD)),Path(ROOT,"scripts/limits.env").read_text()))
+                mp=os.path.join(tmp,"m.json");write_manifest(mp,[entry("a.bin",srv.url())])
+                result=run_fetch(mp,out,limits_file=config);self.assertEqual(result.returncode,0,result.stderr)
+        finally:srv.close()
+
+
+class TestRangeRevisado(unittest.TestCase):
+    def test_content_range_precisa_corresponder_ao_offset(self):
+        from pathlib import Path
+        srv=Server(mode="bad_range")
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                out=Path(tmp)/"out";out.mkdir();partial=out/"a.bin.partial";partial.write_bytes(PAYLOAD[:100])
+                manifest=Path(tmp)/"source.json";write_manifest(manifest,[entry("a.bin",srv.url())])
+                result=run_fetch(str(manifest),str(out))
+                self.assertNotEqual(result.returncode,0)
+                self.assertFalse((out/"a.bin").exists())
+                self.assertEqual(partial.read_bytes(),PAYLOAD[:100])
+        finally:srv.close()
+
+    def test_parcial_completo_e_verificado_antes_de_retornar_a_rede(self):
+        from pathlib import Path
+        srv=Server()
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                out=Path(tmp)/"out";out.mkdir();(out/"a.bin.partial").write_bytes(PAYLOAD)
+                manifest=Path(tmp)/"source.json";write_manifest(manifest,[entry("a.bin",srv.url())])
+                result=run_fetch(str(manifest),str(out))
+                self.assertEqual(result.returncode,0,result.stderr)
+                self.assertEqual(Handler.hits,0)
+                self.assertEqual((out/"a.bin").read_bytes(),PAYLOAD)
+        finally:srv.close()
 
 if __name__ == "__main__":
     unittest.main()

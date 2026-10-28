@@ -20,7 +20,7 @@ import zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from map_raw_data import KNOWN_LAYOUTS  # noqa: E402 — cabeçalho canônico único
+from map_raw_data import KNOWN_LAYOUTS, HashingReader, CsvLines, MappingError  # noqa: E402 — cabeçalho canônico único
 
 HEADER = KNOWN_LAYOUTS["bweb"]
 FAMILY = "bweb"
@@ -73,7 +73,7 @@ DOMAINS.update({
     "NM_TIPO_ELEICAO": {"Eleição Ordinária"},
     "CD_PLEITO": {"3220"},
     "DT_PLEITO": {"2026-10-04 00:00:00"},
-    "NR_TURNO": {"1", "2"},
+    "NR_TURNO": {"1"},
     "CD_ELEICAO": {"6257", "6259"},
     "SG_UF": {"MT"},
     "CD_CARGO_PERGUNTA": {"1", "3", "5", "6", "7"},
@@ -94,7 +94,7 @@ CONSISTENT = {
 
 KEY_COLS = ["CD_PLEITO", "NR_TURNO", "SG_UF", "CD_MUNICIPIO", "NR_ZONA",
             "NR_SECAO", "CD_CARGO_PERGUNTA", "NR_VOTAVEL"]
-SENTINELS = {"#NULO", "#NULO#", "#NE", "-1", "-3", ""}
+SENTINELS = {"#NULO", "#NULO#", "#NE", "#NE#", "-1", "-3", ""}
 
 
 def fail(msg, errors):
@@ -131,12 +131,37 @@ def open_text(source_zip, member, source_csv):
         try:
             info = zf.getinfo(member)
         except KeyError:
-            print(f"ERRO: membro ausente no ZIP: {member}", file=sys.stderr)
-            raise SystemExit(2)
+            zf.close()
+            raise ValueError(f"membro ausente no ZIP: {member}")
+        if sum(i.filename == member for i in zf.infolist()) != 1:
+            zf.close()
+            raise ValueError("nome duplicado no ZIP")
         raw = zf.open(info, "r")
         return raw, zf, member
     raw = open(source_csv, "rb")
     return raw, None, source_csv
+
+
+class BoundedEvidence(list):
+    def __init__(self, maximum):
+        super().__init__()
+        self.maximum = maximum
+        self.total = 0
+    def append(self, item):
+        self.total += 1
+        if super().__len__() < self.maximum:
+            super().append(item)
+    def __len__(self):
+        return self.total
+
+
+def logical_rows(reader, lines):
+    while True:
+        lines.start_record()
+        row = next(reader, None)
+        if row is None:
+            return
+        yield row
 
 
 def main(argv=None):
@@ -155,27 +180,38 @@ def main(argv=None):
 
     limits_path = os.environ.get("URNAPACK_LIMITS_FILE", os.path.join(HERE, "limits.env"))
     limits = load_limits(limits_path)
-    errors = []
+    errors = BoundedEvidence(limits["MAX_BWEB_DUPLICATE_EVIDENCE"])
+    if args.zip and args.csv:
+        print("ERRO: --zip e --csv são mutuamente exclusivos", file=sys.stderr)
+        return 2
+    if args.output and os.path.lexists(args.output):
+        print("ERRO: saída existente recusada (origem preservada)", file=sys.stderr)
+        return 2
+    old_field_limit = csv.field_size_limit(limits["MAX_FIELD_BYTES"])
 
     label = args.member or args.csv
-    raw, zf, _ = open_text(args.zip, args.member, args.csv)
+    try:
+        raw, zf, _ = open_text(args.zip, args.member, args.csv)
+    except (OSError, ValueError, zipfile.BadZipFile) as error:
+        print(f"ERRO: {error}", file=sys.stderr)
+        csv.field_size_limit(old_field_limit)
+        return 2
+    hashed = HashingReader(raw)
+    complete = False
     idx = {c: i for i, c in enumerate(HEADER)}
     key_idx = [idx[c] for c in KEY_COLS]
     records = divergences = dup_total = 0
     dup_evidence = []
-    domain_bad = []
-    pattern_bad = []
-    arith_bad = []
+    domain_bad = BoundedEvidence(limits["MAX_BWEB_DUPLICATE_EVIDENCE"])
+    pattern_bad = BoundedEvidence(limits["MAX_BWEB_DUPLICATE_EVIDENCE"])
+    arith_bad = BoundedEvidence(limits["MAX_BWEB_DUPLICATE_EVIDENCE"])
     key_set = set()
     sentinel_counts = {}
     key_limit_hit = False
     try:
-        if zf is not None:
-            stream = raw
-        else:
-            stream = raw
-        text = io.TextIOWrapper(stream, encoding="latin-1", newline="")
-        reader = csv.reader(text, delimiter=";", quotechar='"', doublequote=True, strict=True)
+        text = io.TextIOWrapper(io.BufferedReader(hashed), encoding="latin-1", newline="")
+        lines = CsvLines(text, limits["MAX_RECORD_BYTES"])
+        reader = csv.reader(lines, delimiter=";", quotechar='"', doublequote=True, strict=True)
         try:
             header = next(reader)
         except StopIteration:
@@ -192,18 +228,18 @@ def main(argv=None):
             return 2
         if len(header) > limits["MAX_CSV_FIELDS"]:
             fail(f"limite excedido: {len(header)} colunas > MAX_CSV_FIELDS", errors)
-        for row in reader:
+        for row in logical_rows(reader, lines):
             records += 1
             if records > limits["MAX_CSV_RECORDS"]:
                 fail(f"limite excedido: > MAX_CSV_RECORDS", errors)
-                break
+                raise MappingError("MAX_CSV_RECORDS excedido")
             if len(row) != len(HEADER):
                 divergences += 1
                 fail(f"divergência de campos no registro {records} (linha {reader.line_num}): "
                      f"{len(row)} x {len(HEADER)}", errors)
                 continue
-            if sum(len(v) for v in row) + len(row) > limits["MAX_RECORD_BYTES"]:
-                fail(f"limite excedido: registro {records} > MAX_RECORD_BYTES", errors)
+            if any(len(v) > limits["MAX_FIELD_BYTES"] for v in row):
+                raise MappingError("MAX_FIELD_BYTES excedido")
             for col, rx in COMPILED.items():
                 if rx is None:
                     continue
@@ -234,6 +270,9 @@ def main(argv=None):
                          f"aptos={a} comp={c} abst={ab}", errors)
             except ValueError:
                 fail(f"QT não numérico no registro {records}", errors)
+            election, cargo = row[idx["CD_ELEICAO"]], row[idx["CD_CARGO_PERGUNTA"]]
+            if (election == "6257" and cargo != "1") or (election == "6259" and cargo == "1"):
+                fail(f"inconsistência eleição/cargo no registro {records}", errors)
             key = tuple(row[i] for i in key_idx)
             if key in key_set:
                 dup_total += 1
@@ -243,16 +282,18 @@ def main(argv=None):
             elif not key_limit_hit:
                 if len(key_set) >= limits["MAX_BWEB_OCCURRENCE_KEYS"]:
                     key_limit_hit = True
-                    fail("limite excedido: chaves de ocorrência > MAX_BWEB_OCCURRENCE_KEYS", errors)
+                    raise MappingError("limite excedido: chaves de ocorrência > MAX_BWEB_OCCURRENCE_KEYS")
                 else:
                     key_set.add(key)
             for col_i, val in enumerate(row):
                 if val in SENTINELS:
                     d = sentinel_counts.setdefault(HEADER[col_i], {})
                     d[val] = d.get(val, 0) + 1
-    except csv.Error as e:
-        fail(f"erro de CSV: {e}", errors)
+        complete = True
+    except (csv.Error, MappingError, OSError, EOFError, zipfile.BadZipFile) as e:
+        fail(f"erro de CSV/leitura: {e}", errors)
     finally:
+        csv.field_size_limit(old_field_limit)
         try:
             raw.close()
         except Exception:  # noqa: BLE001
@@ -266,6 +307,8 @@ def main(argv=None):
         "family": FAMILY,
         "source": label,
         "records": records,
+        "complete": complete,
+        "source_sha256": hashed.hexdigest() if complete else None,
         "field_divergences": divergences,
         "distinct_keys": len(key_set),
         "duplicate_keys": dup_total,
@@ -275,12 +318,12 @@ def main(argv=None):
         "arithmetic_divergences": len(arith_bad),
         "sentinels": {c: dict(sorted(d.items())) for c, d in sorted(sentinel_counts.items())},
         "success": not errors,
-        "errors": errors[:50],
+        "errors": list(errors),
         "error_count": len(errors),
     }
     out_json = json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
     if args.output:
-        with open(args.output, "w", encoding="utf-8", newline="\n") as f:
+        with open(args.output, "x", encoding="utf-8", newline="\n") as f:
             f.write(out_json)
     else:
         print(out_json)
