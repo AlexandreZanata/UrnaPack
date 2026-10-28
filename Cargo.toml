@@ -15,7 +15,7 @@ path = "src/lib.rs"
 
 [dependencies]
 anyhow = "1"
-brotli = "8.0.4"
+brotli = "9.1.0"
 clap = { version = "4", features = ["derive"] }
 csv = "1.4.0"
 hex = "0.4"
