@@ -1,42 +1,98 @@
-# Verificação — os 5 níveis (o que cada um prova e o que NÃO prova)
+# Verificação — garantias e evidências exigidas
 
-## Nível 1 — Integridade do arquivo original ✅ base v0.1
+Os níveis abaixo descrevem garantias diferentes. A base atual não implementa
+um atestado único que reúna todas. As correções da Etapa 1 estão registradas em
+`docs/REVISAO-ETAPA-1.md`; não apresentar garantias futuras como implementadas.
 
-Para cada arquivo: URL oficial (quando conhecida), SHA-256, tamanho, tipo,
-hashes de internos extraídos. Implementado em `manifest` + `verify`.
-**Não prova**: autoria do TSE (só a assinatura digital oficial provaria;
-assinatura nossa nunca será apresentada como do TSE).
+## Nível 1 — Integridade dos objetos declarados
 
-## Nível 2 — Equivalência semântica ⏳ Fase 4
+Implementação: manifesto de origem Rust v1/v2 + `tsepack verify` recomputam
+SHA-256 e tamanho dos arquivos declarados. URL por arquivo é opcional na base.
+Versões incompatíveis, duplicatas, caminhos não canônicos e symlinks internos
+reprovam, e erros de travessia não são omitidos. Hashes de membros internos não
+são produzidos pelo `inspect`: o mapeador calcula SHA-256 dos CSVs lidos até EOF;
+membros opacos catalogados/amostrados mantêm hash ausente e nível explícito.
 
-Esquema formal por campo: tipo original → tipo transformado, regra exata,
-normalização, reconstruibilidade, condições de equivalência. Exige preservar
-zeros à esquerda, nulo≠vazio≠zero, duplicatas legítimas, ordenação com
-significado, precisão/fuso de timestamps. Perda irreversível só no perfil que
-a declarar. **Base v0.1**: nenhum transformador semântico existe; nada a declarar.
+A aprovação prova correspondência com o manifesto examinado, não completude
+da eleição, interpretação correta ou autoria do TSE. Sidecar de hash e assinatura
+digital são evidências diferentes; tamanho/Content-Length sozinho não comprova
+integridade criptográfica. Ausência de assinatura/chave/cadeia verificável precisa
+aparecer como limitação, sem ser substituída por assinatura do projeto.
 
-## Nível 3 — Rastreabilidade por registro ⏳ Fase 4
+## Nível 2 — Equivalência semântica
 
-Índice registro→(fonte, hash, turno/UF, ids, versão do esquema). Merkle com
-domain separation e codificação canônica, provas geradas sob demanda.
-**Não prova**, isoladamente, que o parser interpretou certo o arquivo oficial.
+Contrato exigido antes do primeiro transformador: nome e ordem dos campos,
+tipo original/canônico, domínio/sentinelas, precisão/fuso, normalização, regra
+de equivalência e reconstruibilidade. Preservar nulo, vazio, zero, não existente,
+zeros significativos, categorias oficiais, multiplicidades e ordem com significado.
 
-## Nível 4 — Verificador independente ✅ parcial na base
+Verificar todas as ocorrências e valores, e não apenas somas ou determinismo.
+Campo desconhecido bloqueia interpretação até atualização de esquema. Uma
+redução analítica é produto derivado de escopo declarado, regenerável a partir
+da evidência preservada; não substitui a única cópia de informação eliminada.
+O protótipo BU web v2 preserva os valores lexicais, ordem e multiplicidades.
+`scripts/verify_pack.py` lê a origem com outro parser e confronta cada valor
+com sua coluna, além da emissão e dos hashes. Isso não valida joins,
+interpretação eleitoral ou correção das consultas analíticas.
 
-`tsepack verify` relê manifesto do disco e recalcula tudo (detecta ausente,
-truncado, alterado, versão). Na Fase 4 ganha: reexecução determinística da
-transformação, comparação de multiplicidades/ids, compromissos e agregações,
-relatório aprova/diverge em JSON+texto. Caminho com parser independente para
-não compartilhar o mesmo defeito de parsing.
+## Nível 3 — Rastreabilidade por ocorrência
 
-## Nível 5 — Reconstrução byte a byte ⏳ Fase 4 (perfil FORENSIC)
+Contrato: ocorrência → hash do download, membro e ordinal/posição, escopo,
+versão do esquema e transformação. Hash do arquivo sozinho não identifica a
+linha; caminho do membro sozinho não resolve nomes repetidos em um ZIP.
 
-Formato reversível + resíduos → SHA-256 pós-restauração igual ao original.
-Se o especializado não superar compressão convencional, usa-se a convencional.
+Preservar identidade de negócio e identidade da ocorrência separadamente.
+Deduplicação física não pode fundir ocorrências eleitorais nem apagar snapshots.
+Merkle fica sob demanda, com codificação canônica e domain separation
+especificados; não é pré-requisito para o primeiro índice rastreável.
 
-## Limitação obrigatória (sempre)
+## Nível 4 — Reexecução e verificador independente
 
-Sem originais íntegros (recuperados, rebaixados por hash, ou reconstruídos via
-FORENSIC), não há reverificação integral — atestações anteriores documentam,
-não substituem a evidência. **Semântica ≠ bytes**: os dois níveis de garantia
-são implementados e relatados separadamente.
+`tsepack verify` relê manifesto de origem e bytes. Para BU web existe também
+`scripts/verify_pack.py`, com parser CSV Python independente do Rust e
+confronto de todas as ocorrências. A independência é de implementação do
+parser; a interpretação de negócio e as consultas exigem a Etapa 5.
+
+Cada família transformada precisará de reexecução determinística, comparação
+integral do contrato e confronto de contagens com os arquivos. Usar leitura ou
+referência independente onde seja necessário detectar o mesmo erro de parsing
+compartilhado pelo produtor e pelo verificador.
+
+Validar também cardinalidades de joins, igualdade do contexto repetido,
+cobertura e regras de agregação. Diagnóstico explícito bloqueia o uso afetado;
+um recorte válido precisa de declaração própria, sem virar conjunto completo.
+
+## Nível 5 — Reconstrução byte a byte
+
+Executada no arquivo FORENSIC local v2 da Etapa 4: todos os downloads declarados,
+incluindo os ZIPs completos e sidecars, foram restaurados e confrontados por
+SHA-256 e tamanho. Descritor vincula manifesto, dados e recibo; restauração
+usa saída nova e só promove a árvore após conferência integral. Contrato em
+`spec/archive-v2.md`; resultados em `docs/RESULTADO-COMPRESSAO-MT.md`.
+
+FORENSIC exige SHA-256 dos bytes restaurados igual ao SHA-256 do objeto original
+declarado. Cada técnica deve ser entregue com seu inverso e seus testes.
+
+Distinguir download ZIP, membro descomprimido, representação canônica e pacote
+derivado. Recriar um ZIP com os mesmos membros não prova identidade do ZIP
+baixado. Se esse download é o objeto prometido, preservar o original ou todos
+os resíduos necessários à sua reconstrução e contabilizar esse custo.
+
+Se o especializado não superar a alternativa convencional equivalente,
+usar a alternativa convencional ou stored. Não enfraquecer a garantia para
+produzir uma taxa de compressão melhor.
+
+## Portões de uso e publicação
+
+Hash válido, JSON conforme schema e `verification_status: validated` são
+condições distintas. Nenhum deles sozinho comprova o pipeline completo.
+
+Aprovar um uso somente com cobertura das dependências, origem, semântica,
+rastreabilidade e agregações exigidas por ele. Comparação entre turnos requer
+ambos os lados; uma inspeção de um turno não. Publicação exige ainda arquivos
+completos, vínculos coerentes e reverificação dos assets disponibilizados.
+
+Registrar relatório, hashes de entrada/saída, versões, parâmetros, limitações
+e comandos. Sem originais íntegros, rebaixados com confronto de hash ou
+reconstruíveis, não há reverificação integral. Atestação anterior documenta,
+mas não substitui a evidência. Semântica e bytes são relatados separadamente.

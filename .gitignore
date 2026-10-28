@@ -12,3 +12,4 @@ dist/
 *.upk.zst
 __pycache__/
 *.pyc
+/relatorios-locais/

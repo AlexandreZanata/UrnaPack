@@ -8,12 +8,15 @@ use anyhow::{Context, Result};
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::path::{Path, PathBuf};
-use walkdir::WalkDir;
 
-use crate::{FORMAT_VERSION, TOOL_VERSION};
+use crate::{FORMAT_VERSION, SUPPORTED_FORMAT_VERSIONS, TOOL_VERSION};
 
 /// Um arquivo rastreado pelo manifesto.
+///
+/// Campos desconhecidos são rejeitados (Etapa 2): nenhuma garantia nova pode
+/// viajar em extensões silenciosamente ignoradas.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
 pub struct FileEntry {
     /// Caminho relativo ao diretório raiz, com `/` como separador.
     pub path: String,
@@ -27,7 +30,11 @@ pub struct FileEntry {
 }
 
 /// Manifesto de um conjunto de arquivos oficiais.
+///
+/// v1 (congelado) e v2 (campos estritos) compartilham estes campos; a versão
+/// distingue a política aplicada na escrita. Leitura aceita ambas.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
 pub struct Manifest {
     pub format_version: u32,
     pub tool_version: String,
@@ -39,33 +46,29 @@ pub struct Manifest {
 impl Manifest {
     /// Varre `root` recursivamente, calcula SHA-256 em paralelo e
     /// retorna o manifesto ordenado por caminho (determinístico).
+    ///
+    /// A raiz pode ser um link legítimo (resolvido). Symlinks internos,
+    /// arquivos especiais, raiz inexistente/não diretório, erros de
+    /// travessia/metadata/leitura e nomes não representáveis sem perda
+    /// reprovam explicitamente. Campos desconhecidos no JSON são rejeitados
+    /// (`deny_unknown_fields`); a escrita gera v2, a leitura aceita v1/v2.
     pub fn build_from_dir(root: &Path, source: &str) -> Result<Self> {
-        let paths: Vec<PathBuf> = WalkDir::new(root)
-            .min_depth(1)
-            .into_iter()
-            .filter_map(|e| e.ok())
-            .filter(|e| e.file_type().is_file())
-            .map(|e| e.path().to_path_buf())
-            .collect();
+        let canonical = crate::traverse::resolve_root(root)?;
+        let paths: Vec<PathBuf> = crate::traverse::collect_files(&canonical)?;
 
         let mut files: Vec<FileEntry> = paths
             .par_iter()
             .map(|abs| {
-                let rel = abs
-                    .strip_prefix(root)
-                    .map(|p| {
-                        p.components()
-                            .map(|c| c.as_os_str().to_string_lossy().into_owned())
-                            .collect::<Vec<_>>()
-                            .join("/")
-                    })
-                    .unwrap_or_else(|_| abs.to_string_lossy().into_owned());
-                let meta = std::fs::metadata(abs)?;
+                let rel = crate::traverse::rel_to_canonical(&canonical, abs)?;
+                let meta = std::fs::metadata(abs)
+                    .with_context(|| format!("metadata {}", abs.display()))?;
                 let sha256 = crate::hash::sha256_file(abs)?;
-                let file_type = abs
-                    .extension()
-                    .map(|e| e.to_string_lossy().to_lowercase())
-                    .unwrap_or_default();
+                // Tipo por extensão sem conversão com perda (rel já é UTF-8).
+                let file_name = rel.rsplit('/').next().unwrap_or(&rel);
+                let file_type = match file_name.rfind('.') {
+                    Some(i) if i + 1 < file_name.len() => file_name[i + 1..].to_lowercase(),
+                    _ => String::new(),
+                };
                 Ok(FileEntry {
                     path: rel,
                     size: meta.len(),
@@ -93,10 +96,23 @@ impl Manifest {
         Ok(())
     }
 
+    /// Lê um manifesto de origem v1 (congelado) ou v2, preservando compatibilidade.
+    ///
+    /// Versões fora de `SUPPORTED_FORMAT_VERSIONS` e campos desconhecidos são
+    /// rejeitados explicitamente (a desserialização estrita falha com o campo
+    /// identificado).
     pub fn load(path: &Path) -> Result<Self> {
         let data =
             std::fs::read_to_string(path).with_context(|| format!("ler {}", path.display()))?;
         let m: Self = serde_json::from_str(&data)?;
+        if !SUPPORTED_FORMAT_VERSIONS.contains(&m.format_version) {
+            anyhow::bail!(
+                "format_version incompatível em {}: {} (suportados: {:?})",
+                path.display(),
+                m.format_version,
+                SUPPORTED_FORMAT_VERSIONS
+            );
+        }
         Ok(m)
     }
 
@@ -108,31 +124,22 @@ impl Manifest {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::hash::sha256_bytes;
 
     #[test]
-    fn manifesto_ordena_caminhos() {
-        let mut m = Manifest {
-            format_version: 1,
-            tool_version: "test".into(),
-            source: "s".into(),
-            files: vec![
-                FileEntry {
-                    path: "b.csv".into(),
-                    size: 1,
-                    sha256: "x".into(),
-                    file_type: "csv".into(),
-                    url: None,
-                },
-                FileEntry {
-                    path: "a.csv".into(),
-                    size: 1,
-                    sha256: "x".into(),
-                    file_type: "csv".into(),
-                    url: None,
-                },
-            ],
-        };
-        m.files.sort_by(|a, b| a.path.cmp(&b.path));
-        assert_eq!(m.files[0].path, "a.csv");
+    fn manifesto_ordena_caminhos_com_hash_real() {
+        let dir = tempfile::tempdir().unwrap();
+        let first = include_bytes!("../tests/fixtures/data/bu-amostra.csv");
+        let second = include_bytes!("../tests/fixtures/map/csec-amostra.csv");
+        std::fs::write(dir.path().join("b.csv"), second).unwrap();
+        std::fs::write(dir.path().join("a.csv"), first).unwrap();
+        let manifest = Manifest::build_from_dir(dir.path(), "fixture-sintetica").unwrap();
+        assert_eq!(manifest.files.len(), 2);
+        assert_eq!(manifest.files[0].path, "a.csv");
+        assert_eq!(manifest.files[0].size, first.len() as u64);
+        assert_eq!(manifest.files[0].sha256, sha256_bytes(first));
+        assert_eq!(manifest.files[1].path, "b.csv");
+        assert_eq!(manifest.files[1].size, second.len() as u64);
+        assert_eq!(manifest.files[1].sha256, sha256_bytes(second));
     }
 }

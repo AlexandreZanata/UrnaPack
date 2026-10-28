@@ -1,0 +1,39 @@
+{
+  "dataset_type": "bu",
+  "election_year": 2026,
+  "execution": {
+    "artifact_kind": "urnapack_execution",
+    "format_version": 1
+  },
+  "format_version": 2,
+  "package_hashes": [
+    "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6"
+  ],
+  "packages": [
+    {
+      "name": "urnapack-2026-t2-MT-bu-0001.upk.zst",
+      "records": 2,
+      "sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+      "size_bytes": 244
+    }
+  ],
+  "record_counts": 2,
+  "round": 2,
+  "source_files": [
+    {
+      "path": "origem-v2.bin",
+      "sha256": "afeb17092d56e526465ad1c3d29c2b9c65261b59c03f50cee6a7279aa882428c",
+      "size_bytes": 30,
+      "url": "fixture://local/origem-v2.bin"
+    }
+  ],
+  "source_manifest_sha256": "ab6771af19d771c0b3ee46683483ad3f5f94e7003b1e03842d0124c86b5396d4",
+  "source_urls": [
+    "fixture://local/origem-v2.bin"
+  ],
+  "state": "MT",
+  "tool_version": "tsepack-fixture",
+  "transform_version": "fixture-v1",
+  "verification_profile": "analytical",
+  "verification_status": "validated"
+}

@@ -1,69 +1,175 @@
-# Plano de execução — Fases 1–7
+# Plano de execução — compressão e dados verificáveis
 
-## Onde estamos
+## Objetivo e situação
 
-**Base v0.1 entregue**: CLI com `inspect`/`benchmark`/`verify` funcionais,
-manifesto v1, testes (unit + integração + round-trip + determinismo +
-corrupção/ausência). Todo o resto abaixo é trabalho futuro — os subcomandos
-correspondentes falham explicitamente até sua fase.
+**Minimizar os bytes totais necessários para preservar a evidência e reproduzir
+as análises, sem comprometer integridade, cobertura ou rastreabilidade.**
 
-## Fase 1 — Investigação (próxima)
+Plano refinado em 28/10/2026. A versão v0.2.0 implementa `inspect`, `benchmark`
+em streaming (stored/ZSTD/Brotli), `verify` de arquivos de origem e `pack`/`unpack`
+experimental para BU web. Há aquisição gerenciada em `scripts/fetch_source.py`;
+o subcomando Rust `download` ainda não a integra. Etapa 1 revisada; fases 2–4
+revisadas com correções em `docs/REVISAO-ETAPAS-2-4.md`. G3 passou no membro CSV
+de MT; **G4 concluído para o corpus local baixado**, com resultados em
+`docs/RESULTADO-COMPRESSAO-MT.md`. Arquivo local v2 fecha o vínculo criptográfico
+de execução e implementa `optimize`/`restore`. O manifesto de distribuição v2
+antigo continua bloqueado para publicação; liberação analítica, expansão
+nacional e distribuição permanecem nas etapas seguintes.
+Um plano ou status declarado não constitui evidência de execução.
 
-1. Localizar datasets 2026 (BU, RDV, logs, votação/totalização, CSVs,
-   assinaturas, correspondências) nas fontes oficiais; ler ASN.1 antes de decodificar.
-2. Amostrar MT + outras UFs, turnos e formatos variados (nunca só pequenos/compressíveis).
-3. Rodar `tsepack inspect` + `benchmark --profile exhaustive` na amostra.
-4. Entrega: relatório quantitativo (tipos, tamanhos, entropia aproximada,
-   redundância intra/inter-arquivos, campos de baixa cardinalidade).
-5. Critério de saída: saber **onde está a redundância** com números.
+Documentos de execução:
 
-## Fase 2 — Baselines
+- `docs/ETAPA-1.md`: primeira entrega delimitada e critérios de revisão.
+- `docs/PROMPT-ETAPA-1.md`: instrução para o agente implementador.
+- `docs/DADOS-BRUTOS.md`: mapa inicial dos layouts observados em MT e regras
+  para documentar novos anos, turnos, abrangências e variantes.
+- `docs/ARQUITETURA.md` e `docs/VERIFICACAO.md`: contratos e garantias.
+- `docs/PLANO-ANALISE.md`: liberação por uso e dependências analíticas.
 
-1. Implementar `download` (hash no ato, manifesto, metadados HTTP, checkpoints/retomada).
-2. Estender `benchmark`: ZSTD níveis altos + dicionários treinados (amostras
-   treino/teste separadas), LZMA2/XZ, Brotli, Parquet+ZSTD, compressão sólida.
-3. Registrar por método: tamanhos, razão, economia, tempos, pico RAM, temp,
-   velocidade de leitura, tempo de consultas, integridade — separados por
-   BU/RDV/logs/CSVs/binários/já-comprimidos.
-4. Critério de saída: tabela de baselines reproduzível; **nenhum formato próprio
-   antes de demonstrar oportunidade sobre o melhor baseline**.
+## Contratos que orientam todas as etapas
 
-## Fase 3 — Formato especializado
+1. **Evidência:** preservar os downloads originais, membros, assinaturas e
+   documentos de leiaute. FORENSIC restaura os bytes do objeto original
+   declarado. Reconstruir membros não prova identidade do ZIP baixado.
+2. **Canônico analítico:** preservar campos e ocorrências com tipos exatos,
+   sentinelas, precisão, categorias e contexto; esquema e transformação
+   versionados. Campo desconhecido bloqueia interpretação automática.
+3. **Produtos derivados:** agregações, filtros e modelos são regeneráveis;
+   suas exclusões e limites são explícitos. ANALYTICAL não autoriza descartar
+   a única cópia de informação potencialmente necessária a outra análise.
+4. **Unidades:** separar contexto seção/cargo, votos por votável,
+   correspondências e eventos. Aptos/comparecimento repetidos por votável
+   não são somados por linha. Compartilhar contexto exige verificar igualdade.
+5. **Proveniência:** ocorrência → hash da fonte, membro/ordinal, versão do
+   esquema e transformação. Hash de arquivo sozinho não localiza um registro.
+6. **Comparação justa:** medir a mesma informação e garantia; incluir
+   dicionários, índices, resíduos, proveniência e originais ainda necessários.
+7. **Falha explícita:** erro de leitura, hash, interpretação ou cardinalidade
+   não pode resultar em conjunto aparentemente completo. Recortes válidos
+   exigem escopo, lacunas e limitações documentados.
+8. **Compatibilidade:** alteração incompatível exige versão, teste e `spec/`.
+   Manifesto de origem e manifesto de distribuição são contratos distintos.
+9. **Limites:** valores operacionais em `scripts/limits.env`; processamento
+   em streaming/lotes, com RAM e disco temporário medidos na escala requerida.
 
-1. Dicionários globais/locais (medir com custo do dicionário incluído).
-2. Diferencial: delta/delta-of-delta, VarInt, bit packing, RLE,
-   frame-of-reference, colunar, timestamps.
-3. Separação template×parâmetros em logs; deduplicação exata (hash) sem fundir
-   ocorrências eleitorais distintas; layouts por eleição→seção; colunar×registros.
-4. Regra de corte: técnica que não pagar sua complexidade em bytes é removida.
-5. Perfis: `optimize --mode forensic` (reversível total) e
-   `optimize --mode analytical` (mínimo auditável, perdas declaradas).
+## Etapa 1 — Base confiável e mapa reproduzível de MT
 
-## Fase 4 — Verificação
+Escopo fechado em `docs/ETAPA-1.md`. Não executar etapas posteriores nesta entrega.
 
-`restore` + Níveis 2–5: manifestos de equivalência, Merkle sob demanda,
-verificador com reexecução determinística, round-trip SHA-256, `report`
-(JSON+texto). Testes: property-based, fuzz de parsers, truncados, campos
-desconhecidos, compatibilidade, duplicatas, corrompidos, interrupção, regressão.
+- Corrigir aprovação de versão incompatível, omissões de inventário, caminhos
+  duplicados e escapes por symlinks; distinguir link da raiz de links internos.
+- Preservar erros acumulados pelo validador do repositório e impedir que
+  validação incompleta de schema seja apresentada como validação completa.
+- Automatizar inventário dos downloads e membros ZIP; documentar cabeçalhos
+  e perfis estruturais dos CSVs, sem transformá-los em tabelas analíticas.
+- Usar os dados já baixados de MT; preservar snapshots e identificar escopo
+  pelo conteúdo, sem assumir que pasta, nome ou extensão bastem.
+- Produzir evidências locais, testes de regressão e documentação reutilizável.
 
-## Fase 5 — MVP (MT real) → Fase 6 — Escala nacional → Fase 7 — Otimização extrema
+**Saída G1:** testes negativos realmente reprovam; fonte válida continua
+verificável; mapa identifica arquivos, membros, layouts, turnos observados,
+limitações e objetos ainda não decodificados. Revisão humana antes da Etapa 2.
 
-- F5: ponta a ponta em MT (todos os tipos + exceções), verificações aprovadas.
-- F6: todas UFs/turnos em 32 GB com streaming, lotes, limites e retomada.
-- F7: busca sistemática na fronteira Pareto (tamanho×tempo×RAM); só entra
-  melhoria reproduzível (dicionários globais, sólida, layouts, dedup entre arquivos).
+## Etapa 2 — Ingestão gerenciada e contratos de dados
 
-## Critérios de aceitação (resumo do §14)
+- Implementar aquisição com URL por arquivo, ambiente, identificadores
+  oficiais, metadados HTTP disponíveis, checkpoints e retomada validada.
+  Escrever parciais separadamente e concluir por operação atômica.
+- Preservar snapshots e correções; não presumir que arquivos coletados juntos
+  pertençam à mesma atualização. Completar inventário esperado por fonte.
+- Formalizar contratos de origem, dataset e execução, suas versões e vínculos
+  por hash; resolver campos desconhecidos, extensões e migração dos manifestos.
+- Definir objeto restaurável, unidade de decodificação, dependências entre
+  pacotes, ordem e hash do conjunto reconstruído antes de publicar pacotes.
+- Definir esquema canônico por família: tipos, chaves candidatas, cardinalidades,
+  sentinelas, precisão/fuso e regras de agregação. Validar chaves nos dados;
+  nunca converter hipótese de unicidade em deduplicação automática.
+- Planejar consultas representativas antes de escolher a representação física.
 
-Arquivos reais processados; economia comprovada vs baselines; consultas
-eficientes; assinaturas conferidas quando aplicável; FORENSIC reconstrói
-byte a byte (SHA-256 igual); ANALYTICAL reproduzível deterministicamente;
-perdas identificadas; verificador usável por terceiros; roda em 32 GB;
-resultados reproduzíveis + docs para revisão independente.
+**Saída G2:** fontes e escopos documentados, contratos versionados, testes de
+compatibilidade e regras executáveis para a primeira família a transformar.
 
-## Riscos conhecidos
+## Etapa 3 — MVP reversível por família em MT
 
-- Dados 2026 podem estar indisponíveis/incompletos → registrar limitação,
-  trabalhar com amostras válidas, nunca inventar resultados.
-- RDV×BU e QRs impressos dependem de fontes independentes → escopo condicional.
-- Assinaturas exigem cadeia/material oficial → sem isso, Nível 1 sem prova de autoria.
+- Uma família por vez, começando pelo CSV BU web disponível e seu contexto.
+- Desenvolver transformador, inverso e verificação no mesmo incremento.
+- Preservar bytes originais ou resíduos suficientes à garantia declarada;
+  validar valores, campos, multiplicidades e ordens com significado.
+- Documentar diferenças entre tabelas canônicas e bytes restaurados. Não
+  confundir igualdade de somas com equivalência de todos os registros.
+- Incluir rastreabilidade por ocorrência, testes de corrupção, interrupção,
+  campos novos, sentinelas, zeros significativos, duplicatas e overflow.
+- Parsers binários exigem especificação oficial da versão e testes próprios;
+  inventariar arquivos opacos não significa decodificá-los corretamente.
+
+**Saída G3:** restauração SHA-256 e equivalência semântica aprovadas separadamente;
+verificador reproduzível, com leitura independente onde houver risco de erro comum.
+
+## Etapa 4 — Baselines completos e decisão de armazenamento
+
+**Executada em MT.** Matriz e critérios em `docs/ETAPA-4.md`; decisão e evidências
+reais em `docs/RESULTADO-COMPRESSAO-MT.md`. O resultado vale para os arquivos
+locais declarados, preservando a limitação já mapeada de t2.
+
+- Comparar stored, ZSTD, dicionários com treino/ajuste/avaliação separados,
+  XZ/LZMA2, Brotli, agrupamentos sólidos/blocos e Parquet+ZSTD quando aplicável.
+- Separar preservação dos bytes de compressão do mesmo modelo canônico.
+- Incluir custo de esquema, índices, dicionários, vínculos, multiplicidades,
+  resíduos, originais retidos e materializações. Separar custo permanente,
+  replicação e pico temporário.
+- Registrar hashes do corpus, versões/parâmetros, ambiente, threads, tempos,
+  variação entre execuções, pico RAM/disco e consultas representativas.
+- Comparar arquivos individuais e agrupamentos, incluindo os já comprimidos.
+  Usar o conjunto disponível e amostras estratificadas identificadas.
+- Medir recuperação por seção/cargo e agregações territoriais, além de bytes.
+  O benchmark atual usa streaming; medições locais não comprovam viabilidade
+  nem custo de consultas na escala nacional.
+
+**Saída G4:** experimento reproduzível identifica a melhor alternativa por
+requisito; formato próprio só avança com oportunidade demonstrada. Nenhuma taxa
+é prometida antecipadamente; manter stored pode ser o melhor resultado válido.
+
+## Etapa 5 — Validação analítica do MVP de MT
+
+- Aplicar `docs/PLANO-ANALISE.md` ao escopo com dependências completas.
+- Verificar contexto repetido, cardinalidades de joins, correspondências,
+  seções agregadas, categorias e denominadores antes de qualquer inferência.
+- Um turno permite seus próprios controles; comparação entre turnos exige
+  ambos os lados completos para a unidade e o método declarados.
+- Produzir relatório de qualidade e uma análise simples reproduzível;
+  calibração, falsificação e controle de falsos positivos acompanham os modelos.
+
+**Saída G5:** consultas exigidas corretas, fontes rastreáveis, limitações
+explícitas e execução analítica versionada. Publicação não é pré-requisito
+para validar um uso local; tem seu próprio portão.
+
+## Etapa 6 — Expansão nacional
+
+- Reexecutar o mapeador por ano/ambiente/abrangência; detectar variantes de
+  cabeçalho/leiaute e cadastrar adaptadores, sem presumir que MT cobre o Brasil.
+- Preservar UFs, exterior e outros códigos oficiais como categorias distintas,
+  conforme a fonte; `BR` não pode rotular conjunto parcial como completo.
+- Reconciliar universo esperado, encontrado, verificado, interpretado e apto
+  a cada uso por tipo/turno. Não inferir ausência global por falta no disco local.
+- Processar em streaming/lotes, com retomada, RAM e disco medidos; alvo já
+  estabelecido: executar no ambiente de 32 GB, sem converter projeção em medição.
+- Validar leitura localizada, dependências de dicionários e recuperação após falha.
+
+**Saída G6:** mesmas garantias do MVP em escopo nacional explicitamente coberto;
+variações e exceções documentadas, sem novos descartes silenciosos.
+
+## Etapa 7 — Otimização extrema e distribuição
+
+- Explorar dicionários, delta, VarInt, bit packing, RLE, layouts, template de
+  logs e deduplicação física exata com multiplicidades e vínculos preservados.
+- Melhorias entram apenas com ganho reproduzível sobre baseline equivalente,
+  restauração aprovada e custo aceitável de consulta, recursos e manutenção.
+- Publicação exige artefatos completos, validação estrutural e de conteúdo,
+  restauração/equivalência conforme perfil e reverificação dos assets publicados.
+  `validated` escrito em JSON não substitui relatórios nem execução.
+- Adiar Merkle/provas sob demanda até existir necessidade e codificação canônica
+  especificada; não bloquear o MVP por essa estrutura.
+
+**Saída G7:** pacote verificável por terceiros, índice coerente, documentação e
+benchmark reproduzíveis. Hash do projeto não é assinatura do TSE; anomalias
+não autorizam conclusão política ou alegação de fraude.

@@ -4,6 +4,73 @@ Contratos para pacotes, manifestos, índice e tags. Implementação de referênc
 para validação: `scripts/validate.py`. Valores operacionais autoritativos em
 `scripts/limits.env`.
 
+## Estado e tipos de manifesto
+
+Este documento descreve o contrato de distribuição v1 já usado pelas fixtures
+e validadores, e reservas para distribuição futura. Não há formato `.upk`
+implementado nem dataset publicado pela base. O refinamento do plano não altera
+campos nem versões dos schemas JSON existentes.
+
+O manifesto de origem produzido por `inspect` é outro contrato: Rust
+`Manifest { format_version, tool_version, source, files[] }`, com
+`FileEntry { path, size, sha256, file_type, url? }`. O `verify` atual lê esse
+contrato. Não passar um manifesto de dataset a ele como prova de equivalência.
+Discriminadores, versões próprias, campos desconhecidos e vínculos por hash
+serão formalizados na Etapa 2, com versionamento de alterações incompatíveis.
+
+Na origem v1, caminhos são relativos portáveis em UTF-8 com `/`, sem segmentos
+vazios, `.`/`..`, NUL, separador invertido ou prefixo de unidade Windows.
+O construtor e o verificador aplicam a mesma política. A raiz pode ser um link
+resolvido explicitamente; links internos não são aceitos.
+
+## Origem v2 (Etapa 2) — política de campos desconhecidos e migração
+
+- `FORMAT_VERSION = 2`; escrita gera v2; leitura aceita v1 (congelado) e v2 e
+  rejeita outras versões explicitamente.
+- v2 tem os mesmos campos de v1 com `deny_unknown_fields` em manifesto e
+  entradas: campo desconhecido bloqueia a interpretação automática em vez de
+  passar em silêncio. Nenhuma garantia nova viaja em extensões ignoradas.
+- Migração v1→v2 preserva `files[]` idênticos (caminhos, tamanhos, hashes);
+  testada em `tests/integracao.rs` com bytes reais de fixtures.
+
+## Dataset v2 e execução v1 (Etapa 2) — vínculos por hash
+
+- `spec/manifest-v2.schema.json` = v1 + `format_version: const 2` +
+  `source_manifest_sha256` (obrigatório, SHA-256 dos bytes do documento de
+  manifesto de origem usado na aquisição) + `execution` (objeto opcional com
+  `artifact_kind: urnapack_execution` e `format_version: 1`).
+- Raiz e itens de `source_files[]`/`packages[]` com `additionalProperties:
+  false`: desconhecidos bloqueiam. `validate.py` escolhe o schema pela
+  `format_version` declarada (`--schema-version 1|2|auto`) e, em v2 com
+  `--source-manifest`, reconfronta o vínculo com o documento de origem.
+- `spec/execution.schema.json` v1 (`artifact_kind: urnapack_execution`):
+  ferramenta, comando, parâmetros, hashes de entradas/saídas, ambiente e tempos.
+  Generaliza os `run.json`; `fetch_source.py` emite recibos conformes e
+  `validate.py execution` os valida. Recibos futuros com campos novos exigem
+  versão nova.
+
+## Mapa estrutural local — v1
+
+`scripts/map_raw_data.py` gera `artifact_kind: raw_structure_map` com sua
+própria `format_version: 1`, independente dos manifestos de origem/dataset.
+Os campos adicionais da revisão são compatíveis: frequências por coluna em
+`csv_profiles[].scopes.<coluna>.counts`,
+bytes efetivamente lidos de CSV em `member_bytes_read` e finais de linha em
+`line_endings`. `params.source` preserva o argumento de origem, como na versão
+inicial; caminhos de fontes/membros são relativos e o recibo registra a execução.
+Os campos anteriores dos perfis são preservados.
+
+O estado `complete` indica conclusão do mapeamento, sem afirmar completude da
+eleição, equivalência semântica ou decodificação dos opacos. `metadata_only`,
+`sampled` e `fully_read` distinguem o nível realmente executado; SHA-256 de
+membro só é publicado após leitura integral sem erro e tamanho conferido.
+
+`map.json` é o marcador publicado por último; consumidores conferem o hash de
+`members.jsonl` nele registrado. Gerações anteriores são preservadas em
+`.previous-*`; uma tentativa com erro não deixa mapa completo atual. O recibo
+de execução precisa ter sido escrito antes da conclusão. Usar uma única
+execução por diretório de saída; concorrência entre escritores não é suportada.
+
 ## Pacotes
 
 - Nome determinístico:
@@ -11,11 +78,15 @@ para validação: `scripts/validate.py`. Valores operacionais autoritativos em
   ex.: `urnapack-2026-t2-MT-bu-0001.upk.zst`
 - Regex: `^urnapack-\d{4}-t[12]-[A-Z]{2}-[a-z]+-\d{4}\.upk\.zst$`
 - Tipos (`dataset_type`): `bu`, `rdv`, `logs`, `resultados`, `metadata`.
-- Pacotes são independentes: cada um baixa e verifica isoladamente.
-- Divisão: sequência `seq` zero-padded; reconstrução = concatenação ordenada
-  por `seq`, validada pelo SHA-256 de cada parte e do conjunto.
-- `.upk` (formato binário próprio) ainda NÃO existe — pacotes atuais usam
-  apenas compressão convencional; o sufixo reserva o contrato.
+- Cada pacote deve permitir download e confronto de seu hash isoladamente.
+  Isso não define ainda independência de decodificação de dicionários/outros pacotes.
+- A sequência `seq` é zero-padded e ordena o catálogo. Não usar concatenação
+  como algoritmo de restauração sem contrato do codec e do objeto reconstruído.
+- Antes da primeira distribuição, especificar unidade de decodificação,
+  completude/ordem e dependências, além do hash do objeto restaurado/conjunto.
+  O schema atual não contém esse contrato completo: evoluí-lo com versão e
+  testes antes de publicar um formato que dependa dele.
+- `.upk` (formato binário próprio) ainda NÃO existe; o sufixo reserva o contrato.
 
 ## Manifesto de dataset
 
@@ -38,6 +109,13 @@ JSON versionado (`spec/manifest.schema.json`), um por
 Regras: hashes sempre SHA-256 dos bytes reais; publicação exige
 `verification_status: validated`; hash próprio ≠ assinatura do TSE.
 Invariante: `record_counts` = soma de `packages[].records`.
+Essa igualdade entre declarações não verifica contagem de conteúdo. A liberação
+exige leitura dos dados, multiplicidades reconciliadas e evidências do perfil.
+
+`forensic` restaura os bytes do objeto original declarado; ZIP e membros são
+objetos diferentes. `analytical` exige equivalência documentada do canônico;
+reduções são produtos derivados regeneráveis a partir da evidência preservada.
+Todos os bytes necessários à garantia entram na medição de armazenamento.
 
 ## Índice público (`data/index.json`, schema em `spec/index.schema.json`)
 

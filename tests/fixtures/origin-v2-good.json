@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "file_type": "bin",
+      "path": "origem-v2.bin",
+      "sha256": "afeb17092d56e526465ad1c3d29c2b9c65261b59c03f50cee6a7279aa882428c",
+      "size": 30,
+      "url": "fixture://local/origem-v2.bin"
+    }
+  ],
+  "format_version": 2,
+  "source": "fixture-sintetica",
+  "tool_version": "tsepack-teste"
+}

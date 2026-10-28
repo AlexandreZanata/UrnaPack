@@ -3,8 +3,10 @@
 ## Ambiente
 
 - Rust 1.99 via `rustup` (`rust-toolchain.toml` fixa o canal).
-- Python 3.10+ (stdlib) para `scripts/validate.py`; `pyyaml`/`jsonschema`
-  são opcionais (validação total) e instalados automaticamente no CI.
+- Python 3.10+ para as automações; a validação completa de schema exige
+  `jsonschema`. A suíte completa também usa `pyyaml` e as dependências fixadas
+  em `scripts/requirements-compression.txt`, instaladas automaticamente no CI.
+- XZ (`xz`) disponível no PATH para os codecs e seus testes.
 
 ## Issues e pull requests
 

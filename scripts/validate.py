@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Validação offline do UrnaPack: limites, nomes, schemas, manifestos, índice, segredos.
 
-Sem dependências obrigatórias (stdlib). Se `jsonschema`/`yaml` estiverem
-instalados, a validação é total; sem eles, aplica-se um subconjunto manual
-documentado (campos obrigatórios, tipos, enums, regex).
+Verificações locais usam a biblioteca padrão. A validação completa de schema
+exige `jsonschema`, já instalado pela CI; sua ausência reprova explicitamente.
+Diagnósticos parciais não substituem essa validação.
 """
 
 import argparse
 import hashlib
 import json
 import os
+from pathlib import Path
 import re
 import subprocess
 import sys
@@ -97,18 +98,37 @@ def check_schema(doc, schema_path, errors, label):
         except Exception as e:  # noqa: BLE001 - report as validation error
             fail(f"{label}: fora do schema: {e.message}", errors)
     else:
-        # Subconjunto manual: obrigatórios, tipos e enums principais.
+        # Sem jsonschema não há validação completa de schema: reprovar
+        # explicitamente com instrução sobre a dependência usada na CI.
+        # Não apresentar o subconjunto manual como validação completa.
+        fail(
+            f"{label}: validação completa de schema indisponível "
+            "(dependência ausente: jsonschema; a CI usa "
+            "`pip install \"pyyaml==6.0.2\" \"jsonschema==4.23.0\"` "
+            "antes de `python3 scripts/validate.py repo`)",
+            errors,
+        )
+        # Subconjunto manual apenas como diagnóstico adicional, sem
+        # alegar completude.
         for key in schema.get("required", []):
             if key not in doc:
-                fail(f"{label}: campo obrigatório ausente: {key}", errors)
+                fail(f"{label}: campo obrigatório ausente: {key} (diagnóstico parcial)", errors)
 
 
-def validate_manifest_doc(m, errors, label="manifest"):
-    if m.get("format_version") != 1:
-        fail(f"{label}: format_version incompatível: {m.get('format_version')}", errors)
+def validate_manifest_doc(m, errors, label="manifest", schema_version=1):
+    if m.get("format_version") != schema_version:
+        fail(f"{label}: format_version incompatível: {m.get('format_version')} "
+             f"(schema v{schema_version} exige {schema_version})", errors)
+        return errors
     if m.get("state") not in UFS:
         fail(f"{label}: UF inválida: {m.get('state')}", errors)
     pkgs = m.get("packages", [])
+    names = [p.get("name") for p in pkgs]
+    if len(set(names)) != len(names):
+        fail(f"{label}: nomes de pacote duplicados", errors)
+    paths = [entry.get("path") for entry in m.get("source_files", [])]
+    if len(set(paths)) != len(paths):
+        fail(f"{label}: caminhos de origem duplicados", errors)
     hashes = m.get("package_hashes", [])
     if [p.get("sha256") for p in pkgs] != hashes:
         fail(f"{label}: package_hashes divergem de packages[]", errors)
@@ -120,12 +140,49 @@ def validate_manifest_doc(m, errors, label="manifest"):
     return errors
 
 
+DATASET_SCHEMAS = {1: "manifest.schema.json", 2: "manifest-v2.schema.json"}
+
+
 def cmd_manifest(args):
     errors = []
     with open(args.manifest) as f:
         m = json.load(f)
-    check_schema(m, os.path.join(ROOT, "spec", "manifest.schema.json"), errors, "manifest")
-    validate_manifest_doc(m, errors)
+    want = getattr(args, "schema_version", "auto")
+    if want == "auto":
+        want = m.get("format_version")
+    try:
+        schema_version = int(want)
+    except (TypeError, ValueError):
+        fail(f"manifest: schema_version inválido: {want!r} (use 1, 2 ou auto)", errors)
+        return errors
+    if schema_version not in DATASET_SCHEMAS:
+        fail(f"manifest: format_version incompatível: {m.get('format_version')} "
+             f"(schemas suportados: 1, 2)", errors)
+        return errors
+    check_schema(m, os.path.join(ROOT, "spec", DATASET_SCHEMAS[schema_version]), errors, "manifest")
+    validate_manifest_doc(m, errors, schema_version=schema_version)
+    if schema_version == 2 and getattr(args, "source_manifest", None):
+        try:
+            actual = sha256_file(args.source_manifest)
+        except OSError as e:
+            fail(f"manifest: ler manifesto de origem {args.source_manifest}: {e}", errors)
+            actual = None
+        if actual is not None and actual != m.get("source_manifest_sha256"):
+            fail("manifest: source_manifest_sha256 não confere com o manifesto de origem", errors)
+        if actual is not None:
+            try:
+                source = json.loads(Path(args.source_manifest).read_text())
+                paths = [entry["path"] for entry in source["files"]]
+                if len(set(paths)) != len(paths):
+                    fail("manifest: caminhos duplicados no manifesto de origem", errors)
+                original = {(entry["path"], entry["sha256"], entry["size"]): entry.get("url") for entry in source["files"]}
+                declared = {(entry["path"], entry["sha256"], entry["size_bytes"]): entry.get("url") for entry in m["source_files"]}
+                if set(original) != set(declared) or any(url is not None and url != declared.get(key) for key, url in original.items()):
+                    fail("manifest: source_files divergem dos arquivos do manifesto de origem", errors)
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                fail(f"manifest: origem inválida: {error}", errors)
+    if schema_version == 2 and args.require_status in ("validated", "published"):
+        fail("manifest: v2 possui apenas descrição do recibo; falta compromisso SHA-256 de execução. Publicação bloqueada até contrato versionado completo", errors)
     if args.require_status and m.get("verification_status") != args.require_status:
         fail(
             f"manifest: verification_status={m.get('verification_status')!r}, "
@@ -152,6 +209,23 @@ def cmd_manifest(args):
             actual = sha256_file(ap)
             if actual != p["sha256"]:
                 fail(f"manifest: SHA-256 diverge em {p['name']}", errors)
+    return errors
+
+
+def cmd_execution(args):
+    errors = []
+    with open(args.receipt) as f:
+        doc = json.load(f)
+    check_schema(doc, os.path.join(ROOT, "spec", "execution.schema.json"), errors, "execution")
+    if doc.get("artifact_kind") != "urnapack_execution":
+        fail(f"execution: artifact_kind inesperado: {doc.get('artifact_kind')!r}", errors)
+    if doc.get("format_version") != 1:
+        fail(f"execution: format_version incompatível: {doc.get('format_version')}", errors)
+    if doc.get("success") is True:
+        if doc.get("errors"):
+            fail("execution: sucesso contradiz lista de erros", errors)
+        if any(not isinstance(entry.get("sha256"), str) or not HEX64_RE.fullmatch(entry["sha256"]) for entry in doc.get("inputs", [])):
+            fail("execution: execução bem-sucedida exige hashes de entrada completos", errors)
     return errors
 
 
@@ -204,13 +278,13 @@ def cmd_repo(args):
                     break
     for name in ("manifest.schema.json", "index.schema.json"):
         try:
-            json.load(open(os.path.join(root, "spec", name)))
+            json.loads(Path(root, "spec", name).read_text(encoding="utf-8"))
         except Exception as e:  # noqa: BLE001
             fail(f"repo: schema inválido {name}: {e}", errors)
     idx_path = os.path.join(root, "data", "index.json")
     if os.path.isfile(idx_path):
         ns = argparse.Namespace(index=idx_path)
-        errors = cmd_index(ns)
+        errors.extend(cmd_index(ns))
     else:
         fail("repo: data/index.json ausente", errors)
     return errors
@@ -228,10 +302,10 @@ def stage_fixture(tmp, manifest_src, data_src=None, trunc=None):
     verdadeiros de bu-amostra.csv); o arquivo é materializado em tmp com
     o nome canônico exigido pela convenção de pacotes.
     """
-    m = json.load(open(manifest_src))
+    m = json.loads(Path(manifest_src).read_text(encoding="utf-8"))
     name = m["packages"][0]["name"]
     if data_src is not None:
-        data = open(data_src, "rb").read()
+        data = Path(data_src).read_bytes()
         if trunc is not None:
             data = data[:trunc]
         with open(os.path.join(tmp, name), "wb") as f:
@@ -320,12 +394,17 @@ def main():
     p_man.add_argument("--max-bytes", type=int, default=10**12)
     p_man.add_argument("--max-assets", type=int, default=1000)
     p_man.add_argument("--require-status", default=None)
+    p_man.add_argument("--schema-version", default="auto", choices=["auto", "1", "2"])
+    p_man.add_argument("--source-manifest", default=None)
     p_idx = sub.add_parser("index", help="valida data/index.json")
     p_idx.add_argument("index")
+    p_exe = sub.add_parser("execution", help="valida um recibo de execução")
+    p_exe.add_argument("receipt")
     sub.add_parser("self-test", help="cenários de falha com fixtures")
     args = ap.parse_args()
 
     errors = {"repo": cmd_repo, "manifest": cmd_manifest, "index": cmd_index,
+              "execution": cmd_execution,
               "self-test": cmd_self_test}[args.cmd](args)
     for e in errors:
         print("ERRO:", e)

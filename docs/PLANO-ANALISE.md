@@ -1,77 +1,110 @@
-# Plano de execução — Análise entre turnos (pós-tratamento)
+# Plano de análise — requisitos durante o tratamento e execução por escopo
 
-Sequência executável da fase de detecção de anomalias e comparação entre
-turnos. A metodologia completa é a especificação recebida para esta fase;
-este documento define **quando começar, em que ordem e como saber que cada
-etapa está pronta**. Sem duplicar a metodologia: os detalhes de cada método
-vivem na especificação; aqui vive a ordem, as dependências e os portões.
+## Posição no projeto
 
-Posição no projeto: infraestrutura pronta → **tratamento (docs/PLANO.md,
-Fases 2–6)** → este plano. Nada abaixo começa antes do portão de entrada.
+Os requisitos analíticos orientam o tratamento desde a Etapa 1 de
+`docs/PLANO.md`. Os controles descritivos começam no MVP validado; modelos e
+comparações dependem das fontes que cada uso requer. Não esperar a publicação
+ou a cobertura nacional para verificar um recorte local completo.
 
-## 0. Portão de entrada (objetivo, verificável por comando)
+Este documento define ordem e portões. A metodologia estatística completa
+precisa ser versionada no repositório ou referenciada por versão e hash antes
+da implementação dos respectivos modelos. A especificação externa mencionada
+na versão anterior não foi localizada; não tratá-la como requisito implementado.
 
-O tratamento está concluído para (ano, turnos, UF) quando:
+## A1 — Contrato de entrada para cada uso
 
-1. `data/index.json` contém entradas `validated`/`published` para 2026 t1 e t2.
-2. `tsepack verify` aprova os manifestos contra as fontes.
-3. Cada registro tratado referencia arquivo oficial + hash (rastreabilidade).
-4. Granularidade mínima: seção (zona/município/UF deriváveis por agregação).
-5. Cargo presidencial separável por identificador oficial (sem misturar cargos).
+Registrar ano, ambiente, abrangência, eleição/pleito, cargo, fontes, snapshots,
+recorte e cobertura. Só liberar o uso quando existirem evidências de:
 
-```bash
-python3 scripts/validate.py index data/index.json
-tsepack verify --manifest <manifest-t1> --source <origem-t1>
-tsepack verify --manifest <manifest-t2> --source <origem-t2>
-```
+- hashes recomputados dos objetos exigidos e dependências disponíveis;
+- preservação/restauração conforme o perfil e equivalência do canônico;
+- granularidade e medidas declaradas: contexto seção/cargo, votos por votável,
+  correspondências e eventos separados logicamente;
+- localização de cada ocorrência na fonte por hash + membro/ordinal;
+- sentinelas, nulos, categorias, tipos e referência temporal documentados;
+- contagens e multiplicidades confrontadas com leitura dos dados;
+- chaves, cardinalidades e regras de agregação verificadas;
+- lacunas, exclusões explícitas e limitações de origem/autoria registradas.
 
-Sem isso: registrar a lacuna e executar só o subconjunto válido. Nunca
-completar resultado com dado ausente.
+`tsepack verify` atual confere arquivos de origem. O validador do índice confere
+estrutura. Esses comandos não implementam sozinhos A1 nem conferem equivalência
+semântica. O índice pode estar vazio e estruturalmente correto.
 
-## 1. Ordem de execução (cada etapa só começa com a anterior verde)
+## A2 — Controles por fonte antes de unir tabelas
 
-1. **Correspondência de seções** — tabela canônica de unidades comparáveis
-   (ano/UF/município/zona/seção + agregadas/desmembradas); sem par confiável,
-   sem comparação inventada (sobe para zona/município e registra).
-2. **Registro comparativo por seção** — t1×t2 lado a lado + métricas derivadas,
-   denominadores explícitos, sem divisão por zero, pp ≠ % relativa.
-3. **Invariantes aritméticas** — somas, válidos/brancos/nulos, comparecimento,
-   abstenção, aptos, agregações; divergência relata valor calculado × oficial.
-4. **BU × RDV × totalização** — relatório separado da estatística.
-5. **Comparecimento** — robusto + intervalos empíricos calibrados por grupo.
-6. **Brancos/nulos** — condicional a turno/cargo/grupo; categorias documentadas.
-7. **Hierárquicos** — baseline simples primeiro (binomial/beta-binomial);
-   complexidade só com calibração melhor demonstrada.
-8. **Ecológica** — limites de compatibilidade antes de qualquer matriz;
-   não-identificação explícita quando houver.
-9. **Territorial** — só com geometria confiável; controle de testes múltiplos.
-10. **ML** — somente exploratório, após 5–9, com calibração e remoção se inútil.
-11. **Operacional/logs e dígitos** — condicionais à disponibilidade e às
-    hipóteses do método; sem valor probatório isolado.
-12. **Falsos positivos** — FDR/permuta/bootstrap desde o primeiro modelo.
-13. **Controle/falsificação** — sintéticos identificados, ground truth, taxas
-    de detecção e falso positivo antes de qualquer conclusão sobre reais.
-14. **Explicabilidade + CLI + relatórios** — achado sem justificativa não
-    existe; relatório JSON/CSV/HTML versionado.
+- Comparar somas e categorias com suas definições oficiais para ano/cargo.
+  Não impor a todos os cargos a mesma relação entre votos e comparecimento.
+- Aptos/comparecimento repetidos por votável exigem igualdade verificada antes
+  de extrair contexto. Divergência bloqueia o uso afetado e gera evidência.
+- Preservar todas as ocorrências, inclusive duplicatas legítimas e versões;
+  escolher snapshot para uma análise por regra registrada.
+- Medir cobertura e qualidade antes de procurar anomalias estatísticas.
 
-## 2. Regras de implementação
+## A3 — Correspondência entre fontes e turnos
 
-- Módulos = responsabilidades (`section_matching`, `deterministic_checks`,
-  `turn_comparison`, `statistical_models`, ...), sem dez crates.
-- CLI no binário existente: `tsepack analyze <compare|integrity|turnout|
-  statistical|spatial|transitions|report> --year 2026 --rounds 1,2 --state MT`.
-- Comando não implementado falha explicitamente; relatório nunca finge sucesso.
-- Streaming/lotes, 32 GB; determinístico (sementes registradas).
-- Sintéticos em `tests/fixtures/`, identificados; jamais misturados a reais.
+- Identificar unidade comparável por códigos oficiais, sem ligar apenas por
+  nome ou por número de seção isolado. Códigos de eleição podem variar por turno.
+- Validar cardinalidades antes de cada join; multiplicação de linhas é erro
+  se a relação esperada era muitos-para-um.
+- Documentar seções principais, agregadas, desmembradas e correspondências
+  esperadas/efetivadas/contingência. Não contar principal e agregadas novamente.
+- Sem par confiável: bloquear a comparação nessa granularidade ou publicar
+  outro recorte explicitamente validado; não fabricar correspondência.
+- BU × RDV × totalização exige fontes disponíveis, compatibilidade e tratamento
+  das situações oficiais. Relatório de reconciliação separado da estatística.
 
-## 3. MVP (MT) e expansão
+## A4 — Comparação descritiva
 
-MT primeiro: correspondência → invariantes → turnout → 1 modelo calibrado →
-falsificação → relatório. Nacional só com pipeline validado e estável.
+Construir registros comparativos apenas para pares válidos, com numeradores,
+denominadores, unidades e regras explícitos. Distinguir pontos percentuais de
+variação percentual; tratar denominador zero sem produzir taxa artificial.
 
-## 4. Aceitação (como verificar cada item)
+Começar por comparecimento, brancos/nulos e distribuições por cargo e grupo,
+com categorias oficiais preservadas. A primeira análise serve também para
+verificar se o tratamento conservou o contexto necessário.
 
-Itens 1–5, 9–10: comandos + relatórios reproduzíveis. Itens 6–8, 12:
-testes sintéticos com taxas medidas e limiares pré-registrados. Item 11:
-pico de RAM medido em MT e projeção nacional. Item 13: revisão dos relatórios
-— nenhum converte indicador em alegação sem evidência direta.
+## A5 — Modelos e controles que os acompanham
+
+- Baseline simples primeiro, por exemplo binomial/beta-binomial quando suas
+  hipóteses forem adequadas. Complexidade exige calibração melhor demonstrada.
+- Registrar famílias de hipóteses e controle de testes múltiplos desde o
+  primeiro modelo. FDR, permutação e bootstrap dependem das hipóteses e da
+  estrutura de dependência; não são selos automáticos de validade.
+- Usar sintéticos identificados, controles, falsificação e validação separada
+  do ajuste antes de interpretar achados reais. Medir as taxas sob as
+  hipóteses simuladas e verificar sua adequação aos dados observados.
+- Análise ecológica exige limites de compatibilidade e não-identificação
+  explícita. Não transformar agregado em trajetória de eleitor individual.
+- Territorial depende de geometria confiável; logs dependem de formatos e
+  referência temporal conhecidos; dígitos exigem hipóteses justificadas.
+- ML é exploratório e opcional. Sua ausência não bloqueia outros relatórios.
+- RDV não oferece identidade/ordem individual de comparecimento; não fabricar
+  vínculos entre votos por cargo ou turno a partir de posições ou agregados.
+
+Esses métodos não formam uma fila obrigatória. Cada um depende de A1–A4 e de
+seus próprios controles. Explicabilidade e falsificação são transversais.
+
+## A6 — Execução e relatório reproduzíveis
+
+Planejar extensão do binário existente com `tsepack analyze`; ainda não
+implementada. Cada execução registrará hashes de datasets/tabelas auxiliares,
+versões de esquema/parser/código, parâmetros, seleção/exclusões, denominadores,
+sementes quando aplicáveis, limitações e verificações executadas.
+
+Relatórios JSON/CSV/HTML versionados devem separar qualidade dos dados,
+reconciliação determinística e achados estatísticos. Estado parcial precisa
+estar explícito. Comando não implementado ou dependência ausente falha; não
+finge sucesso.
+
+## MVP e critérios de revisão
+
+MT: contrato → controles por fonte → correspondência → descrição → um modelo
+calibrado, se necessário → relatório. Comparação t1×t2 somente com o par
+exigido; verificações de um turno não dependem de aguardar o outro.
+
+Aprovação exige evidências para A1–A6 aplicáveis, consultas conferidas contra
+uma referência independente, controles executados e relatório interpretável.
+A expansão nacional reaplica os mesmos portões e a detecção de variantes do
+mapa de dados brutos. RAM nacional deve ser medida; projeção continua projeção.
+Nenhum indicador isolado produz conclusão de fraude ou autenticidade eleitoral.

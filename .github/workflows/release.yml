@@ -32,7 +32,11 @@ jobs:
           fi
 
       - name: compilar
-        run: cargo build --release
+        run: cargo build --release --locked
+
+      - name: conferir versão do binário contra a tag
+        run: |
+          test "$(./target/release/tsepack --version)" = "tsepack ${GITHUB_REF_NAME#v}"
 
       - name: empacotar + SHA-256
         run: |
