@@ -19,13 +19,34 @@ concurrency:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write # permite ao audit-check publicar o resultado como check-run
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: rustsec/audit-check@69366f33c96575abad1ee0dba8212993eecbe998 # v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   dependency-review:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      - name: detectar dependency graph
+        id: graph
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "repos/${{ github.repository }}/dependency-graph/sbom" --silent >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        if: steps.graph.outputs.enabled == 'true'
       - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0
+        if: steps.graph.outputs.enabled == 'true'
+      - name: aviso quando indisponível
+        if: steps.graph.outputs.enabled != 'true'
+        run: |
+          echo "::notice::Dependency graph desativado neste repositório; dependency-review pulado. Ative em Settings → Code security → Dependency graph."
