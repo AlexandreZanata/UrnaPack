@@ -4,7 +4,15 @@
 # Uso: ./scripts/apply_rulesets.sh [owner/repo]  (padrão: origin do git)
 set -euo pipefail
 
-REPO="${1:-$(git remote get-url origin | sed -E 's#.*github.com[:/]([^/]+/[^/]+?)(\.git)?$#\1#')}"
+if [ $# -ge 1 ]; then
+  REPO="$1"
+else
+  # Deriva owner/repo do remote origin (https ou ssh), sem sufixo .git.
+  url="$(git remote get-url origin)"
+  url="${url%.git}"
+  url="${url%/}"
+  REPO="${url##*github.com[:/]}"
+fi
 FILE=".github/rulesets/main.json"
 
 command -v gh >/dev/null || { echo "gh CLI necessário"; exit 1; }
@@ -15,7 +23,7 @@ NAMES=$(python3 -c "import json; print('\n'.join(r['name'] for r in json.load(op
 
 # Regras em JSON não se aplicam sozinhas: a aplicação exige esta chamada à API.
 for name in $NAMES; do
-  id=$(gh api "repos/$REPO/rulesets" --jq ".[] | select(.name==\"$name\") | .id" || true)
+  id=$(gh api "repos/$REPO/rulesets" --jq ".[] | select(.name==\"$name\") | .id" 2>/dev/null || true)
   body=$(python3 -c "import json; print(json.dumps([r for r in json.load(open('$FILE')) if r['name']==\"$name\"][0]))")
   if [ -z "$id" ]; then
     echo "criando ruleset '$name'..."
