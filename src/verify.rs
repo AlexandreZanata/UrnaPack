@@ -1,15 +1,20 @@
-//! Verificador independente (Níveis 1–2 da verificação).
+//! Verificador de integridade dos arquivos de origem (Nível 1).
 //!
 //! Reexecuta o hashing dos arquivos de origem e compara com o
 //! manifesto registrado: detecta ausentes, truncados/alterados e
 //! divergências de versão. NÃO compartilha estado com o compressor:
 //! lê o manifesto do disco e recalcula tudo a partir dos arquivos.
+//!
+//! Limite documentado: exige fonte imutável durante a verificação;
+//! não promete proteção contra substituição concorrente de arquivos.
 
-use anyhow::{Context, Result};
+use anyhow::{bail, Context, Result};
 use serde::{Deserialize, Serialize};
-use std::path::Path;
+use std::collections::HashSet;
+use std::path::{Path, PathBuf};
 
 use crate::manifest::Manifest;
+use crate::traverse::{resolve_root, validate_manifest_rel};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub enum VerifyStatus {
@@ -17,6 +22,12 @@ pub enum VerifyStatus {
     Missing,
     SizeMismatch,
     HashMismatch,
+    /// Caminho declarado inválido (vazio, absoluto, `..`, não canônico,
+    /// duplicado) ou componente que escapa da raiz / symlink interno.
+    InvalidPath,
+    /// Versão do manifesto não suportada. Também reportado como erro
+    /// antes da comparação quando o carregamento falha por versão.
+    UnsupportedVersion,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -39,28 +50,112 @@ pub struct VerifyReport {
     pub approved: bool,
 }
 
+/// Junta o relativo validado à raiz canônica, rejeitando escapes por
+/// componentes symlink internos. Retorna o absoluto correspondente.
+fn join_checked(root: &Path, rel: &str) -> Result<PathBuf> {
+    validate_manifest_rel(rel)?;
+    let mut abs = root.to_path_buf();
+    let parts: Vec<_> = rel.split('/').collect();
+    for (index, part) in parts.iter().enumerate() {
+        abs.push(part);
+        let meta = match std::fs::symlink_metadata(&abs) {
+            Ok(meta) => meta,
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => return Ok(root.join(rel)),
+            Err(e) => return Err(e).with_context(|| format!("metadata {}", abs.display())),
+        };
+        if meta.file_type().is_symlink() {
+            bail!("symlink interno em componente: {rel}");
+        }
+        if index + 1 < parts.len() && !meta.is_dir() {
+            bail!("componente não diretório em: {rel}");
+        }
+    }
+    Ok(abs)
+}
+
 pub fn verify(manifest_path: &Path, source_dir: &Path) -> Result<VerifyReport> {
+    // Carrega o manifesto com guarda de versão explícita. Divergência de
+    // versão reprova com erro (exit não zero na CLI), não com aprovação.
     let manifest = Manifest::load(manifest_path)?;
+
+    let root = resolve_root(source_dir)?;
+
+    // Duplicata de caminho de manifesto: reprova explicitamente.
+    // (Duplicata eleitoral legítima é outro conceito e não entra aqui.)
+    let mut seen: HashSet<&str> = HashSet::new();
+    let mut duplicate_paths: HashSet<&str> = HashSet::new();
+    for e in &manifest.files {
+        if !seen.insert(e.path.as_str()) {
+            duplicate_paths.insert(e.path.as_str());
+        }
+    }
+
     let mut verdicts = Vec::with_capacity(manifest.files.len());
     let mut passed = 0usize;
 
     for entry in &manifest.files {
-        // Defesa contra path traversal no manifesto: rejeita `..` e raiz.
-        let rel = Path::new(&entry.path);
-        let unsafe_path = rel.is_absolute()
-            || rel
-                .components()
-                .any(|c| matches!(c, std::path::Component::ParentDir));
-        if unsafe_path {
+        if duplicate_paths.contains(entry.path.as_str()) {
             verdicts.push(FileVerdict {
                 path: entry.path.clone(),
-                status: VerifyStatus::Missing,
+                status: VerifyStatus::InvalidPath,
                 expected_sha256: entry.sha256.clone(),
                 actual_sha256: None,
             });
             continue;
         }
-        let abs = source_dir.join(rel);
+        // Validação de forma do caminho declarado.
+        if validate_manifest_rel(&entry.path).is_err() {
+            verdicts.push(FileVerdict {
+                path: entry.path.clone(),
+                status: VerifyStatus::InvalidPath,
+                expected_sha256: entry.sha256.clone(),
+                actual_sha256: None,
+            });
+            continue;
+        }
+        let abs = match join_checked(&root, &entry.path) {
+            Ok(p) => p,
+            Err(_) => {
+                verdicts.push(FileVerdict {
+                    path: entry.path.clone(),
+                    status: VerifyStatus::InvalidPath,
+                    expected_sha256: entry.sha256.clone(),
+                    actual_sha256: None,
+                });
+                continue;
+            }
+        };
+        // Symlink no próprio arquivo: rejeita sem ignorar.
+        match std::fs::symlink_metadata(&abs) {
+            Ok(meta) if meta.file_type().is_symlink() => {
+                verdicts.push(FileVerdict {
+                    path: entry.path.clone(),
+                    status: VerifyStatus::InvalidPath,
+                    expected_sha256: entry.sha256.clone(),
+                    actual_sha256: None,
+                });
+                continue;
+            }
+            Ok(meta) if !meta.file_type().is_file() => {
+                verdicts.push(FileVerdict {
+                    path: entry.path.clone(),
+                    status: VerifyStatus::InvalidPath,
+                    expected_sha256: entry.sha256.clone(),
+                    actual_sha256: None,
+                });
+                continue;
+            }
+            Err(_) => {
+                verdicts.push(FileVerdict {
+                    path: entry.path.clone(),
+                    status: VerifyStatus::Missing,
+                    expected_sha256: entry.sha256.clone(),
+                    actual_sha256: None,
+                });
+                continue;
+            }
+            _ => {}
+        }
         if !abs.is_file() {
             verdicts.push(FileVerdict {
                 path: entry.path.clone(),

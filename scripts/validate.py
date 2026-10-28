@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Validação offline do UrnaPack: limites, nomes, schemas, manifestos, índice, segredos.
 
-Sem dependências obrigatórias (stdlib). Se `jsonschema`/`yaml` estiverem
-instalados, a validação é total; sem eles, aplica-se um subconjunto manual
-documentado (campos obrigatórios, tipos, enums, regex).
+Verificações locais usam a biblioteca padrão. A validação completa de schema
+exige `jsonschema`, já instalado pela CI; sua ausência reprova explicitamente.
+Diagnósticos parciais não substituem essa validação.
 """
 
 import argparse
 import hashlib
 import json
 import os
+from pathlib import Path
 import re
 import subprocess
 import sys
@@ -97,10 +98,21 @@ def check_schema(doc, schema_path, errors, label):
         except Exception as e:  # noqa: BLE001 - report as validation error
             fail(f"{label}: fora do schema: {e.message}", errors)
     else:
-        # Subconjunto manual: obrigatórios, tipos e enums principais.
+        # Sem jsonschema não há validação completa de schema: reprovar
+        # explicitamente com instrução sobre a dependência usada na CI.
+        # Não apresentar o subconjunto manual como validação completa.
+        fail(
+            f"{label}: validação completa de schema indisponível "
+            "(dependência ausente: jsonschema; a CI usa "
+            "`pip install \"pyyaml==6.0.2\" \"jsonschema==4.23.0\"` "
+            "antes de `python3 scripts/validate.py repo`)",
+            errors,
+        )
+        # Subconjunto manual apenas como diagnóstico adicional, sem
+        # alegar completude.
         for key in schema.get("required", []):
             if key not in doc:
-                fail(f"{label}: campo obrigatório ausente: {key}", errors)
+                fail(f"{label}: campo obrigatório ausente: {key} (diagnóstico parcial)", errors)
 
 
 def validate_manifest_doc(m, errors, label="manifest"):
@@ -204,13 +216,13 @@ def cmd_repo(args):
                     break
     for name in ("manifest.schema.json", "index.schema.json"):
         try:
-            json.load(open(os.path.join(root, "spec", name)))
+            json.loads(Path(root, "spec", name).read_text(encoding="utf-8"))
         except Exception as e:  # noqa: BLE001
             fail(f"repo: schema inválido {name}: {e}", errors)
     idx_path = os.path.join(root, "data", "index.json")
     if os.path.isfile(idx_path):
         ns = argparse.Namespace(index=idx_path)
-        errors = cmd_index(ns)
+        errors.extend(cmd_index(ns))
     else:
         fail("repo: data/index.json ausente", errors)
     return errors
@@ -228,10 +240,10 @@ def stage_fixture(tmp, manifest_src, data_src=None, trunc=None):
     verdadeiros de bu-amostra.csv); o arquivo é materializado em tmp com
     o nome canônico exigido pela convenção de pacotes.
     """
-    m = json.load(open(manifest_src))
+    m = json.loads(Path(manifest_src).read_text(encoding="utf-8"))
     name = m["packages"][0]["name"]
     if data_src is not None:
-        data = open(data_src, "rb").read()
+        data = Path(data_src).read_bytes()
         if trunc is not None:
             data = data[:trunc]
         with open(os.path.join(tmp, name), "wb") as f:

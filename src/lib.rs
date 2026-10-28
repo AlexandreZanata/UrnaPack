@@ -8,6 +8,7 @@ pub mod benchmark;
 pub mod hash;
 pub mod inspect;
 pub mod manifest;
+pub mod traverse;
 pub mod verify;
 
 /// Versão do formato de manifesto/artefatos gerados por esta base.

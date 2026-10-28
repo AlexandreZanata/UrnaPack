@@ -1,9 +1,27 @@
-//! Round-trip: manifesto salvo e recarregado é idêntico;
-//! verificação aprova o diretório intacto.
+//! Round-trip e regressões da Etapa 1: manifesto/verify/inspect.
+//!
+//! Todos os hashes usam bytes reais calculados; nenhum digest fictício.
+//! Cada teste realmente exercita a verificação (não apenas ordenação).
 
-use std::path::Path;
-use tsepack::manifest::Manifest;
-use tsepack::verify::verify;
+use std::path::{Path, PathBuf};
+use tsepack::manifest::{FileEntry, Manifest};
+use tsepack::verify::{verify, VerifyStatus};
+
+fn sha_of(data: &[u8]) -> String {
+    tsepack::hash::sha256_bytes(data)
+}
+
+fn save_manifest(dir: &Path, files: Vec<FileEntry>) -> PathBuf {
+    let m = Manifest {
+        format_version: tsepack::FORMAT_VERSION,
+        tool_version: "teste-etapa1".into(),
+        source: "teste".into(),
+        files,
+    };
+    let mpath = dir.join("manifest.json");
+    m.save(&mpath).unwrap();
+    mpath
+}
 
 #[test]
 fn manifest_round_trip_e_verify_ok() {
@@ -53,4 +71,338 @@ fn arquivo_ausente_e_detectado() {
     std::fs::remove_file(dir.path().join("x.bin")).unwrap();
     let rep = verify(&mpath, dir.path()).unwrap();
     assert!(!rep.approved);
+}
+
+#[test]
+fn corrupcao_mesmo_tamanho_reprova_com_hash_mismatch() {
+    let dir = tempfile::tempdir().unwrap();
+    let f = dir.path().join("dado.bin");
+    std::fs::write(&f, b"ABCDEFGH").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "teste").unwrap();
+    let mpath = dir.path().join("manifest.json");
+    m.save(&mpath).unwrap();
+
+    // Mesmo tamanho, conteúdo diferente: deve dar HashMismatch, não Ok.
+    std::fs::write(&f, b"ABCDEFGX").unwrap();
+    let rep = verify(&mpath, dir.path()).unwrap();
+    assert!(!rep.approved);
+    assert_eq!(rep.failed, 1);
+    assert_eq!(rep.verdicts[0].status, VerifyStatus::HashMismatch);
+}
+
+#[test]
+fn truncado_reprova_com_size_mismatch() {
+    let dir = tempfile::tempdir().unwrap();
+    let f = dir.path().join("dado.bin");
+    std::fs::write(&f, b"0123456789ABCDEF").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "teste").unwrap();
+    let mpath = dir.path().join("manifest.json");
+    m.save(&mpath).unwrap();
+
+    std::fs::write(&f, b"0123").unwrap();
+    let rep = verify(&mpath, dir.path()).unwrap();
+    assert!(!rep.approved);
+    assert_eq!(rep.verdicts[0].status, VerifyStatus::SizeMismatch);
+}
+
+#[test]
+fn manifesto_vazio_reprova() {
+    let dir = tempfile::tempdir().unwrap();
+    let mpath = save_manifest(dir.path(), vec![]);
+    let rep = verify(&mpath, dir.path()).unwrap();
+    assert!(!rep.approved, "manifesto sem arquivos não é dataset pronto");
+    assert_eq!(rep.files_checked, 0);
+}
+
+#[test]
+fn versao_incompativel_reprova_com_erro() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("a.txt"), b"oi").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "teste").unwrap();
+    let mut raw = serde_json::to_value(&m).unwrap();
+    raw["format_version"] = serde_json::json!(999u32);
+    let mpath = dir.path().join("manifest.json");
+    std::fs::write(&mpath, serde_json::to_string_pretty(&raw).unwrap()).unwrap();
+
+    let err = verify(&mpath, dir.path()).unwrap_err();
+    assert!(
+        err.to_string().contains("incompatível"),
+        "erro inesperado: {err:#}"
+    );
+    // Leitura direta também reprova.
+    assert!(Manifest::load(&mpath).is_err());
+}
+
+#[test]
+fn caminho_repetido_reprova() {
+    let dir = tempfile::tempdir().unwrap();
+    let data = b"conteudo";
+    std::fs::write(dir.path().join("a.txt"), data).unwrap();
+    let h = sha_of(data);
+    let entry = FileEntry {
+        path: "a.txt".into(),
+        size: data.len() as u64,
+        sha256: h,
+        file_type: "txt".into(),
+        url: None,
+    };
+    let mpath = save_manifest(dir.path(), vec![entry.clone(), entry]);
+    let rep = verify(&mpath, dir.path()).unwrap();
+    assert!(!rep.approved);
+    assert!(rep
+        .verdicts
+        .iter()
+        .all(|v| v.status == VerifyStatus::InvalidPath));
+}
+
+#[test]
+fn travessia_e_caminhos_invalidos_reprovam() {
+    for bad in [
+        "../fora.txt",
+        "/absoluto.txt",
+        "",
+        "a//b.txt",
+        "a/./b.txt",
+        "a/../b.txt",
+        "sub/",
+    ] {
+        let dir = tempfile::tempdir().unwrap();
+        let entry = FileEntry {
+            path: bad.into(),
+            size: 1,
+            sha256: sha_of(b"x"),
+            file_type: "txt".into(),
+            url: None,
+        };
+        let mpath = save_manifest(dir.path(), vec![entry]);
+        let rep = verify(&mpath, dir.path()).unwrap();
+        assert!(!rep.approved, "caminho inválido deveria reprovar: {bad:?}");
+        assert_eq!(rep.verdicts[0].status, VerifyStatus::InvalidPath);
+    }
+}
+
+#[test]
+fn raiz_inexistente_reprova() {
+    let dir = tempfile::tempdir().unwrap();
+    let missing = dir.path().join("inexistente");
+    assert!(tsepack::inspect::scan(&missing).is_err());
+    assert!(Manifest::build_from_dir(&missing, "s").is_err());
+}
+
+#[test]
+fn raiz_nao_diretorio_reprova() {
+    let dir = tempfile::tempdir().unwrap();
+    let f = dir.path().join("arq.txt");
+    std::fs::write(&f, b"oi").unwrap();
+    assert!(tsepack::inspect::scan(&f).is_err());
+    assert!(Manifest::build_from_dir(&f, "s").is_err());
+}
+
+#[test]
+fn raiz_vazia_tem_inventario_explicito() {
+    let dir = tempfile::tempdir().unwrap();
+    let rep = tsepack::inspect::scan(dir.path()).unwrap();
+    assert_eq!(rep.file_count, 0);
+    assert_eq!(rep.total_bytes, 0);
+    assert!(rep.by_type.is_empty());
+    let m = Manifest::build_from_dir(dir.path(), "s").unwrap();
+    assert!(m.files.is_empty());
+    let mpath = dir.path().join("manifest.json");
+    m.save(&mpath).unwrap();
+    let v = verify(&mpath, dir.path()).unwrap();
+    assert!(!v.approved);
+}
+
+#[cfg(unix)]
+#[test]
+fn link_legitimo_da_raiz_e_resolvido() {
+    let dir = tempfile::tempdir().unwrap();
+    let real = dir.path().join("real");
+    std::fs::create_dir(&real).unwrap();
+    std::fs::write(real.join("a.txt"), b"conteudo-legitimo").unwrap();
+    let link = dir.path().join("ligacao");
+    std::os::unix::fs::symlink(&real, &link).unwrap();
+
+    let m = Manifest::build_from_dir(&link, "s").unwrap();
+    assert_eq!(m.files.len(), 1);
+    assert_eq!(m.files[0].path, "a.txt");
+    let rep = tsepack::inspect::scan(&link).unwrap();
+    assert_eq!(rep.file_count, 1);
+}
+
+#[cfg(unix)]
+#[test]
+fn symlink_interno_reprova_build() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("real.txt"), b"dados").unwrap();
+    std::os::unix::fs::symlink(dir.path().join("real.txt"), dir.path().join("atalho.txt")).unwrap();
+    let err = Manifest::build_from_dir(dir.path(), "s").unwrap_err();
+    assert!(err.to_string().contains("symlink"), "erro: {err:#}");
+    assert!(tsepack::inspect::scan(dir.path()).is_err());
+}
+
+#[cfg(unix)]
+#[test]
+fn symlink_no_arquivo_verificado_reprova() {
+    let dir = tempfile::tempdir().unwrap();
+    let outside = dir.path().join("fora.txt");
+    std::fs::write(&outside, b"segredo").unwrap();
+    // Manifesto declara sub/link.txt mas link aponta para fora.
+    let sub = dir.path().join("sub");
+    std::fs::create_dir(&sub).unwrap();
+    std::os::unix::fs::symlink(&outside, sub.join("link.txt")).unwrap();
+
+    let entry = FileEntry {
+        path: "sub/link.txt".into(),
+        size: 7,
+        sha256: sha_of(b"segredo"),
+        file_type: "txt".into(),
+        url: None,
+    };
+    let mpath = save_manifest(dir.path(), vec![entry]);
+    let rep = verify(&mpath, dir.path()).unwrap();
+    assert!(!rep.approved);
+    assert_eq!(rep.verdicts[0].status, VerifyStatus::InvalidPath);
+}
+
+#[cfg(unix)]
+#[test]
+fn arquivo_especial_fifo_reprova_build() {
+    let dir = tempfile::tempdir().unwrap();
+    let fifo = dir.path().join("canal.fifo");
+    let st = std::process::Command::new("mkfifo")
+        .arg(&fifo)
+        .status()
+        .expect("mkfifo disponível no ambiente de teste");
+    assert!(st.success());
+    let err = Manifest::build_from_dir(dir.path(), "s").unwrap_err();
+    assert!(
+        err.to_string().contains("especial") || err.to_string().contains("symlink"),
+        "erro: {err:#}"
+    );
+}
+
+#[cfg(unix)]
+#[test]
+fn erro_de_leitura_por_permissao_propaga() {
+    let dir = tempfile::tempdir().unwrap();
+    let sub = dir.path().join("restrito");
+    std::fs::create_dir(&sub).unwrap();
+    std::fs::write(sub.join("a.txt"), b"dados").unwrap();
+    use std::os::unix::fs::PermissionsExt;
+    std::fs::set_permissions(&sub, std::fs::Permissions::from_mode(0o000)).unwrap();
+    let res = Manifest::build_from_dir(dir.path(), "s");
+    // Restaura para o TempDir conseguir limpar.
+    std::fs::set_permissions(&sub, std::fs::Permissions::from_mode(0o700)).unwrap();
+    assert!(res.is_err(), "travessia sem permissão deveria reprovar");
+}
+
+// ---- CLI: exit != 0 nos casos inválidos ----
+
+fn bin() -> PathBuf {
+    PathBuf::from(env!("CARGO_BIN_EXE_tsepack"))
+}
+
+fn run_cli(args: &[&str]) -> std::process::Output {
+    std::process::Command::new(bin())
+        .args(args)
+        .output()
+        .expect("executar tsepack")
+}
+
+#[test]
+fn cli_verify_aprova_fonte_valida() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("ok.txt"), b"integro").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "s").unwrap();
+    let mpath = dir.path().join("m.json");
+    m.save(&mpath).unwrap();
+    let out = run_cli(&[
+        "verify",
+        "--manifest",
+        mpath.to_str().unwrap(),
+        "--source",
+        dir.path().to_str().unwrap(),
+    ]);
+    assert!(
+        out.status.success(),
+        "stderr: {}",
+        String::from_utf8_lossy(&out.stderr)
+    );
+}
+
+#[test]
+fn cli_verify_reprova_hash_e_versao_com_exit_nao_zero() {
+    // Hash divergente.
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("a.txt"), b"um").unwrap();
+    let m = Manifest::build_from_dir(dir.path(), "s").unwrap();
+    let mpath = dir.path().join("m.json");
+    m.save(&mpath).unwrap();
+    std::fs::write(dir.path().join("a.txt"), b"do").unwrap();
+    let out = run_cli(&[
+        "verify",
+        "--manifest",
+        mpath.to_str().unwrap(),
+        "--source",
+        dir.path().to_str().unwrap(),
+    ]);
+    assert!(!out.status.success());
+    assert!(String::from_utf8_lossy(&out.stdout).contains("HashMismatch"));
+
+    // Versão incompatível.
+    let dir2 = tempfile::tempdir().unwrap();
+    std::fs::write(dir2.path().join("a.txt"), b"um").unwrap();
+    let m2 = Manifest::build_from_dir(dir2.path(), "s").unwrap();
+    let mut raw = serde_json::to_value(&m2).unwrap();
+    raw["format_version"] = serde_json::json!(999u32);
+    let mp2 = dir2.path().join("m.json");
+    std::fs::write(&mp2, serde_json::to_string_pretty(&raw).unwrap()).unwrap();
+    let out2 = run_cli(&[
+        "verify",
+        "--manifest",
+        mp2.to_str().unwrap(),
+        "--source",
+        dir2.path().to_str().unwrap(),
+    ]);
+    assert!(!out2.status.success());
+}
+
+#[test]
+fn cli_inspect_reprova_raiz_inexistente() {
+    let dir = tempfile::tempdir().unwrap();
+    let missing = dir.path().join("inexistente");
+    let out = run_cli(&["inspect", "--input", missing.to_str().unwrap()]);
+    assert!(!out.status.success());
+}
+
+#[cfg(unix)]
+#[test]
+fn diretorio_vazio_nao_utf8_e_rejeitado() {
+    use std::os::unix::ffi::OsStringExt;
+    let dir = tempfile::tempdir().unwrap();
+    let name = std::ffi::OsString::from_vec(vec![0xff]);
+    std::fs::create_dir(dir.path().join(name)).unwrap();
+    assert!(tsepack::inspect::scan(dir.path()).is_err());
+    assert!(Manifest::build_from_dir(dir.path(), "fixture-sintetica").is_err());
+}
+
+#[cfg(unix)]
+#[test]
+fn inventario_nao_gera_caminho_que_verify_rejeita() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(
+        dir.path().join("barra\\invertida.csv"),
+        include_bytes!("fixtures/data/bu-amostra.csv"),
+    )
+    .unwrap();
+    assert!(tsepack::inspect::scan(dir.path()).is_err());
+    assert!(Manifest::build_from_dir(dir.path(), "fixture-sintetica").is_err());
+}
+
+#[test]
+fn caminhos_windows_e_nul_reprovam_sem_depender_do_host() {
+    for path in ["C:/fora.csv", "C:fora.csv", "bad\0name.csv"] {
+        assert!(tsepack::traverse::validate_manifest_rel(path).is_err());
+    }
 }

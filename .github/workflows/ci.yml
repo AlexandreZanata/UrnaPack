@@ -34,6 +34,9 @@ jobs:
       - name: test
         run: cargo test
 
+      - name: testes das automações (unittest)
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
       - name: validar repositorio (limites, nomes, schemas, indice, segredos)
         run: |
           python3 -m pip install --quiet "pyyaml==6.0.2" "jsonschema==4.23.0"
