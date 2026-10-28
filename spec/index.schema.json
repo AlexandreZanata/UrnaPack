@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AlexandreZanata/UrnaPack/spec/index.schema.json",
+  "title": "UrnaPack public dataset index",
+  "type": "object",
+  "required": ["format_version", "datasets"],
+  "properties": {
+    "format_version": { "type": "integer", "const": 1 },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "election_year", "round", "state", "dataset_type", "version",
+          "release_tag", "assets", "manifest_url", "manifest_sha256",
+          "validation_state", "published_at"
+        ],
+        "properties": {
+          "election_year": { "type": "integer", "minimum": 1996, "maximum": 2100 },
+          "round": { "type": "integer", "enum": [1, 2] },
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "dataset_type": { "type": "string", "enum": ["bu", "rdv", "logs", "resultados", "metadata"] },
+          "version": { "type": "string", "pattern": "^v[0-9]+$" },
+          "release_tag": { "type": "string", "pattern": "^data-[0-9]{4}-t[12]-[A-Z]{2}-v[0-9]+$" },
+          "assets": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["name", "url", "sha256", "size_bytes"],
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "url": { "type": "string", "pattern": "^https://" },
+                "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+                "size_bytes": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "manifest_url": { "type": "string", "pattern": "^https://" },
+          "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "validation_state": { "type": "string", "enum": ["validated", "published"] },
+          "published_at": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

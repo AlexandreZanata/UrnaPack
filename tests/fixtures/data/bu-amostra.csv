@@ -1,0 +1,5 @@
+# FIXTURE SINTÉTICA — não representa dados reais do TSE.
+# Usada apenas para testar o mecanismo de validação (scripts/validate.py).
+cargo;secao;votos_candidato_A;votos_candidato_B;brancos;nulos
+99999;0001;120;80;3;2
+99999;0002;95;105;1;4

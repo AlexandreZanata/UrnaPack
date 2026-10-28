@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Princípio do menor privilégio: CI só lê.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Nome do job = "ci": é o status check exigido pelo ruleset da main.
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
+
+      - name: fmt
+        run: cargo fmt --check
+
+      - name: check
+        run: cargo check --all-targets
+
+      - name: clippy
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: test
+        run: cargo test
+
+      - name: validar repositorio (limites, nomes, schemas, indice, segredos)
+        run: |
+          python3 -m pip install --quiet "pyyaml==6.0.2" "jsonschema==4.23.0"
+          python3 scripts/validate.py repo --root .
+
+      - name: cenarios de falha com fixtures (hash ruim, ausente, truncado, duplicado...)
+        run: python3 scripts/validate.py self-test

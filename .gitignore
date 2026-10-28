@@ -1,0 +1,13 @@
+/target/
+dados/
+originais/
+compactado/
+restaurado/
+dist/
+*.log
+.DS_Store
+# Pacotes de dados: distribuição via GitHub Releases, nunca no Git.
+*.upk
+*.upk.zst
+__pycache__/
+*.pyc

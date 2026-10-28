@@ -1,0 +1,28 @@
+[package]
+name = "tsepack"
+version = "0.1.0"
+edition = "2021"
+description = "Compressão extrema e verificável dos dados eleitorais do TSE — base v0.1"
+license = "MIT"
+
+[[bin]]
+name = "tsepack"
+path = "src/main.rs"
+
+[lib]
+name = "tsepack"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+hex = "0.4"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+walkdir = "2"
+zstd = "0.13"
+
+[dev-dependencies]
+tempfile = "3"

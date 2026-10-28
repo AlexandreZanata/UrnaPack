@@ -1,0 +1,32 @@
+{
+  "format_version": 1,
+  "election_year": 2026,
+  "round": 2,
+  "state": "MT",
+  "dataset_type": "bu",
+  "transform_version": "fixture-v1",
+  "tool_version": "tsepack-fixture",
+  "source_files": [
+    {
+      "path": "bu-amostra.csv",
+      "sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+      "size_bytes": 244,
+      "url": "fixture://local/bu-amostra.csv"
+    }
+  ],
+  "source_urls": ["fixture://local/bu-amostra.csv"],
+  "packages": [
+    {
+      "name": "urnapack-2026-t2-MT-bu-0001.upk.zst",
+      "sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+      "size_bytes": 244,
+      "records": 2
+    }
+  ],
+  "package_hashes": [
+    "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6"
+  ],
+  "record_counts": 2,
+  "verification_profile": "analytical",
+  "verification_status": "validated"
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "datasets": [
+    {
+      "election_year": 2026,
+      "round": 2,
+      "state": "MT",
+      "dataset_type": "bu",
+      "version": "v1",
+      "release_tag": "data-2026-t2-MT-v1",
+      "assets": [
+        {
+          "name": "urnapack-2026-t2-MT-bu-0001.upk.zst",
+          "url": "https://github.com/AlexandreZanata/UrnaPack/releases/download/data-2026-t2-MT-v1/urnapack-2026-t2-MT-bu-0001.upk.zst",
+          "sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+          "size_bytes": 244
+        }
+      ],
+      "manifest_url": "https://github.com/AlexandreZanata/UrnaPack/releases/download/data-2026-t2-MT-v1/urnapack-2026-t2-MT-bu-v1.manifest.json",
+      "manifest_sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+      "validation_state": "published",
+      "published_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "election_year": 2026,
+      "round": 2,
+      "state": "MT",
+      "dataset_type": "bu",
+      "version": "v1",
+      "release_tag": "data-2026-t2-MT-v1",
+      "assets": [
+        {
+          "name": "urnapack-2026-t2-MT-bu-0001.upk.zst",
+          "url": "https://github.com/AlexandreZanata/UrnaPack/releases/download/data-2026-t2-MT-v1/urnapack-2026-t2-MT-bu-0001.upk.zst",
+          "sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+          "size_bytes": 244
+        }
+      ],
+      "manifest_url": "https://github.com/AlexandreZanata/UrnaPack/releases/download/data-2026-t2-MT-v1/urnapack-2026-t2-MT-bu-v1.manifest.json",
+      "manifest_sha256": "9e5ede9ec4ea18f755af3d32419b8b75c0ffcb4904a42c364405626d92b89ca6",
+      "validation_state": "published",
+      "published_at": "2026-01-01T00:00:00Z"
+    }
+  ]
+}

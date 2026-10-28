@@ -1,0 +1,138 @@
+name: publish-data
+
+# Publica datasets verificados em GitHub Releases (tags data-*).
+# Recebe pacotes PREVIAMENTE preparados e validados via packages_url
+# (compressão pesada ocorre fora do Actions). Nunca publica parcial.
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Ano da eleição (ex.: 2026)"
+        required: true
+      round:
+        description: "Turno"
+        required: true
+        type: choice
+        options: ["1", "2"]
+      state:
+        description: "UF (ex.: MT; BR = índice nacional)"
+        required: true
+      dataset_type:
+        description: "Tipo de dado"
+        required: true
+        type: choice
+        options: ["bu", "rdv", "logs", "resultados", "metadata"]
+      dataset_version:
+        description: "Versão do dataset (ex.: v1)"
+        required: true
+        default: "v1"
+      packages_url:
+        description: "URL base com manifest + pacotes preparados (obrigatória)"
+        required: true
+
+permissions:
+  contents: write # criar tag/release, enviar assets, atualizar data/index.json
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: validar parâmetros
+        run: |
+          [[ "${{ inputs.year }}" =~ ^[0-9]{4}$ ]] || { echo "year inválido"; exit 1; }
+          [[ "${{ inputs.state }}" =~ ^[A-Z]{2}$ ]] || { echo "state inválido (AAAA, ex.: MT)"; exit 1; }
+          [[ "${{ inputs.dataset_version }}" =~ ^v[0-9]+$ ]] || { echo "dataset_version inválida (ex.: v1)"; exit 1; }
+          [[ -n "${{ inputs.packages_url }}" ]] || { echo "packages_url vazia: não há datasets publicáveis"; exit 1; }
+          echo "TAG=data-${{ inputs.year }}-t${{ inputs.round }}-${{ inputs.state }}-${{ inputs.dataset_version }}" >> "$GITHUB_ENV"
+          # shellcheck disable=SC2129
+          echo "MANIFEST=urnapack-${{ inputs.year }}-t${{ inputs.round }}-${{ inputs.state }}-${{ inputs.dataset_type }}-${{ inputs.dataset_version }}.manifest.json" >> "$GITHUB_ENV"
+
+      - name: limites operacionais
+        run: |
+          set -a; . scripts/limits.env; set +a
+          {
+            echo "MAX_RELEASE_ASSET_BYTES=$MAX_RELEASE_ASSET_BYTES"
+            echo "MAX_RELEASE_ASSETS=$MAX_RELEASE_ASSETS"
+          } >> "$GITHUB_ENV"
+
+      - name: impedir publicação duplicada do manifesto
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$TAG" --json assets --jq '.assets[].name' 2>/dev/null | grep -qx "$MANIFEST"; then
+            echo "manifesto $MANIFEST já publicado em $TAG — nunca sobrescrever. Suba nova versão."
+            exit 1
+          fi
+
+      - name: baixar manifesto + pacotes (origem explícita, disco efêmero)
+        run: |
+          mkdir -p stage && cd stage
+          curl -fsSL "${{ inputs.packages_url }}/$MANIFEST" -o "$MANIFEST"
+          python3 -c "
+          import json
+          m = json.load(open('$MANIFEST'))
+          open('packages.txt','w').write('\n'.join(p['name'] for p in m['packages']))
+          "
+          while read -r pkg; do
+            curl -fsSL "${{ inputs.packages_url }}/$pkg" -o "$pkg"
+          done < packages.txt
+          ls -la
+
+      - name: verificar hashes, tamanhos, manifesto e estado
+        run: |
+          python3 -m pip install --quiet "jsonschema==4.23.0"
+          python3 scripts/validate.py manifest "stage/$MANIFEST" \
+            --data-root stage \
+            --max-bytes "$MAX_RELEASE_ASSET_BYTES" \
+            --max-assets "$MAX_RELEASE_ASSETS" \
+            --require-status validated
+
+      - name: criar release (se inexistente) e enviar assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --title "$TAG" \
+              --notes "Dataset UrnaPack ${{ inputs.year }} t${{ inputs.round }} ${{ inputs.state }} (${{ inputs.dataset_type }}) ${{ inputs.dataset_version }}. Verifique com data/index.json e scripts/validate.py." \
+              "stage/$MANIFEST"
+          else
+            gh release upload "$TAG" "stage/$MANIFEST"
+          fi
+          while read -r pkg; do
+            gh release upload "$TAG" "stage/$pkg"
+          done < stage/packages.txt
+
+      - name: re-verificar assets publicados (baixa e confere hash)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reverified && cd reverified
+          gh release download "$TAG" --pattern "$MANIFEST" --pattern '*.upk.zst'
+          python3 ../scripts/validate.py manifest "$MANIFEST" \
+            --data-root . \
+            --max-bytes "$MAX_RELEASE_ASSET_BYTES" \
+            --max-assets "$MAX_RELEASE_ASSETS" \
+            --require-status validated
+
+      - name: atualizar índice público (somente após confirmação)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BASE="https://github.com/${{ github.repository }}/releases/download/$TAG"
+          ARGS=(--index data/index.json --year "${{ inputs.year }}" --round "${{ inputs.round }}"
+                --state "${{ inputs.state }}" --type "${{ inputs.dataset_type }}"
+                --version "${{ inputs.dataset_version }}" --release-tag "$TAG"
+                --manifest-url "$BASE/$MANIFEST"
+                --manifest-sha256 "$(sha256sum "stage/$MANIFEST" | cut -d' ' -f1)")
+          while read -r pkg; do
+            sha=$(sha256sum "stage/$pkg" | cut -d' ' -f1)
+            size=$(stat -c%s "stage/$pkg")
+            ARGS+=(--asset "$pkg,$BASE/$pkg,$sha,$size")
+          done < stage/packages.txt
+          python3 scripts/update_index.py "${ARGS[@]}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/index.json
+          git commit -m "data: publica $TAG (${{ inputs.dataset_type }})" && git push

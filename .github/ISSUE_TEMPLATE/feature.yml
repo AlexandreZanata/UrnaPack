@@ -1,0 +1,14 @@
+name: Feature request
+description: Propor funcionalidade para o UrnaPack
+body:
+  - type: textarea
+    attributes:
+      label: Problema e proposta
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Ganho esperado e como medir (benchmark, bytes, tempo)
+  - type: textarea
+    attributes:
+      label: Impacto em formato/verificação (se houver)

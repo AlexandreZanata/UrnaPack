@@ -1,0 +1,7 @@
+# Pacotes de dados nunca entram no Git (vão para GitHub Releases).
+*.upk binary
+*.upk.zst binary
+*.zst binary
+
+# JSON de manifestos e índice: texto, LF sempre.
+*.json text eol=lf

@@ -1,0 +1,21 @@
+name: Bug report
+description: Reportar defeito no UrnaPack
+body:
+  - type: input
+    attributes:
+      label: Versão/commit
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Comportamento esperado vs observado
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reprodução (comandos + fixture mínima)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs relevantes

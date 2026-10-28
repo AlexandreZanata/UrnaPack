@@ -1,0 +1,54 @@
+name: release
+
+# Publica o executável tsepack. Tags de software: vX.Y.Z (nunca data-*).
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write # criar release + enviar assets
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: validar formato da tag (vX.Y.Z, sem misturar com data-*)
+        run: |
+          if [[ ! "${GITHUB_REF_NAME}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "tag inválida para release de software: ${GITHUB_REF_NAME} (esperado vX.Y.Z)"
+            exit 1
+          fi
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
+
+      - name: impedir publicação duplicada
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            echo "release ${GITHUB_REF_NAME} já existe — nunca sobrescrever. Suba nova versão."
+            exit 1
+          fi
+
+      - name: compilar
+        run: cargo build --release
+
+      - name: empacotar + SHA-256
+        run: |
+          BIN="tsepack-${GITHUB_REF_NAME}-x86_64-linux"
+          cp target/release/tsepack "dist-${BIN}"
+          mkdir -p dist
+          mv "dist-${BIN}" "dist/${BIN}"
+          (cd dist && sha256sum "${BIN}" > SHA256SUMS)
+          cat dist/SHA256SUMS
+
+      - name: publicar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes \
+            "dist/tsepack-${GITHUB_REF_NAME}-x86_64-linux" \
+            dist/SHA256SUMS
