@@ -29,5 +29,21 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      - name: detectar dependency graph
+        id: graph
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "repos/${{ github.repository }}/dependency-graph/sbom" --silent >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        if: steps.graph.outputs.enabled == 'true'
       - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0
+        if: steps.graph.outputs.enabled == 'true'
+      - name: aviso quando indisponível
+        if: steps.graph.outputs.enabled != 'true'
+        run: |
+          echo "::notice::Dependency graph desativado neste repositório; dependency-review pulado. Ative em Settings → Code security → Dependency graph."
