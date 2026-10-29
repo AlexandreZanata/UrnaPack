@@ -1,0 +1,39 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "eleitorado_local_votacao_2026.zip",
+  "finished_at_utc": "2026-10-29T12:04:18.048502+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 167493511,
+      "finished_at_utc": "2026-10-29T12:04:18.047458+00:00",
+      "http_head": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=93600",
+        "Cache-Control": "max-age=27484",
+        "Connection": "close",
+        "Content-Length": "167493511",
+        "Content-Type": "application/zip",
+        "Date": "Thu, 29 Oct 2026 12:00:59 GMT",
+        "ETag": "\"9fbbf87-65eae6ef5bf91\"",
+        "Last-Modified": "Sun, 25 Oct 2026 18:32:19 GMT"
+      },
+      "http_length_verification": "matched",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip",
+      "sha1": "9facb4d39ed21c6b0ce40f9a9faf38e62e7aefa1",
+      "sha256": "771ecfe5086b65c38943df9f694831dc5b94e0addd563517cd139fbd97642981",
+      "sha512": "86847bce0747ce491ef8b2d27a6630598ce92715059103f5e8efa42d2ba433740eb35cd0e58afa34920da5a6fefbfbf43d8fc1da9a6d88d3d2f8f412e3dadd10",
+      "started_at_utc": "2026-10-29T12:00:58.729707+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T12:00:58.725669+00:00"
+}

@@ -68,12 +68,21 @@ Esses votos por categoria e o comparecimento coincidem com o
 obtido do [servidor de resultados do TSE](https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json).
 O confronto é executável e reprova em caso de divergência.
 
-Isso reproduz os totais da capa. Não encerra, por si, a questão da cobertura
-de todas as categorias de seção do sistema de totalização: o objeto `s` do
-JSON nacional contém `ts=499248` e `si=499207`, enquanto a chave presidencial
-dos CSVs resulta em 499205. O objeto original foi mantido no confronto.
-A diferença de definições/registro precisa de conciliação própria; não foi
-preenchida com seções inventadas nem justificada por suposição.
+Isso reproduz os totais da capa. O objeto `s` do JSON nacional contém
+`ts=499248` e `si=499207`, enquanto a chave presidencial dos CSVs resulta em
+499205. A conciliação identificou no próprio BU web do exterior duas seções
+com cargo `-1` e zero comparecimento: Trípoli, município 30686, zona 1,
+seção 443 (30 aptos); Ciudad Guayana, município 29564, zona 1, seção 91
+(72 aptos). Essas chaves não duplicam seções presidenciais. Sua união dá
+**499.207** seções, **158.745.079** aptos e **30.509.005** abstenções,
+coincidindo com os campos correspondentes da totalização. O comparecimento
+permanece **128.236.074**. Todos os campos dos dois registros foram preservados.
+
+O [leiaute oficial EA20](https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/divulgacao-de-resultados/tse-ea20-arquivo-de-resultado-unificado)
+define `si` como seções instaladas; `sni=41` corresponde às não instaladas.
+O [confronto executável de cobertura](resultados/cobertura-secoes.json)
+documenta essa diferença de universo sem atribuir motivo ao comparecimento
+zero. A identificação nominal das 41 não instaladas exige o índice pertinente.
 
 Fontes computacionais: [entrada com hashes por membro](evidencias/entrada-buweb-2t.json),
 [inventário de todos os membros dos ZIPs](evidencias/membros-buweb.json),
@@ -209,6 +218,12 @@ classificar valores como anômalos. As quatro páginas não fornecem esse modelo
 
 A concentração rural, a classificação de presídios/assentamentos/comunidades
 e as hipóteses de coação não foram demonstradas pelo cálculo apresentado.
+O recurso oficial `eleitorado_local_votacao_2026.zip` foi obtido e seu
+dicionário preservado. Nesse leiaute, DS_SITU_LOCALIDADE descreve o estado
+do cadastro (ativo/inativo/desativado), não uma classificação rural/urbana.
+CD_TIPO_LOCAL distingue convencional, trânsito, preso provisório e temporário.
+Coordenadas do local de votação não bastam para caracterizar a residência dos
+eleitores. A classificação rural exige definição operacional e fonte própria.
 Exigem classificação geográfica e evidência própria. A ressalva das imagens
 de que os extremos, isoladamente, não provam fraude eletrônica deve ser
 mantida; a contagem não permite escolher entre causas sociais ou operacionais.
@@ -288,6 +303,8 @@ Pendências que impedem declarar a auditoria integral encerrada:
 - Verificar assinaturas digitais e cadeias dos arquivos de urna quando
   exigidas pela etapa correspondente; hashes não substituem essa verificação.
 - Conciliar as diferentes contagens de seção com os índices oficiais.
+  A diferença entre 499205 e 499207 já foi conciliada, inclusive aptos e
+  abstenções; permanece a identificação das 41 não instaladas.
 - Documentar fuso por seção/município e publicar análise temporal normalizada.
 - Verificar, com fonte geográfica adequada, a alegada concentração rural.
 - Obter os artefatos originais dos testes estatísticos e os documentos

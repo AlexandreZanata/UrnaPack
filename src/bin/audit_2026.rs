@@ -30,6 +30,9 @@ struct Args {
     manifest: PathBuf,
     #[arg(long)]
     output: PathBuf,
+    /// Exportação semântica por seção para confrontos com índices/locais/logs.
+    #[arg(long)]
+    sections_output: Option<PathBuf>,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -207,13 +210,6 @@ fn ingest<R: Read>(
             row.iter().all(|field| field.len() <= max_field),
             "MAX_FIELD_BYTES excedido"
         );
-        for index in [2, 5, 7, 8, 11, 13, 14, 16, 29] {
-            ensure!(
-                !row[index].is_empty() && row[index].iter().all(u8::is_ascii_digit),
-                "identificador não numérico em {}",
-                BWEB_HEADER[index]
-            );
-        }
         ensure!(
             ascii(&row, 2)? == "2026" && ascii(&row, 7)? == "2" && ascii(&row, 10)? == uf,
             "ano/turno/UF divergente"
@@ -222,6 +218,13 @@ fn ingest<R: Read>(
         if cargo != "1" {
             *excluded.entry(cargo.to_owned()).or_default() += 1;
             continue;
+        }
+        for index in [2, 5, 7, 8, 11, 13, 14, 16, 29] {
+            ensure!(
+                !row[index].is_empty() && row[index].iter().all(u8::is_ascii_digit),
+                "identificador não numérico em {}",
+                BWEB_HEADER[index]
+            );
         }
         ensure!(
             ascii(&row, 5)? == "3221" && ascii(&row, 8)? == "6258",
@@ -353,7 +356,7 @@ fn extremes_add(out: &mut Extremes, lula: u64, flavio: u64) {
 
 fn report(
     inputs: Vec<Input>,
-    sections: HashMap<String, Section>,
+    sections: &HashMap<String, Section>,
     records: u64,
     excluded: BTreeMap<String, u64>,
 ) -> Result<Report> {
@@ -377,18 +380,18 @@ fn report(
     let (mut x, mut y, mut groups) = (Vec::new(), Vec::new(), Vec::new());
     let mut municipal: BTreeMap<String, (f64, f64, usize)> = BTreeMap::new();
     // Ordem estável torna o relatório reproduzível inclusive nos floats.
-    let mut ordered: Vec<_> = sections.into_iter().collect();
-    ordered.sort_by(|a, b| a.0.cmp(&b.0));
+    let mut ordered: Vec<_> = sections.iter().collect();
+    ordered.sort_by(|a, b| a.0.cmp(b.0));
     for (key, section) in ordered {
         ensure!(
             section.votes.values().sum::<u64>() == section.turnout,
             "soma votos != comparecimento em {key}"
         );
-        out.presidential.add(&section);
+        out.presidential.add(section);
         out.by_uf
             .entry(section.uf.clone())
             .or_default()
-            .add(&section);
+            .add(section);
         let lula = *section.votes.get("13").unwrap_or(&0);
         let flavio = *section.votes.get("22").unwrap_or(&0);
         extremes_add(&mut out.extremes, lula, flavio);
@@ -434,7 +437,7 @@ fn report(
             out.raw_clock_windows
                 .entry(window.to_owned())
                 .or_default()
-                .add(&section);
+                .add(section);
             let minute_window = if seconds < 17 * 3600 + 60 {
                 "ate_17h00m59s"
             } else if seconds < 17 * 3600 + 16 * 60 {
@@ -447,15 +450,15 @@ fn report(
             out.raw_minute_windows
                 .entry(minute_window.to_owned())
                 .or_default()
-                .add(&section);
+                .add(section);
             if seconds > 19 * 3600 {
-                out.raw_strict_after_19.add(&section);
+                out.raw_strict_after_19.add(section);
             }
             if seconds >= 19 * 3600 {
                 out.raw_after_19_by_uf
                     .entry(section.uf.clone())
                     .or_default()
-                    .add(&section);
+                    .add(section);
             }
         } else {
             out.closing_missing += 1;
@@ -475,11 +478,92 @@ fn report(
     Ok(out)
 }
 
+fn publish_file(
+    path: &std::path::Path,
+    write: impl FnOnce(&mut std::fs::File) -> Result<()>,
+) -> Result<()> {
+    use std::io::Write;
+    ensure!(!path.exists(), "saída existente; bytes preservados");
+    let mut name = path
+        .file_name()
+        .context("saída sem nome de arquivo")?
+        .to_os_string();
+    name.push(format!(".partial-{}", std::process::id()));
+    let partial = path.with_file_name(name);
+    let mut file = std::fs::OpenOptions::new()
+        .write(true)
+        .create_new(true)
+        .open(&partial)?;
+    write(&mut file).with_context(|| format!("parcial preservado: {}", partial.display()))?;
+    file.flush()?;
+    file.sync_all()?;
+    drop(file);
+    // hard_link cria o destino sem sobrescrever arquivo surgido durante a escrita.
+    std::fs::hard_link(&partial, path)?;
+    std::fs::remove_file(partial)?;
+    Ok(())
+}
+
+fn write_sections(path: &std::path::Path, sections: &HashMap<String, Section>) -> Result<()> {
+    publish_file(path, |file| {
+        let mut writer = csv::Writer::from_writer(file);
+        writer.write_record([
+            "ANO_ELEICAO",
+            "CD_PLEITO",
+            "CD_ELEICAO",
+            "NR_TURNO",
+            "SG_UF",
+            "CD_MUNICIPIO",
+            "NR_ZONA",
+            "NR_SECAO",
+            "CD_CARGO_PERGUNTA",
+            "NR_LOCAL_VOTACAO",
+            "NR_URNA_EFETIVADA",
+            "DT_ENCERRAMENTO",
+            "CD_TIPO_URNA",
+            "QT_APTOS",
+            "QT_COMPARECIMENTO",
+            "QT_ABSTENCOES",
+            "QT_ELEI_BIOM_SEM_HABILITACAO",
+            "VOTOS_13",
+            "VOTOS_22",
+            "VOTOS_BRANCOS",
+            "VOTOS_NULOS",
+        ])?;
+        let mut ordered: Vec<_> = sections.iter().collect();
+        ordered.sort_by(|a, b| a.0.cmp(b.0));
+        for (key, section) in ordered {
+            let mut row: Vec<String> = key.split('/').map(str::to_owned).collect();
+            for index in [6, 7, 15, 4] {
+                row.push(std::str::from_utf8(&section.context[index])?.to_owned());
+            }
+            row.extend([
+                std::str::from_utf8(&section.context[1])?.to_owned(),
+                section.turnout.to_string(),
+                std::str::from_utf8(&section.context[3])?.to_owned(),
+                section.biometric.to_string(),
+            ]);
+            for candidate in ["13", "22", "95", "96"] {
+                row.push(section.votes.get(candidate).unwrap_or(&0).to_string());
+            }
+            writer.write_record(row)?;
+        }
+        writer.flush()?;
+        Ok(())
+    })
+}
+
 fn run(args: Args) -> Result<()> {
     ensure!(
         !args.output.exists(),
         "saída já existe; preservar relatório anterior"
     );
+    if let Some(path) = &args.sections_output {
+        ensure!(
+            !path.exists() && path != &args.output,
+            "saída de seções existente ou igual ao relatório"
+        );
+    }
     let manifest: Manifest = serde_json::from_reader(std::fs::File::open(args.manifest)?)?;
     ensure!(
         manifest.format_version == 1,
@@ -521,12 +605,14 @@ fn run(args: Args) -> Result<()> {
             input.path.display()
         );
     }
-    let result = report(manifest.inputs, sections, records, excluded)?;
-    let mut dest = std::fs::OpenOptions::new()
-        .write(true)
-        .create_new(true)
-        .open(args.output)?;
-    serde_json::to_writer_pretty(&mut dest, &result)?;
+    let result = report(manifest.inputs, &sections, records, excluded)?;
+    if let Some(path) = &args.sections_output {
+        write_sections(path, &sections)?;
+    }
+    publish_file(&args.output, |dest| {
+        serde_json::to_writer_pretty(dest, &result)?;
+        Ok(())
+    })?;
     Ok(())
 }
 
@@ -537,6 +623,84 @@ fn main() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn failed_publication_keeps_partial_without_final_file() {
+        use std::io::Write;
+        let temp = tempfile::tempdir().unwrap();
+        let path = temp.path().join("failed.csv");
+        assert!(publish_file(&path, |file| {
+            file.write_all(&include_bytes!("../../tests/fixtures/audit-2026/synthetic.csv")[..7])?;
+            anyhow::bail!("falha deliberada de teste")
+        })
+        .is_err());
+        assert!(!path.exists());
+        assert_eq!(std::fs::read_dir(temp.path()).unwrap().count(), 1);
+    }
+
+    #[test]
+    fn section_export_preserves_keys_and_counts_once() {
+        let mut sections = HashMap::new();
+        ingest(
+            &include_bytes!("../../tests/fixtures/audit-2026/synthetic.csv")[..],
+            "MT",
+            &mut sections,
+            &mut 0,
+            &mut BTreeMap::new(),
+        )
+        .unwrap();
+        let temp = tempfile::tempdir().unwrap();
+        let path = temp.path().join("sections.csv");
+        write_sections(&path, &sections).unwrap();
+        let mut reader = csv::Reader::from_path(&path).unwrap();
+        let header = reader.headers().unwrap().clone();
+        let turnout = header
+            .iter()
+            .position(|h| h == "QT_COMPARECIMENTO")
+            .unwrap();
+        let records = reader.records().collect::<Result<Vec<_>, _>>().unwrap();
+        assert_eq!(records.len(), 2);
+        assert_eq!(
+            records
+                .iter()
+                .map(|r| r[turnout].parse::<u64>().unwrap())
+                .sum::<u64>(),
+            103
+        );
+        let before = std::fs::read(&path).unwrap();
+        assert!(write_sections(&path, &sections).is_err());
+        assert_eq!(std::fs::read(path).unwrap(), before);
+    }
+
+    #[test]
+    fn out_of_scope_negative_cargo_is_counted_without_losing_presidential_rows() {
+        let fixture = include_bytes!("../../tests/fixtures/audit-2026/synthetic.csv");
+        let mut reader = ReaderBuilder::new()
+            .delimiter(b';')
+            .from_reader(&fixture[..]);
+        let header = reader.byte_headers().unwrap().clone();
+        let rows = reader
+            .byte_records()
+            .collect::<Result<Vec<_>, _>>()
+            .unwrap();
+        let mut out = csv::WriterBuilder::new()
+            .delimiter(b';')
+            .from_writer(Vec::new());
+        out.write_byte_record(&header).unwrap();
+        for row in &rows {
+            out.write_byte_record(row).unwrap();
+        }
+        let mut fields: Vec<Vec<u8>> = rows[0].iter().map(<[u8]>::to_vec).collect();
+        fields[16] = b"-1".to_vec();
+        fields[29] = b"-1".to_vec();
+        out.write_record(fields).unwrap();
+        let bytes = out.into_inner().unwrap();
+        let (mut sections, mut records, mut excluded) = (HashMap::new(), 0, BTreeMap::new());
+        ingest(&bytes[..], "MT", &mut sections, &mut records, &mut excluded).unwrap();
+        assert_eq!(records, 5);
+        assert_eq!(sections.len(), 2);
+        assert_eq!(excluded.get("-1"), Some(&1));
+    }
 
     #[test]
     fn exact_boundaries_and_bad_date() {

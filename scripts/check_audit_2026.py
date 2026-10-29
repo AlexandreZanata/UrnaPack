@@ -85,7 +85,7 @@ def check(report, official):
               report["extremes"]["above_90_" + number], "desigualdade estrita: 10*votos > 9*válidos; >=90% publicado separadamente")
     return {"format_version": 1, "bu_vs_totalization": "matched_votes_and_turnout",
             "section_count_note": {"BU_presidential_keys": observed["sections"], "official_s_object": official["s"],
-                                   "status": "contagens conceitualmente distintas; diferença em s.si requer conciliação própria"},
+                                   "status": "universo presidencial; conciliação geográfica ampliada documentada em cobertura-secoes.json"},
             "numeric_assertions": assertions,
             "derived": {"early_flavio_margin_through_17_00_59": early["votes"]["22"]-early["votes"]["13"],
                         "lula_margin_after_17_00_59_known_closing": sum(v["votes"].get("13",0)-v["votes"].get("22",0) for k,v in minute.items() if k != "ate_17h00m59s"),

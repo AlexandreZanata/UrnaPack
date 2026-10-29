@@ -83,11 +83,19 @@ python3 scripts/prepare_audit_2026.py \
 cargo build --release --bin audit_2026
 target/release/audit_2026 \
   --manifest /tmp/urnapack-audit-input.json \
-  --output /tmp/urnapack-audit-result.json
+  --output /tmp/urnapack-audit-result.json \
+  --sections-output /data/urnapack/auditoria-2026/secoes-presidente-2t-repeticao.csv
 python3 scripts/check_audit_2026.py \
   --report /tmp/urnapack-audit-result.json \
   --official auditoria/2026/evidencias/totalizacao-presidente-2t.json \
   --output /tmp/urnapack-audit-comparison.json
+python3 scripts/reconcile_coverage_2026.py \
+  --sections /data/urnapack/auditoria-2026/secoes-presidente-2t-repeticao.csv \
+  --export-receipt auditoria/2026/evidencias/exportacao-secoes-v1.json \
+  --source-manifest /tmp/urnapack-audit-input.json \
+  --report /tmp/urnapack-audit-result.json \
+  --official auditoria/2026/evidencias/totalizacao-presidente-2t.json \
+  --output /tmp/urnapack-cobertura-repeticao.json
 ```
 
 O binário preserva saídas existentes; escolha um caminho ainda inexistente.
@@ -99,6 +107,7 @@ A transformação analítica está documentada em `spec/audit-2026-v1.md`.
 python3 -m unittest discover -s scripts -p 'test_acquire_2026.py' -v
 python3 -m unittest discover -s scripts -p 'test_check_audit_2026.py' -v
 python3 -m unittest discover -s scripts -p 'test_prepare_audit_2026.py' -v
+python3 -m unittest discover -s scripts -p 'test_reconcile_coverage_2026.py' -v
 cargo test --bin audit_2026 --test audit_2026
 ```
 

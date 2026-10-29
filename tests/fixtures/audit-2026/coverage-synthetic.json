@@ -1,0 +1,44 @@
+{
+  "fixture_kind": "synthetic-not-TSE",
+  "rows": [
+    {
+      "SG_UF": "MT",
+      "CD_MUNICIPIO": "1",
+      "NR_ZONA": "1",
+      "NR_SECAO": "1",
+      "QT_APTOS": "100",
+      "QT_COMPARECIMENTO": "90",
+      "QT_ABSTENCOES": "10"
+    }
+  ],
+  "sentinels": [
+    {
+      "SG_UF": "ZZ",
+      "CD_MUNICIPIO": "2",
+      "NR_ZONA": "1",
+      "NR_SECAO": "1",
+      "CD_CARGO_PERGUNTA": "-1",
+      "QT_APTOS": "10",
+      "QT_COMPARECIMENTO": "0",
+      "QT_ABSTENCOES": "10",
+      "QT_VOTOS": "0",
+      "NM_MUNICIPIO": "FIXTURE SINTÉTICA"
+    }
+  ],
+  "report": {
+    "presidential": {
+      "sections": 1,
+      "turnout": 90
+    }
+  },
+  "official": {
+    "s": {
+      "si": "2",
+      "sni": "0"
+    },
+    "e": {
+      "esi": "110",
+      "a": "20"
+    }
+  }
+}

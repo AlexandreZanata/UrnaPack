@@ -32,6 +32,9 @@ habilitada <= comparecimento; soma de todos os votos do cargo=comparecimento.
 Limites são lidos exclusivamente de `scripts/limits.env`.
 Contagens individuais de seção são inteiros u32; acumuladores nacionais são
 u64. Identificadores numéricos são validados sem retirar zeros à esquerda.
+Essa validação de identificadores ocorre dentro do recorte presidencial;
+sentinelas de outros cargos, como `CD_CARGO_PERGUNTA=-1`, são contadas no
+universo excluído antes dessa validação, sem perder o registro original.
 
 ## Agregações
 
@@ -63,6 +66,20 @@ JSON contém fontes, controles implícitos na aceitação, totais, UFs, janelas,
 extremos, correlações, histogramas e limitações. Saída preexistente não é
 sobrescrita. Qualquer falha de integridade, layout, universo ou controle gera
 exit diferente de zero, sem publicar relatório de sucesso.
+As saídas são escritas em parcial, sincronizadas e publicadas sem sobrescrever
+destino existente. Falha de escrita preserva o parcial sem criar um final.
+
+`--sections-output` exporta uma projeção semântica CSV v1 de uma linha por
+seção presidencial, ordenada pela chave: identificadores da chave original,
+local, número da urna, encerramento original, tipo de urna, aptos,
+comparecimento, abstenções, contagem biométrica e votos 13/22/brancos/nulos.
+Categoria ausente tem zero nesta projeção, após verificar que a soma de todos
+os votos do cargo iguala comparecimento. Não é restauração do CSV original.
+O recibo externo registra bytes/SHA-256 e o manifesto de fontes utilizado.
+`scripts/reconcile_coverage_2026.py` confere esse hash e relê o CSV ZZ original
+com seu hash para localizar sentinelas; exige chaves distintas e concilia
+seções instaladas, aptos e abstenções com o JSON nacional. Zeros à esquerda
+são normalizados apenas para a junção semântica, com colisões reprovadas.
 
 `scripts/check_audit_2026.py` confronta categorias e comparecimento com o JSON
 oficial de totalização. Divergência com totalização é erro; divergência com

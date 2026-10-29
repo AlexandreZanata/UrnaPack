@@ -22,5 +22,12 @@
     "sha256": "f28e8aab0e2299082325b18ae44029eaa4cac30a24992f97a4aee357c88fe323",
     "local_mtime_utc": "2026-10-29T11:24:30.474020+00:00",
     "scope": "bytes obtidos por curl HTTPS; sem assinatura digital verificada; mtime local não é data de publicação"
+  },
+  {
+    "file": "leiame-locais-votacao.pdf",
+    "source": "membro leiame.pdf do ZIP oficial eleitorado_local_votacao_2026.zip",
+    "bytes": 336489,
+    "sha256": "f13dc50e0c1cd81a97c4f222bd427e84353b2d01dbecedbaec8185e6545e67fd",
+    "scope": "bytes do membro preservados; cabeçalhos CSV normalizam espaços dos nomes de campos do PDF para underscore"
   }
 ]

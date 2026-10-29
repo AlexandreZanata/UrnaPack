@@ -30,6 +30,13 @@ class Response(io.BytesIO):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_fixture_hashes_are_recomputed(self):
+        metadata = json.loads((FIXTURE.parent / "hashes.json").read_text())
+        for name, expected in metadata.items():
+            body = (FIXTURE.parent / name).read_bytes()
+            self.assertEqual(len(body), expected["bytes"])
+            self.assertEqual(hashlib.sha256(body).hexdigest(), expected["sha256"])
+
     def opener(self, body, unknown=False):
         def open_response(request, timeout):
             headers = {"ETag": '"fixture"'}
