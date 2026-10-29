@@ -1,0 +1,267 @@
+{
+  "bu_vs_totalization": "matched_votes_and_turnout",
+  "derived": {
+    "biometric_to_margin_ratio": "1.948558877032615523800215386",
+    "early_flavio_margin_through_17_00_59": 1747639,
+    "lula_margin_after_17_00_59_known_closing": 6177738,
+    "turnout_since_17_16": 2533073,
+    "turnout_without_closing_time": 831
+  },
+  "format_version": 1,
+  "inputs_sha256": {
+    "auditoria/2026/evidencias/totalizacao-presidente-2t.json": "67fae708b0c7977fc9847d36100c63313621bff971178c48f2da99969707c263",
+    "auditoria/2026/resultados/presidente-2t.json": "bd66c2174428150b7fb885d5d13817d98e56459150bf691468c376a29f68a59a"
+  },
+  "numeric_assertions": [
+    {
+      "claim": "Seções processadas",
+      "claimed": 499205,
+      "id": "N01",
+      "method": "chave completa de seção/cargo/eleição; não linhas CSV",
+      "observed": 499205,
+      "page": 1,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Votos apurados",
+      "claimed": 128236074,
+      "id": "N02",
+      "method": "soma dos votos de todos os tipos presidenciais; confronto com JSON nacional",
+      "observed": 128236074,
+      "page": 1,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Flávio com 52,39% até 17h00",
+      "claimed": "52.39",
+      "id": "N03",
+      "method": "inclui o minuto inteiro, até 17:00:59; sem ajuste de fuso",
+      "observed": "52.39",
+      "page": 2,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h01m00s_ate_17h15m59s: seções",
+      "claimed": 339593,
+      "id": "N04a",
+      "method": "horário lexical, fronteiras explícitas",
+      "observed": 339593,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h01m00s_ate_17h15m59s: eleitores",
+      "claimed": 88071750,
+      "id": "N04b",
+      "method": "comparecimento somado uma vez por seção presidencial",
+      "observed": 88071750,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h01m00s_ate_17h15m59s: % Lula",
+      "claimed": "53.46",
+      "id": "N04c",
+      "method": "votos 13 / (13+22), arredondado a duas casas",
+      "observed": "53.46",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h16m00s_ate_18h59m59s: seções",
+      "claimed": 2472,
+      "id": "N05a",
+      "method": "horário lexical, fronteiras explícitas",
+      "observed": 2472,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h16m00s_ate_18h59m59s: eleitores",
+      "claimed": 674799,
+      "id": "N05b",
+      "method": "comparecimento somado uma vez por seção presidencial",
+      "observed": 674799,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "17h16m00s_ate_18h59m59s: % Lula",
+      "claimed": "57.16",
+      "id": "N05c",
+      "method": "votos 13 / (13+22), arredondado a duas casas",
+      "observed": "57.16",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Após 19h: seções (corte >=19:00:00)",
+      "claimed": 6333,
+      "id": "N06a",
+      "method": ">=19:00:00; cenário >19:00:00 também publicado no relatório Rust",
+      "observed": 6342,
+      "page": 3,
+      "status": "não reproduzido nesta definição"
+    },
+    {
+      "claim": "Após 19h: eleitores (corte >=19:00:00)",
+      "claimed": 1856306,
+      "id": "N06b",
+      "method": "comparecimento de todas as seções nesse corte",
+      "observed": 1858274,
+      "page": 3,
+      "status": "não reproduzido nesta definição"
+    },
+    {
+      "claim": "BA: seções desde 19h",
+      "claimed": 936,
+      "id": "N07-BAa",
+      "method": ">=19:00:00 lexical",
+      "observed": 936,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "BA: % Lula",
+      "claimed": "72.31",
+      "id": "N07-BAb",
+      "method": "votos válidos, não comparecimento total",
+      "observed": "72.31",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "PE: seções desde 19h",
+      "claimed": 657,
+      "id": "N07-PEa",
+      "method": ">=19:00:00 lexical",
+      "observed": 657,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "PE: % Lula",
+      "claimed": "65.70",
+      "id": "N07-PEb",
+      "method": "votos válidos, não comparecimento total",
+      "observed": "65.70",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "MA: % Lula",
+      "claimed": "83.31",
+      "id": "N07-MAb",
+      "method": "votos válidos, não comparecimento total",
+      "observed": "83.31",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "SP: seções desde 19h",
+      "claimed": 1571,
+      "id": "N07-SPa",
+      "method": ">=19:00:00 lexical",
+      "observed": 1571,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "SP: % Lula",
+      "claimed": "57.46",
+      "id": "N07-SPb",
+      "method": "votos válidos, não comparecimento total",
+      "observed": "57.46",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Eleitores com biometria não habilitados por ela",
+      "claimed": 8632488,
+      "id": "N08",
+      "method": "QT_ELEI_BIOM_SEM_HABILITACAO uma vez por seção presidencial",
+      "observed": 8632488,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "6,73% do comparecimento",
+      "claimed": "6.73",
+      "id": "N09",
+      "method": "eleitores / comparecimento, não votos de candidato",
+      "observed": "6.73",
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Margem final",
+      "claimed": 4430191,
+      "id": "N10",
+      "method": "votos nominais 13 menos votos nominais 22",
+      "observed": 4430191,
+      "page": 3,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "100% válidos, candidato 13",
+      "claimed": 106,
+      "id": "N11-13",
+      "method": "válidos >0 e votos do candidato == válidos",
+      "observed": 106,
+      "page": 4,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Mais de 90%, candidato 13",
+      "claimed": 6899,
+      "id": "N12-13",
+      "method": "desigualdade estrita: 10*votos > 9*válidos; >=90% publicado separadamente",
+      "observed": 6816,
+      "page": 4,
+      "status": "não reproduzido nesta definição"
+    },
+    {
+      "claim": "100% válidos, candidato 22",
+      "claimed": 4,
+      "id": "N11-22",
+      "method": "válidos >0 e votos do candidato == válidos",
+      "observed": 4,
+      "page": 4,
+      "status": "reproduzido"
+    },
+    {
+      "claim": "Mais de 90%, candidato 22",
+      "claimed": 384,
+      "id": "N12-22",
+      "method": "desigualdade estrita: 10*votos > 9*válidos; >=90% publicado separadamente",
+      "observed": 378,
+      "page": 4,
+      "status": "não reproduzido nesta definição"
+    }
+  ],
+  "section_count_note": {
+    "BU_presidential_keys": 499205,
+    "official_s_object": {
+      "psa": "100,00",
+      "psan": "100",
+      "psi": "99,99",
+      "psin": "99,991787649",
+      "psna": "0,00",
+      "psnan": "0",
+      "psni": "0,01",
+      "psnin": "0,008212351",
+      "psnt": "0,00",
+      "psntn": "0",
+      "pst": "100,00",
+      "pstn": "100",
+      "sa": "499207",
+      "si": "499207",
+      "sna": "0",
+      "sni": "41",
+      "snt": "0",
+      "st": "499248",
+      "ts": "499248"
+    },
+    "status": "contagens conceitualmente distintas; diferença em s.si requer conciliação própria"
+  }
+}

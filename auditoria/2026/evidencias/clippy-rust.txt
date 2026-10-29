@@ -1,0 +1,2 @@
+    Checking tsepack v0.2.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/UrnaPack)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.84s

@@ -1,0 +1,10 @@
+test_bad_zip_hash_is_rejected (test_prepare_audit_2026.PreparationTests.test_bad_zip_hash_is_rejected) ... ok
+test_incomplete_coverage_cannot_produce_national_manifest (test_prepare_audit_2026.PreparationTests.test_incomplete_coverage_cannot_produce_national_manifest) ... preparado MT: 1613 bytes CSV
+ok
+test_unchanged_member_bytes_and_inventory (test_prepare_audit_2026.PreparationTests.test_unchanged_member_bytes_and_inventory) ... preparado MT: 1613 bytes CSV
+ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK

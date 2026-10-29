@@ -1,0 +1,113 @@
+{
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 337580733,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_BA_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_BA_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "2da14ba284381f28e6538c9822b3615535be7d40",
+      "sha256": "374248b950dd9581785b7ebb1a8e66d22c1da717d74b899e96cc34a0be9e372b",
+      "sha512": "e6b0c2ab220574bdd4f38a8670278229ff4ef117a5b6230e9843509990965ae676ff9a4cbb594b65bd7d3c34188e0a2695fe79d6987995fd3408d9a8943d204b"
+    },
+    {
+      "bytes": 158258794,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_GO_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_GO_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "09fc8597e588050e8b551bc8a199168e977112d0",
+      "sha256": "1b2c46b42e4b7df64b5b153ff7a75fac297886365e2a5118b578d90a79f4d6c6",
+      "sha512": "b879c4ced35fcb5540b3baff27e3ee93c42fc03405d7bc8da6a649a2ac76f454e1e0d64552a4f3ce14d0d2da76a14355c4ddadb836bfc783cc7796c13c1881bd"
+    },
+    {
+      "bytes": 204319446,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_MA_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MA_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "b56293831dfd3eabe7d37eb407673a98a1e4fe80",
+      "sha256": "8fa87ea24a3d0d86e8ebe2419d216c44a59ded811698a67dac2a0fadf1a8826f",
+      "sha512": "a970d6b58a87caa44747dde71a04febe80b9179182731f3d24043a85230ecd4c8ab8a77a68e788210215d844efb42a7d3c887015cf73e6b7d352bd46d080885c"
+    },
+    {
+      "bytes": 521812637,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_MG_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MG_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "c2acfe2187fd63ad5df182ac3e6d59025b55d3a7",
+      "sha256": "37ec3ca6b24abad7753af5a46cda12469689ce438dcf5cc1d3c916b28579fe98",
+      "sha512": "0f50bcd774e75b674ddd50564fd04c2775cd3f1055f06ae7ca680aff7b1c379492ba6fc603a6c8b41213296da5ae7784f7d68e59ac0b0c610ccb18e407385889"
+    },
+    {
+      "bytes": 53027178,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_MS_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MS_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "f00c60edd520b146039f0cc8652a3e708483fc97",
+      "sha256": "55fb0bf6c89ecf55572752d493440e55adc9fc3a3ab9f959e0f54a32d25ec23e",
+      "sha512": "67737fef734030d90a8d852bb2727732e02a9b43a556204743cd3b58b8f340d34e2edf6281134bc7a721057418279f1b49f3584459e1cfdc6ee327ec9b89d673"
+    },
+    {
+      "bytes": 206020711,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_PE_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_PE_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "33382730d8954c41476d50cb14bce8573a1b3333",
+      "sha256": "5342f702af3804f9c1b56e934bc5d0ad510147eb32031e9a29d99158eed82179",
+      "sha512": "380b074fa426b162aab81e9806acfd45d594e83c9539e6842b50db41afed06ba9b152f50b00ac76135fcf2008c7f1f08ba25dc804ecc4e06f5c5ff026c68a025"
+    },
+    {
+      "bytes": 271295434,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_PR_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_PR_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "8dc5adec59460158ca922daab2a86fa5689daa83",
+      "sha256": "12a9d20f545654430f6f5f04401563e04edaf763c42e528134449e364737e233",
+      "sha512": "21e84b3c64025956e534515c6d759f664c09fc5f20cfb74af1bb1409f990427098420161cc006b0a960b3cbad329ffac4ebded9fe40d8a06d3b02b7c1a052d79"
+    },
+    {
+      "bytes": 449839104,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_RJ_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_RJ_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "1bbdd19acd64a68814f7fd85e0e2a54e97d36755",
+      "sha256": "b4e6e6136eda0f116176ad12f5103209b8cba066c2b7d61440c5c10b22dc60ec",
+      "sha512": "38c16deed1e59af8f9f62d3f15560e81fb8359d2f8f27f0405c76db2ce12991481879b6793b0e5bbae8c056afbe1ec6d8b5607178dd01267032dc3126c457842"
+    },
+    {
+      "bytes": 271908352,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_RS_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_RS_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "69c068d327520fed0405b6a7c4a5501a6192cc05",
+      "sha256": "21030a61989a585ae392d8bc0ccf8fd8e5f11fa2a93992daa3d0570544ce4e93",
+      "sha512": "d7697892b6f9e067e85fe442cf04119e92b4c29113525c14d9da2f71b6e2510a08daa520a20e5f27590e5acf1de9070fa672f4dabaf2b363522f1c6a1a53aee1"
+    },
+    {
+      "bytes": 154226908,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_SC_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_SC_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "85a0afb27781deea8723b68f174e83672ca45262",
+      "sha256": "90aad819676c6136f67f895511a6572fbc2dd7a79f7341d4f29be8d3e093f23c",
+      "sha512": "18789fa6e3780786df373093fde4463a929c03c021b76fef2b146d17582c3244dd367bd27d8463f0d71587a0c25355cfb7f439ff4f5ef147986dbb5c2cb26892"
+    },
+    {
+      "bytes": 47980538,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_SE_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_SE_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "70944172752964b78ae0ca0b68ab8ed02e8fdc9d",
+      "sha256": "95558d6d2c0e69c1bd18f9179c625e33ab38a728336c247f81aef7b43ffa3d74",
+      "sha512": "c53f661ed1b945f230399f0487e4deeeca7e996fb058714049993221cc6091b0fb9eedb8ce0c6fe968ae69908429d80c6d946e1f2c93b93a9d489614e51b0216"
+    },
+    {
+      "bytes": 152043520,
+      "preserved_path": "/data/urnapack/auditoria-2026/quarentena/concorrencia-primeiras-tentativas/bweb_1t_SP_051020261403.zip.partial",
+      "previous_path": "/data/urnapack/auditoria-2026/fontes/cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_SP_051020261403.zip.partial",
+      "reason": "sobreposição de tentativas de aquisição; prefixo parcial não confiável para retomada; nunca usado na análise",
+      "sha1": "be3b8deec8b799312d63f43bfa424a4a2745a744",
+      "sha256": "f04d5dfd390087e0f69a70c3d813fbd4e3dc413cf4174ec30c55360517eb088c",
+      "sha512": "295b5ae2baa07c8c1144e004a0fba9a06f423b682c17bae40e10fa734b2f92eb8b0851a3c887d75de0dbe0f141f578773c4890aaf0294af6e289ab48ad07da96"
+    }
+  ]
+}

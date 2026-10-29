@@ -1,0 +1,26 @@
+[
+  {
+    "file": "totalizacao-presidente-2t.json",
+    "source_url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json",
+    "bytes": 3233,
+    "sha256": "67fae708b0c7977fc9847d36100c63313621bff971178c48f2da99969707c263",
+    "local_mtime_utc": "2026-10-29T11:19:34.839383+00:00",
+    "scope": "bytes obtidos por curl HTTPS; sem assinatura digital verificada; mtime local não é data de publicação"
+  },
+  {
+    "file": "municipios-2t.json",
+    "source_url": "https://resultados.tse.jus.br/oficial/ele2026/6258/config/mun-e006258-cm.json",
+    "bytes": 534026,
+    "sha256": "e4a2f2d45bac325f486e1866973fd65ae86744896d0f19e791b0bbb58d86e839",
+    "local_mtime_utc": "2026-10-29T11:19:35.513258+00:00",
+    "scope": "bytes obtidos por curl HTTPS; sem assinatura digital verificada; mtime local não é data de publicação"
+  },
+  {
+    "file": "web/nota-pf.html",
+    "source_url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/10/nota-a-imprensa-3",
+    "bytes": 116406,
+    "sha256": "f28e8aab0e2299082325b18ae44029eaa4cac30a24992f97a4aee357c88fe323",
+    "local_mtime_utc": "2026-10-29T11:24:30.474020+00:00",
+    "scope": "bytes obtidos por curl HTTPS; sem assinatura digital verificada; mtime local não é data de publicação"
+  }
+]
