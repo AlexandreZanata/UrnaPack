@@ -9,6 +9,11 @@ import sys
 import tempfile
 import unittest
 import zipfile
+from unittest.mock import patch
+from contextlib import redirect_stdout
+import io
+import package_buweb_audit_2026 as package_module
+from validate import load_limits
 
 REPO = Path(__file__).resolve().parents[1]
 FIXTURE = REPO / "tests/fixtures/audit-2026/synthetic.csv"
@@ -47,6 +52,19 @@ class PackageTests(unittest.TestCase):
                 for name, expected_member in report["bundle_members"].items():
                     restored = bundle.read(name)
                     self.assertEqual(hashlib.sha256(restored).hexdigest(), expected_member["sha256"])
+            inside = source/"nested-output"
+            refused = run(inside)
+            self.assertNotEqual(refused.returncode, 0)
+            self.assertFalse(inside.exists())
+            self.assertIn("dentro da origem recusada", refused.stderr)
+            limited = root/"limited"
+            argv = ["package_buweb_audit_2026.py", "--input", str(source), "--expected-manifest", str(expected),
+                "--output", str(limited), "--binary", str(binary), "--method", "zstd-3", "--source", "fixture-sintetica-nao-TSE"]
+            with patch.object(sys, "argv", argv), patch.object(package_module, "load_limits", return_value=dict(load_limits(REPO), MAX_RELEASE_ASSET_BYTES=1)), redirect_stdout(io.StringIO()):
+                self.assertEqual(package_module.main(), 1)
+            self.assertFalse((limited/"buweb-csv-comprimido.zip").exists())
+            self.assertTrue((limited/"buweb-csv-comprimido.zip.partial").exists())
+            self.assertIn("limite centralizado",json.loads((limited/"package-run.json").read_text())["error"])
             shutil.copyfile(FIXTURE, source/"extra.csv")
             bad = root/"bad"
             result = run(bad)

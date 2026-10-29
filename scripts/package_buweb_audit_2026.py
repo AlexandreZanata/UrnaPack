@@ -47,6 +47,8 @@ def main():
     limits = load_limits(Path(__file__).resolve().parents[1])
     if min(limits["IO_BUFFER_BYTES"], limits["MAX_RELEASE_ASSET_BYTES"]) <= 0:
         raise ValueError("limites de buffer/asset inválidos")
+    if args.output.resolve().is_relative_to(args.input.resolve()):
+        raise ValueError("saída dentro da origem recusada antes de criar arquivos")
     args.output.mkdir(parents=True, exist_ok=False)
     commands = []
     receipt = {"format_version": 1, "success": False, "commands": commands,

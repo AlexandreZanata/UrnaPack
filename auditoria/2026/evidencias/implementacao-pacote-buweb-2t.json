@@ -1,4 +1,5 @@
 {
+  "automation_revision": "1787e7ca42a6b357d94b8ae372f8c87ebf68ac4c",
   "files": {
     "scripts/package_buweb_audit_2026.py": {
       "bytes": 7966,
@@ -6,5 +7,5 @@
     }
   },
   "format_version": 1,
-  "scope": "Implementação presente durante a execução que gerou pacote-buweb-2t-csv.json; snapshot será vinculado pela revisão Git de publicação."
+  "scope": "Implementação utilizada na geração do primeiro asset; bytes da implementação preservados na revisão Git informada. O binário Rust possui recibo próprio de compilação."
 }

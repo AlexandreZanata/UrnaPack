@@ -12,8 +12,19 @@ if [[ -e "$run_root" ]]; then
   echo "diretório de execução já existe; escolha outro para preservar evidência" >&2
   exit 1
 fi
+catalog=auditoria/2026/catalogo-fixado.json
+if [[ ! -f "$catalog" ]]; then
+  echo "catálogo fixado ausente; não iniciar reprodução com URLs sem hashes" >&2
+  exit 1
+fi
+python3 - "$catalog" <<'PY'
+import sys,json,pathlib
+sys.path.insert(0,'scripts')
+from pin_catalog_2026 import validate_fixed
+validate_fixed(pathlib.Path('auditoria/2026/catalogo.json').read_bytes(),
+               json.loads(pathlib.Path(sys.argv[1]).read_bytes()))
+PY
 mkdir -p "$run_root"
-catalog=auditoria/2026/catalogo.json
 official=auditoria/2026/evidencias/totalizacao-presidente-2t.json
 python3 scripts/acquire_2026.py fetch --catalog "$catalog" --root "$source_root" \
   --receipt "$run_root/acquisition.json" --transport curl
@@ -45,9 +56,18 @@ env={'format_version':1,'git_revision':subprocess.check_output(['git','rev-parse
                       for n in ['audit_2026','audit_logs_2026','tsepack']}}
 (root/'environment.json').write_text(json.dumps(env,sort_keys=True,indent=2)+'\n')
 PY
+correspondence=$(python3 - "$catalog" "$source_root" <<'PY'
+import sys,json,pathlib,re
+items=json.loads(pathlib.Path(sys.argv[1]).read_text())['items']
+selected=[i for i in items if re.search(r'/CEFT_2t_ZZ_\d+\.zip$',i['url'])]
+if len(selected)!=1:raise ValueError('correspondência ZZ ausente ou ambígua')
+print(pathlib.Path(sys.argv[2])/selected[0]['path'])
+PY
+)
 python3 scripts/reconcile_coverage_2026.py --sections "$run_root/sections.csv" \
   --export-receipt "$run_root/sections-export.json" --source-manifest "$run_root/bu-input.json" \
-  --report "$run_root/president.json" --official "$official" --output "$run_root/coverage.json"
+  --report "$run_root/president.json" --official "$official" --output "$run_root/coverage.json" \
+  --correspondence-zip "$correspondence"
 # Código diferente de zero continua explícito. Diagnóstico científico é
 # preservado; falha de estrutura/fluxo será reprovada também pelo coletor.
 logs_code=0

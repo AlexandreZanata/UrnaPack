@@ -1,0 +1,3624 @@
+{
+  "all_parsed_events": {
+    "completed_after_17_brt": 34050,
+    "completed_after_19_brt": 11,
+    "completed_electors": 128235152,
+    "president_after_17_brt": 33865,
+    "president_after_19_brt": 11,
+    "president_confirmations": 128234600
+  },
+  "completed_after_17_brt_bounds": {
+    "definition": "Intervalo conservador: seções conciliadas contribuem sua contagem; todo o comparecimento restante pode estar antes ou depois do corte. Depende da associação dos pacotes oficiais às seções e da política nominal de relógio. ZZ permanece excluído do corte BRT.",
+    "lower": 34050,
+    "unresolved_turnout": 4424,
+    "upper": 38474
+  },
+  "events_in_matched_sections": {
+    "completed_after_17_brt": 34050,
+    "completed_after_19_brt": 11,
+    "completed_electors": 128231650,
+    "president_after_17_brt": 33865,
+    "president_after_19_brt": 11,
+    "president_confirmations": 128231094
+  },
+  "expected_sections": 499207,
+  "format_version": 1,
+  "inputs": [
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/AC/analysis.json",
+      "sha256": "83c588f65b8637761133d94af1d175194a6ddccc58fa78007cfd16cff148ae69"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/AL/analysis.json",
+      "sha256": "d09cb997ebbd7826abd602ec1d03bc206ff86c6c95e707a4f5928a349dada092"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/AM/analysis.json",
+      "sha256": "d1f96dbcdd3c39b544074f2860a1dd5f037a09e06ac6ad3448c2524647c91d9c"
+    },
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/AP/analysis.json",
+      "sha256": "b3e6d5eb8c4faa8aa73bf9fdbd3b6a4881b837956378743b855364a85fc86dbb"
+    },
+    {
+      "bytes": 4270,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/BA/analysis.json",
+      "sha256": "0fdbc806e679367abc08a4fb1edc6d5eb82647e6bc1a84e6f2f8dfd2ed1c3f4b"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/CE/analysis.json",
+      "sha256": "2a38939d27cd7eed7b26ec5d4f0815db30fd3c505df1b8e00bf115d95c6d661f"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/DF/analysis.json",
+      "sha256": "5a21c5a8fe5f1360d3d71d5f49fe0d0ab9c3a90239197cf1cba44658b1e4d544"
+    },
+    {
+      "bytes": 2609,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/ES/analysis.json",
+      "sha256": "88bb486c1883c5898de37538b71370cf210d4479fc6d2e5d8ae44d0d3aadecb4"
+    },
+    {
+      "bytes": 2581,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/GO/analysis.json",
+      "sha256": "80a6102a0a9482eb9831baeb06278061ab842df46620b2509e0da8a2b2828b60"
+    },
+    {
+      "bytes": 3143,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/MA/analysis.json",
+      "sha256": "8f5ee5c428ce2f8ca955adf6f659cdb39bf0b30a8684a91bf494f65cf17bfe96"
+    },
+    {
+      "bytes": 6957,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/MG/analysis.json",
+      "sha256": "d5c461e7f7f8ea2ff1bce2cba4e6ed0d0501087015121da004367d6954d4d5af"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/MS/analysis.json",
+      "sha256": "6c2e1b60d6e6edbff846f596e1983d6b8632c34fc4dc33340e02ceb5dd3ed369"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/MT/analysis.json",
+      "sha256": "7c85ba92f9aa98351c72b825b33424c9845d2e40b6ff4fc82930b40685d4d9b2"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/PA/analysis.json",
+      "sha256": "8d4f47320bbd58d240b7bf8832836beb6e143c614e52ced8dca11e616f60fea8"
+    },
+    {
+      "bytes": 3143,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/PB/analysis.json",
+      "sha256": "d310239a857e11613e2588ca9c770716a78e22932723127eb84e96c726e14bcc"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/PE/analysis.json",
+      "sha256": "a7e8f4bf49ae909bf70982c64515f226b5423502e59d93f3cce2817fbd9805fd"
+    },
+    {
+      "bytes": 3141,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/PI/analysis.json",
+      "sha256": "d9d8c416001616ba7408bd94d7153095503f44b9fae82b57aacb65e9b08d16e0"
+    },
+    {
+      "bytes": 4601,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/PR/analysis.json",
+      "sha256": "ab1af84908f900ca8fbf5f3448b5714450553f74cc18865669c237bbdcc2cf83"
+    },
+    {
+      "bytes": 48477,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/RJ/analysis.json",
+      "sha256": "f6ea1fe91d8a118bc1600ab246fce34c7bed584ed0c97516396050f01ff6685c"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/RN/analysis.json",
+      "sha256": "4b653459636a81516b646ab18760dc931c69f8bb529bfe5b9d734f4af9ef97e2"
+    },
+    {
+      "bytes": 2571,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/RO/analysis.json",
+      "sha256": "292f5c50c85d79181a62c3a928c42bfb8ff0416076bd53fc7b52a6fd8f1eb9c7"
+    },
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/RR/analysis.json",
+      "sha256": "ab4f22e0fa677321f936a2d59eb03c41ace22cb9843603bc4d5f5347f4611fe5"
+    },
+    {
+      "bytes": 3141,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/RS/analysis.json",
+      "sha256": "39c8e03ea24b2eeb4e3bc753c8d15190cf38ddb4215044334acdc28ad857397f"
+    },
+    {
+      "bytes": 2581,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/SC/analysis.json",
+      "sha256": "08306c87414baf4cd83b5781b0f3196a20bdb0c2ed344d2d49c24b88a680a2e8"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/SE/analysis.json",
+      "sha256": "0cc16e14cc6d5e7e13d869b506b862cc34331d959ba58f961f87beba438ecef6"
+    },
+    {
+      "bytes": 2598,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/SP/analysis.json",
+      "sha256": "9517aabbe2ecf900a24146484155a71f31c93cae1a13ffe62d29e8275301bae2"
+    },
+    {
+      "bytes": 2571,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/TO/analysis.json",
+      "sha256": "6a5a6f4f0b7f1c7a48e06f0612f680d678930f3eacebb69cfa36cba829333285"
+    },
+    {
+      "bytes": 17601,
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/logs/ZZ/analysis.json",
+      "sha256": "471e272ed620a9c8d5122fdb4da8b8843486cfe12efeb645e7f07d55924822c3"
+    }
+  ],
+  "limitations": [
+    "Relógios nominais; não prova o instante físico do voto.",
+    "ZZ excluído dos cortes BRT.",
+    "Confirmação presidencial e conclusão do eleitor são métricas distintas.",
+    "Assinaturas e autenticadores não verificados. Não revela candidato escolhido.",
+    "Sem conciliação completa, somas são diagnóstico, não contagem nacional validada."
+  ],
+  "mismatched_sections": 41,
+  "missing_ufs": [],
+  "national_coverage_complete": false,
+  "official_input": {
+    "bytes": 3233,
+    "path": "/data/urnapack/auditoria-2026/reproducao-codigo-1/auditoria/2026/evidencias/totalizacao-presidente-2t.json",
+    "sha256": "67fae708b0c7977fc9847d36100c63313621bff971178c48f2da99969707c263"
+  },
+  "official_installed_sections": 499207,
+  "official_turnout": 128236074,
+  "per_uf": {
+    "AC": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 157,
+        "completed_after_19_brt": 0,
+        "completed_electors": 453654,
+        "president_after_17_brt": 156,
+        "president_after_19_brt": 0,
+        "president_confirmations": 453603
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 157,
+        "completed_after_19_brt": 0,
+        "completed_electors": 453654,
+        "president_after_17_brt": 156,
+        "president_after_19_brt": 0,
+        "president_confirmations": 453603
+      },
+      "expected_section_keys_sha256": "65d5763f8aa125b2affcab59d7f963e6e6e7703e5c2616b226fa51b500ecacf2",
+      "expected_sections": 2270,
+      "format_version": 1,
+      "frames": 2312,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 19779862,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 2270,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 967741
+      },
+      "parsed_section_keys_sha256": "65d5763f8aa125b2affcab59d7f963e6e6e7703e5c2616b226fa51b500ecacf2",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 2270,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "AC"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 1919537270,
+      "wire_sha256": "1deefedd67e34d66c517cff43325a8a10f8bc23e8e64e2437ee3f6676e3c2d95"
+    },
+    "AL": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 640,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1951632,
+        "president_after_17_brt": 633,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1951632
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 640,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1951632,
+        "president_after_17_brt": 633,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1951632
+      },
+      "expected_section_keys_sha256": "988a8950c83018895548cf73c65a8b55db3637745f55b8bc16d45797da613961",
+      "expected_sections": 7101,
+      "format_version": 1,
+      "frames": 7329,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 78212047,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 7101,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 3863939
+      },
+      "parsed_section_keys_sha256": "988a8950c83018895548cf73c65a8b55db3637745f55b8bc16d45797da613961",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 7101,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "AL"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 7574132876,
+      "wire_sha256": "fdb6b7f2e8a1f792c1a73e567dbd98d72d504ae86fc02b78b1d0774a3424b01d"
+    },
+    "AM": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 999,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2192059,
+        "president_after_17_brt": 991,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2191937
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 999,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2192059,
+        "president_after_17_brt": 991,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2191937
+      },
+      "expected_section_keys_sha256": "6f20bc4112cf39a04ce97eb96ba52a6a11d6e5cfd3e4c4f57ee884137d34edc6",
+      "expected_sections": 8157,
+      "format_version": 1,
+      "frames": 8280,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 88506124,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 8157,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 4455308
+      },
+      "parsed_section_keys_sha256": "6f20bc4112cf39a04ce97eb96ba52a6a11d6e5cfd3e4c4f57ee884137d34edc6",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 8157,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "AM"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 8559778834,
+      "wire_sha256": "a85397ad85e07c496458fa814133ea886e2202957e48206ee7421172a8a3cf62"
+    },
+    "AP": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 140,
+        "completed_after_19_brt": 0,
+        "completed_electors": 429975,
+        "president_after_17_brt": 137,
+        "president_after_19_brt": 0,
+        "president_confirmations": 429975
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 140,
+        "completed_after_19_brt": 0,
+        "completed_electors": 429975,
+        "president_after_17_brt": 137,
+        "president_after_19_brt": 0,
+        "president_confirmations": 429975
+      },
+      "expected_section_keys_sha256": "b38aea52f50fcca73e83b9c89e21514a79f0019fecec6768efdb667d1897e305",
+      "expected_sections": 1914,
+      "format_version": 1,
+      "frames": 1979,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 17233109,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 1914,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 943622
+      },
+      "parsed_section_keys_sha256": "b38aea52f50fcca73e83b9c89e21514a79f0019fecec6768efdb667d1897e305",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 1914,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "AP"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 1666613668,
+      "wire_sha256": "cb9126a3542465dfee3eaa77f3c5726ca5597c41f4f3402b9f32bf1bbd3de26e"
+    },
+    "BA": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 4167,
+        "completed_after_19_brt": 2,
+        "completed_electors": 9422218,
+        "president_after_17_brt": 4151,
+        "president_after_19_brt": 2,
+        "president_confirmations": 9422227
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 370,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 4167,
+        "completed_after_19_brt": 2,
+        "completed_electors": 9421368,
+        "president_after_17_brt": 4151,
+        "president_after_19_brt": 2,
+        "president_confirmations": 9421376
+      },
+      "expected_section_keys_sha256": "b9368d2ac6a2d95d9b6769d3a04650095fab5d4f8aed1da4a58d5b625d3be113",
+      "expected_sections": 35476,
+      "format_version": 1,
+      "frames": 36549,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 380771848,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 35473,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 233,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 234
+          },
+          "expected_turnout": 234,
+          "files": 1,
+          "key": "BA/34711/0021/0178",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "BA",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 204,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 204
+          },
+          "expected_turnout": 217,
+          "files": 3,
+          "key": "BA/35653/0173/0235",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "BA",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 370,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 413,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 413
+          },
+          "expected_turnout": 228,
+          "files": 3,
+          "key": "BA/39870/0133/0184",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "BA",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 3,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 18024427
+      },
+      "parsed_section_keys_sha256": "b9368d2ac6a2d95d9b6769d3a04650095fab5d4f8aed1da4a58d5b625d3be113",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 35476,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "BA"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 36907654446,
+      "wire_sha256": "259035c60281f88fef806e0560e815a25423f15a1ca1b90f707dbb268dd62c81"
+    },
+    "CE": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 1069,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6024843,
+        "president_after_17_brt": 1062,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6024845
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 1069,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6024843,
+        "president_after_17_brt": 1062,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6024845
+      },
+      "expected_section_keys_sha256": "f81811cc986771501ae5a389dc82b28fb7400730cd90fc1303631e3b18bac42d",
+      "expected_sections": 23765,
+      "format_version": 1,
+      "frames": 24247,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 240013953,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 23765,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 11769110
+      },
+      "parsed_section_keys_sha256": "f81811cc986771501ae5a389dc82b28fb7400730cd90fc1303631e3b18bac42d",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 23765,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "CE"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 23252185044,
+      "wire_sha256": "eef063e45b6737b5f9bd9621a66abfd36368f19cdcc76adff8278a068eedc013"
+    },
+    "DF": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 976,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1868280,
+        "president_after_17_brt": 975,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1868198
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 976,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1868280,
+        "president_after_17_brt": 975,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1868198
+      },
+      "expected_section_keys_sha256": "f552198233085c38799505a31f0ba3f0ea6aa2a0138ab028b96b7f9ab7bc495e",
+      "expected_sections": 6969,
+      "format_version": 1,
+      "frames": 7111,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 72877808,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 6969,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 3650210
+      },
+      "parsed_section_keys_sha256": "f552198233085c38799505a31f0ba3f0ea6aa2a0138ab028b96b7f9ab7bc495e",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 6969,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "DF"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 7053384426,
+      "wire_sha256": "81910f6cf94f4cf28b815d0a6bf86a24dd6763024a69cae73f59c912c80d5507"
+    },
+    "ES": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 289,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2409214,
+        "president_after_17_brt": 287,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2409070
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 1,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 289,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2409214,
+        "president_after_17_brt": 287,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2409070
+      },
+      "expected_section_keys_sha256": "a21a4b2e696e7ffd01fa5d8e1bb090680911f9ffb6da570725cf4e57947104e2",
+      "expected_sections": 9844,
+      "format_version": 1,
+      "frames": 10238,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 96866495,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 9844,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {
+        "ES/57932/0009/0112": 608
+      },
+      "other_dates_relevant_events": {
+        "04/10/2026": 4688144
+      },
+      "parsed_section_keys_sha256": "a21a4b2e696e7ffd01fa5d8e1bb090680911f9ffb6da570725cf4e57947104e2",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 9844,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "ES"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 9433589937,
+      "wire_sha256": "962efcaefcb3d811c020edc44e994022afe5778ed24af072e0f71e1e8d8db212"
+    },
+    "GO": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 725,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4047280,
+        "president_after_17_brt": 720,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4047282
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 725,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4047280,
+        "president_after_17_brt": 720,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4047282
+      },
+      "expected_section_keys_sha256": "e8de4d24fdc1476efd5e8cbeceb6a287fdfbd231b7044b9b0f48b66ef75217de",
+      "expected_sections": 15686,
+      "format_version": 1,
+      "frames": 16016,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 158714795,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 15686,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 7926882
+      },
+      "parsed_section_keys_sha256": "e8de4d24fdc1476efd5e8cbeceb6a287fdfbd231b7044b9b0f48b66ef75217de",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 15686,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "GO"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 15417993724,
+      "wire_sha256": "87228ccc06febf3efeb5d0adedbe6f2775b224043e8682170c6d1036e58ff049"
+    },
+    "MA": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 915,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4127735,
+        "president_after_17_brt": 911,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4127737
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 915,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4127547,
+        "president_after_17_brt": 911,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4127549
+      },
+      "expected_section_keys_sha256": "1d4a5d88f29d478d9558024a09768d8e8d4dd36e5fb761af49932d54edd503ec",
+      "expected_sections": 18093,
+      "format_version": 1,
+      "frames": 18529,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 168627752,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 18092,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 188,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 188
+          },
+          "expected_turnout": 224,
+          "files": 2,
+          "key": "MA/08893/0047/0609",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "MA",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 1,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 8304015
+      },
+      "parsed_section_keys_sha256": "1d4a5d88f29d478d9558024a09768d8e8d4dd36e5fb761af49932d54edd503ec",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 18093,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "MA"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 16373272670,
+      "wire_sha256": "a0175d890b4a7d6945d51f08fbc5ab599f82043f84e7dc674b2d10892ba398ae"
+    },
+    "MG": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 2228,
+        "completed_after_19_brt": 0,
+        "completed_electors": 13044249,
+        "president_after_17_brt": 2210,
+        "president_after_19_brt": 0,
+        "president_confirmations": 13044259
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 92,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 2228,
+        "completed_after_19_brt": 0,
+        "completed_electors": 13043638,
+        "president_after_17_brt": 2210,
+        "president_after_19_brt": 0,
+        "president_confirmations": 13043648
+      },
+      "expected_section_keys_sha256": "ce821820d8c51768a49a6a94cf84e102a31b69edb778d5ca34ece96b08ff6936",
+      "expected_sections": 52062,
+      "format_version": 1,
+      "frames": 52973,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 504533473,
+      "malformed_line_examples": [
+        {
+          "body_line": 1884,
+          "line_bytes_without_eol": 258,
+          "line_sha256_without_eol": "9909993e1af16c5380d2122dce9b1cbeb3d2de9456147e1b2f277b6ec40cb180",
+          "nested_member": "024716770410202610214201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/44458/0103/0221",
+          "source_member": "o03221mg4445801030221-log.jez"
+        },
+        {
+          "body_line": 1885,
+          "line_bytes_without_eol": 99,
+          "line_sha256_without_eol": "fc391db1a2bb72d396af6a8b7a0ebbf7a52dcc4ec48778fe5ab63f9e7543acff",
+          "nested_member": "024716770410202610214201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/44458/0103/0221",
+          "source_member": "o03221mg4445801030221-log.jez"
+        },
+        {
+          "body_line": 200,
+          "line_bytes_without_eol": 49,
+          "line_sha256_without_eol": "7e614900f13fc3266922a512ae5767c242cf7f73330ef61eeaade1285251d8e0",
+          "nested_member": "024716770410202610384103MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/44458/0103/0221",
+          "source_member": "o03221mg4445801030221-log.jez"
+        },
+        {
+          "body_line": 201,
+          "line_bytes_without_eol": 255,
+          "line_sha256_without_eol": "142b31baf990e9a16b998b2141ef96880c015ddc38858e17fa176a5b5c65b8e9",
+          "nested_member": "024716770410202610384103MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/44458/0103/0221",
+          "source_member": "o03221mg4445801030221-log.jez"
+        },
+        {
+          "body_line": 202,
+          "line_bytes_without_eol": 248,
+          "line_sha256_without_eol": "4188028de720df2b68902381b5bf4016295951133745d03dbfaabbe35f4e29f9",
+          "nested_member": "024716770410202610384103MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/44458/0103/0221",
+          "source_member": "o03221mg4445801030221-log.jez"
+        },
+        {
+          "body_line": 4693,
+          "line_bytes_without_eol": 178,
+          "line_sha256_without_eol": "a7547ec5558680387be1e5e909e20a3b404e9af656d17af86cba2e56143c9f90",
+          "nested_member": "021308890410202616515401MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "MG/47830/0165/0031",
+          "source_member": "o03221mg4783001650031-log.jez"
+        }
+      ],
+      "malformed_lines": 6,
+      "matched_sections": 52059,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 92,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 160,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 160
+          },
+          "expected_turnout": 114,
+          "files": 3,
+          "key": "MG/40690/0016/0264",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "MG",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 241,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 241
+          },
+          "expected_turnout": 241,
+          "files": 6,
+          "key": "MG/44458/0103/0221",
+          "malformed_lines": 5,
+          "matched": false,
+          "uf": "MG",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 210,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 210
+          },
+          "expected_turnout": 210,
+          "files": 4,
+          "key": "MG/47830/0165/0031",
+          "malformed_lines": 1,
+          "matched": false,
+          "uf": "MG",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 3,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 25198242
+      },
+      "parsed_section_keys_sha256": "ce821820d8c51768a49a6a94cf84e102a31b69edb778d5ca34ece96b08ff6936",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 52062,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "MG"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 49090043389,
+      "wire_sha256": "ad2ad08ef12086fe96f710ec0f496cb59b00cfe6659c27bf01b0da28dff027dd"
+    },
+    "MS": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 419,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1594460,
+        "president_after_17_brt": 417,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1594461
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 419,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1594460,
+        "president_after_17_brt": 417,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1594461
+      },
+      "expected_section_keys_sha256": "a8055d40af6f6a9a90d696faba7fab99fbea8844d40203bfdc6e109e6b00cbe1",
+      "expected_sections": 7106,
+      "format_version": 1,
+      "frames": 7270,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 62853826,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 7106,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 3059402
+      },
+      "parsed_section_keys_sha256": "a8055d40af6f6a9a90d696faba7fab99fbea8844d40203bfdc6e109e6b00cbe1",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 7106,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "MS"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 6129500114,
+      "wire_sha256": "d2e4f8a77f5f403604282c066c2f2e2727cc62eb11c8ebd7270fbce267b83e3c"
+    },
+    "MT": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 896,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2085334,
+        "president_after_17_brt": 888,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2085335
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 896,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2085334,
+        "president_after_17_brt": 888,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2085335
+      },
+      "expected_section_keys_sha256": "c2fc6e6c9b9d4dcaaeee565b4e514ff2f1dbc175966a5ef16bb5ddbcc0d70469",
+      "expected_sections": 8287,
+      "format_version": 1,
+      "frames": 8462,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 81987818,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 8287,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 4092545
+      },
+      "parsed_section_keys_sha256": "c2fc6e6c9b9d4dcaaeee565b4e514ff2f1dbc175966a5ef16bb5ddbcc0d70469",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 8287,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "MT"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 7971764512,
+      "wire_sha256": "e75aec9369e31c7fd94dfd4f062ec1b43a2cffda1f30c4eea7a58b520cf0e978"
+    },
+    "PA": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 1299,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4989573,
+        "president_after_17_brt": 1291,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4989575
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 1299,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4989573,
+        "president_after_17_brt": 1291,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4989575
+      },
+      "expected_section_keys_sha256": "da8b6cc4d2e7b2fa5dfdc2c80464fadb716c7063614546c8bd0ac363f7dd83d1",
+      "expected_sections": 20827,
+      "format_version": 1,
+      "frames": 21324,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 200766961,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 20827,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 10113876
+      },
+      "parsed_section_keys_sha256": "da8b6cc4d2e7b2fa5dfdc2c80464fadb716c7063614546c8bd0ac363f7dd83d1",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 20827,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "PA"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 19497692318,
+      "wire_sha256": "386c365957ebe0e8ee13e495033704be3a678c59cba7f53b87b85e386d7c380e"
+    },
+    "PB": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 465,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2743559,
+        "president_after_17_brt": 462,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2743561
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 465,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2743256,
+        "president_after_17_brt": 462,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2743257
+      },
+      "expected_section_keys_sha256": "a323c6e96f1c204b2b13d6d2f083d04ace7616384fbd7b114cda0546215bdc69",
+      "expected_sections": 10712,
+      "format_version": 1,
+      "frames": 10876,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 109198973,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 10711,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 303,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 304
+          },
+          "expected_turnout": 304,
+          "files": 1,
+          "key": "PB/21750/0002/0254",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "PB",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 1,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 5340734
+      },
+      "parsed_section_keys_sha256": "a323c6e96f1c204b2b13d6d2f083d04ace7616384fbd7b114cda0546215bdc69",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 10712,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "PB"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 10582922370,
+      "wire_sha256": "f2f837be2f7f138da27d227e7bf670bb2eb84e558b579ca6a42957f9f6b85a4d"
+    },
+    "PE": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 1625,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6126467,
+        "president_after_17_brt": 1617,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6126470
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 1625,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6126467,
+        "president_after_17_brt": 1617,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6126470
+      },
+      "expected_section_keys_sha256": "efc6c324775ff8dcfbd44f51a0e1d81ff998e6510f494aa3fe044d49a250d16f",
+      "expected_sections": 21418,
+      "format_version": 1,
+      "frames": 21728,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 236247020,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 21418,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 11777423
+      },
+      "parsed_section_keys_sha256": "efc6c324775ff8dcfbd44f51a0e1d81ff998e6510f494aa3fe044d49a250d16f",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 21418,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "PE"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 22880459151,
+      "wire_sha256": "aacca3cbc13250457fbb89317046927ede1e75cec13a6da4c2e1e8886cd98253"
+    },
+    "PI": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 334,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2239829,
+        "president_after_17_brt": 333,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2239830
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 334,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2239571,
+        "president_after_17_brt": 333,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2239571
+      },
+      "expected_section_keys_sha256": "74490e9facecb48a43edaeb20a2b5ae9b8330b4afbc5abef6c2466a16d1bdc80",
+      "expected_sections": 10225,
+      "format_version": 1,
+      "frames": 10456,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 95040750,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 10224,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 258,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 259
+          },
+          "expected_turnout": 259,
+          "files": 1,
+          "key": "PI/11533/0003/0216",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "PI",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 1,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 4468551
+      },
+      "parsed_section_keys_sha256": "74490e9facecb48a43edaeb20a2b5ae9b8330b4afbc5abef6c2466a16d1bdc80",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 10225,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "PI"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 9239414125,
+      "wire_sha256": "09ea7132f2ad7b26b2351b3309782f16358acfa652198a6a4b2b57fe1b13dd03"
+    },
+    "PR": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 909,
+        "completed_after_19_brt": 0,
+        "completed_electors": 7059339,
+        "president_after_17_brt": 897,
+        "president_after_19_brt": 0,
+        "president_confirmations": 7059342
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 909,
+        "completed_after_19_brt": 0,
+        "completed_electors": 7058766,
+        "president_after_17_brt": 897,
+        "president_after_19_brt": 0,
+        "president_confirmations": 7058769
+      },
+      "expected_section_keys_sha256": "f7e0ad3a784239f02e11d20c6ac6d71e81d7ff16aa45b4c8e970c1af130c1482",
+      "expected_sections": 27142,
+      "format_version": 1,
+      "frames": 28132,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 275817238,
+      "malformed_line_examples": [
+        {
+          "body_line": 2354,
+          "line_bytes_without_eol": 167,
+          "line_sha256_without_eol": "fdd8ab894f92ea8ddec6b3c055c6fd37e94c5044ab4fe64a812d18cdc5bd1665",
+          "nested_member": "023213660410202610082401MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "PR/75353/0002/0574",
+          "source_member": "o03221pr7535300020574-log.jez"
+        },
+        {
+          "body_line": 3557,
+          "line_bytes_without_eol": 167,
+          "line_sha256_without_eol": "a0fca5c0a99379286facb8527b4b5dfef5561907ff93bf77dfee8a5714206512",
+          "nested_member": "020183520410202613151801MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "PR/76570/0010/0273",
+          "source_member": "o03221pr7657000100273-log.jez"
+        }
+      ],
+      "malformed_lines": 2,
+      "matched_sections": 27140,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 331,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 331
+          },
+          "expected_turnout": 331,
+          "files": 4,
+          "key": "PR/75353/0002/0574",
+          "malformed_lines": 1,
+          "matched": false,
+          "uf": "PR",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 242,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 242
+          },
+          "expected_turnout": 242,
+          "files": 3,
+          "key": "PR/76570/0010/0273",
+          "malformed_lines": 1,
+          "matched": false,
+          "uf": "PR",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 2,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 13652399
+      },
+      "parsed_section_keys_sha256": "f7e0ad3a784239f02e11d20c6ac6d71e81d7ff16aa45b4c8e970c1af130c1482",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 27142,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "PR"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 26825135955,
+      "wire_sha256": "6595dcee5724f09c51108cab951ec54d15eb29bcb144fd1ef1a2cf822bbb45ca"
+    },
+    "RJ": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 4126,
+        "completed_after_19_brt": 4,
+        "completed_electors": 10077449,
+        "president_after_17_brt": 4115,
+        "president_after_19_brt": 4,
+        "president_confirmations": 10077452
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 4126,
+        "completed_after_19_brt": 4,
+        "completed_electors": 10076820,
+        "president_after_17_brt": 4115,
+        "president_after_19_brt": 4,
+        "president_confirmations": 10076823
+      },
+      "expected_section_keys_sha256": "07d486a1af5cb2652b2e97f1cfde6dfdda50accd3d0bb206d54c52e2d53103fd",
+      "expected_sections": 37675,
+      "format_version": 1,
+      "frames": 38835,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 395128672,
+      "malformed_line_examples": [
+        {
+          "body_line": 4339,
+          "line_bytes_without_eol": 196,
+          "line_sha256_without_eol": "9c61cd436fa80933594e589041ebbf73b2370e46945ef21e5da4f944a27d0ad0",
+          "nested_member": "022272400410202614100701MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/58041/0155/0190",
+          "source_member": "o03221rj5804101550190-log.jez"
+        },
+        {
+          "body_line": 911,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "f2ccc95709d1a88fc29e9c25cc563579dd81c406b86bdf341a9789e8c60ffe04",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 912,
+          "line_bytes_without_eol": 183,
+          "line_sha256_without_eol": "62e74bacfb47e20115798d66d6873ddd1b9b01282b881cf45fe09018788a19bb",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 913,
+          "line_bytes_without_eol": 266,
+          "line_sha256_without_eol": "648af7e94cf55b7db190141bd5dad86b73a00e185440a91281364f3106429f61",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1533,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "c0a03a6390dfb9896e8795e11783ec34d9db34376b2c75ba599cd9d0faa2aa7a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1534,
+          "line_bytes_without_eol": 229,
+          "line_sha256_without_eol": "6d87e59ddf3894627fc99628098521bc39c05e7336ce7d9ac16156d83b00adc6",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1535,
+          "line_bytes_without_eol": 271,
+          "line_sha256_without_eol": "ad09453becb1db1522e7794b745b6e26a553f10d234b5b6dd517a2e131fa384e",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1536,
+          "line_bytes_without_eol": 173,
+          "line_sha256_without_eol": "d568661ad1836187549f706f8996865dc3293b1ee044103e069aa32c1188bb30",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1537,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "2b00d9fcd9ffb015f94547bab02f629fdc2954b7107b345e32d139e945d60b58",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1538,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "f9ab7e420948720052c617ed7bb373547ebd2018c30222b45b1f45aa09fc8be9",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2703,
+          "line_bytes_without_eol": 116,
+          "line_sha256_without_eol": "594d13b8577f778a9d987d4848901169b026313e16baf8ff8162f410992c7443",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2704,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "8956db20e0d3d169353de8c14e9ac4bbc3d305fcea8b505b22c29f9e6de13f0a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2705,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "13a5dd696fd02410a791c6a5ffe7909bd4ea889eb93f8247d130bc0dcf8f82a6",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2706,
+          "line_bytes_without_eol": 301,
+          "line_sha256_without_eol": "2663ecb693483d552e276c6983f8b8813224dd46f36eb2733dbb21b503e85d9a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2707,
+          "line_bytes_without_eol": 173,
+          "line_sha256_without_eol": "d170f278b7101bf5d8549c2fa64413133747995096c0bca6a8a5d951ba9b3487",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2722,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "a1d2f49fc90e96caf017deb68ef92478f6a40db8545b0eccab30dfd8aa6523b5",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2723,
+          "line_bytes_without_eol": 183,
+          "line_sha256_without_eol": "e029839d29d3e5e00668515cec3a6d88e64f3aeba6f5d07db99003ae8448a541",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 2724,
+          "line_bytes_without_eol": 459,
+          "line_sha256_without_eol": "4323999e23f3bf4e2e65052cd5980b36494ac77d69a40a9606f3cd50f04877bc",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3256,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "b2269fbdbbd8e551a4be5c78a799e1fddc760c73ea83456a64ee5c4e3aaa9e14",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3257,
+          "line_bytes_without_eol": 179,
+          "line_sha256_without_eol": "c6f30b81a82f27003e11ff108095617fe9f47598059d03b991f7eff660190530",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3258,
+          "line_bytes_without_eol": 169,
+          "line_sha256_without_eol": "421b0c6ad83b35c2649d634e038d44de24d975ea5df3cbf9be4c9949365a9bf8",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3259,
+          "line_bytes_without_eol": 169,
+          "line_sha256_without_eol": "2ef842b6decb1be5d011ed1d3a6f62531cef03922330a581efff2b166506c8b2",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3260,
+          "line_bytes_without_eol": 255,
+          "line_sha256_without_eol": "315a5627f6ca262d1a602ed83cf1da786c49b20ef37d44184914ab4ae71b3c01",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3261,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "027eb856c5e29d7a214f59418c2790afe121dd4b7c3d1c8489903f85114a14b5",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3313,
+          "line_bytes_without_eol": 229,
+          "line_sha256_without_eol": "5283b0080a36840152bdeaa48447dbd1f25d54ac2f2c417f1eeabd853844be8a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3314,
+          "line_bytes_without_eol": 271,
+          "line_sha256_without_eol": "03e5bc20104d0bfe920c7831f7890b717c397c7196b1ac367405135b7052b223",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3315,
+          "line_bytes_without_eol": 169,
+          "line_sha256_without_eol": "7efb9ca51ad7bb02365c296b27f51b7678e39d6c60567472a439c3e2ffb643a9",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3316,
+          "line_bytes_without_eol": 169,
+          "line_sha256_without_eol": "6ab51d2cd6225643bdf2fe45857d266f7191b508de908287076c2b904fb36224",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3317,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "fbc1638eb93b5e2f52e21f30c87f6131b86630c644ae44d4c31f96402029ac1a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 3392,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "8d69de67d75b3f301c1f2b3e8f629ee785e2085d405f3b69199124a99ccf13a8",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4108,
+          "line_bytes_without_eol": 255,
+          "line_sha256_without_eol": "5137bf1390d6d937d209556540434a2b843bf8d89ca93121246605a9f82bd5cb",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4109,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "e38829c39cece168b110771614f090c283072f6b358e9edb8a150ec14573cc70",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4110,
+          "line_bytes_without_eol": 87,
+          "line_sha256_without_eol": "2d14a5482b6a71e6e204cf2ff503fcca84baabd9b106d3e15a59e2e74b43f476",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4111,
+          "line_bytes_without_eol": 207,
+          "line_sha256_without_eol": "998f49b9862c656cd45e5520b92b9070c938381b4c18639151bd7ab5ee95ff96",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4112,
+          "line_bytes_without_eol": 295,
+          "line_sha256_without_eol": "583ade249a6bae967518f26b7ec394915a136d83d742c3556d8d8855d1b2cc42",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4489,
+          "line_bytes_without_eol": 295,
+          "line_sha256_without_eol": "65bdb9cf0b1e46f2a08737c1d134b398ca1ad61008e618f4df163e8d8f52a225",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4490,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "7f6d3700de09ac914b891969b82a46e1899ba0d19ca6936d84984c48e5dbab85",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4491,
+          "line_bytes_without_eol": 99,
+          "line_sha256_without_eol": "c8665f8eda1ad9bcca0eb3f325538773d8cd96904cbca8ecc684acd959bf5ff4",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4492,
+          "line_bytes_without_eol": 187,
+          "line_sha256_without_eol": "2e7c68a1e47378b5758223c2f27a510bf9138ed2b43abd79203323cf3b64b82c",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4493,
+          "line_bytes_without_eol": 261,
+          "line_sha256_without_eol": "b1c994bd8ac6ba815f45952352d78e8812453ff5a5604fe42106b824240a946d",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4494,
+          "line_bytes_without_eol": 96,
+          "line_sha256_without_eol": "a69f1e58c139cf65749d10a3736453c2ed9f7b936298a28ff35d03241f31203e",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4577,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "8339bcf96feb00558427d97668f7101ddd86410ff2b9e210a0757aefd2c13f4a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4578,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "03fcc479fe36556148c9261f95dfb36faf6ee22a4d3bc4c9904315d09e14e189",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4579,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "6aa0f1b11fdc7764467ecfa13ce51f7bc3aeabb4b852289eaba9f68c0d3d5cda",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4652,
+          "line_bytes_without_eol": 192,
+          "line_sha256_without_eol": "e276f96fd637d7fe459aeb34ecc0aeb23589c465061aedb7203bcfc1d2785b51",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4653,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "7061f93f0f3414a42b47564b6d11b87e40fb2c4756dd32dfde2d7725665338d2",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4654,
+          "line_bytes_without_eol": 105,
+          "line_sha256_without_eol": "6a718084558f03bb3714ad767c07238a8a23679a8f269cd49ec67e60b51e06d8",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4684,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "eeb6918a961d40f3e571c8d9aad421d274da3bf0ce4f09b41251ef8723fb0e01",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4685,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "ab59fffa4923e06bbee78cc0306fbb373bcfcf8f6d0d3ea316151a141fb02313",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4686,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "a3b0e77a7bfde7b3fac46ce83e463fa880b42e5dbdee6b977ee8958b26a4df26",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4687,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "a3421bf927b84bb4d1b94e61f7ac174a589935b1666273b1dad39c0921ac0e85",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4925,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "d787300701ee959ed39846aeca91b70bad3c0d93bb72f4716a0edccec0bb0f2f",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4926,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "98ba65f6aa94e44f351be5e2f262cb086043f4938cd98729ef5308067dcdf144",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4927,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "27fa2ad17ed19430a3280aca957c210b73ee6e24099de431b323b8c663adeb05",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4928,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "a8fdb8397888ee097badba27895f10bee6888431d3f72ff681053427c422a678",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 4929,
+          "line_bytes_without_eol": 179,
+          "line_sha256_without_eol": "2658378d2c92b0050a92a640b819aad26754c1d87c303c873e798b3073ebe739",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5101,
+          "line_bytes_without_eol": 365,
+          "line_sha256_without_eol": "a8622af39667010f46560df9016b2f979c451a07f432f1cd3a5f7d3fc101ca9e",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5102,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "5f9c9cb8460b456e6a5ea1bfb79a7e5a60eb81eb6afe5fa9de7d1238186d8ad7",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5103,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "d66f9071c1627dd2614601cc53d32ad11f7a23b3ee062bb97abcd6678d6cf237",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5104,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "3e43034259d4f842c6798f544044349079754842e13966df1f05cb3ea3a776ab",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5177,
+          "line_bytes_without_eol": 104,
+          "line_sha256_without_eol": "3ffe5eadca6f30b6389d014907fcb0a7128456c5255cdf342a2cb5b3ed43e9a2",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5178,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "f0d0a3246918f72529493fe1b9b30596f68d0688cac0cec9f012bce82228947d",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5179,
+          "line_bytes_without_eol": 105,
+          "line_sha256_without_eol": "6771bdd42cd5c66c2885bbb62701de5c00f1136f6b9f7ad627b103f7164833b1",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5180,
+          "line_bytes_without_eol": 174,
+          "line_sha256_without_eol": "e8bcdcabefdbddcb590561a7cc78b2b621c1c9d08f113bdb3d4ee004c74dc9c0",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5378,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "585f76bbc3cb8c8b2eb9d7e2330a02a09e48749b637934c4bfa35a797d9a18ff",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5379,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "fc149a18bf5bb412c226a0c8dbf59a84c1da834e3e07ac68828260d405998e32",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5380,
+          "line_bytes_without_eol": 192,
+          "line_sha256_without_eol": "15e2961c655f585261f7054774355778f3ce0fd3b6e888d03e95ac30adf5d9fc",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5804,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "986d408dd1a792bf5dba436b09b50301d2eed72d147de85b28825e0c4ca8f66e",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5805,
+          "line_bytes_without_eol": 191,
+          "line_sha256_without_eol": "56bbaeb1918d2160b9aebed3543f2be5a593b0f507769a0a8261cf43e35db44b",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5806,
+          "line_bytes_without_eol": 183,
+          "line_sha256_without_eol": "dfd4c9accdd18db8ecdb22189c68854830253981cd36885fc120168645190690",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5807,
+          "line_bytes_without_eol": 195,
+          "line_sha256_without_eol": "cdb080fc6979b04c2eaf3a070b2ba2ad2b58e9919ebcfd27950252d312662ee7",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5808,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "f4b4ec32675e227b817e1d3a9d8317411cb2074d17170fb2bc1abeeaa7fb279d",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5809,
+          "line_bytes_without_eol": 82,
+          "line_sha256_without_eol": "b468dff5fb2cac9f8d54f597abc644027faa023e7b0d6c7bf3fd8e6ee2fa8a4d",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5886,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "e450f6bb1b1b4e93dd36a13feb179abeb61fa3f8f58c82d164fc677106d17fae",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5887,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "8a49fb68f48355d1c0d1f0cc731d913497fca6f2b59eb2f744880a422df986a5",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5888,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "68d3ee3bd722599d57d2ac18e491c5e00a840c526867ce8ba1fc34735c0b7970",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 5889,
+          "line_bytes_without_eol": 124,
+          "line_sha256_without_eol": "474a7f5c3463274778e94d1b466a4b2e4d02312c010fc497f4a7fffb37a38fa5",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6026,
+          "line_bytes_without_eol": 207,
+          "line_sha256_without_eol": "fc554a4f7018b54a332355d468750d07136fd7fabe2613d3344799befe715a4f",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6027,
+          "line_bytes_without_eol": 295,
+          "line_sha256_without_eol": "e5d0e2b2b7b039848ed466490f1177e4fd660f484dcde9daddff4af310adaf32",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6028,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "d55507b1cb338fe5ea402831af10c9fd4f0d937a6648a75f509ec64bdb772be0",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6029,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "09d4a76cb33b9a42174841330aeea268365bc60b442dfec416f86d5003cd3fc4",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6030,
+          "line_bytes_without_eol": 97,
+          "line_sha256_without_eol": "f87316a470a2e254aec9be5d02441351cd22c0a462a32b9f31027825253d8d30",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6031,
+          "line_bytes_without_eol": 99,
+          "line_sha256_without_eol": "ff6a4c485b9767aee1b8390b84d4ef1585900cd17bf6bd08d0285b912acfa005",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6032,
+          "line_bytes_without_eol": 78,
+          "line_sha256_without_eol": "6b40214e5b389b15847f515c5a4c40431f5d462316c6dff441307e1b74819ff7",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6172,
+          "line_bytes_without_eol": 99,
+          "line_sha256_without_eol": "2f6c9ca283e4c3b1287b0ea7269f32fcb379507aabce2a2b3f58cb7ab3a684eb",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6173,
+          "line_bytes_without_eol": 477,
+          "line_sha256_without_eol": "5289e9130fa85887109fc17f74b3edb69a3b3c3f84382a13369f7e6f7d7aaa99",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6174,
+          "line_bytes_without_eol": 173,
+          "line_sha256_without_eol": "2a94238ece4350e87eed45cdb30d3547c339901df666a390480b45c89cd972a5",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6175,
+          "line_bytes_without_eol": 89,
+          "line_sha256_without_eol": "18cddc41bb51413de67b9f2c826af2d7d8c9a33e63fbce01deffb001d3cfcede",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6176,
+          "line_bytes_without_eol": 198,
+          "line_sha256_without_eol": "dc6b6a8e5e9ded8754d710ea5d50171e68bb1a424b499c60cd0f63bf5f745b7b",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6307,
+          "line_bytes_without_eol": 83,
+          "line_sha256_without_eol": "1bee654b45a919e202ed37acfc217ad6d60c03a32228c7ea622ab0469ebe44c0",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6308,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "1aa4624b5a2e8d955f0fc9c7ea6f96091968f81b64dbb2ae303b5793a4f5d1cc",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6309,
+          "line_bytes_without_eol": 95,
+          "line_sha256_without_eol": "9bedeea7c618b2614491c740e97660423af4adb8d68fa7c6d4f9682c06eb0aad",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6310,
+          "line_bytes_without_eol": 85,
+          "line_sha256_without_eol": "7187fa6885e181b96db69b318012c8f5fbd74d1bd808da9a544166eab2c40ad8",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6311,
+          "line_bytes_without_eol": 85,
+          "line_sha256_without_eol": "70895cf1080612bc074e21074823d489a0a8e2105daa6f10c4b11ebf1d9e8a77",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6312,
+          "line_bytes_without_eol": 177,
+          "line_sha256_without_eol": "f93c581e55bda79f7d530537d66481d624e19bde475272cb444a86dd32b4fe5e",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6313,
+          "line_bytes_without_eol": 283,
+          "line_sha256_without_eol": "7e83aaab806c11d259701a5c533e34226e151713d2d355a603c4fe662926f4bd",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6314,
+          "line_bytes_without_eol": 183,
+          "line_sha256_without_eol": "56f4d6898a72f1126806d1756c6fce4c9f3e9b3dc97525fc6374e97c81c75171",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6315,
+          "line_bytes_without_eol": 459,
+          "line_sha256_without_eol": "72a2de1af84a59790055e546427f88b900cbc44596cf595aeef62be4b676109a",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 6316,
+          "line_bytes_without_eol": 219,
+          "line_sha256_without_eol": "0bca44eec2fe11da4e4d6758a04f2e0b172f40a018407c72498e42fd9c551edb",
+          "nested_member": "017609831610202608235201MI.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        },
+        {
+          "body_line": 1892,
+          "line_bytes_without_eol": 371,
+          "line_sha256_without_eol": "4f137de9e783a3c991f220dcd742e0f6b0b8b192333cf9a992cc96345df5cceb",
+          "nested_member": "017609831610202608235302ME.jez!logd.dat",
+          "reason": "campos/timestamp fora do leiaute; linha não interpretada, seção impedida de conciliar",
+          "section_key": "RJ/60011/0008/0061",
+          "source_member": "o03221rj6001100080061-log.jez"
+        }
+      ],
+      "malformed_lines": 169,
+      "matched_sections": 37673,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 291,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 291
+          },
+          "expected_turnout": 291,
+          "files": 3,
+          "key": "RJ/58041/0155/0190",
+          "malformed_lines": 1,
+          "matched": false,
+          "uf": "RJ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 338,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 338
+          },
+          "expected_turnout": 338,
+          "files": 3,
+          "key": "RJ/60011/0008/0061",
+          "malformed_lines": 168,
+          "matched": false,
+          "uf": "RJ",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 2,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 19702076
+      },
+      "parsed_section_keys_sha256": "07d486a1af5cb2652b2e97f1cfde6dfdda50accd3d0bb206d54c52e2d53103fd",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 37675,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "RJ"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 38513667572,
+      "wire_sha256": "5ba59de2bc5579bdc97a1ad78860df45451ede9d8feacffdc9ae7818b0f21732"
+    },
+    "RN": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 412,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2232823,
+        "president_after_17_brt": 411,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2232686
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 412,
+        "completed_after_19_brt": 0,
+        "completed_electors": 2232823,
+        "president_after_17_brt": 411,
+        "president_after_19_brt": 0,
+        "president_confirmations": 2232686
+      },
+      "expected_section_keys_sha256": "4766a82d219635e11ace2649715f8fe11c046ecbbe6530a1320f3e8896e3fc49",
+      "expected_sections": 8115,
+      "format_version": 1,
+      "frames": 8765,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 92520557,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 8115,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 4324200
+      },
+      "parsed_section_keys_sha256": "4766a82d219635e11ace2649715f8fe11c046ecbbe6530a1320f3e8896e3fc49",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 8115,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "RN"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 8956931054,
+      "wire_sha256": "00c8de8e114b9a48ac9e997bcaac1a93763c172456e3765bc337a920e33c24de"
+    },
+    "RO": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 552,
+        "completed_after_19_brt": 0,
+        "completed_electors": 988489,
+        "president_after_17_brt": 552,
+        "president_after_19_brt": 0,
+        "president_confirmations": 988489
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 552,
+        "completed_after_19_brt": 0,
+        "completed_electors": 988489,
+        "president_after_17_brt": 552,
+        "president_after_19_brt": 0,
+        "president_confirmations": 988489
+      },
+      "expected_section_keys_sha256": "3f009a79b912ae685a9bbb2c9697507681e76178781212cc964f937cfe6c155f",
+      "expected_sections": 4698,
+      "format_version": 1,
+      "frames": 4785,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 40442552,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 4698,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 1973925
+      },
+      "parsed_section_keys_sha256": "3f009a79b912ae685a9bbb2c9697507681e76178781212cc964f937cfe6c155f",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 4698,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "RO"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 3946671117,
+      "wire_sha256": "cc47649ae78096eda30f07b220b915a2833744d6fac3c0f5a1714c9aa4d3031a"
+    },
+    "RR": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 143,
+        "completed_after_19_brt": 0,
+        "completed_electors": 308597,
+        "president_after_17_brt": 142,
+        "president_after_19_brt": 0,
+        "president_confirmations": 308597
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 143,
+        "completed_after_19_brt": 0,
+        "completed_electors": 308597,
+        "president_after_17_brt": 142,
+        "president_after_19_brt": 0,
+        "president_confirmations": 308597
+      },
+      "expected_section_keys_sha256": "ac7b04484074ce414e1337e5e88d7040076ef6d5b5952fca30f485c6af6e6a3b",
+      "expected_sections": 1519,
+      "format_version": 1,
+      "frames": 1528,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 12324846,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 1519,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 656875
+      },
+      "parsed_section_keys_sha256": "ac7b04484074ce414e1337e5e88d7040076ef6d5b5952fca30f485c6af6e6a3b",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 1519,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "RR"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 1196263578,
+      "wire_sha256": "7d14d92bf30d3afc096e9cef4fc8aec448a2d71d7a48fa78d21889a367a89d33"
+    },
+    "RS": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 819,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6889636,
+        "president_after_17_brt": 813,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6889640
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 819,
+        "completed_after_19_brt": 0,
+        "completed_electors": 6889546,
+        "president_after_17_brt": 813,
+        "president_after_19_brt": 0,
+        "president_confirmations": 6889549
+      },
+      "expected_section_keys_sha256": "8441fb365395f0176cca1ef1d6d1497cabc01e49fac1e6f6a288a28215123096",
+      "expected_sections": 27547,
+      "format_version": 1,
+      "frames": 28243,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 274918557,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 27546,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": 0,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 90,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 91
+          },
+          "expected_turnout": 92,
+          "files": 2,
+          "key": "RS/89060/0017/0191",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "RS",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 1,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 13391312
+      },
+      "parsed_section_keys_sha256": "8441fb365395f0176cca1ef1d6d1497cabc01e49fac1e6f6a288a28215123096",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 27547,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "RS"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 26828725983,
+      "wire_sha256": "4f82e1bca31d17a19080a6e86d7a2b28299ceecc071531b73bd0981c1e69d09b"
+    },
+    "SC": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 454,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4762303,
+        "president_after_17_brt": 453,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4762304
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 454,
+        "completed_after_19_brt": 0,
+        "completed_electors": 4762303,
+        "president_after_17_brt": 453,
+        "president_after_19_brt": 0,
+        "president_confirmations": 4762304
+      },
+      "expected_section_keys_sha256": "45047fba4bd0bbb98d37b8f5b647e952edf70869216af9ac574dd0277e65c18b",
+      "expected_sections": 17326,
+      "format_version": 1,
+      "frames": 17792,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 182730769,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 17326,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 9270075
+      },
+      "parsed_section_keys_sha256": "45047fba4bd0bbb98d37b8f5b647e952edf70869216af9ac574dd0277e65c18b",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 17326,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "SC"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 17750940705,
+      "wire_sha256": "2a970dab98aeda210f6b3298aa91aab9e56eb0a21ec9de7d50367fc267422d2a"
+    },
+    "SE": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 284,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1466659,
+        "president_after_17_brt": 282,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1466659
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 284,
+        "completed_after_19_brt": 0,
+        "completed_electors": 1466659,
+        "president_after_17_brt": 282,
+        "president_after_19_brt": 0,
+        "president_confirmations": 1466659
+      },
+      "expected_section_keys_sha256": "3e3f021c59971df402393356087a704e493e372a317a209886aba8f789bc7f19",
+      "expected_sections": 5923,
+      "format_version": 1,
+      "frames": 6186,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 58651897,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 5923,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 2866400
+      },
+      "parsed_section_keys_sha256": "3e3f021c59971df402393356087a704e493e372a317a209886aba8f789bc7f19",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 5923,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "SE"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 5695513951,
+      "wire_sha256": "d5b2732ea03cb81202aa43446df2e451a68280a4f10121488c93ade6ceca5a2a"
+    },
+    "SP": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 8787,
+        "completed_after_19_brt": 5,
+        "completed_electors": 27364121,
+        "president_after_17_brt": 8739,
+        "president_after_19_brt": 5,
+        "president_confirmations": 27364129
+      },
+      "blank_lines": 0,
+      "coverage_complete": false,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 8787,
+        "completed_after_19_brt": 5,
+        "completed_electors": 27364121,
+        "president_after_17_brt": 8739,
+        "president_after_19_brt": 5,
+        "president_confirmations": 27364129
+      },
+      "expected_section_keys_sha256": "47c771d00126d6d505e42da86e4405abf0e59d9c0db2b68e4afd6483ec805926",
+      "expected_sections": 103656,
+      "format_version": 1,
+      "frames": 106360,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 1045342930,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 103655,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 52656093
+      },
+      "parsed_section_keys_sha256": "d13f07fe7c5e601faa8aaa51ba8efb6bb6209df2935bce02602e89d6e549b0a5",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 103655,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "SP"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 101487578225,
+      "wire_sha256": "4672035e8e79735059709c3a0e4b368b7e1533fd6c56c1eb903eb5eadb9f1d37"
+    },
+    "TO": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 221,
+        "completed_after_19_brt": 0,
+        "completed_electors": 954763,
+        "president_after_17_brt": 220,
+        "president_after_19_brt": 0,
+        "president_confirmations": 954693
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 221,
+        "completed_after_19_brt": 0,
+        "completed_electors": 954763,
+        "president_after_17_brt": 220,
+        "president_after_19_brt": 0,
+        "president_confirmations": 954693
+      },
+      "expected_section_keys_sha256": "d950975fdeb4433e0be90c9a9fb2e781a020aa1ce4457c8c65b72a5ec6fb0474",
+      "expected_sections": 4384,
+      "format_version": 1,
+      "frames": 4473,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 40020046,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 4384,
+      "mismatch_examples": [],
+      "mismatched_sections": 0,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 1919102
+      },
+      "parsed_section_keys_sha256": "d950975fdeb4433e0be90c9a9fb2e781a020aa1ce4457c8c65b72a5ec6fb0474",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 4384,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": true,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "TO"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 3874675138,
+      "wire_sha256": "83908086cb7b37f7b45f79dc999963a9c5a4911663d4d0b610adc485858c2f4d"
+    },
+    "ZZ": {
+      "all_parsed_events": {
+        "completed_after_17_brt": 0,
+        "completed_after_19_brt": 0,
+        "completed_electors": 380612,
+        "president_after_17_brt": 0,
+        "president_after_19_brt": 0,
+        "president_confirmations": 380612
+      },
+      "blank_lines": 0,
+      "coverage_complete": true,
+      "duplicate_body_files": 0,
+      "duplicate_relevant_lines": 0,
+      "events_in_matched_sections": {
+        "completed_after_17_brt": 0,
+        "completed_after_19_brt": 0,
+        "completed_electors": 380612,
+        "president_after_17_brt": 0,
+        "president_after_19_brt": 0,
+        "president_confirmations": 380612
+      },
+      "expected_section_keys_sha256": "eec19528d7dfb63d7a58923f4edf91849569c204ad04565cbcc303afcca4e80b",
+      "expected_sections": 1310,
+      "format_version": 1,
+      "frames": 1394,
+      "limitations": [
+        "Autenticadores de linhas, assinaturas e cadeia de certificados não verificados.",
+        "Relógios nominalmente normalizados; não prova o instante físico de cada voto.",
+        "O log não revela candidato escolhido.",
+        "Contingências, rotação, duplicação ou cobertura incompleta que impeçam conciliação bloqueiam a classificação de sucesso.",
+        "Um resultado parcial por UF não é contagem nacional."
+      ],
+      "lines_all_dates_apps": 7589459,
+      "malformed_line_examples": [],
+      "malformed_lines": 0,
+      "matched_sections": 1283,
+      "mismatch_examples": [
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 13,
+          "files": 1,
+          "key": "ZZ/29173/0001/0494",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 53,
+          "files": 1,
+          "key": "ZZ/29254/0001/0001",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 14,
+          "files": 1,
+          "key": "ZZ/29270/0001/0003",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 39,
+          "files": 1,
+          "key": "ZZ/29297/0001/0495",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 29,
+          "files": 1,
+          "key": "ZZ/29300/0001/0006",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 41,
+          "files": 1,
+          "key": "ZZ/29394/0001/0028",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 31,
+          "files": 1,
+          "key": "ZZ/29580/0001/0096",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 52,
+          "files": 1,
+          "key": "ZZ/29645/0001/0380",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 34,
+          "files": 1,
+          "key": "ZZ/29750/0001/1703",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 45,
+          "files": 1,
+          "key": "ZZ/29777/0001/0127",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 21,
+          "files": 1,
+          "key": "ZZ/29858/0001/1183",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 37,
+          "files": 1,
+          "key": "ZZ/29912/0001/0150",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 97,
+          "files": 1,
+          "key": "ZZ/30163/0001/0647",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 10,
+          "files": 1,
+          "key": "ZZ/30171/0001/1340",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 7,
+          "files": 1,
+          "key": "ZZ/30295/0001/0348",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 24,
+          "files": 1,
+          "key": "ZZ/30325/0001/0352",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 8,
+          "files": 1,
+          "key": "ZZ/30333/0001/0353",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 23,
+          "files": 1,
+          "key": "ZZ/30430/0001/0384",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 55,
+          "files": 1,
+          "key": "ZZ/30546/0001/1764",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 28,
+          "files": 1,
+          "key": "ZZ/30597/0001/1182",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 23,
+          "files": 1,
+          "key": "ZZ/30708/0001/0444",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 12,
+          "files": 1,
+          "key": "ZZ/30821/0001/1524",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 17,
+          "files": 1,
+          "key": "ZZ/38962/0001/0558",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 34,
+          "files": 1,
+          "key": "ZZ/39102/0001/0712",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 20,
+          "files": 1,
+          "key": "ZZ/99155/0001/1504",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 22,
+          "files": 1,
+          "key": "ZZ/99180/0001/1228",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        },
+        {
+          "brt_shift_seconds": null,
+          "duplicate_body_files": 0,
+          "duplicate_relevant_lines": 0,
+          "events": {
+            "completed_after_17_brt": 0,
+            "completed_after_19_brt": 0,
+            "completed_electors": 0,
+            "president_after_17_brt": 0,
+            "president_after_19_brt": 0,
+            "president_confirmations": 0
+          },
+          "expected_turnout": 42,
+          "files": 1,
+          "key": "ZZ/99473/0001/1327",
+          "malformed_lines": 0,
+          "matched": false,
+          "uf": "ZZ",
+          "unknown_context_relevant_events": 0
+        }
+      ],
+      "mismatched_sections": 27,
+      "other_context_relevant_events": {},
+      "other_dates_relevant_events": {
+        "04/10/2026": 681954
+      },
+      "parsed_section_keys_sha256": "eec19528d7dfb63d7a58923f4edf91849569c204ad04565cbcc303afcca4e80b",
+      "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+      "scope": "Eventos VOTA em 25/10/2026; confirmações para Presidente e eventos de eleitor computado são métricas distintas. Cobertura limitada às UFs/arquivos efetivamente importados.",
+      "section_assignment": "GAP municipality/zone/section inside each text body; official outer filename is expected key. Unknown context blocks reconciliation; other keys counted separately.",
+      "sections": 1310,
+      "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+      "success": false,
+      "timestamp_policy": "Relógio registrado + deslocamento nominal para Brasília fornecido pela política documentada; cortes estritos >17:00:00 e >19:00:00. ZZ não entra nas métricas BRT.",
+      "ufs": [
+        "ZZ"
+      ],
+      "unknown_context_relevant_events": 0,
+      "wire_bytes": 756627360,
+      "wire_sha256": "9bdd578cd36ea4f606d8e7e6925f9eb85337edb5a3aef0bbfd642aa8650eff72"
+    }
+  },
+  "policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+  "scope": "Consolidação de relatórios de logs; diagnóstico enquanto houver falhas ou cobertura incompleta.",
+  "sections": 499206,
+  "sections_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+  "success": false,
+  "ufs": [
+    "AC",
+    "AL",
+    "AM",
+    "AP",
+    "BA",
+    "CE",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MG",
+    "MS",
+    "MT",
+    "PA",
+    "PB",
+    "PE",
+    "PI",
+    "PR",
+    "RJ",
+    "RN",
+    "RO",
+    "RR",
+    "RS",
+    "SC",
+    "SE",
+    "SP",
+    "TO",
+    "ZZ"
+  ]
+}

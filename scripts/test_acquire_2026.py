@@ -13,7 +13,7 @@ import subprocess
 import sys
 
 from acquire_2026 import catalog_from_snapshot, fetch, limits_at, official_digest, probe, relative_url, write_json
-from pin_catalog_2026 import pin
+from pin_catalog_2026 import pin, validate_fixed
 from acquire_2026 import scheduled_batches
 
 FIXTURE = Path(__file__).resolve().parents[1] / "tests/fixtures/audit-2026/synthetic.csv"
@@ -97,6 +97,15 @@ class AcquisitionTests(unittest.TestCase):
         row = dict(item, status="reverified_local", bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
         report = {"errors": 0, "finished_at_utc": "synthetic-test", "catalog_sha256": digest, "items": [row]}
         fixed = pin(catalog, report, digest)
+        validate_fixed(raw, fixed)
+        for altered in (dict(fixed, items=[]),
+                        dict(fixed, items=[dict(fixed['items'][0], path='changed')]),
+                        dict(fixed, items=[item]),
+                        dict(fixed, items=[fixed['items'][0], fixed['items'][0]])):
+            with self.assertRaises(ValueError):
+                validate_fixed(raw, altered)
+        with self.assertRaisesRegex(ValueError, "descoberta"):
+            validate_fixed(raw+b'\n', fixed)
         ranged = pin(catalog, dict(report, items=[dict(row, metadata_method="range")]), digest)
         self.assertEqual(ranged["items"][0]["metadata_method"], "range")
         with tempfile.TemporaryDirectory() as tmp:
@@ -117,6 +126,19 @@ class AcquisitionTests(unittest.TestCase):
             pin(catalog, dict(report, items=[]), digest)
         with self.assertRaisesRegex(ValueError, "repetidos"):
             pin(catalog, dict(report, items=[row,row]), digest)
+
+    def test_pipeline_without_fixed_catalog_fails_before_creating_output(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            script = root/'scripts/reproduce_audit_2026.sh'
+            script.parent.mkdir()
+            script.write_bytes(Path(__file__).with_name(script.name).read_bytes())
+            output = root/'new-run'
+            result = subprocess.run(['bash', str(script), str(root/'sources'), str(output)],
+                                    capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('catálogo fixado ausente', result.stderr)
+            self.assertFalse(output.exists())
 
     def test_fixture_hashes_are_recomputed(self):
         metadata = json.loads((FIXTURE.parent / "hashes.json").read_text())

@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "observed_at_utc": "2026-10-29T21:41:15.093811+00:00",
+  "git_revision": "1787e7ca42a6b357d94b8ae372f8c87ebf68ac4c",
+  "scope": "Primeira execução integral: verificação dos originais, CRC, BU e importação de logs executados. Empacotamento interrompido antes do recibo final; esta tentativa não é declarada concluída.",
+  "presidential_fields_equal_except_source_members": true,
+  "artifacts_inventory_present": false,
+  "files": {
+    "verification.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/verification.json",
+      "bytes": 1764811,
+      "sha256": "69e8ce7e9ddd367cbec34b65f066d84599e530af6e4f948df77c38f68fe37dad"
+    },
+    "zip-integrity.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/zip-integrity.json",
+      "bytes": 459601,
+      "sha256": "1ec1a3001ed14bb47bfc2393cf06b87dd95e8421347455272691991b02228c9e"
+    },
+    "comparison.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/comparison.json",
+      "bytes": 7472,
+      "sha256": "c2ada7d4761fd4390e64e7d16a0526e66dd10fada92f842efa6fa7abbfd6bc49"
+    },
+    "coverage.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/coverage.json",
+      "bytes": 4855,
+      "sha256": "663f7ba6f61346a90470a31310a7bffc9004a3d34f61bbd87b528d4c8152b15e"
+    },
+    "environment.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/environment.json",
+      "bytes": 1307,
+      "sha256": "0e0bafcdeebec761f0ac035262be5fb12d9293639106979e2a5f586247893c70"
+    },
+    "log-national.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-1/log-national.json",
+      "bytes": 165574,
+      "sha256": "19ef93f103630216b15dd53bcdd788dbd6a085a9769192114d3690c63059b352"
+    }
+  }
+}
