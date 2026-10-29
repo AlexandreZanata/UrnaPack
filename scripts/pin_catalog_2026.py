@@ -25,6 +25,10 @@ def pin(catalog, report, catalog_hash):
         if row["path"] != item["path"]:
             raise ValueError("caminho diverge entre catálogo e verificação")
         fixed = dict(item, expected_bytes=row["bytes"], expected_sha256=row["sha256"])
+        if "metadata_method" in row:
+            if row["metadata_method"] not in ("head", "range"):
+                raise ValueError("método de metadados não reconhecido no recibo")
+            fixed["metadata_method"] = row["metadata_method"]
         check_pinned(fixed, row)
         result["items"].append(fixed)
     return result

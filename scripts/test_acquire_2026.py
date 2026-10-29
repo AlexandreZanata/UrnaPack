@@ -9,6 +9,8 @@ import unittest
 from email.message import Message
 from unittest.mock import patch
 import fcntl
+import subprocess
+import sys
 
 from acquire_2026 import catalog_from_snapshot, fetch, limits_at, official_digest, probe, relative_url, write_json
 from pin_catalog_2026 import pin
@@ -32,6 +34,52 @@ class Response(io.BytesIO):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_one_byte_range_metadata_is_explicit_and_checks_total_then_full_bytes(self):
+        body = FIXTURE.read_bytes()
+        calls = []
+        def opener(request, timeout):
+            calls.append(request.get_method())
+            if request.get_header("Range") == "bytes=0-0":
+                return Response(body[:1], {"Content-Length": 1, "Content-Range": f"bytes 0-0/{len(body)}", "ETag": '"fixture"'}, 206)
+            return Response(body, {"Content-Length": len(body), "ETag": '"fixture"'})
+        with tempfile.TemporaryDirectory() as tmp:
+            item = {"url": URL, "path": relative_url(URL), "metadata_method": "range"}
+            result = fetch(item, Path(tmp), {URL}, LIMITS, opener)
+            self.assertEqual(result["status"], "downloaded")
+            self.assertEqual(result["metadata_method"], "range")
+            self.assertNotIn("http_head", result)
+            self.assertEqual(result["http_metadata_range"]["Content-Length"], "1")
+            self.assertEqual(result["bytes"], len(body))
+            self.assertEqual(result["sha256"], hashlib.sha256(body).hexdigest())
+            self.assertEqual(calls, ["GET", "GET"])
+            receipt = Path(tmp)/ (item["path"]+".receipt.json")
+            altered = json.loads(receipt.read_text())
+            altered["metadata_sample_sha256"] = hashlib.sha256(bytes([body[0]^1])).hexdigest()
+            write_json(receipt, altered)
+            local = fetch(item, Path(tmp), {URL}, LIMITS, opener)
+            self.assertEqual(local["status"], "error")
+            self.assertIn("primeiro byte local", local["error"])
+        with tempfile.TemporaryDirectory() as tmp:
+            result = fetch(item, Path(tmp), {URL}, LIMITS, self.opener(body))
+            self.assertEqual(result["status"], "error")
+            self.assertIn("Range 0-0", result["error"])
+        def changed_sample(request, timeout):
+            if request.get_header("Range") == "bytes=0-0":
+                return Response(bytes([body[0] ^ 1]), {"Content-Length": 1,
+                    "Content-Range": f"bytes 0-0/{len(body)}", "ETag": '"fixture"'}, 206)
+            return opener(request, timeout)
+        with tempfile.TemporaryDirectory() as tmp:
+            result = fetch(item, Path(tmp), {URL}, LIMITS, changed_sample)
+            self.assertEqual(result["status"], "error")
+            self.assertIn("primeiro byte", result["error"])
+            self.assertFalse((Path(tmp)/item["path"]).exists())
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run([sys.executable, str(Path(__file__).with_name("acquire_2026.py")),
+                "plan", "--catalog", str(FIXTURE.parent/"hashes.json"), "--receipt", str(Path(tmp)/"plan.json"),
+                "--metadata-method", "range"], capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("opções de fetch/verify", result.stderr)
+
     def test_sidecar_barrier_preserves_every_resource_without_barrier_for_large_files(self):
         items = [{"url": URL+".sha512"}, {"url": URL},
                  {"url": "https://cdn.tse.jus.br/arqurnatot/synthetic_2026_1t_MT.zip"}]
@@ -49,6 +97,8 @@ class AcquisitionTests(unittest.TestCase):
         row = dict(item, status="reverified_local", bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
         report = {"errors": 0, "finished_at_utc": "synthetic-test", "catalog_sha256": digest, "items": [row]}
         fixed = pin(catalog, report, digest)
+        ranged = pin(catalog, dict(report, items=[dict(row, metadata_method="range")]), digest)
+        self.assertEqual(ranged["items"][0]["metadata_method"], "range")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             result = fetch(fixed["items"][0], root, {URL}, LIMITS, self.opener(body))

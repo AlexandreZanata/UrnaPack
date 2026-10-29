@@ -6,4 +6,6 @@ SHA-256 real dos bytes de `synthetic.csv`: `e586b1cee52d7c54ff35e9098909e833ef69
 
 `coverage-synthetic.json` contém um caso artificial de conciliação com seção sem votantes. Não representa dados oficiais. Bytes e SHA-256 real em `hashes.json`.
 
+`correspondence-synthetic.csv` é uma correspondência inteiramente artificial para testar junção por chave, ausência de horário e preservação de campo extra; não representa CEFT real. Hash e tamanho dos bytes constam de `hashes.json`.
+
 Os arquivos `log*-synthetic.*` são inteiramente artificiais e identificados para testar o parser de logs. Incluem eventos de outro turno e fronteiras exatas de horário. O token final das linhas é o SHA-256 truncado do prefixo de teste; **não** é um autenticador TSE. O ZIP e todos os corpos têm hashes reais em `hashes.json`. Nenhuma URL de fixture afirma publicação real no TSE.

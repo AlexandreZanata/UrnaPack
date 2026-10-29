@@ -1,0 +1,145 @@
+{
+  "format_version": 1,
+  "inputs": [
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/AC/analysis.json",
+      "sha256": "83c588f65b8637761133d94af1d175194a6ddccc58fa78007cfd16cff148ae69"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/AL/analysis.json",
+      "sha256": "d09cb997ebbd7826abd602ec1d03bc206ff86c6c95e707a4f5928a349dada092"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/AM/analysis.json",
+      "sha256": "d1f96dbcdd3c39b544074f2860a1dd5f037a09e06ac6ad3448c2524647c91d9c"
+    },
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/AP/analysis.json",
+      "sha256": "b3e6d5eb8c4faa8aa73bf9fdbd3b6a4881b837956378743b855364a85fc86dbb"
+    },
+    {
+      "bytes": 4270,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/BA/analysis.json",
+      "sha256": "0fdbc806e679367abc08a4fb1edc6d5eb82647e6bc1a84e6f2f8dfd2ed1c3f4b"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/CE/analysis.json",
+      "sha256": "2a38939d27cd7eed7b26ec5d4f0815db30fd3c505df1b8e00bf115d95c6d661f"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/DF/analysis.json",
+      "sha256": "5a21c5a8fe5f1360d3d71d5f49fe0d0ab9c3a90239197cf1cba44658b1e4d544"
+    },
+    {
+      "bytes": 2609,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/ES/analysis.json",
+      "sha256": "88bb486c1883c5898de37538b71370cf210d4479fc6d2e5d8ae44d0d3aadecb4"
+    },
+    {
+      "bytes": 2581,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/GO/analysis.json",
+      "sha256": "80a6102a0a9482eb9831baeb06278061ab842df46620b2509e0da8a2b2828b60"
+    },
+    {
+      "bytes": 3143,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/MA/analysis.json",
+      "sha256": "8f5ee5c428ce2f8ca955adf6f659cdb39bf0b30a8684a91bf494f65cf17bfe96"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/MS/analysis.json",
+      "sha256": "6c2e1b60d6e6edbff846f596e1983d6b8632c34fc4dc33340e02ceb5dd3ed369"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/MT/analysis.json",
+      "sha256": "7c85ba92f9aa98351c72b825b33424c9845d2e40b6ff4fc82930b40685d4d9b2"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/PA/analysis.json",
+      "sha256": "8d4f47320bbd58d240b7bf8832836beb6e143c614e52ced8dca11e616f60fea8"
+    },
+    {
+      "bytes": 3143,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/PB/analysis.json",
+      "sha256": "d310239a857e11613e2588ca9c770716a78e22932723127eb84e96c726e14bcc"
+    },
+    {
+      "bytes": 2586,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/PE/analysis.json",
+      "sha256": "a7e8f4bf49ae909bf70982c64515f226b5423502e59d93f3cce2817fbd9805fd"
+    },
+    {
+      "bytes": 3141,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/PI/analysis.json",
+      "sha256": "d9d8c416001616ba7408bd94d7153095503f44b9fae82b57aacb65e9b08d16e0"
+    },
+    {
+      "bytes": 4601,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/PR/analysis.json",
+      "sha256": "ab1af84908f900ca8fbf5f3448b5714450553f74cc18865669c237bbdcc2cf83"
+    },
+    {
+      "bytes": 48477,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/RJ/analysis.json",
+      "sha256": "f6ea1fe91d8a118bc1600ab246fce34c7bed584ed0c97516396050f01ff6685c"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/RN/analysis.json",
+      "sha256": "4b653459636a81516b646ab18760dc931c69f8bb529bfe5b9d734f4af9ef97e2"
+    },
+    {
+      "bytes": 2571,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/RO/analysis.json",
+      "sha256": "292f5c50c85d79181a62c3a928c42bfb8ff0416076bd53fc7b52a6fd8f1eb9c7"
+    },
+    {
+      "bytes": 2570,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/RR/analysis.json",
+      "sha256": "ab4f22e0fa677321f936a2d59eb03c41ace22cb9843603bc4d5f5347f4611fe5"
+    },
+    {
+      "bytes": 3141,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/RS/analysis.json",
+      "sha256": "39c8e03ea24b2eeb4e3bc753c8d15190cf38ddb4215044334acdc28ad857397f"
+    },
+    {
+      "bytes": 2575,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/SE/analysis.json",
+      "sha256": "0cc16e14cc6d5e7e13d869b506b862cc34331d959ba58f961f87beba438ecef6"
+    },
+    {
+      "bytes": 2571,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/TO/analysis.json",
+      "sha256": "6a5a6f4f0b7f1c7a48e06f0612f680d678930f3eacebb69cfa36cba829333285"
+    },
+    {
+      "bytes": 17601,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-3/ZZ/analysis.json",
+      "sha256": "471e272ed620a9c8d5122fdb4da8b8843486cfe12efeb645e7f07d55924822c3"
+    },
+    {
+      "bytes": 6957,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-4/MG/analysis.json",
+      "sha256": "d5c461e7f7f8ea2ff1bce2cba4e6ed0d0501087015121da004367d6954d4d5af"
+    },
+    {
+      "bytes": 2581,
+      "path": "/data/urnapack/auditoria-2026/logs/lote-4/SC/analysis.json",
+      "sha256": "08306c87414baf4cd83b5781b0f3196a20bdb0c2ed344d2d49c24b88a680a2e8"
+    }
+  ],
+  "official": {
+    "bytes": 3233,
+    "path": "/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/UrnaPack/auditoria/2026/evidencias/totalizacao-presidente-2t.json",
+    "sha256": "67fae708b0c7977fc9847d36100c63313621bff971178c48f2da99969707c263"
+  }
+}

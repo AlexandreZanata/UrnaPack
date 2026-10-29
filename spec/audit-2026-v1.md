@@ -87,6 +87,10 @@ O recibo externo registra bytes/SHA-256 e o manifesto de fontes utilizado.
 com seu hash para localizar sentinelas; exige chaves distintas e concilia
 seções instaladas, aptos e abstenções com o JSON nacional. Zeros à esquerda
 são normalizados apenas para a junção semântica, com colisões reprovadas.
+Com `--correspondence-zip`, a conciliação também verifica ZIP/recibo/SHA-512,
+exige cobertura exata das chaves ZZ na CEFT e compara seções C com votantes
+às chaves sem encerramento no BU. Preserva códigos/descrições de todas as
+origens e todos os campos das linhas C, sem inferir o horário de voto.
 
 `scripts/check_audit_2026.py` confronta categorias e comparecimento com o JSON
 oficial de totalização. Divergência com totalização é erro; divergência com
@@ -110,3 +114,12 @@ de uma verificação concluída sem erros e com exatamente as URLs do catálogo.
 Ambos são obrigatórios quando qualquer um aparece. Arquivo local divergente
 reprova; download divergente permanece parcial e não é promovido. A fixação
 não verifica autoria/assinatura, mas impede aceitar outro snapshot na mesma URL.
+HEAD e GET podem observar versões distintas na mesma URL. O modo explícito
+`--metadata-method range` faz GET `Range: bytes=0-0`, exige resposta 206 com
+Content-Range e exatamente um byte, e usa o total declarado nesse campo.
+O GET completo/retomado deve manter validadores, tamanho total e primeiro
+byte da sondagem. O recibo distingue essa observação de HEAD; não altera
+cabeçalho remoto para simular Content-Length. A fixação conserva o método
+efetivamente usado por recurso. No transporte curl, os blocos de cabeçalho
+textuais emitidos pelo cliente também são preservados em Latin-1 reversível,
+além da lista ordenada de campos (inclusive repetições).

@@ -148,24 +148,27 @@ def check_pinned(item, measured):
         raise ValueError("bytes divergem do snapshot fixado; preservar e investigar")
 
 
-def fetch(item, root, catalog_urls, limits, opener=urllib.request.urlopen):
+def fetch(item, root, catalog_urls, limits, opener=urllib.request.urlopen, metadata_method=None):
     """Um bloqueio por destino impede escritores concorrentes, inclusive entre CLIs."""
     try:
         dest = safe_path(root, item["path"])
         dest.parent.mkdir(parents=True, exist_ok=True)
         with open(dest.with_name(dest.name + ".lock"), "a") as lock:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            return _fetch_unlocked(item, root, catalog_urls, limits, opener)
+            return _fetch_unlocked(item, root, catalog_urls, limits, opener, metadata_method)
     except Exception as exc:
         return {"url": item["url"], "path": item.get("path"), "status": "error",
                 "error": f"{type(exc).__name__}: {exc}", "finished_at_utc": now()}
 
 
-def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlopen):
+def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlopen, metadata_method=None):
     entry = {"url": item["url"], "path": item.get("path"), "started_at_utc": now()}
     try:
         if "unsupported" in item:
             raise ValueError(item["unsupported"])
+        metadata_method = metadata_method or item.get("metadata_method", "head")
+        if metadata_method not in ("head", "range"):
+            raise ValueError("método de metadados desconhecido")
         dest = safe_path(root, item["path"])
         dest.parent.mkdir(parents=True, exist_ok=True)
         receipt_path = dest.with_name(dest.name + ".receipt.json")
@@ -176,6 +179,11 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
             measured = hashes(dest, limits["IO_BUFFER_BYTES"])
             if measured["sha256"] != saved["sha256"] or measured["bytes"] != saved["bytes"]:
                 raise ValueError("SHA-256/tamanho local divergente do recibo")
+            if saved.get("metadata_method") == "range":
+                with dest.open("rb") as stream:
+                    first_byte_hash = hashlib.sha256(stream.read(1)).hexdigest()
+                if first_byte_hash != saved.get("metadata_sample_sha256"):
+                    raise ValueError("primeiro byte local diverge da sondagem Range registrada")
             check_pinned(item, measured)
             for algorithm in ("sha512", "sha1"):
                 if item["url"] + "." + algorithm in catalog_urls:
@@ -185,14 +193,32 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
                         raise ValueError(f"{algorithm} local diverge do sidecar oficial")
             entry.update(saved, status="reverified_local", reverified_at_utc=now())
             return entry
-        request = urllib.request.Request(item["url"], method="HEAD")
+        request = urllib.request.Request(item["url"], method="HEAD" if metadata_method == "head" else "GET")
+        sample = None
+        if metadata_method == "range":
+            request.add_header("Range", "bytes=0-0")
         with opener(request, timeout=limits["FETCH_TIMEOUT_SECS"]) as response:
             relative_url(response.geturl())
             headers = dict(response.headers.items())
-            wanted = int(response.headers["Content-Length"]) if response.headers.get("Content-Length") else None
+            if metadata_method == "range":
+                match = re.fullmatch(r"bytes 0-0/(\d+)", response.headers.get("Content-Range", ""))
+                if response.status != 206 or not match or int(match[1]) < 1:
+                    raise ValueError("sondagem Range 0-0 não confirmada pelo servidor")
+                sample = response.read(2)
+                if len(sample) != 1:
+                    raise ValueError("sondagem Range não retornou exatamente um byte")
+                wanted = int(match[1])
+                entry["metadata_sample_sha256"] = hashlib.sha256(sample).hexdigest()
+            else:
+                wanted = int(response.headers["Content-Length"]) if response.headers.get("Content-Length") else None
             etag = response.headers.get("ETag")
             modified = response.headers.get("Last-Modified")
-        entry["http_head"] = headers
+            entry["http_metadata_fields"] = list(response.headers.items())
+            if hasattr(response, "raw_http_headers"):
+                entry["http_metadata_raw_headers_latin1"] = response.raw_http_headers.decode("latin1")
+                entry["http_metadata_protocol"] = response.http_status_line
+        entry["metadata_method"] = metadata_method
+        entry["http_head" if metadata_method == "head" else "http_metadata_range"] = headers
         if wanted is not None and (wanted < 0 or wanted > limits["MAX_AUDIT_FETCH_BYTES"]):
             raise ValueError(f"Content-Length excede limite: {wanted}")
         partial = dest.with_name(dest.name + ".partial")
@@ -221,6 +247,9 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
             with opener(req, timeout=limits["FETCH_TIMEOUT_SECS"]) as response:
                 relative_url(response.geturl())
                 entry["http_get"] = dict(response.headers.items())
+                entry["http_get_fields"] = list(response.headers.items())
+                if hasattr(response, "raw_http_headers"):
+                    entry["http_get_raw_headers_latin1"] = response.raw_http_headers.decode("latin1")
                 entry["http_get_status"] = response.status
                 entry["http_get_url"] = response.geturl()
                 if hasattr(response, "http_status_line"):
@@ -250,6 +279,10 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
             raise ValueError("download truncado; parcial preservado")
         official = []
         check_pinned(item, measured)
+        if sample is not None:
+            with partial.open("rb") as stream:
+                if stream.read(1) != sample:
+                    raise ValueError("primeiro byte diverge da sondagem Range; parcial preservado")
         for algorithm in ("sha512", "sha1"):
             side_url = item["url"] + "." + algorithm
             if side_url in catalog_urls:
@@ -259,7 +292,7 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
                     raise ValueError(f"{algorithm} diverge do sidecar oficial; parcial preservado")
                 official.append({"algorithm": algorithm, "expected": expected, "verified": True,
                                  "sidecar_url": side_url, "sidecar_sha256": hashes(side_path, limits["IO_BUFFER_BYTES"])["sha256"]})
-        entry.update(measured, status="downloaded", http_head=headers,
+        entry.update(measured, status="downloaded",
                      http_length_verification="matched" if wanted is not None else "HEAD sem Content-Length; tamanho local medido, sem confronto de tamanho remoto",
                      official_checks=official, finished_at_utc=now(),
                      integrity_scope="bytes e sidecar quando listado; assinatura digital não verificada")
@@ -315,8 +348,11 @@ def main():
     parser.add_argument("--match", default="")
     parser.add_argument("--exclude", default="")
     parser.add_argument("--transport", choices=["urllib", "curl"], default="urllib")
+    parser.add_argument("--metadata-method", choices=["head", "range"])
     parser.add_argument("--limits", default=str(Path(__file__).with_name("limits.env")))
     args = parser.parse_args()
+    if args.action in ("catalog", "plan") and (args.metadata_method is not None or args.transport != "urllib"):
+        parser.error("--transport curl e --metadata-method são opções de fetch/verify; plan usa HEAD urllib")
     limits = limits_at(args.limits)
     if args.action == "catalog":
         if not args.snapshot:
@@ -356,8 +392,8 @@ def main():
             return {"url": item["url"], "path": item["path"], "status": "error", "error": "arquivo final ausente; sem download no modo verify"}
         if args.transport == "curl":
             from curl_transport import CurlOpener
-            return fetch(item, args.root, urls, limits, CurlOpener(limits))
-        return fetch(item, args.root, urls, limits)
+            return fetch(item, args.root, urls, limits, CurlOpener(limits), args.metadata_method)
+        return fetch(item, args.root, urls, limits, metadata_method=args.metadata_method)
     # Só os sidecars dependem de barreira. Um ZIP grande não bloqueia a fila
     # de outros datasets enquanto há trabalhadores livres.
     for phase_items in scheduled_batches(selected):

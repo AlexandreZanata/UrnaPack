@@ -13,7 +13,7 @@ if [[ -e "$run_root" ]]; then
   exit 1
 fi
 mkdir -p "$run_root"
-catalog=auditoria/2026/catalogo-fixado.json
+catalog=auditoria/2026/catalogo.json
 official=auditoria/2026/evidencias/totalizacao-presidente-2t.json
 python3 scripts/acquire_2026.py fetch --catalog "$catalog" --root "$source_root" \
   --receipt "$run_root/acquisition.json" --transport curl
@@ -60,15 +60,14 @@ aggregate_code=0
 target/release/audit_logs_2026 --aggregate-manifest "$run_root/log-input.json" \
   --output "$run_root/log-national.json" || aggregate_code=$?
 python3 - "$run_root" "$logs_code" "$aggregate_code" <<'PY'
-import sys,json,pathlib
-sys.path.insert(0,'scripts')
-from acquire_2026 import hashes,limits_at
+import sys,json,pathlib,hashlib
 root=pathlib.Path(sys.argv[1]); files={}
-buffer=limits_at('scripts/limits.env')['IO_BUFFER_BYTES']
 for path in sorted(root.rglob('*')):
  if path.is_file():
-  measured=hashes(path,buffer)
-  files[str(path.relative_to(root))]={key:measured[key] for key in ['bytes','sha256']}
+  h=hashlib.sha256()
+  with path.open('rb') as stream:
+   for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+  files[str(path.relative_to(root))]={'bytes':path.stat().st_size,'sha256':h.hexdigest()}
 (root/'artifacts.json').write_text(json.dumps({'format_version':1,'logs_exit_code':int(sys.argv[2]),
   'aggregate_exit_code':int(sys.argv[3]),'files':files},sort_keys=True,indent=2)+'\n')
 PY

@@ -89,6 +89,24 @@ Fontes computacionais: [entrada com hashes por membro](evidencias/entrada-buweb-
 [saída Rust](resultados/presidente-2t.json),
 [confronto executado](resultados/confronto-imagens.json).
 
+### Complemento de cobertura do exterior
+
+A junção por município/zona/seção com a correspondência efetivada oficial
+ZZ (`CEFT_2t_ZZ_261020261201.zip`), verificada contra SHA-512 publicado,
+identifica 29 seções de origem **C - Sistema de apuração**: 27 com
+comparecimento positivo, somando **831**, e as duas sentinelas sem votantes.
+As 27 chaves com votantes são exatamente as chaves presidenciais sem
+encerramento no BU. As demais origens são **U - Urna Eletrônica**, com
+1.280 seções/380.404 comparecimentos, e **R - BU gerado por RED em urna de
+seção**, com 1 seção/208 comparecimentos. Os códigos e descrições são os
+da fonte; essa junção não atribui horário a voto.
+
+O resultado integral e as linhas C com todos os seus campos estão em
+[cobertura-origens-exterior.json](resultados/cobertura-origens-exterior.json),
+e o dicionário e seu vínculo ao ZIP em `evidencias/leiame-correspondencias-efetivadas.*`.
+Isso esclarece a ausência de encerramento sem inventar eventos `VOTA` para
+logs de apuração.
+
 ## 3. Encerramento e horário de cada voto são variáveis diferentes
 
 O dicionário que acompanha os ZIPs define DT_ENCERRAMENTO como data e hora
@@ -224,7 +242,7 @@ do cadastro (ativo/inativo/desativado), não uma classificação rural/urbana.
 CD_TIPO_LOCAL distingue convencional, trânsito, preso provisório e temporário.
 Coordenadas do local de votação não bastam para caracterizar a residência dos
 eleitores. A classificação rural exige definição operacional e fonte própria.
-Exigem classificação geográfica e evidência própria. A ressalva das imagens
+A ressalva das imagens
 de que os extremos, isoladamente, não provam fraude eletrônica deve ser
 mantida; a contagem não permite escolher entre causas sociais ou operacionais.
 
@@ -313,6 +331,17 @@ Esses arquivos não entraram nos cálculos. A implementação passou a usar
 exclusão mútua por arquivo. Downloads posteriores só são aceitos após nova
 conferência de tamanho, releitura SHA-256 e sidecar oficial quando publicado.
 O histórico de erros HTTP/ausência de tamanho/retomadas também foi preservado.
+
+Também foram observadas versões diferentes em HEAD e GET de alguns recursos
+administrativos, inclusive quando ambos usavam HTTP/2: ETag, Last-Modified
+ou tamanho divergiam. Essas tentativas foram rejeitadas. Uma sondagem GET
+de um byte, com Content-Range/validadores conferidos contra o GET completo,
+permitiu adquirir esses recursos sem aceitar a inconsistência. Os recibos
+`aquisicao-http2-cabecalhos-*` e `aquisicao-range-metadados-*` preservam o
+confronto. Não se atribui causa ao comportamento do servidor. O acervo é uma
+coleta por recurso, em instantes registrados; não é snapshot transacional
+simultâneo de todos os sistemas do TSE. Recursos administrativos mutáveis
+também não são presumidos idênticos aos disponíveis na data das imagens.
 
 Pendências que impedem declarar a auditoria integral encerrada:
 

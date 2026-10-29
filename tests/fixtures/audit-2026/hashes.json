@@ -1,4 +1,8 @@
 {
+  "correspondence-synthetic.csv": {
+    "bytes": 238,
+    "sha256": "1fe9cad6c2f48da4a9dd873899784f1983b62bd81d1e43a39bdbfb68ad5f0f36"
+  },
   "coverage-synthetic.json": {
     "bytes": 775,
     "sha256": "f135d1fe37249ce27d5296015ad57e0e915c0eee190765a8b06bd692995ac947"

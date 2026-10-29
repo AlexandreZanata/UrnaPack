@@ -1,16 +1,17 @@
-"""Resposta GET por curl/HTTP2 para a mesma aquisição verificada.
+"""Respostas HEAD/GET por curl/HTTP2 para a mesma aquisição verificada.
 
-Não segue redirecionamentos. HEAD continua com urllib; Content-Length,
+Não segue redirecionamentos. HEAD e GET usam o mesmo transporte; Content-Length,
 Content-Range, validadores e hashes continuam sendo conferidos pelo chamador.
 """
 from email.message import Message
 import subprocess
 import tempfile
-import urllib.request
 
 
 class CurlResponse:
     def __init__(self, request, limits, timeout):
+        if request.get_method() not in ("HEAD", "GET"):
+            raise ValueError("curl: método não permitido na aquisição somente leitura")
         self.url = request.full_url
         self.timeout = timeout
         self.error_stream = tempfile.TemporaryFile()
@@ -18,6 +19,8 @@ class CurlResponse:
                    "--silent", "--show-error", "--fail", "--proto", "=https",
                    "--connect-timeout", str(timeout), "--speed-time", str(timeout),
                    "--speed-limit", str(limits["FETCH_MIN_SPEED_BYTES_PER_SEC"]) ]
+        if request.get_method() == "HEAD":
+            command.append("--head")
         for name, value in request.header_items():
             command.extend(["--header", f"{name}: {value}"])
         command.append(self.url)
@@ -25,8 +28,10 @@ class CurlResponse:
         self.stream = self.process.stdout
         try:
             used = 0
+            self.raw_http_headers = bytearray()
             while True:
                 line = self.stream.readline(limits["IO_BUFFER_BYTES"] + 1)
+                self.raw_http_headers.extend(line)
                 used += len(line)
                 if not line.startswith(b"HTTP/") or used > limits["IO_BUFFER_BYTES"]:
                     raise ValueError("curl: status HTTP ausente/inválido ou cabeçalho excessivo")
@@ -35,6 +40,7 @@ class CurlResponse:
                 self.headers = Message()
                 while True:
                     line = self.stream.readline(limits["IO_BUFFER_BYTES"] + 1)
+                    self.raw_http_headers.extend(line)
                     used += len(line)
                     if used > limits["IO_BUFFER_BYTES"] or not line:
                         raise ValueError("curl: cabeçalho truncado/excessivo")
@@ -86,6 +92,4 @@ class CurlOpener:
         self.limits = limits
 
     def __call__(self, request, timeout):
-        if request.get_method() == "HEAD":
-            return urllib.request.urlopen(request, timeout=timeout)
         return CurlResponse(request, self.limits, timeout)

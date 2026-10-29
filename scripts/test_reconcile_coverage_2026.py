@@ -4,7 +4,8 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import unittest
-from reconcile_coverage_2026 import reconcile
+import csv
+from reconcile_coverage_2026 import reconcile, reconcile_origins
 
 
 class CoverageTests(unittest.TestCase):
@@ -36,6 +37,24 @@ class CoverageTests(unittest.TestCase):
         bad["s"]["si"] = "3"
         with self.assertRaisesRegex(ValueError, "não confere"):
             reconcile(self.rows, self.sentinels, self.report, bad)
+
+    def test_origin_join_preserves_extra_fields_and_requires_exact_keys(self):
+        path = Path(__file__).resolve().parents[1] / "tests/fixtures/audit-2026/correspondence-synthetic.csv"
+        with path.open() as stream:
+            ceft = list(csv.DictReader(stream, delimiter=";"))
+        rows = [dict(row, SG_UF="ZZ", DT_ENCERRAMENTO="") for row in self.rows]
+        result = reconcile_origins(ceft, rows, self.sentinels)
+        self.assertEqual(result["nonzero_system_sections"], 1)
+        self.assertEqual(result["by_origin"]["C"]["turnout"], 90)
+        self.assertEqual(result["by_origin"]["C"]["sections"], 2)
+        self.assertEqual(result["system_of_counting_rows"][0]["ceft_row_all_fields"]["EXTRA_FIXTURE_PRESERVADO"], "SINTÉTICO NÃO TSE")
+        with self.assertRaisesRegex(ValueError, "duplicada"):
+            reconcile_origins(ceft+ceft[:1], rows, self.sentinels)
+        with self.assertRaisesRegex(ValueError, "incompleta"):
+            reconcile_origins(ceft[:1], rows, self.sentinels)
+        rows[0]["DT_ENCERRAMENTO"] = "2026-10-25 17:00:00"
+        with self.assertRaisesRegex(ValueError, "difere das chaves"):
+            reconcile_origins(ceft, rows, self.sentinels)
 
 
 if __name__ == "__main__":

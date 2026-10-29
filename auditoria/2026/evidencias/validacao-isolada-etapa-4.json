@@ -1,0 +1,80 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 1010,
+      "sha256": "b6510b881083b80e346ea464c874923eaff9bad332f8bb61c4189c10189f4d8e"
+    },
+    "auditoria/2026/README.md": {
+      "bytes": 10234,
+      "sha256": "bde58598b1948104e5ffed303f593b87cbdbfc80ad1a20423d72971ecda91f19"
+    },
+    "auditoria/2026/RELATORIO.md": {
+      "bytes": 22221,
+      "sha256": "41742c9a38c428f46a677842be0bf449da97e400e51381311ec0d356adab86a1"
+    },
+    "auditoria/2026/evidencias/leiame-correspondencias-efetivadas.json": {
+      "bytes": 371,
+      "sha256": "470f00fd91fb7ffecd5ba6a49624c0207fc3fae88ba1fa65c4b2dd2e75a72179"
+    },
+    "auditoria/2026/evidencias/leiame-correspondencias-efetivadas.pdf": {
+      "bytes": 311293,
+      "sha256": "9d6cee8d1aa2dd65108005c228e2212eb6e3112186c27dd21615c83dda0232e4"
+    },
+    "auditoria/2026/resultados/cobertura-origens-exterior.json": {
+      "bytes": 58040,
+      "sha256": "665e8d23a7773476b10273335d8d1c43ad0601b2bb56eac3bfea5c801dcb12bd"
+    },
+    "scripts/acquire_2026.py": {
+      "bytes": 22323,
+      "sha256": "4dd7a4addb9ef35149eb08db08e792f6f7f520a54771032ee9db31a7318b7778"
+    },
+    "scripts/curl_transport.py": {
+      "bytes": 4029,
+      "sha256": "2dc76a28202201a72af4702b57bd6f1b2199603730fd4dd7aecf64fe5264464e"
+    },
+    "scripts/pin_catalog_2026.py": {
+      "bytes": 2275,
+      "sha256": "d60e45e45ef1e3483b500f2f5dc1e420caa4101b4359f34791438fdcae111576"
+    },
+    "scripts/reconcile_coverage_2026.py": {
+      "bytes": 9452,
+      "sha256": "52272334238cef949b3d81a662bdf18300ba01e73bdcacf24512e74531c7f331"
+    },
+    "scripts/reproduce_audit_2026.sh": {
+      "bytes": 4585,
+      "sha256": "e6c8899192d76781a1e39f5ef5b688138649467cd99a0b77539692061e015f7c"
+    },
+    "scripts/test_acquire_2026.py": {
+      "bytes": 12974,
+      "sha256": "a6db4dc69cd8067bad4a15b69fc2974110325c7837548bfdb7ebbe775a79e2d4"
+    },
+    "scripts/test_curl_transport.py": {
+      "bytes": 2944,
+      "sha256": "e08239d66dc185c8e72f399e4bb06267c7e8e7354f5d3c8edeecb1e94208757c"
+    },
+    "scripts/test_reconcile_coverage_2026.py": {
+      "bytes": 2988,
+      "sha256": "bd33beaa2fc4abaecd5499d41547bc0a87eca49b80dbca08862d6ccfc569dd7a"
+    },
+    "spec/audit-2026-v1.md": {
+      "bytes": 7927,
+      "sha256": "5322c97957e142dc04a32be2492aabe2926de32c6c1e25c065400f1a946d2be3"
+    },
+    "tests/fixtures/audit-2026/README.md": {
+      "bytes": 1095,
+      "sha256": "2c08e97b18bab7abd861857bfac9650580152e23181557e36d92481bac3620c9"
+    },
+    "tests/fixtures/audit-2026/correspondence-synthetic.csv": {
+      "bytes": 238,
+      "sha256": "1fe9cad6c2f48da4a9dd873899784f1983b62bd81d1e43a39bdbfb68ad5f0f36"
+    },
+    "tests/fixtures/audit-2026/hashes.json": {
+      "bytes": 1074,
+      "sha256": "6b1a86f3a5c9903676795fd78ff9d4b9cb6f6babd53c95b465cf52e9fbd57bdc"
+    }
+  },
+  "format_version": 1,
+  "python_tests_passed": 112,
+  "recorded_at_utc": "2026-10-29T15:26:44.133371+00:00",
+  "scope": "Automação CEFT e transporte HEAD/GET/Range; fontes Rust não mudaram desde a validação de 75 testes da etapa 3."
+}

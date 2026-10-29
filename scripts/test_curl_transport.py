@@ -7,7 +7,7 @@ from unittest.mock import patch
 import urllib.request
 
 from acquire_2026 import limits_at
-from curl_transport import CurlResponse
+from curl_transport import CurlResponse, CurlOpener
 
 LIMITS = limits_at(Path(__file__).with_name("limits.env"))
 BODY = (Path(__file__).resolve().parents[1] / "tests/fixtures/audit-2026/synthetic.csv").read_bytes()
@@ -27,6 +27,17 @@ class Process:
 
 
 class CurlTests(unittest.TestCase):
+    def test_head_uses_http2_transport_without_expectation_of_a_body(self):
+        request = urllib.request.Request(REQUEST.full_url, method="HEAD")
+        payload = b"HTTP/2 200\r\ncontent-length: " + str(len(BODY)).encode() + b"\r\n\r\n"
+        with patch("subprocess.Popen", return_value=Process(payload)) as launch:
+            with CurlOpener(LIMITS)(request, LIMITS["FETCH_TIMEOUT_SECS"]) as response:
+                self.assertEqual(response.read(), b"")
+                self.assertEqual(int(response.headers["Content-Length"]), len(BODY))
+            command = launch.call_args.args[0]
+            self.assertIn("--head", command)
+            self.assertIn("--http2", command)
+
     def test_status_headers_and_identical_body(self):
         payload = b"HTTP/2 206\r\ncontent-length: " + str(len(BODY)).encode() + b"\r\nETag: fixture\r\n\r\n" + BODY
         with patch("subprocess.Popen", return_value=Process(payload)):
@@ -35,6 +46,7 @@ class CurlTests(unittest.TestCase):
                 self.assertEqual(int(response.headers["Content-Length"]), len(BODY))
                 self.assertEqual(response.read(), BODY)
                 self.assertEqual(response.read(), b"")
+                self.assertEqual(bytes(response.raw_http_headers), payload[:-len(BODY)])
 
     def test_truncated_transfer_exit_is_error(self):
         payload = b"HTTP/2 200\r\ncontent-length: " + str(len(BODY)).encode() + b"\r\n\r\n"

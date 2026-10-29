@@ -83,6 +83,11 @@ Para usar curl com HTTP/2 na aquisição, acrescente `--transport curl` a
 implementação valida status e cabeçalhos, corpo, fim do processo e retomada;
 um erro de transporte mantém o parcial, sem promovê-lo como íntegro. O
 transporte padrão continua sendo a biblioteca padrão do Python.
+`--metadata-method range` permite uma sondagem GET de exatamente um byte
+quando HEAD não fornece a mesma versão do GET. Exige Content-Range válido,
+validadores coerentes e o mesmo primeiro byte no arquivo completo. Não ignora
+divergências e não muda o significado dos cabeçalhos no recibo. O catálogo
+fixado conserva o método medido por recurso.
 
 ## Repetir cálculo
 
