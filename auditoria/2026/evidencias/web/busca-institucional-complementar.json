@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "limitation": "Busca pública retornou a nota oficial já preservada; não forneceu íntegra da decisão, timestamps verificáveis ou documento das autoridades dos EUA para as afirmações das imagens. Ausência no resultado da busca não prova inexistência de documento.",
+  "primary_source_found": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/10/nota-a-imprensa-3",
+  "queries": [
+    "site.stf.jus.br \"16877\" \"2026\" \"Flávio\"",
+    "site.pf.gov.br \"2026\" \"passaportes\" \"Flávio\"",
+    "site.gov.br \"2026\" \"Flávio Bolsonaro\" \"Estados Unidos\" proteção diplomática"
+  ],
+  "recorded_at_utc": "2026-10-29T14:27:28.647307+00:00"
+}

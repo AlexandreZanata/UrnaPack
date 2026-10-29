@@ -266,6 +266,27 @@ limitação de obtenção por HTTP estão preservadas em `evidencias/web/`.
 
 ## 8. Aquisição, incidentes e pendências
 
+### Encerramentos com deslocamento nominal para Brasília
+
+O arquivo `resultados/presidente-2t-normalizado.json` acrescenta uma análise
+separada por UF/município, com a política e seu SHA-256 preservados. Os demais
+campos são iguais ao relatório lexical original, conforme conferência
+registrada em `evidencias/encerramento-normalizado.json`.
+
+No recorte doméstico, com encerramento conhecido, 497.897 seções e
+127.854.631 comparecimentos têm encerramento estritamente posterior a
+17:00:00 BRT nominal. A fronteira ao minuto muda o recorte: até 17:00:59 são
+125.624 seções e 31.599.960 comparecimentos; depois disso, 372.273 seções e
+96.254.671 comparecimentos. O exterior fica separado: 1.308 seções
+presidenciais e 381.443 comparecimentos. As horas ausentes do relatório
+presidencial estão no exterior; não há hora ausente no recorte doméstico.
+
+Para 19h, o corte nominal `>=19:00:00` resulta em 6.352 seções e 1.861.259
+comparecimentos; `>19:00:00` resulta em 6.336 e 1.856.250. Nenhum dos dois
+reproduz exatamente 6.333/1.856.306. A política não ajusta relógios físicos e
+não identifica quando cada voto foi dado. Esses recortes são encerramentos
+de seção; a contagem de eventos de votação é uma análise diferente, nos logs.
+
 Os dados volumosos ficam em `/data/urnapack/auditoria-2026/`, acessíveis no
 repositório por `dados/auditoria-2026/`. O link local `dados -> /data/urnapack`
 já existia e foi conferido. Os ZIPs originais não são reescritos. Extração de

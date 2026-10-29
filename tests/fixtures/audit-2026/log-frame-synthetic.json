@@ -1,0 +1,25 @@
+{
+  "end": {
+    "expected_section_keys_sha256": "898271609276d4531219ae0718eff4bb8e164af4236217e03ab189475d6468c5",
+    "expected_sections": 1,
+    "files": 1,
+    "format_version": 1,
+    "kind": "end",
+    "policy_sha256": "1bf82db793d8c65a0c2398072a282b7a6862b4c221f7779b390d86049c68f80c",
+    "sections_export_sha256": "97273e90f5eca742c5137daf91ad2f5d8304331f2ff6278aa46cbd32d102fd76"
+  },
+  "header": {
+    "brt_shift_seconds": 3600,
+    "bytes": 648,
+    "expected_turnout": 2,
+    "format_version": 1,
+    "kind": "log",
+    "nested_member": "logd.dat",
+    "section_key": "MT/00001/0001/0001",
+    "sha256": "41245eadc5a2ebee5ea38ba59741da20778ce8ea14c894853bb7d51c23ddba83",
+    "source_member": "o03221mt0000100010001-log.jez",
+    "source_zip_sha256": "c57816b1a0058b71b458a52a94f846a6ee19907e249de048a6f6463cae25e690",
+    "source_zip_url": "https://cdn.tse.jus.br/synthetic-fixture/bu_imgbu_logjez_rdv_vscmr_2026_2t_MT.zip",
+    "uf": "MT"
+  }
+}

@@ -49,6 +49,13 @@ cenários de fronteira ao segundo e ao minuto: até 17:00:00, até 17:00:59,
 `#NULO#` e `#NE#` são contados como encerramento ausente; não entram nas janelas,
 mas permanecem nos totais. Outras datas/horas inesperadas reprovam.
 
+`--time-policy` acrescenta `normalized_closing` sem alterar os recortes
+lexicais. O hash da política é calculado dos bytes, a regra usa códigos
+municipais com exceções antes do padrão da UF, e ZZ fica separado. Cortes
+ao segundo e ao minuto são publicados em paralelo. Hora ausente permanece
+contada. Trata-se de relógio nominal, não de prova de sincronização nem do
+instante de cada voto. Sem essa opção, a saída anterior permanece igual.
+
 Pearson e Spearman: x=biometria não habilitada/comparecimento e
 y=votos13/válidos, entre seções com denominadores positivos; sem pesos.
 Spearman usa postos médios nos empates. Pearson adicional usa desvios das
@@ -98,3 +105,8 @@ limitação explícita. Retomada exige tamanho, ETag/Last-Modified e Content-Ran
 coerentes. Lock por destino impede escrita simultânea. Parciais nunca são
 promovidos como completos antes da releitura e verificações; falhas não apagam
 os bytes. Respostas e recibos anteriores permanecem como histórico de tentativas.
+O catálogo fixado acrescenta `expected_bytes` e `expected_sha256`, derivados
+de uma verificação concluída sem erros e com exatamente as URLs do catálogo.
+Ambos são obrigatórios quando qualquer um aparece. Arquivo local divergente
+reprova; download divergente permanece parcial e não é promovido. A fixação
+não verifica autoria/assinatura, mas impede aceitar outro snapshot na mesma URL.

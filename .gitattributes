@@ -15,5 +15,8 @@ tests/fixtures/bweb/*.csv binary
 /auditoria/2026/evidencias/web/*.html -text whitespace=-blank-at-eol,-blank-at-eof
 /auditoria/2026/evidencias/web/*.headers -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /tests/fixtures/audit-2026/*.csv -text whitespace=cr-at-eol
+/tests/fixtures/audit-2026/*.dat -text
+/tests/fixtures/audit-2026/*.zip binary
+/scripts/reproduce_audit_2026.sh text eol=lf
 
 /auditoria/2026/evidencias/testes-*.txt whitespace=-blank-at-eof

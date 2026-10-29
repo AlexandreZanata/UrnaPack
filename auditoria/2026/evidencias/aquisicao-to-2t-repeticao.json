@@ -1,0 +1,57 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "_2026_2t_TO.zip",
+  "finished_at_utc": "2026-10-29T14:22:29.113243+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 1020216357,
+      "finished_at_utc": "2026-10-29T14:22:29.100280+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=43200",
+        "content-length": "862237771",
+        "content-range": "bytes 157978586-1020216356/1020216357",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 14:13:48 GMT",
+        "etag": "\"3ccf4425-65ec235d3c000\"",
+        "last-modified": "Mon, 26 Oct 2026 18:08:00 GMT"
+      },
+      "http_get_protocol": "HTTP/2 206",
+      "http_get_status": 206,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_TO.zip",
+      "http_head": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=93600",
+        "Cache-Control": "max-age=5780",
+        "Connection": "close",
+        "Content-Length": "1020216357",
+        "Content-Type": "application/zip",
+        "Date": "Thu, 29 Oct 2026 14:13:48 GMT",
+        "ETag": "\"3ccf4425-65ec235d3c000\"",
+        "Last-Modified": "Mon, 26 Oct 2026 18:08:00 GMT"
+      },
+      "http_length_verification": "matched",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_TO.zip",
+      "sha1": "9069b07d350e90a01fd1cc329dfee05f9f313756",
+      "sha256": "1918470eebba70d1700e1f85cee2a1021390235e3497539a55ea28845c2d518b",
+      "sha512": "811f3ed3c367640ad00679daa22541a1cba12555ece887a26b4054705eeb7bbd05333840ae368b1c5d81431f540e72c04b7731d58135c61d141da15dc34b6d22",
+      "started_at_utc": "2026-10-29T14:13:47.790552+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_TO.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T14:13:47.788215+00:00",
+  "transport_requested": "curl"
+}

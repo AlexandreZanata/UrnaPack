@@ -11,6 +11,8 @@ from unittest.mock import patch
 import fcntl
 
 from acquire_2026 import catalog_from_snapshot, fetch, limits_at, official_digest, probe, relative_url, write_json
+from pin_catalog_2026 import pin
+from acquire_2026 import scheduled_batches
 
 FIXTURE = Path(__file__).resolve().parents[1] / "tests/fixtures/audit-2026/synthetic.csv"
 LIMITS = limits_at(Path(__file__).with_name("limits.env"))
@@ -30,6 +32,42 @@ class Response(io.BytesIO):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_sidecar_barrier_preserves_every_resource_without_barrier_for_large_files(self):
+        items = [{"url": URL+".sha512"}, {"url": URL},
+                 {"url": "https://cdn.tse.jus.br/arqurnatot/synthetic_2026_1t_MT.zip"}]
+        batches = scheduled_batches(items)
+        self.assertEqual(batches, [items[:1], items[1:]])
+        self.assertEqual([item for batch in batches for item in batch], items)
+        self.assertEqual(scheduled_batches([]), [])
+
+    def test_pinned_catalog_requires_full_verified_coverage_and_checks_actual_bytes(self):
+        body = FIXTURE.read_bytes()
+        item = {"url": URL, "path": relative_url(URL)}
+        catalog = {"format_version": 1, "items": [item]}
+        raw = json.dumps(catalog).encode()
+        digest = hashlib.sha256(raw).hexdigest()
+        row = dict(item, status="reverified_local", bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
+        report = {"errors": 0, "finished_at_utc": "synthetic-test", "catalog_sha256": digest, "items": [row]}
+        fixed = pin(catalog, report, digest)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            result = fetch(fixed["items"][0], root, {URL}, LIMITS, self.opener(body))
+            self.assertEqual(result["status"], "downloaded")
+            wrong = dict(fixed["items"][0], expected_bytes=len(body)+1)
+            result = fetch(wrong, root, {URL}, LIMITS, self.opener(body))
+            self.assertEqual(result["status"], "error")
+            self.assertIn("snapshot fixado", result["error"])
+            self.assertEqual((root/item["path"]).read_bytes(), body)
+            fresh = root / "fresh"
+            result = fetch(wrong, fresh, {URL}, LIMITS, self.opener(body))
+            self.assertEqual(result["status"], "error")
+            self.assertFalse((fresh/item["path"]).exists())
+            self.assertEqual((fresh/(item["path"]+".partial")).read_bytes(), body)
+        with self.assertRaisesRegex(ValueError, "cobertura"):
+            pin(catalog, dict(report, items=[]), digest)
+        with self.assertRaisesRegex(ValueError, "repetidos"):
+            pin(catalog, dict(report, items=[row,row]), digest)
+
     def test_fixture_hashes_are_recomputed(self):
         metadata = json.loads((FIXTURE.parent / "hashes.json").read_text())
         for name, expected in metadata.items():

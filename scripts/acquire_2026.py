@@ -24,7 +24,7 @@ from fetch_source import load_limits, check_rel
 API = "https://dadosabertos.tse.jus.br/api/3/action/package_search?q=2026&rows=100"
 OFFICIAL_HOSTS = {"cdn.tse.jus.br", "dadosabertos.tse.jus.br", "resultados.tse.jus.br"}
 EXTRA_LIMITS = ("MAX_AUDIT_FETCH_BYTES", "AUDIT_FETCH_WORKERS", "AUDIT_MIN_FREE_BYTES",
-                "MAX_ZIP_MEMBER_BYTES", "MAX_ZIP_MEMBERS")
+                "MAX_ZIP_MEMBER_BYTES", "MAX_ZIP_MEMBERS", "FETCH_MIN_SPEED_BYTES_PER_SEC")
 
 
 def now():
@@ -137,6 +137,17 @@ def safe_path(root, rel):
     return path
 
 
+def check_pinned(item, measured):
+    keys = {"expected_bytes", "expected_sha256"}
+    present = keys.intersection(item)
+    if not present:
+        return
+    if present != keys or type(item["expected_bytes"]) is not int or item["expected_bytes"] < 0 or not re.fullmatch(r"[0-9a-f]{64}", item["expected_sha256"]):
+        raise ValueError("fixação de tamanho/hash inválida ou incompleta")
+    if measured["bytes"] != item["expected_bytes"] or measured["sha256"] != item["expected_sha256"]:
+        raise ValueError("bytes divergem do snapshot fixado; preservar e investigar")
+
+
 def fetch(item, root, catalog_urls, limits, opener=urllib.request.urlopen):
     """Um bloqueio por destino impede escritores concorrentes, inclusive entre CLIs."""
     try:
@@ -165,6 +176,7 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
             measured = hashes(dest, limits["IO_BUFFER_BYTES"])
             if measured["sha256"] != saved["sha256"] or measured["bytes"] != saved["bytes"]:
                 raise ValueError("SHA-256/tamanho local divergente do recibo")
+            check_pinned(item, measured)
             for algorithm in ("sha512", "sha1"):
                 if item["url"] + "." + algorithm in catalog_urls:
                     side_path = dest.with_name(dest.name + "." + algorithm)
@@ -208,6 +220,11 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
                 req.add_header("If-Range", etag or modified)
             with opener(req, timeout=limits["FETCH_TIMEOUT_SECS"]) as response:
                 relative_url(response.geturl())
+                entry["http_get"] = dict(response.headers.items())
+                entry["http_get_status"] = response.status
+                entry["http_get_url"] = response.geturl()
+                if hasattr(response, "http_status_line"):
+                    entry["http_get_protocol"] = response.http_status_line
                 if offset:
                     match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", response.headers.get("Content-Range", ""))
                     if response.status != 206 or not match or tuple(map(int, match.groups())) != (offset, wanted - 1, wanted):
@@ -232,6 +249,7 @@ def _fetch_unlocked(item, root, catalog_urls, limits, opener=urllib.request.urlo
         if wanted is not None and measured["bytes"] != wanted:
             raise ValueError("download truncado; parcial preservado")
         official = []
+        check_pinned(item, measured)
         for algorithm in ("sha512", "sha1"):
             side_url = item["url"] + "." + algorithm
             if side_url in catalog_urls:
@@ -267,6 +285,12 @@ def priority(item):
     return 4
 
 
+def scheduled_batches(selected):
+    """Sidecars têm dependência; demais prioridades ordenam a fila, sem barreira."""
+    return [batch for batch in ([item for item in selected if priority(item) == 0],
+                                [item for item in selected if priority(item) != 0]) if batch]
+
+
 def probe(item, limits):
     entry = {"url": item["url"], "observed_at_utc": now()}
     try:
@@ -290,6 +314,7 @@ def main():
     parser.add_argument("--receipt", type=Path)
     parser.add_argument("--match", default="")
     parser.add_argument("--exclude", default="")
+    parser.add_argument("--transport", choices=["urllib", "curl"], default="urllib")
     parser.add_argument("--limits", default=str(Path(__file__).with_name("limits.env")))
     args = parser.parse_args()
     limits = limits_at(args.limits)
@@ -312,6 +337,7 @@ def main():
     if not selected:
         raise ValueError("filtro sem recursos; não declarar sucesso")
     report = {"format_version": 1, "started_at_utc": now(), "filter": args.match, "exclude": args.exclude,
+              "transport_requested": args.transport,
               "catalog_sha256": hashlib.sha256(args.catalog.read_bytes()).hexdigest(), "items": []}
     if args.action == "plan":
         with ThreadPoolExecutor(max_workers=limits["AUDIT_FETCH_WORKERS"]) as executor:
@@ -328,10 +354,13 @@ def main():
     def operation(item):
         if args.action == "verify" and not safe_path(args.root, item["path"]).is_file():
             return {"url": item["url"], "path": item["path"], "status": "error", "error": "arquivo final ausente; sem download no modo verify"}
+        if args.transport == "curl":
+            from curl_transport import CurlOpener
+            return fetch(item, args.root, urls, limits, CurlOpener(limits))
         return fetch(item, args.root, urls, limits)
-    # Barreiras entre fases garantem sidecars antes dos arquivos que validam.
-    for phase in sorted({priority(item) for item in selected}):
-        phase_items = [item for item in selected if priority(item) == phase]
+    # Só os sidecars dependem de barreira. Um ZIP grande não bloqueia a fila
+    # de outros datasets enquanto há trabalhadores livres.
+    for phase_items in scheduled_batches(selected):
         with ThreadPoolExecutor(max_workers=limits["AUDIT_FETCH_WORKERS"]) as executor:
             futures = [executor.submit(operation, item) for item in phase_items]
             for future in as_completed(futures):

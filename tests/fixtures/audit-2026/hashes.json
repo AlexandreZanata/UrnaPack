@@ -1,10 +1,30 @@
 {
-  "synthetic.csv": {
-    "bytes": 1613,
-    "sha256": "e586b1cee52d7c54ff35e9098909e833ef69a139f67e7973a213a8382ce0181a"
-  },
   "coverage-synthetic.json": {
     "bytes": 775,
     "sha256": "f135d1fe37249ce27d5296015ad57e0e915c0eee190765a8b06bd692995ac947"
+  },
+  "log-frame-synthetic.json": {
+    "bytes": 961,
+    "sha256": "3cf7739be96cb7f62d6f8863c9a62df7d6bd0266baad6fb3f0848200accbca91"
+  },
+  "log-policy-synthetic.json": {
+    "bytes": 109,
+    "sha256": "1bf82db793d8c65a0c2398072a282b7a6862b4c221f7779b390d86049c68f80c"
+  },
+  "log-sections-synthetic.csv": {
+    "bytes": 67,
+    "sha256": "97273e90f5eca742c5137daf91ad2f5d8304331f2ff6278aa46cbd32d102fd76"
+  },
+  "logd-synthetic.dat": {
+    "bytes": 648,
+    "sha256": "41245eadc5a2ebee5ea38ba59741da20778ce8ea14c894853bb7d51c23ddba83"
+  },
+  "logs-synthetic.zip": {
+    "bytes": 511,
+    "sha256": "c57816b1a0058b71b458a52a94f846a6ee19907e249de048a6f6463cae25e690"
+  },
+  "synthetic.csv": {
+    "bytes": 1613,
+    "sha256": "e586b1cee52d7c54ff35e9098909e833ef69a139f67e7973a213a8382ce0181a"
   }
 }

@@ -8,21 +8,9 @@ use std::collections::{BTreeMap, HashMap};
 use std::io::Read;
 use std::path::PathBuf;
 use tsepack::bweb::BWEB_HEADER;
-
-struct HashingRead<R> {
-    inner: R,
-    hash: Sha256,
-    bytes: u64,
-}
-
-impl<R: Read> Read for HashingRead<R> {
-    fn read(&mut self, buffer: &mut [u8]) -> std::io::Result<usize> {
-        let count = self.inner.read(buffer)?;
-        self.hash.update(&buffer[..count]);
-        self.bytes += count as u64;
-        Ok(count)
-    }
-}
+#[path = "../audit_io.rs"]
+mod audit_io;
+use audit_io::{publish_file, HashingRead};
 
 #[derive(Parser)]
 struct Args {
@@ -33,6 +21,8 @@ struct Args {
     /// Exportação semântica por seção para confrontos com índices/locais/logs.
     #[arg(long)]
     sections_output: Option<PathBuf>,
+    #[arg(long)]
+    time_policy: Option<PathBuf>,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -128,7 +118,77 @@ struct Report {
     benford_expected_probabilities: [f64; 9],
     benford_scope: &'static str,
     closing_missing: u64,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    normalized_closing: Option<NormalizedClosing>,
     limitations: Vec<&'static str>,
+}
+
+#[derive(Deserialize)]
+struct TimePolicy {
+    format_version: u32,
+    brt_shift_seconds_by_uf: BTreeMap<String, Option<i32>>,
+    municipality_overrides: BTreeMap<String, i32>,
+}
+
+#[derive(Default, Serialize)]
+struct NormalizedClosing {
+    policy_sha256: String,
+    definition: &'static str,
+    windows: BTreeMap<String, Totals>,
+    foreign_excluded: Totals,
+    missing_closing: Totals,
+}
+
+fn normalize_closing(
+    policy: &TimePolicy,
+    sections: &HashMap<String, Section>,
+) -> Result<NormalizedClosing> {
+    ensure!(
+        policy.format_version == 1,
+        "versão de política desconhecida"
+    );
+    let mut out = NormalizedClosing { definition: "Encerramento registrado + deslocamento nominal local para Brasília. Não identifica instante dos votos nem demonstra sincronização física do relógio. ZZ separado.", ..Default::default() };
+    for section in sections.values() {
+        if section.uf == "ZZ" {
+            out.foreign_excluded.add(section);
+            continue;
+        }
+        let key = format!("{}/{:05}", section.uf, section.municipality.parse::<u32>()?);
+        let shift = policy
+            .municipality_overrides
+            .get(&key)
+            .copied()
+            .or_else(|| {
+                policy
+                    .brt_shift_seconds_by_uf
+                    .get(&section.uf)
+                    .copied()
+                    .flatten()
+            })
+            .context("UF/município sem deslocamento nominal")?;
+        ensure!(
+            matches!(shift, -3600 | 0 | 3600 | 7200),
+            "deslocamento nominal inválido"
+        );
+        let Some(raw) = section.close_seconds else {
+            out.missing_closing.add(section);
+            continue;
+        };
+        let seconds = raw as i32 + shift;
+        for (name, included) in [
+            ("ate_17h00m00s", seconds <= 17 * 3600),
+            ("apos_17h00m00s", seconds > 17 * 3600),
+            ("ate_17h00m59s", seconds < 17 * 3600 + 60),
+            ("apos_17h00m59s", seconds >= 17 * 3600 + 60),
+            ("desde_19h00m00s", seconds >= 19 * 3600),
+            ("apos_19h00m00s", seconds > 19 * 3600),
+        ] {
+            if included {
+                out.windows.entry(name.to_owned()).or_default().add(section);
+            }
+        }
+    }
+    Ok(out)
 }
 
 fn ascii(row: &ByteRecord, index: usize) -> Result<&str> {
@@ -375,7 +435,7 @@ fn report(
         within_municipality_pearson: None, benford_first_digit_counts_13: [0; 9], benford_first_digit_counts_22: [0; 9],
         benford_expected_probabilities: std::array::from_fn(|i| (1. + 1./(i+1) as f64).log10()),
         benford_scope: "Primeiro dígito dos votos nominais POSITIVOS por candidato/seção; zeros excluídos da distribuição de dígitos. Descrição, sem classificação de fraude.",
-        closing_missing: 0, limitations: vec!["Sem hipótese causal ou conclusão de fraude/autenticidade.", "Fuso de DT_ENCERRAMENTO não estabelecido pelo dicionário: recorte lexical não equivale a corte nacional BRT.", "Agregação de seção não identifica o candidato votado por eleitores sem habilitação biométrica.", "Sem logs processados, não há contagem de votos efetivamente depositados após 17h.", "Ruralidade/coação não podem ser inferidas destes percentuais; classificação geográfica exige fonte própria.", "Correlação descritiva não reproduz estudo original sem base, filtros e código dele.", "Assinaturas de BU/RDV/JWS e cadeia de certificados não verificadas neste relatório."],
+        closing_missing: 0, normalized_closing: None, limitations: vec!["Sem hipótese causal ou conclusão de fraude/autenticidade.", "Fuso de DT_ENCERRAMENTO não estabelecido pelo dicionário: recorte lexical não equivale a corte nacional BRT.", "Agregação de seção não identifica o candidato votado por eleitores sem habilitação biométrica.", "Sem logs processados, não há contagem de votos efetivamente depositados após 17h.", "Ruralidade/coação não podem ser inferidas destes percentuais; classificação geográfica exige fonte própria.", "Correlação descritiva não reproduz estudo original sem base, filtros e código dele.", "Assinaturas de BU/RDV/JWS e cadeia de certificados não verificadas neste relatório."],
     };
     let (mut x, mut y, mut groups) = (Vec::new(), Vec::new(), Vec::new());
     let mut municipal: BTreeMap<String, (f64, f64, usize)> = BTreeMap::new();
@@ -476,32 +536,6 @@ fn report(
     }
     out.within_municipality_pearson = pearson(&residual_x, &residual_y);
     Ok(out)
-}
-
-fn publish_file(
-    path: &std::path::Path,
-    write: impl FnOnce(&mut std::fs::File) -> Result<()>,
-) -> Result<()> {
-    use std::io::Write;
-    ensure!(!path.exists(), "saída existente; bytes preservados");
-    let mut name = path
-        .file_name()
-        .context("saída sem nome de arquivo")?
-        .to_os_string();
-    name.push(format!(".partial-{}", std::process::id()));
-    let partial = path.with_file_name(name);
-    let mut file = std::fs::OpenOptions::new()
-        .write(true)
-        .create_new(true)
-        .open(&partial)?;
-    write(&mut file).with_context(|| format!("parcial preservado: {}", partial.display()))?;
-    file.flush()?;
-    file.sync_all()?;
-    drop(file);
-    // hard_link cria o destino sem sobrescrever arquivo surgido durante a escrita.
-    std::fs::hard_link(&partial, path)?;
-    std::fs::remove_file(partial)?;
-    Ok(())
 }
 
 fn write_sections(path: &std::path::Path, sections: &HashMap<String, Section>) -> Result<()> {
@@ -605,7 +639,14 @@ fn run(args: Args) -> Result<()> {
             input.path.display()
         );
     }
-    let result = report(manifest.inputs, &sections, records, excluded)?;
+    let mut result = report(manifest.inputs, &sections, records, excluded)?;
+    if let Some(path) = &args.time_policy {
+        let bytes = std::fs::read(path)?;
+        let policy: TimePolicy = serde_json::from_slice(&bytes)?;
+        let mut normalized = normalize_closing(&policy, &sections)?;
+        normalized.policy_sha256 = hex::encode(Sha256::digest(&bytes));
+        result.normalized_closing = Some(normalized);
+    }
     if let Some(path) = &args.sections_output {
         write_sections(path, &sections)?;
     }
@@ -670,6 +711,36 @@ mod tests {
         let before = std::fs::read(&path).unwrap();
         assert!(write_sections(&path, &sections).is_err());
         assert_eq!(std::fs::read(path).unwrap(), before);
+    }
+
+    #[test]
+    fn nominal_clock_uses_municipality_override_and_preserves_totals() {
+        let mut sections = HashMap::new();
+        ingest(
+            &include_bytes!("../../tests/fixtures/audit-2026/synthetic.csv")[..],
+            "MT",
+            &mut sections,
+            &mut 0,
+            &mut BTreeMap::new(),
+        )
+        .unwrap();
+        let mut policy: TimePolicy = serde_json::from_slice(include_bytes!(
+            "../../tests/fixtures/audit-2026/log-policy-synthetic.json"
+        ))
+        .unwrap();
+        let result = normalize_closing(&policy, &sections).unwrap();
+        assert_eq!(result.windows["apos_17h00m00s"].turnout, 103);
+        assert_eq!(result.windows["apos_19h00m00s"].turnout, 3);
+        policy
+            .municipality_overrides
+            .insert("MT/00001".to_owned(), 0);
+        let result = normalize_closing(&policy, &sections).unwrap();
+        assert_eq!(result.windows["ate_17h00m00s"].turnout, 100);
+        assert_eq!(result.windows["desde_19h00m00s"].turnout, 3);
+        assert!(!result.windows.contains_key("apos_19h00m00s"));
+        policy.municipality_overrides.clear();
+        policy.brt_shift_seconds_by_uf.clear();
+        assert!(normalize_closing(&policy, &sections).is_err());
     }
 
     #[test]
