@@ -38,6 +38,13 @@ documentação, imagens recebidas, fontes documentais pequenas, manifestos e
 resultados reais. O catálogo delimita o snapshot da busca CKAN, não promete
 um espelho integral de PJe/DivulgaCand ou outros sistemas.
 
+Nos releases serão distribuídos somente os dados tratados e comprimidos,
+com inventário, hashes e prova de restauração. O acervo original de centenas
+de GB permanece no SSD e não será enviado como assets. Um pacote deve declarar
+exatamente quais dados contém: compressão reversível conserva os bytes da
+entrada selecionada; uma projeção analítica continua sendo transformação
+semântica, mesmo quando depois é comprimida sem perdas.
+
 ## Repetir aquisição
 
 Execute a partir da raiz do repositório. Há retomada validada e bloqueio por
@@ -70,6 +77,14 @@ python3 scripts/acquire_2026.py verify \
 arquivos ausentes e retorna exit diferente de zero se algo faltar ou divergir.
 O planejamento pode ser repetido com `plan --catalog ... --receipt ...`.
 Limites e concorrência estão em `scripts/limits.env`.
+
+`verify_zip_integrity_2026.py` acrescenta leitura de todos os membros declarados
+dos ZIPs externos, com CRC/tamanho conferidos por ordinal, inclusive nomes
+repetidos. O cache só é reutilizado após novo hash integral da fonte e com a
+mesma chave de implementação/ambiente/limites. Recursos não ZIP são contados
+explicitamente fora dessa etapa; sua integridade permanece coberta por
+`acquire_2026.py verify`. ZIPs aninhados são opacos para o CRC externo; os
+logs usados na análise são abertos e conferidos também pela importação.
 
 O catálogo fixado, quando gerado após a verificação integral, acrescenta o
 tamanho e SHA-256 realmente medidos de cada recurso. `fetch` e `verify`
@@ -180,6 +195,9 @@ cargo test --bin audit_2026 --test audit_2026
 cargo test --bin audit_logs_2026 --test audit_logs_2026
 python3 -m unittest discover -s scripts -p 'test_import_logs_2026.py' -v
 python3 -m unittest discover -s scripts -p 'test_curl_transport.py' -v
+python3 -m unittest discover -s scripts -p 'test_package_buweb_audit_2026.py' -v
+python3 -m unittest discover -s scripts -p 'test_relocate_audit_manifest_2026.py' -v
+python3 -m unittest discover -s scripts -p 'test_verify_zip_integrity_2026.py' -v
 ```
 
 Os testes executam o binário sobre fixture sintética identificada em
@@ -207,3 +225,52 @@ orquestração. Falhas anteriores preservam os recibos e parciais já produzidos
 Metadados de caminho/ambiente podem variar entre máquinas; compare as
 definições, contagens e hashes dos dados, sem confundir equivalência semântica
 com igualdade byte a byte de todos os arquivos de proveniência.
+
+## Pacote comprimido dos CSVs usados na auditoria
+
+O primeiro pacote verificado contém os **28 CSVs originais de BU web t2**,
+com todas as colunas e linhas, incluindo registros de outros cargos que não
+entram na análise presidencial. São **924.395.728 bytes de CSVs** em um asset
+de **67.026.472 bytes**, incluindo payload e metadados. Esse denominador é o
+conjunto de CSVs selecionados, não o acervo de ZIPs de centenas de GB.
+
+O formato interno é o arquivo UrnaPack v2 já implementado, com TAR e ZSTD19;
+o invólucro externo é ZIP padrão com armazenamento do payload já comprimido.
+Não é um formato binário UPK novo. O pacote não contém os ZIPs originais do
+TSE nem todos os logs de urna. As fontes volumosas ficam no SSD, vinculadas
+por URLs, hashes e recibos. A compressão conserva os bytes dos CSVs selecionados.
+
+A geração e a restauração dos 28 arquivos foram executadas e conferidas em
+[pacote-buweb-2t-csv.json](evidencias/pacote-buweb-2t-csv.json). Em outro
+diretório, o asset foi extraído e restaurado, seu manifesto realocado após
+nova releitura dos hashes, e o cálculo nacional repetido. Todos os campos
+do relatório, exceto os caminhos dos membros, ficaram iguais, conforme
+[reproducao-offline-pacote-2026.json](evidencias/reproducao-offline-pacote-2026.json).
+
+Para gerar novamente, use destino novo:
+
+```bash
+python3 scripts/package_buweb_audit_2026.py \
+  --input /data/urnapack/auditoria-2026/extraidos/buweb-2t \
+  --expected-manifest auditoria/2026/evidencias/entrada-buweb-2t.json \
+  --output /data/urnapack/auditoria-2026/tratados/buweb-2t-novo \
+  --source tse-dados-abertos:buweb-2026-2t-csv
+```
+
+Depois de obter e conferir o hash do asset publicado, extraia-o em diretório
+novo e execute os comandos a seguir. `pacote/` é a raiz extraída do ZIP.
+
+```bash
+target/release/tsepack archive verify --input pacote/archive
+target/release/tsepack restore --dataset pacote/archive --output csvs-restaurados
+python3 scripts/relocate_audit_manifest_2026.py \
+  --manifest pacote/audit-input.json --restored csvs-restaurados \
+  --output /tmp/urnapack-entrada-local.json
+target/release/audit_2026 --manifest /tmp/urnapack-entrada-local.json \
+  --time-policy auditoria/2026/evidencias/politica-relogio-nominal-2026.json \
+  --output /tmp/urnapack-resultado-local.json
+```
+
+Esse caminho reproduz o cálculo dos BU sem baixar os ZIPs originais. O
+reprocessamento dos eventos dos logs requer os respectivos ZIPs oficiais;
+resumos e índices não substituem seus bytes originais.

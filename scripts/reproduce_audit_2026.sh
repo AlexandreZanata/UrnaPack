@@ -19,11 +19,13 @@ python3 scripts/acquire_2026.py fetch --catalog "$catalog" --root "$source_root"
   --receipt "$run_root/acquisition.json" --transport curl
 python3 scripts/acquire_2026.py verify --catalog "$catalog" --root "$source_root" \
   --receipt "$run_root/verification.json"
+python3 scripts/verify_zip_integrity_2026.py --catalog "$catalog" --root "$source_root" \
+  --cache "$(dirname "$source_root")/integridade-zip" --output "$run_root/zip-integrity.json"
 python3 scripts/prepare_audit_2026.py --catalog "$catalog" --root "$source_root" \
   --destination "$run_root/csv" --evidence "$run_root/preparation" --manifest "$run_root/bu-input.json"
 python3 scripts/build_time_policy_2026.py \
   --municipalities auditoria/2026/evidencias/municipios-2t.json --output "$run_root/time-policy.json"
-cargo build --locked --release --bin audit_2026 --bin audit_logs_2026
+cargo build --locked --release --bin audit_2026 --bin audit_logs_2026 --bin tsepack
 target/release/audit_2026 --manifest "$run_root/bu-input.json" \
   --time-policy "$run_root/time-policy.json" --output "$run_root/president.json" \
   --sections-output "$run_root/sections.csv"
@@ -40,7 +42,7 @@ env={'format_version':1,'git_revision':subprocess.check_output(['git','rev-parse
      'rustc':subprocess.check_output(['rustc','--version','--verbose'],text=True),'python':sys.version,
      'curl':subprocess.check_output(['curl','--version'],text=True),
      'binary_sha256':{n:hashlib.sha256(pathlib.Path('target/release',n).read_bytes()).hexdigest()
-                      for n in ['audit_2026','audit_logs_2026']}}
+                      for n in ['audit_2026','audit_logs_2026','tsepack']}}
 (root/'environment.json').write_text(json.dumps(env,sort_keys=True,indent=2)+'\n')
 PY
 python3 scripts/reconcile_coverage_2026.py --sections "$run_root/sections.csv" \
@@ -59,7 +61,11 @@ python3 scripts/collect_logs_2026.py --directories "$run_root"/logs/?? \
 aggregate_code=0
 target/release/audit_logs_2026 --aggregate-manifest "$run_root/log-input.json" \
   --output "$run_root/log-national.json" || aggregate_code=$?
-python3 - "$run_root" "$logs_code" "$aggregate_code" <<'PY'
+package_code=0
+python3 scripts/package_buweb_audit_2026.py --input "$run_root/csv" \
+  --expected-manifest "$run_root/bu-input.json" --output "$run_root/compressed-buweb" \
+  --source tse-dados-abertos:buweb-2026-2t-csv || package_code=$?
+python3 - "$run_root" "$logs_code" "$aggregate_code" "$package_code" <<'PY'
 import sys,json,pathlib,hashlib
 root=pathlib.Path(sys.argv[1]); files={}
 for path in sorted(root.rglob('*')):
@@ -69,8 +75,12 @@ for path in sorted(root.rglob('*')):
    for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
   files[str(path.relative_to(root))]={'bytes':path.stat().st_size,'sha256':h.hexdigest()}
 (root/'artifacts.json').write_text(json.dumps({'format_version':1,'logs_exit_code':int(sys.argv[2]),
-  'aggregate_exit_code':int(sys.argv[3]),'files':files},sort_keys=True,indent=2)+'\n')
+  'aggregate_exit_code':int(sys.argv[3]),'package_exit_code':int(sys.argv[4]),'files':files},sort_keys=True,indent=2)+'\n')
 PY
+if [[ "$package_code" -ne 0 ]]; then
+  echo "Empacotamento/restauração reprovado; consulte compressed-buweb/package-run.json." >&2
+  exit 1
+fi
 if [[ "$logs_code" -ne 0 || "$aggregate_code" -ne 0 ]]; then
   echo "Artefatos gerados com diagnóstico de logs; sem conciliação integral. Consulte log-national.json." >&2
   exit 1

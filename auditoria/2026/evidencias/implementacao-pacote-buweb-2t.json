@@ -1,0 +1,10 @@
+{
+  "files": {
+    "scripts/package_buweb_audit_2026.py": {
+      "bytes": 7966,
+      "sha256": "9b15d07c4f87d9d4b4a4e7a0ae4458ad02375fff531255150931753ed2f621a7"
+    }
+  },
+  "format_version": 1,
+  "scope": "Implementação presente durante a execução que gerou pacote-buweb-2t-csv.json; snapshot será vinculado pela revisão Git de publicação."
+}
