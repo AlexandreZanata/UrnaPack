@@ -3,9 +3,10 @@
 Data de execução inicial: 29/10/2026, America/Cuiaba.
 Objeto: verificar afirmações, sem adotar conclusão política prévia.
 Este relatório não é laudo pericial assinado e não certifica a autenticidade
-do processo eleitoral. O download amplo e as verificações ainda pendentes
-estão identificados abaixo; não confundir a conclusão de um cálculo com a
-conclusão de toda a auditoria.
+do processo eleitoral. A análise distingue resultados reproduzidos,
+divergências e alegações inconclusivas. A aquisição completa do catálogo e
+as verificações de integridade estão documentadas abaixo; a conciliação dos
+logs apresentou diagnóstico, sem aprovação nacional integral.
 
 ## 1. Material recebido e rastreabilidade
 
@@ -158,8 +159,10 @@ relatório original para explicar sua seleção.
 Somando desde 17:16:00, obtêm-se **2.533.073** votantes em seções desse
 recorte. Isso reproduz a ordem de grandeza “mais de dois milhões e meio”,
 mas continua sem medir votos individualmente posteriores ao horário legal.
-O valor de aproximadamente 34 mil votos efetivamente tardios fica pendente
-até a análise dos logs com cobertura e fuso documentados.
+A análise dos logs, descrita na seção 8, encontrou 34.050 eventos de eleitor
+computado depois de 17h nas seções conciliadas, sob relógio nominal de Brasília.
+A cobertura e as divergências impedem declarar esse valor uma contagem
+nacional exata de votos efetivamente tardios.
 
 ### Recortes por estado desde 19:00:00
 
@@ -282,7 +285,52 @@ documentação pertinente das autoridades citadas. Não se infere intenção
 política a partir de proximidade temporal. A consulta documental e sua
 limitação de obtenção por HTTP estão preservadas em `evidencias/web/`.
 
-## 8. Aquisição, incidentes e pendências
+## 8. Aquisição, logs e limites da conclusão
+
+### Resultado dos logs do segundo turno
+
+Foram importados os arquivos das 28 abrangências. A associação exige a
+chave do pacote oficial e o contexto interno GAP de município/zona/seção;
+eventos de outras datas e outras chaves ficam contados separadamente.
+Os corpos originais e os índices têm hashes, e o fluxo entre Python e Rust
+é conferido em tamanho, SHA-256 e marcador final. Não há deduplicação para
+forçar reconciliação.
+
+O [resultado nacional](resultados/logs-nacional.json) contém **499.206** chaves
+de logs para **499.207** seções instaladas esperadas. **41** chaves presentes
+não passaram em todos os controles: **27** do exterior, de origem C no
+sistema de apuração, e **14** domésticas. A ausência de VOTA nas 27 de origem
+C é compatível com a distinção documental de origem; não é contada como
+evidência de voto eletrônico ausente. Entre as domésticas existem diferenças
+de contagem, linhas repetidas e linhas malformadas. Todos os exemplos e
+contadores estão no JSON, sem apagar registros ou atribuir causa.
+
+Falta ainda o contêiner de log esperado para **SP/64777/0395/0298**, cuja
+seção presidencial tem **268** comparecimentos no BU. Não foi encontrada
+outra chave inesperada na seleção de pacotes de SP. A ausência é relativa
+ao pacote e à regra de associação publicados, não prova inexistência de
+registro em outro sistema. Essa chave ausente é adicional às 41 presentes
+com diagnóstico. Esses números não são as 41 seções não instaladas do
+resultado nacional, que pertencem a outro universo.
+
+Nas seções conciliadas, os eventos de **eleitor computado** somam
+**128.231.650**. Depois de 17:00:00 BRT nominal há **34.050** eventos; depois
+de 19:00:00, **11**. O evento distinto de **confirmação para Presidente**
+produz **33.865** e **11**, respectivamente. Não se somam as duas métricas.
+Os logs não informam em quem cada eleitor votou.
+
+O programa publica um intervalo conservador para eleitor computado após
+17h: **34.050 a 38.474**. O limite superior acrescenta todo o comparecimento
+nacional ainda não conciliado (**4.424**), inclusive os **831** das seções C
+do exterior, embora ZZ seja excluído das contagens pontuais BRT. Portanto,
+é uma margem ampla e deliberadamente conservadora, não uma estimativa
+estatística ou uma atribuição de horário a esses eleitores.
+
+A expressão aproximada “34 mil” tem, assim, sustentação descritiva na ordem
+de grandeza dos eventos conciliados. Não foi obtida conciliação integral
+para certificar seu valor exato. O analisador retorna **exit 1** e
+`success=false`; isso é preservado como resultado da auditoria. Esses
+diagnósticos não demonstram alteração de votos nem sua direção partidária.
 
 ### Encerramentos com deslocamento nominal para Brasília
 
@@ -316,8 +364,22 @@ O levantamento HEAD de 942 URLs registrou **252.927.326.444 bytes** em
 tamanhos conhecidos e **44** URLs sem tamanho declarado. Essa soma não
 inclui os tamanhos desconhecidos nem representa bytes já baixados. A evidência
 por URL está em [planejamento-http.json](evidencias/planejamento-http.json).
-O estado por recurso, os tamanhos medidos e os hashes constam dos recibos de
-aquisição. Um inventário de URLs não equivale a download concluído. A expressão
+A aquisição foi concluída e os **942 recursos** foram relidos, com **zero
+erros**, totalizando **252.866.700.631 bytes**, conforme
+[verificacao-integral-2026.json](evidencias/verificacao-integral-2026.json).
+O [catálogo fixado](catalogo-fixado.json) registra tamanho e SHA-256 medidos
+para cada URL. A diferença em relação ao planejamento é preservada; os
+metadados HTTP de planejamento não substituem os bytes adquiridos.
+
+Os **606 ZIPs externos** passaram na verificação de **5.151.871 membros**
+declarados, com **361.661.227.754 bytes** expandidos lidos, conforme
+[integridade-zip-integral-2026.json](evidencias/integridade-zip-integral-2026.json).
+Os **336 recursos não ZIP** ficam fora do teste de CRC e dentro da releitura
+criptográfica integral. ZIPs aninhados são opacos nessa etapa; os usados
+para análise de logs também foram abertos pela importação. Essa conferência
+não valida assinaturas digitais ou autenticadores de urna.
+
+A expressão
 “todos os dados” é delimitada aqui aos recursos da busca oficial CKAN q=2026
 no snapshot preservado, mais a inclusão documentada de RR e os JSONs oficiais
 de confronto. Não alegamos ter espelhado PJe ou todos os objetos internos de
@@ -343,22 +405,23 @@ coleta por recurso, em instantes registrados; não é snapshot transacional
 simultâneo de todos os sistemas do TSE. Recursos administrativos mutáveis
 também não são presumidos idênticos aos disponíveis na data das imagens.
 
-Pendências que impedem declarar a auditoria integral encerrada:
+Limites e pontos inconclusivos da análise:
 
-- Concluir e reconferir a aquisição ampla por recurso, sem tratar parcial como
-  completo nem substituir ano/turno indisponível.
-- Processar logs de votação do segundo turno com identificação do cargo,
-  data, fuso, contingências, rotação e reconciliação com BU; verificar a
-  afirmação de aproximadamente 34 mil votos após 17h.
-- Verificar assinaturas digitais e cadeias dos arquivos de urna quando
-  exigidas pela etapa correspondente; hashes não substituem essa verificação.
-- Conciliar as diferentes contagens de seção com os índices oficiais.
-  A diferença entre 499205 e 499207 já foi conciliada, inclusive aptos e
-  abstenções; permanece a identificação das 41 não instaladas.
-- Documentar fuso por seção/município e publicar análise temporal normalizada.
-- Verificar, com fonte geográfica adequada, a alegada concentração rural.
-- Obter os artefatos originais dos testes estatísticos e os documentos
-  primários das alegações institucionais, ou manter essas afirmações abertas.
+- As 14 seções domésticas com diagnóstico e o pacote esperado ausente de SP
+  não foram conciliados por ajustes ou exclusões. Precisam de registros de
+  contingência, documentação operacional ou outros originais para explicar
+  as diferenças. A auditoria documenta essas falhas; não lhes atribui fraude.
+- Assinaturas digitais, cadeias e autenticadores não foram validados. SHA e
+  CRC comprovam a integridade descrita, sem substituí-los.
+- A união de BU presidencial e sentinelas já concilia instaladas, aptos e
+  abstenções. Não foram identificadas nominalmente as 41 não instaladas;
+  sua contagem oficial não se mistura aos diagnósticos dos logs.
+- Os fusos municipais foram documentados e aplicados nominalmente. Não há
+  calibração independente do relógio físico de cada urna.
+- Concentração rural, métodos estatísticos originais não fornecidos e
+  alegações institucionais sem documentos suficientes permanecem
+  inconclusivos nas definições expostas. Não são aceitos nem refutados por
+  ausência de documentação.
 
 ## 9. Reprodutibilidade
 

@@ -2,8 +2,11 @@
 
 O [relatório](RELATORIO.md) confronta individualmente o conteúdo das
 [quatro imagens transcritas](TRANSCRICAO.md) com dados e documentos oficiais.
-O download amplo e a análise dos logs têm estado próprio; não estão
-implicitamente concluídos porque a soma dos BU web foi executada.
+A aquisição dos 942 recursos foi concluída e relida sem erros. Os logs das
+28 abrangências foram processados, com diagnóstico nacional explícito:
+41 chaves presentes não conciliadas e uma chave esperada ausente em SP.
+Isso não impede documentar os achados, mas impede aprovar a conciliação
+integral ou anunciar uma contagem exata nacional de eventos após 17h.
 
 ## Artefatos
 
@@ -203,8 +206,8 @@ python3 -m unittest discover -s scripts -p 'test_verify_zip_integrity_2026.py' -
 Os testes executam o binário sobre fixture sintética identificada em
 `tests/fixtures/audit-2026/`, com hash real. O confronto também usa os pequenos
 relatórios reais versionados; mutações locais são apenas testes negativos.
-As alterações que já existiam no checkout antes da auditoria não pertencem
-a esta entrega.
+As alterações que já existiam no checkout antes da auditoria foram
+preservadas para a etapa posterior de consolidação solicitada pelo usuário.
 
 ## Execução integral em um comando
 
@@ -217,6 +220,17 @@ bash scripts/reproduce_audit_2026.sh \
   /data/urnapack/auditoria-2026/fontes \
   /data/urnapack/auditoria-2026/reproducao-nova
 ```
+
+O catálogo fixado já está versionado. O roteiro verifica seu vínculo com o
+catálogo de descoberta e exige tamanho/SHA-256 para cada recurso antes de
+criar o diretório da execução. Ele também repete a conciliação das origens
+do exterior com o ZIP CEFT. Uma URL oficial que passe a servir bytes diferentes
+reprova; nesse caso, use os originais preservados com os mesmos hashes.
+
+`exit 1` por diagnóstico de logs não significa que o programa declarou
+sucesso nem que a aquisição falhou. Confira `verification.json`,
+`zip-integrity.json`, `log-national.json` e `artifacts.json` separadamente.
+O inventário final registra os códigos de logs, consolidação e empacotamento.
 
 O script registra ambiente, revisão Git, executáveis, comandos/recibos de
 importação e hashes dos artefatos. Uma divergência científica nos logs produz
@@ -274,3 +288,28 @@ target/release/audit_2026 --manifest /tmp/urnapack-entrada-local.json \
 Esse caminho reproduz o cálculo dos BU sem baixar os ZIPs originais. O
 reprocessamento dos eventos dos logs requer os respectivos ZIPs oficiais;
 resumos e índices não substituem seus bytes originais.
+
+## Empacotar resultados derivados dos logs
+
+O pacote de resultados é um ZIP padrão de uma seleção explícita. `_inventory.json`
+registra caminhos, tamanhos e SHA-256 dos membros; o empacotador relê todos os
+membros e confere CRC, tamanho e SHA-256 antes de publicar o asset. Os arquivos
+derivados são preservados byte a byte; isso não torna a análise uma restauração
+dos logs originais. Os limites continuam em `scripts/limits.env`.
+
+```bash
+python3 scripts/package_audit_results_2026.py \
+  --input /data/urnapack/auditoria-2026/reproducao-integral-1 \
+  --output /data/urnapack/auditoria-2026/tratados/resultados-logs-novo \
+  --include logs sections.csv sections-export.json log-national.json \
+    time-policy.json comparison.json coverage.json environment.json \
+    bu-input.json verification.json zip-integrity.json \
+  --scope 'Resultados derivados e índices de proveniência dos logs; sem os ZIPs originais do TSE'
+```
+
+O pacote inclui todos os arquivos sob `logs`, inclusive diagnósticos e índices;
+não contém os corpos originais dos logs. Para repetir os eventos a partir dos
+originais, use os ZIPs oficiais e o roteiro integral. Para repetir a verificação
+dos assets baixados do GitHub, execute `sha256sum -c SHA256SUMS-audit-2026` no
+diretório do download. A primeira conferência publicada está em
+`evidencias/download-release-conferido.json`.

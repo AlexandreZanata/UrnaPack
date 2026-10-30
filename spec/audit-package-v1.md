@@ -51,3 +51,19 @@ sendo transformação semântica, mesmo se comprimida sem perdas depois.
 Resumos/índices de logs não substituem seus arquivos originais para reprocessar
 os eventos. A disponibilização futura de objetos mutáveis na mesma URL do
 TSE não é garantida pelo pacote; o catálogo fixado detecta mudanças.
+# ZIP de resultados derivados
+
+`scripts/package_audit_results_2026.py` é um invólucro ZIP padrão, separado
+do arquivo UrnaPack v2 e do pacote de CSVs descrito neste documento. A seleção
+de arquivos/diretórios é explícita, recursiva e sem deduplicação. Symlinks,
+caminhos inválidos, sobreposição da seleção e saída dentro da origem reprovam.
+Não preserva diretórios vazios ou metadados do sistema de arquivos.
+
+O membro reservado `_inventory.json`, `format_version=1`, contém escopo,
+seleção, ambiente/implementação e mapa de caminhos para bytes/SHA-256. O
+recibo externo `package-results.json` registra sucesso ou falha e, em caso
+de sucesso, os hashes medidos do asset. Todos os membros são relidos do ZIP
+e comparados com os bytes selecionados; divergência ou excesso do limite
+central de asset reprova, preservando o parcial. A compactação conserva
+os arquivos derivados selecionados; não recupera informação que sua
+transformação analítica já não continha.
