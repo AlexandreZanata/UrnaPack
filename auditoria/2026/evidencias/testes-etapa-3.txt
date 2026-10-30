@@ -1,0 +1,292 @@
+Árvore isolada /tmp/urnapack-audit-review3. Sem alterações preexistentes de analyze.
+
+$ cargo fmt --check e cargo clippy --locked --offline --all-targets -- -D warnings
+exit=0
+
+$ cargo test --locked --offline
+exit=0
+
+   Compiling tsepack v0.2.0 (/tmp/urnapack-audit-review3)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 15.81s
+     Running unittests src/lib.rs (target/debug/deps/tsepack-bd66b06be67f7482)
+
+running 3 tests
+test hash::tests::arquivo_vazio_tem_hash_conhecido ... ok
+test hash::tests::vetor_conhecido_sha256 ... ok
+test manifest::tests::manifesto_ordena_caminhos_com_hash_real ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running unittests src/bin/audit_2026.rs (target/debug/deps/audit_2026-4ee86b776565ed0f)
+
+running 7 tests
+test tests::exact_boundaries_and_bad_date ... ok
+test tests::correlations_and_ties ... ok
+test tests::out_of_scope_negative_cargo_is_counted_without_losing_presidential_rows ... ok
+test tests::strict_extremes_and_empty_denominator ... ok
+test tests::failed_publication_keeps_partial_without_final_file ... ok
+test tests::nominal_clock_uses_municipality_override_and_preserves_totals ... ok
+test tests::section_export_preserves_keys_and_counts_once ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running unittests src/bin/audit_logs_2026.rs (target/debug/deps/audit_logs_2026-feeb853043a31eb4)
+
+running 8 tests
+test tests::bounded_line_rejects_before_consuming_excessive_record ... ok
+test tests::counts_synthetic_fixture_bytes_at_strict_time_boundary_and_excludes_other_day ... ok
+test tests::malformed_line_is_hashed_and_blocks_section_without_stopping_coverage ... ok
+test tests::duplicate_events_are_counted_and_block_reconciliation ... ok
+test tests::missing_expected_section_prevents_success_even_when_present_section_matches ... ok
+test tests::other_internal_section_is_counted_separately_instead_of_assigned_by_filename ... ok
+test tests::repeated_bodies_are_preserved_and_current_day_duplicates_block_success ... ok
+test tests::changed_hash_and_interrupted_stream_fail ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/tsepack-724d8a88e1345a2b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/audit_2026.rs (target/debug/deps/audit_2026-92b09b084647c458)
+
+running 4 tests
+test wrong_hash_exits_nonzero_without_report ... ok
+test changed_repeated_context_fails ... ok
+test duplicate_occurrence_is_not_silently_removed ... ok
+test sums_context_once_and_checks_exact_percent_boundary ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/audit_logs_2026.rs (target/debug/deps/audit_logs_2026-ec26bc51cb347512)
+
+running 1 test
+test cli_checks_hashes_and_produces_verified_stream_receipt ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/bweb_pack.rs (target/debug/deps/bweb_pack-1858c74656d62375)
+
+running 13 tests
+test relatorio_escalar_nao_sobrescreve_e_permite_denominador_vazio ... ok
+test reversivel_com_duplicatas_zeros_aspas_e_multilinhas ... ok
+test quoting_ou_newline_diferente_reprova_sem_saida ... ok
+test limites_de_comprimento_sao_aplicados_antes_de_alocar ... ok
+test saida_dentro_do_pacote_e_arquivo_extra_reprovam ... ok
+test hash_de_origem_errado_reprova_no_pack_e_no_unpack ... ok
+test checkpoint_recalcula_taxas_e_rejeita_fronteiras_de_coluna_falsas ... ok
+test saida_resolve_symlink_antes_de_pai ... ok
+test checkpoint_retomavel_reconfere_binario_e_origem ... ok
+test legado_com_hash_e_legado_sem_hash_sao_distintos ... ok
+test truncado_ou_residuo_mesmo_com_hash_atualizado_reprova_sem_parcial ... ok
+test caminhos_metadados_e_campos_desconhecidos_reprovam ... ok
+test verificador_python_funciona_tambem_com_otimizacao ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.21s
+
+     Running tests/compression.rs (target/debug/deps/compression-d1f06f0d4287520b)
+
+running 8 tests
+test q2_nao_soma_contexto_por_votavel_e_detecta_divergencia ... ok
+test origem_duplicada_tar_desconhecido_e_campos_extras_reprovam ... ok
+test arquivo_por_fonte_preserva_conteudos_iguais_e_reprova_selecao_duplicada ... ok
+test arquivo_padrao_deterministico_restaura_e_vincula_recibo ... ok
+xz: /tmp/.tmp3jeX5f/xz-6.encoded: Unexpected end of input
+test dicionario_treinado_e_multiplos_blocos_reconstroem_todos_os_bytes ... ok
+test codecs_conferem_bytes_e_recusam_hash_errado_sem_promover ... ok
+test decoder_falha_em_truncamento_e_tamanho_excedido ... ok
+test optimize_e_restore_cli_executam_verificacao_real ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.67s
+
+     Running tests/determinismo.rs (target/debug/deps/determinismo-e5996a0a175c2a5a)
+
+running 2 tests
+test manifesto_e_deterministico ... ok
+test benchmark_round_trip_zstd ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.25s
+
+     Running tests/integracao.rs (target/debug/deps/integracao-103130f4789ee8c4)
+
+running 29 tests
+test inventario_nao_gera_caminho_que_verify_rejeita ... ok
+test caminhos_windows_e_nul_reprovam_sem_depender_do_host ... ok
+test diretorio_vazio_nao_utf8_e_rejeitado ... ok
+test cli_inspect_reprova_raiz_inexistente ... ok
+test origem_rejeita_campo_desconhecido ... ok
+test arquivo_especial_fifo_reprova_build ... ok
+test caminho_repetido_reprova ... ok
+test erro_de_leitura_por_permissao_propaga ... ok
+test raiz_inexistente_reprova ... ok
+test symlink_interno_reprova_build ... ok
+test origem_rejeita_versao_nao_suportada ... ok
+test travessia_e_caminhos_invalidos_reprovam ... ok
+test raiz_nao_diretorio_reprova ... ok
+test origem_v1_congelado_carrega ... ok
+test manifesto_vazio_reprova ... ok
+test migracao_v1_para_v2_preserva_arquivos ... ok
+test link_legitimo_da_raiz_e_resolvido ... ok
+test symlink_no_arquivo_verificado_reprova ... ok
+test arquivo_ausente_e_detectado ... ok
+test corrupcao_mesmo_tamanho_reprova_com_hash_mismatch ... ok
+test corrupcao_e_detectada ... ok
+test cli_verify_reprova_hash_e_versao_com_exit_nao_zero ... ok
+test origem_v2_escrita_por_padrao ... ok
+test versao_incompativel_reprova_com_erro ... ok
+test truncado_reprova_com_size_mismatch ... ok
+test raiz_vazia_tem_inventario_explicito ... ok
+test manifest_round_trip_e_verify_ok ... ok
+test cli_verify_aprova_fonte_valida ... ok
+test benchmark_pack_columns_consistente ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.84s
+
+   Doc-tests tsepack
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+$ python3 -m unittest discover -s scripts -p 'test_*.py'
+exit=0
+
+.........................../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpdydy6pqy/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:241: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpkle_o4w7/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:152: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpcpvukp4r/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:172: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpn1co6bsg/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpiqpjh4zp/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpw37jbq_c/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...............ERRO: falha de publicação injetada
+.........../home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.txt'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+...........ERRO: falha injetada
+ERRO: escrever diagnóstico/recibo: falha injetada
+......preparado MT: 1613 bytes CSV
+.preparado MT: 1613 bytes CSV
+................/home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.csv'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+.../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpybfxdodv/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:138: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp64u9_g4v/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:108: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpx47cq00f/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:118: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpqn6cjljt/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:81: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpewngskkk/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:160: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpq64vuono/b.csv'>
+  z.writestr("bweb.csv", open(csv_path, "rb").read())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.
+----------------------------------------------------------------------
+Ran 109 tests in 24.848s
+
+OK
+
+$ python3 scripts/validate.py repo --root .
+exit=0
+
+
+$ python3 scripts/validate.py self-test
+exit=0
+
+PASS manifesto correto aprova
+PASS hash incorreto reprova
+PASS arquivo ausente reprova
+PASS versão incompatível reprova
+PASS pacote truncado reprova
+PASS acima do limite reprova
+PASS índice duplicado reprova
+PASS nome inválido rejeitado
+PASS nome válido aceito
+
+9/9 cenários OK
+
+$ cargo build --locked --offline --release --bin audit_2026 --bin audit_logs_2026
+exit=0
+
+   Compiling libc v0.2.191
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling version_check v0.9.5
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.15
+   Compiling pkg-config v0.3.34
+   Compiling crossbeam-utils v0.8.23
+   Compiling serde_core v1.0.229
+   Compiling crossbeam-epoch v0.9.21
+   Compiling typenum v1.20.1
+   Compiling utf8parse v0.2.2
+   Compiling crossbeam-deque v0.8.8
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling memchr v2.8.3
+   Compiling anstyle-parse v1.0.0
+   Compiling zmij v1.0.23
+   Compiling cfg-if v1.0.5
+   Compiling zstd-safe v8.2.0
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling colorchoice v1.0.5
+   Compiling anstyle-query v1.1.5
+   Compiling anstyle v1.0.14
+   Compiling rayon-core v1.13.0
+   Compiling alloc-stdlib v0.2.4
+   Compiling itoa v1.0.18
+   Compiling heck v0.5.0
+   Compiling serde_json v1.0.154
+   Compiling clap_lex v1.1.1
+   Compiling anyhow v1.0.104
+   Compiling strsim v0.11.1
+   Compiling generic-array v0.14.7
+   Compiling anstream v1.0.0
+   Compiling serde v1.0.229
+   Compiling brotli-decompressor v5.0.3
+   Compiling cpufeatures v0.2.17
+   Compiling ryu v1.0.23
+   Compiling same-file v1.0.6
+   Compiling either v1.19.0
+   Compiling csv-core v0.1.13
+   Compiling clap_builder v4.6.7
+   Compiling walkdir v2.5.0
+   Compiling syn v3.0.9
+   Compiling hex v0.4.3
+   Compiling jobserver v0.1.35
+   Compiling brotli v8.0.4
+   Compiling cc v1.10.0
+   Compiling filetime v0.2.29
+   Compiling tar v0.4.46
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling rayon v1.12.0
+   Compiling csv v1.4.0
+   Compiling serde_derive v1.0.229
+   Compiling clap_derive v4.6.7
+   Compiling zstd-sys v2.1.2+zstd.1.5.7
+   Compiling clap v4.6.7
+   Compiling zstd v0.14.3
+   Compiling tsepack v0.2.0 (/tmp/urnapack-audit-review3)
+    Finished `release` profile [optimized] target(s) in 1m 25s

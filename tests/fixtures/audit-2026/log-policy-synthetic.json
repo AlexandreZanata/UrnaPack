@@ -1,0 +1,7 @@
+{
+  "format_version": 1,
+  "brt_shift_seconds_by_uf": {
+    "MT": 3600
+  },
+  "municipality_overrides": {}
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "pagina": 1,
+    "nome_recebido": "WhatsApp Image 2026-10-29 at 7.02.02 AM.jpeg",
+    "arquivo": "auditoria/2026/imagens/pagina-01.jpeg",
+    "bytes": 57576,
+    "sha256": "e896021c2f39712fd1bd53a24e062b4251aec8b8ee918724d91e092f1e51b025",
+    "origem": "anexo fornecido pelo usuário; autoria e completude do documento não verificadas"
+  },
+  {
+    "pagina": 2,
+    "nome_recebido": "WhatsApp Image 2026-10-29 at 7.02.40 AM.jpeg",
+    "arquivo": "auditoria/2026/imagens/pagina-02.jpeg",
+    "bytes": 199317,
+    "sha256": "ad05c5434c359403b79ae557c403c4a1511df32e2df86270ebc5a3dd7a3bc394",
+    "origem": "anexo fornecido pelo usuário; autoria e completude do documento não verificadas"
+  },
+  {
+    "pagina": 3,
+    "nome_recebido": "WhatsApp Image 2026-10-29 at 7.02.40 AM (1).jpeg",
+    "arquivo": "auditoria/2026/imagens/pagina-03.jpeg",
+    "bytes": 168792,
+    "sha256": "6c1272126433934d039f2d8871a4ad63cd2568a7ec326346dcacd15319df2d7f",
+    "origem": "anexo fornecido pelo usuário; autoria e completude do documento não verificadas"
+  },
+  {
+    "pagina": 4,
+    "nome_recebido": "WhatsApp Image 2026-10-29 at 7.02.41 AM.jpeg",
+    "arquivo": "auditoria/2026/imagens/pagina-04.jpeg",
+    "bytes": 194864,
+    "sha256": "f937afda8ce1b900ebd1284262a94de66862053c7921ac472870cd0965ce9461",
+    "origem": "anexo fornecido pelo usuário; autoria e completude do documento não verificadas"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "recorded_at_utc": "2026-10-29T11:56:31.644235+00:00",
+  "base_commit": "9cc4e4a19e3d6d1e8764808b9213af89464084c4",
+  "validation_scope": "exportação do índice Git em /tmp/urnapack-audit-review; alterações anteriores do checkout não incluídas",
+  "checks": [
+    {
+      "command": "cargo fmt --check",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo clippy --all-targets -- -D warnings",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --all-targets",
+      "exit_code": 0,
+      "tests_passed": 62
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p 'test_*.py'",
+      "exit_code": 0,
+      "tests_run": 95,
+      "log": "testes-python-copia-do-commit.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py repo --root .",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/validate.py self-test",
+      "exit_code": 0
+    }
+  ],
+  "deterministic_report": {
+    "first_sha256": "bd66c2174428150b7fb885d5d13817d98e56459150bf691468c376a29f68a59a",
+    "second_sha256": "bd66c2174428150b7fb885d5d13817d98e56459150bf691468c376a29f68a59a",
+    "identical_bytes": true
+  },
+  "testes_rust_txt_scope": "testes-rust.txt foi executado no checkout de trabalho e inclui testes de alterações anteriores; validação limpa acima usa apenas o índice",
+  "download_and_audit_complete": false
+}

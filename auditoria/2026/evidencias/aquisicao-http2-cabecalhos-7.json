@@ -1,0 +1,158 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_RJ.zip",
+  "finished_at_utc": "2026-10-29T15:09:31.382234+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 1536348,
+      "finished_at_utc": "2026-10-29T15:09:31.380851+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=33421",
+        "content-length": "1536348",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:30 GMT",
+        "etag": "\"17715c-65ef9015ee8b7\"",
+        "last-modified": "Thu, 29 Oct 2026 11:30:23 GMT"
+      },
+      "http_get_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 11:30:23 GMT"
+        ],
+        [
+          "etag",
+          "\"17715c-65ef9015ee8b7\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "1536348"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=33421"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:30 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_get_protocol": "HTTP/2 200",
+      "http_get_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 11:30:23 GMT\r\netag: \"17715c-65ef9015ee8b7\"\r\naccept-ranges: bytes\r\ncontent-length: 1536348\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=33421\r\ndate: Thu, 29 Oct 2026 15:09:30 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_get_status": 200,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_RJ.zip",
+      "http_head": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=33421",
+        "content-length": "1536348",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:30 GMT",
+        "etag": "\"17715c-65ef9015ee8b7\"",
+        "last-modified": "Thu, 29 Oct 2026 11:30:23 GMT"
+      },
+      "http_head_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 11:30:23 GMT"
+        ],
+        [
+          "etag",
+          "\"17715c-65ef9015ee8b7\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "1536348"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=33421"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:30 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_head_protocol": "HTTP/2 200",
+      "http_head_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 11:30:23 GMT\r\netag: \"17715c-65ef9015ee8b7\"\r\naccept-ranges: bytes\r\ncontent-length: 1536348\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=33421\r\ndate: Thu, 29 Oct 2026 15:09:30 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_length_verification": "matched",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_RJ.zip",
+      "sha1": "23651fac1ef57d3731ea652db892df7128554066",
+      "sha256": "7abceac7d8671ce14272795bf4f3355577a77ea62498b8b0c8da609aea4b9106",
+      "sha512": "7dfce036ad8509afa8740e5650ecea8409a422c94e3fee948ea1001f591208d3d4bd31dfbbe1342ffc2d39123dc68674af506e47962f3a86de3359dba4239590",
+      "started_at_utc": "2026-10-29T15:09:29.683491+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_RJ.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T15:09:29.681609+00:00",
+  "transport_requested": "curl"
+}

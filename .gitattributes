@@ -8,3 +8,15 @@
 
 # Fixtures lexicais têm Latin-1/CRLF e hashes dos bytes; Git não pode normalizá-las.
 tests/fixtures/bweb/*.csv binary
+
+# Evidências HTTP originais: preservar todos os bytes, inclusive espaços e CRLF.
+/auditoria/2026/evidencias/municipios-2t.json -text whitespace=-blank-at-eol,-blank-at-eof
+/auditoria/2026/evidencias/totalizacao-presidente-2t.json -text whitespace=-blank-at-eol,-blank-at-eof
+/auditoria/2026/evidencias/web/*.html -text whitespace=-blank-at-eol,-blank-at-eof
+/auditoria/2026/evidencias/web/*.headers -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/tests/fixtures/audit-2026/*.csv -text whitespace=cr-at-eol
+/tests/fixtures/audit-2026/*.dat -text
+/tests/fixtures/audit-2026/*.zip binary
+/scripts/reproduce_audit_2026.sh text eol=lf
+
+/auditoria/2026/evidencias/testes-*.txt whitespace=-blank-at-eof

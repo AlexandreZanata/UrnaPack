@@ -1,0 +1,159 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+  "finished_at_utc": "2026-10-29T15:12:44.792311+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 8122316,
+      "finished_at_utc": "2026-10-29T15:09:25.926833+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=42646",
+        "content-length": "8122316",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:23 GMT",
+        "etag": "\"7befcc-65ef5141a37b6\"",
+        "last-modified": "Thu, 29 Oct 2026 06:49:17 GMT"
+      },
+      "http_get_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 06:49:17 GMT"
+        ],
+        [
+          "etag",
+          "\"7befcc-65ef5141a37b6\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "8122316"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=42646"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:23 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_get_protocol": "HTTP/2 200",
+      "http_get_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 06:49:17 GMT\r\netag: \"7befcc-65ef5141a37b6\"\r\naccept-ranges: bytes\r\ncontent-length: 8122316\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=42646\r\ndate: Thu, 29 Oct 2026 15:09:23 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_get_status": 200,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+      "http_head": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=41769",
+        "content-length": "8122316",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:22 GMT",
+        "etag": "\"7befcc-65ef5141a37b6\"",
+        "last-modified": "Thu, 29 Oct 2026 06:49:17 GMT"
+      },
+      "http_head_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 06:49:17 GMT"
+        ],
+        [
+          "etag",
+          "\"7befcc-65ef5141a37b6\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "8122316"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=41769"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:22 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_head_protocol": "HTTP/2 200",
+      "http_head_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 06:49:17 GMT\r\netag: \"7befcc-65ef5141a37b6\"\r\naccept-ranges: bytes\r\ncontent-length: 8122316\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=41769\r\ndate: Thu, 29 Oct 2026 15:09:22 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_length_verification": "matched",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+      "reverified_at_utc": "2026-10-29T15:12:44.791760+00:00",
+      "sha1": "ee7270c6a66e2908e92b3d09cded899e7eb16452",
+      "sha256": "214264af4603463793f6a5539f35852bb9bc2fb37c903a9798e5c0dc78db9450",
+      "sha512": "528931fb2ae8448bf0ebcb440dcaa4aa943c3e7666f575ec8c9593650c8f1e93b0880fef09932941b5a1affec5613268639c6e2370926afd1875d1ac4db39146",
+      "started_at_utc": "2026-10-29T15:09:22.545992+00:00",
+      "status": "reverified_local",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T15:12:44.767758+00:00",
+  "transport_requested": "curl"
+}

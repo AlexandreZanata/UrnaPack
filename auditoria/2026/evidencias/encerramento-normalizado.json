@@ -1,0 +1,33 @@
+{
+  "command": "target/release/audit_2026 --manifest auditoria/2026/evidencias/entrada-buweb-2t.json --time-policy auditoria/2026/evidencias/politica-relogio-nominal-2026.json --output auditoria/2026/resultados/presidente-2t-normalizado.json",
+  "files": {
+    "auditoria/2026/evidencias/entrada-buweb-2t.json": {
+      "bytes": 13676,
+      "sha256": "9afcc5042375f12e43da7a0d9ee40a93ccec1c68db08d4180e76fada29c3a5b4"
+    },
+    "auditoria/2026/evidencias/politica-relogio-nominal-2026.json": {
+      "bytes": 1672,
+      "sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba"
+    },
+    "auditoria/2026/resultados/presidente-2t-normalizado.json": {
+      "bytes": 39881,
+      "sha256": "5d2d1ed1aa40b257a952a197c7c242445a21f765f82c84fbdfeb7eee8d4d89a4"
+    },
+    "src/audit_io.rs": {
+      "bytes": 1360,
+      "sha256": "d1af98307a107ed7a27183852b271f459822c61e6db6e6a5cadbd14e4aae39d3"
+    },
+    "src/bin/audit_2026.rs": {
+      "bytes": 28582,
+      "sha256": "817eabc940aca5708fdad2ff0bd922e247a0b9b105a9a1f3f4294b11b576b3f5"
+    },
+    "target/release/audit_2026": {
+      "bytes": 1766416,
+      "sha256": "bfdd55a621a371ae45e31f814701ffe08c29d01497c9dd6bc3d224d2780e0939"
+    }
+  },
+  "format_version": 1,
+  "recorded_at_utc": "2026-10-29T14:25:12.411547+00:00",
+  "result_preserves_lexical_report": true,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)"
+}

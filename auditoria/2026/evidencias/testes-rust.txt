@@ -1,0 +1,230 @@
+   Compiling tsepack v0.2.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/UrnaPack)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.06s
+     Running unittests src/lib.rs (target/debug/deps/tsepack-bd66b06be67f7482)
+
+running 3 tests
+test hash::tests::vetor_conhecido_sha256 ... ok
+test hash::tests::arquivo_vazio_tem_hash_conhecido ... ok
+test manifest::tests::manifesto_ordena_caminhos_com_hash_real ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/bin/audit_2026.rs (target/debug/deps/audit_2026-4ee86b776565ed0f)
+
+running 3 tests
+test tests::exact_boundaries_and_bad_date ... ok
+test tests::strict_extremes_and_empty_denominator ... ok
+test tests::correlations_and_ties ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/tsepack-724d8a88e1345a2b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/analyze.rs (target/debug/deps/analyze-2e99295de6e3cce9)
+
+running 21 tests
+análise: 1 registros; votos=indisponível; status=failed; erros=3
+saída: /tmp/.tmppMdU1i/invalid
+analyze: controles obrigatórios reprovaram; consulte quality.json e REPORT.md
+test saida_existente_ou_sobreposta_e_recusada_sem_residuo ... ok
+test cli_retorna_exit_nao_zero_quando_controle_obrigatorio_reprova ... ok
+test fora_do_escopo_bloqueia_votos_e_contexto ... ok
+test recibo_de_falha_tem_schema_unificado ... ok
+test conflito_de_nome_municipal_bloqueia_cobertura_territorial ... ok
+test contexto_repetido_conta_uma_vez_e_preserva_zeros ... ok
+test perfil_desconhecido_e_rejeitado_sem_inferencia ... ok
+test categoria_desconhecida_entra_na_cobertura_e_bloqueia_interpretacao ... ok
+test hash_divergente_reprova_sem_aprovar ... ok
+test contexto_divergente_bloqueia_contexto_sem_arbitrar ... ok
+test data_invalida_reprova_lexico ... ok
+test secoes_agregadas_bloqueiam_contagem_fisica_sem_falhar_o_resto ... ok
+test overflow_de_votos_reprova ... ok
+test view_com_payload_adulterado_reprova ... ok
+test view_com_membro_divergente_reprova_com_mismatch ... ok
+test duplicata_repetida_e_conflito_sao_distintos ... ok
+test truncada_e_cabecalho_divergente_nao_aprovam ... ok
+test view_verifica_payload_sha_membro_e_ordinal ... ok
+test segunda_execucao_reproduz_resultados_e_qualidade ... ok
+test campo_excessivo_falha_explicitamente ... ok
+{
+  "artifact_kind": "bweb_independent_check",
+  "checks": [
+    {
+      "check": "csv_sha256",
+      "detail": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+      "ok": true
+    },
+    {
+      "check": "records",
+      "detail": "8",
+      "ok": true
+    },
+    {
+      "check": "source_hash",
+      "detail": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+      "ok": true
+    },
+    {
+      "check": "header",
+      "detail": "45 campos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office",
+      "detail": "2 cargos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office_category",
+      "detail": "6 grupos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office_municipality",
+      "detail": "7 grupos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office",
+      "detail": "2 cargos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office_municipality",
+      "detail": "3 grupos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office_zone",
+      "detail": "3 grupos",
+      "ok": true
+    },
+    {
+      "check": "keys",
+      "detail": "duplicatas=0",
+      "ok": true
+    },
+    {
+      "check": "context",
+      "detail": "grupos=4",
+      "ok": true
+    },
+    {
+      "check": "coverage",
+      "detail": "municípios=2 zonas=2 contextos=4 conflitos_nome=0",
+      "ok": true
+    },
+    {
+      "check": "sentinels",
+      "detail": "6 colunas",
+      "ok": true
+    },
+    {
+      "check": "ds_secoes_agregadas",
+      "detail": "1 valores, overflow=0",
+      "ok": true
+    }
+  ],
+  "csv": "/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/UrnaPack/tests/fixtures/analyze/mt-valid.csv",
+  "csv_sha256": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+  "errors": [],
+  "format_version": 1,
+  "records": 8,
+  "success": true
+}
+analyze_check: OK (8 registros, 15 verificações)
+test verificador_independente_confere_fixture_sintetica ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.43s
+
+     Running tests/audit_2026.rs (target/debug/deps/audit_2026-27e32a850af112b2)
+
+running 4 tests
+test wrong_hash_exits_nonzero_without_report ... ok
+test changed_repeated_context_fails ... ok
+test duplicate_occurrence_is_not_silently_removed ... ok
+test sums_context_once_and_checks_exact_percent_boundary ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/bweb_pack.rs (target/debug/deps/bweb_pack-2896fb2c96cc0a62)
+
+running 13 tests
+test relatorio_escalar_nao_sobrescreve_e_permite_denominador_vazio ... ok
+test quoting_ou_newline_diferente_reprova_sem_saida ... ok
+test hash_de_origem_errado_reprova_no_pack_e_no_unpack ... ok
+test reversivel_com_duplicatas_zeros_aspas_e_multilinhas ... ok
+test legado_com_hash_e_legado_sem_hash_sao_distintos ... ok
+test saida_resolve_symlink_antes_de_pai ... ok
+test limites_de_comprimento_sao_aplicados_antes_de_alocar ... ok
+test saida_dentro_do_pacote_e_arquivo_extra_reprovam ... ok
+test truncado_ou_residuo_mesmo_com_hash_atualizado_reprova_sem_parcial ... ok
+test checkpoint_retomavel_reconfere_binario_e_origem ... ok
+test checkpoint_recalcula_taxas_e_rejeita_fronteiras_de_coluna_falsas ... ok
+test caminhos_metadados_e_campos_desconhecidos_reprovam ... ok
+test verificador_python_funciona_tambem_com_otimizacao ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.67s
+
+     Running tests/compression.rs (target/debug/deps/compression-eea518b8ea3102ce)
+
+running 8 tests
+test origem_duplicada_tar_desconhecido_e_campos_extras_reprovam ... ok
+test arquivo_padrao_deterministico_restaura_e_vincula_recibo ... ok
+test q2_nao_soma_contexto_por_votavel_e_detecta_divergencia ... ok
+test arquivo_por_fonte_preserva_conteudos_iguais_e_reprova_selecao_duplicada ... ok
+xz: /tmp/.tmpoWpUIj/xz-6.encoded: Unexpected end of input
+test decoder_falha_em_truncamento_e_tamanho_excedido ... ok
+test optimize_e_restore_cli_executam_verificacao_real ... ok
+test codecs_conferem_bytes_e_recusam_hash_errado_sem_promover ... ok
+test dicionario_treinado_e_multiplos_blocos_reconstroem_todos_os_bytes ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.64s
+
+     Running tests/determinismo.rs (target/debug/deps/determinismo-4eca3dd16118ecaa)
+
+running 2 tests
+test manifesto_e_deterministico ... ok
+test benchmark_round_trip_zstd ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/integracao.rs (target/debug/deps/integracao-25cadba97b2cb41d)
+
+running 29 tests
+test caminhos_windows_e_nul_reprovam_sem_depender_do_host ... ok
+test diretorio_vazio_nao_utf8_e_rejeitado ... ok
+test caminho_repetido_reprova ... ok
+test arquivo_ausente_e_detectado ... ok
+test erro_de_leitura_por_permissao_propaga ... ok
+test corrupcao_mesmo_tamanho_reprova_com_hash_mismatch ... ok
+test raiz_inexistente_reprova ... ok
+test origem_v2_escrita_por_padrao ... ok
+test raiz_nao_diretorio_reprova ... ok
+test symlink_interno_reprova_build ... ok
+test raiz_vazia_tem_inventario_explicito ... ok
+test symlink_no_arquivo_verificado_reprova ... ok
+test truncado_reprova_com_size_mismatch ... ok
+test travessia_e_caminhos_invalidos_reprovam ... ok
+test versao_incompativel_reprova_com_erro ... ok
+test corrupcao_e_detectada ... ok
+test inventario_nao_gera_caminho_que_verify_rejeita ... ok
+test cli_verify_reprova_hash_e_versao_com_exit_nao_zero ... ok
+test manifest_round_trip_e_verify_ok ... ok
+test manifesto_vazio_reprova ... ok
+test migracao_v1_para_v2_preserva_arquivos ... ok
+test origem_v1_congelado_carrega ... ok
+test cli_verify_aprova_fonte_valida ... ok
+test link_legitimo_da_raiz_e_resolvido ... ok
+test cli_inspect_reprova_raiz_inexistente ... ok
+test origem_rejeita_campo_desconhecido ... ok
+test arquivo_especial_fifo_reprova_build ... ok
+test origem_rejeita_versao_nao_suportada ... ok
+test benchmark_pack_columns_consistente ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+

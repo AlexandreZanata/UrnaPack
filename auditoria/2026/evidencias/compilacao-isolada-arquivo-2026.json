@@ -1,0 +1,94 @@
+{
+  "assurance": "Recibo local de comparação dos arquivos de fonte e hash do binário; não é atestado assinado de compilação reproduzível entre máquinas.",
+  "binary": {
+    "bytes": 5157024,
+    "path": "/tmp/urnapack-audit-review3/target/release/tsepack",
+    "sha256": "db6dd189f0fd7ea18d8a838bfbb7b6b58854a346e81df4282b379421833233b7"
+  },
+  "command": "cargo build --locked --offline --release --bin tsepack",
+  "format_version": 1,
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.1\nLLVM version: 23.1.1\n",
+  "source_files_checked_against_git": {
+    "Cargo.lock": {
+      "bytes": 17103,
+      "sha256": "1b27db17603e69cf643ceb93d75fb9425c68a417a5911a6a2f447fa06d6bdde0"
+    },
+    "Cargo.toml": {
+      "bytes": 606,
+      "sha256": "8c7abc72113e3f6ba2086e5351372a087eced9651b92c6ea3e1b587e74bd8325"
+    },
+    "scripts/limits.env": {
+      "bytes": 3167,
+      "sha256": "aee8a48073b19a179adbdb4f077affdd4ce9b81c10d74491a1d9a5a365e75ed0"
+    },
+    "src/archive.rs": {
+      "bytes": 21551,
+      "sha256": "0c96b185f2a9627ec3eca0ff3a57daccf7057a525ce2e20297aba30d75ecd170"
+    },
+    "src/audit_io.rs": {
+      "bytes": 1360,
+      "sha256": "d1af98307a107ed7a27183852b271f459822c61e6db6e6a5cadbd14e4aae39d3"
+    },
+    "src/benchmark.rs": {
+      "bytes": 18543,
+      "sha256": "d9f0974ae6e36bd7211eca222af05ed5e11623d0fb19643cfbef8b9ccdfbcc66"
+    },
+    "src/bin/audit_2026.rs": {
+      "bytes": 28582,
+      "sha256": "817eabc940aca5708fdad2ff0bd922e247a0b9b105a9a1f3f4294b11b576b3f5"
+    },
+    "src/bin/audit_logs_2026.rs": {
+      "bytes": 37524,
+      "sha256": "7fae549a3c3b9f73714e9b08ede0bcf923b9959a359264e2c6755b5b1e98c014"
+    },
+    "src/bweb.rs": {
+      "bytes": 14954,
+      "sha256": "3cdda03869dc123dfca3c3fe75135dc04dff57d14a9f577a9d85123ad26fc13e"
+    },
+    "src/codec.rs": {
+      "bytes": 10167,
+      "sha256": "0a3159aec95541674d85d842a12ca995f9ea32af5f4bf10eae8982f297370fd3"
+    },
+    "src/hash.rs": {
+      "bytes": 1804,
+      "sha256": "a578af04f25f6d409cc406e58b5a00ebde65f3ccb6c320b04ba33be3abb929ea"
+    },
+    "src/inspect.rs": {
+      "bytes": 2301,
+      "sha256": "c787ca409965fc8355f2eb0f952e404bdbbde7b9c532b46d91d3cae481658c78"
+    },
+    "src/lib.rs": {
+      "bytes": 1407,
+      "sha256": "9e5db589f9b43d2d2d1586ecc761f6eaebd51135a73358492cefccf25613bf55"
+    },
+    "src/limits.rs": {
+      "bytes": 696,
+      "sha256": "d7ab086ca34606351a19ac604266ef9b6bdd9fb20e780ad622957f3a53f0da63"
+    },
+    "src/main.rs": {
+      "bytes": 16293,
+      "sha256": "2bb995596bf5941ba75a392fd26d5b74373d50d3b847b2ee8f4f3cdc73f8ff08"
+    },
+    "src/manifest.rs": {
+      "bytes": 5875,
+      "sha256": "710efc3b1a523ff36f945db524216d9f201457781bcd6dd7268402296e9b7020"
+    },
+    "src/output.rs": {
+      "bytes": 3240,
+      "sha256": "e6c20f9f35e7342807b1d5c1fae3d13bb1853bc5207746d0bb06f3243ea69e61"
+    },
+    "src/queries.rs": {
+      "bytes": 6731,
+      "sha256": "13712a3967b21cfa78e271ee488052800576067edf6efb90ff395a4aa7745d17"
+    },
+    "src/traverse.rs": {
+      "bytes": 5301,
+      "sha256": "70cf7127ac6a1f9cd5c39fe7ee0b8303e313b9101b6be94152a451ef8f6d49f7"
+    },
+    "src/verify.rs": {
+      "bytes": 7652,
+      "sha256": "0ec49a4dfaa217d9575f74c0d824c8ffbdbb1d08698d93f3ae14dff4b452773d"
+    }
+  },
+  "source_revision": "9ca405d43ef3b5aa27882be6bae9ba019e5b139c"
+}

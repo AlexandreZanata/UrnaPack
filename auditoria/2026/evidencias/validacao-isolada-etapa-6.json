@@ -1,0 +1,38 @@
+{
+  "format_version": 1,
+  "scope": "Automação de pré-verificação do catálogo e barreiras de empacotamento; Rust sem mudanças nesta etapa. Suíte Python isolada completa, com servidores HTTP locais reais, 118 testes aprovados.",
+  "files": {
+    "scripts/package_buweb_audit_2026.py": {
+      "bytes": 8118,
+      "sha256": "f8141ae5523ee886cf2a0dec8f40cec7e2b39fa47a34240e9e92a0818d11ac92"
+    },
+    "scripts/test_package_buweb_audit_2026.py": {
+      "bytes": 4080,
+      "sha256": "78a48d17e973f623d2dee191380320ad329eb901f56a9fa4d92312a138537455"
+    },
+    "scripts/pin_catalog_2026.py": {
+      "bytes": 3810,
+      "sha256": "8c6e64b55cd1accdd1a5b2c9ba05875acf1c4154a1d11afd270d5be98b155220"
+    },
+    "scripts/test_acquire_2026.py": {
+      "bytes": 14198,
+      "sha256": "581e81ae1f94ce460335c56f27e75e52eeba23f311aeede72e5155526b8a0cba"
+    },
+    "scripts/reproduce_audit_2026.sh": {
+      "bytes": 6043,
+      "sha256": "f34d3b4a9c45a87880f6c03dc0ca309ffb4b65debf9c5a39175178e0373786c0"
+    }
+  },
+  "checks": {
+    "python_unittest": {
+      "exit_code": 0,
+      "bytes": 4420,
+      "sha256": "2259d0d423569a798c00474436683459920e2d16b9fda8b91f16032c4df835fe"
+    },
+    "validate_repo": {
+      "exit_code": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

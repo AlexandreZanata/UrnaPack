@@ -1,0 +1,35 @@
+{
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "bytes": 2570,
+      "first": "/data/urnapack/auditoria-2026/logs/lote-3/AC/analysis.json",
+      "isolated_reproduction": "/data/urnapack/auditoria-2026/logs/reproducao-AC-isolada/analysis.json",
+      "sha256": "83c588f65b8637761133d94af1d175194a6ddccc58fa78007cfd16cff148ae69"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 95356,
+      "first": "/data/urnapack/auditoria-2026/logs/lote-3/AC/sections.csv",
+      "isolated_reproduction": "/data/urnapack/auditoria-2026/logs/reproducao-AC-isolada/sections.csv",
+      "sha256": "5b514d28c5d7b540bafa4b207b232eae17c8ae1dccf9b6b24dee0135f56f33a0"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 293588,
+      "first": "/data/urnapack/auditoria-2026/logs/lote-3/AC/members.jsonl.gz",
+      "isolated_reproduction": "/data/urnapack/auditoria-2026/logs/reproducao-AC-isolada/members.jsonl.gz",
+      "sha256": "62ac2b82e6b88276bd043c68c76237d06e3a27e7027435fd42b14b12a7cccada"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 39881,
+      "first": "auditoria/2026/resultados/presidente-2t-normalizado.json",
+      "isolated_reproduction": "/tmp/urnapack-bu-normalizado-reproducao-isolada.json",
+      "sha256": "5d2d1ed1aa40b257a952a197c7c242445a21f765f82c84fbdfeb7eee8d4d89a4"
+    }
+  ],
+  "format_version": 1,
+  "recorded_at_utc": "2026-10-29T14:52:58.658227+00:00",
+  "scope": "Comparação realmente executada entre binários do checkout de trabalho e da entrega isolada: BU nacional normalizado; análise, CSV e índice gzip de logs do AC. Não é repetição de todas as UFs."
+}

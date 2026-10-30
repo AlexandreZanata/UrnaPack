@@ -1,0 +1,121 @@
+...FFFF..F..FF................/tmp/urnapack-audit-review3/scripts/test_fetch_source.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxxqe212r/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:241: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpbiu2b4ex/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:152: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpac3jk5f1/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:172: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp5so_8qs_/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmplv880ydi/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpba90kxco/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...............ERRO: falha de publicação injetada
+.........../home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.txt'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+...........ERRO: falha injetada
+ERRO: escrever diagnóstico/recibo: falha injetada
+.........preparado MT: 1613 bytes CSV
+.preparado MT: 1613 bytes CSV
+................../home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.csv'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+.../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpevq6z49x/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:138: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp5bagswre/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:108: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpwlmjuh7b/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:118: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpd5g53dpc/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:81: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpfy64dfq9/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:160: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmp3uujt0k1/b.csv'>
+  z.writestr("bweb.csv", open(csv_path, "rb").read())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....
+======================================================================
+FAIL: test_local_hash_and_tamper_failure (test_acquire_2026.AcquisitionTests.test_local_hash_and_tamper_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 164, in test_local_hash_and_tamper_failure
+    self.assertEqual(result["status"], "downloaded")
+AssertionError: 'error' != 'downloaded'
+- error
++ downloaded
+
+
+======================================================================
+FAIL: test_official_sidecar_mismatch_preserves_partial (test_acquire_2026.AcquisitionTests.test_official_sidecar_mismatch_preserves_partial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 184, in test_official_sidecar_mismatch_preserves_partial
+    self.assertTrue((root / (item["path"] + ".partial")).exists())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_one_byte_range_metadata_is_explicit_and_checks_total_then_full_bytes (test_acquire_2026.AcquisitionTests.test_one_byte_range_metadata_is_explicit_and_checks_total_then_full_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 48, in test_one_byte_range_metadata_is_explicit_and_checks_total_then_full_bytes
+    self.assertEqual(result["status"], "downloaded")
+AssertionError: 'error' != 'downloaded'
+- error
++ downloaded
+
+
+======================================================================
+FAIL: test_pinned_catalog_requires_full_verified_coverage_and_checks_actual_bytes (test_acquire_2026.AcquisitionTests.test_pinned_catalog_requires_full_verified_coverage_and_checks_actual_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 114, in test_pinned_catalog_requires_full_verified_coverage_and_checks_actual_bytes
+    self.assertEqual(result["status"], "downloaded")
+AssertionError: 'error' != 'downloaded'
+- error
++ downloaded
+
+
+======================================================================
+FAIL: test_resume_range (test_acquire_2026.AcquisitionTests.test_resume_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 204, in test_resume_range
+    self.assertEqual(result["status"], "downloaded")
+AssertionError: 'error' != 'downloaded'
+- error
++ downloaded
+
+
+======================================================================
+FAIL: test_truncated_body_does_not_become_final (test_acquire_2026.AcquisitionTests.test_truncated_body_does_not_become_final)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 255, in test_truncated_body_does_not_become_final
+    self.assertIn("truncado", result["error"])
+AssertionError: 'truncado' not found in 'ValueError: espaço livre insuficiente; aquisição interrompida'
+
+======================================================================
+FAIL: test_unknown_http_length_is_explicit (test_acquire_2026.AcquisitionTests.test_unknown_http_length_is_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/urnapack-audit-review3/scripts/test_acquire_2026.py", line 211, in test_unknown_http_length_is_explicit
+    self.assertEqual(result["status"], "downloaded")
+AssertionError: 'error' != 'downloaded'
+- error
++ downloaded
+
+
+----------------------------------------------------------------------
+Ran 120 tests in 74.920s
+
+FAILED (failures=7)

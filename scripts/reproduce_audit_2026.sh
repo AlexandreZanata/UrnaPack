@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+# Pipeline completo do catálogo preservado. Nunca sobrescreve um run anterior.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+if [[ $# -ne 2 ]]; then
+  echo "uso: bash scripts/reproduce_audit_2026.sh DIRETORIO_FONTES NOVO_DIRETORIO_EXECUCAO" >&2
+  exit 2
+fi
+source_root=$(realpath -m "$1")
+run_root=$(realpath -m "$2")
+if [[ -e "$run_root" ]]; then
+  echo "diretório de execução já existe; escolha outro para preservar evidência" >&2
+  exit 1
+fi
+catalog=auditoria/2026/catalogo-fixado.json
+if [[ ! -f "$catalog" ]]; then
+  echo "catálogo fixado ausente; não iniciar reprodução com URLs sem hashes" >&2
+  exit 1
+fi
+python3 - "$catalog" <<'PY'
+import sys,json,pathlib
+sys.path.insert(0,'scripts')
+from pin_catalog_2026 import validate_fixed
+validate_fixed(pathlib.Path('auditoria/2026/catalogo.json').read_bytes(),
+               json.loads(pathlib.Path(sys.argv[1]).read_bytes()))
+PY
+mkdir -p "$run_root"
+official=auditoria/2026/evidencias/totalizacao-presidente-2t.json
+python3 scripts/acquire_2026.py fetch --catalog "$catalog" --root "$source_root" \
+  --receipt "$run_root/acquisition.json" --transport curl
+python3 scripts/acquire_2026.py verify --catalog "$catalog" --root "$source_root" \
+  --receipt "$run_root/verification.json"
+python3 scripts/verify_zip_integrity_2026.py --catalog "$catalog" --root "$source_root" \
+  --cache "$(dirname "$source_root")/integridade-zip" --output "$run_root/zip-integrity.json"
+python3 scripts/prepare_audit_2026.py --catalog "$catalog" --root "$source_root" \
+  --destination "$run_root/csv" --evidence "$run_root/preparation" --manifest "$run_root/bu-input.json"
+python3 scripts/build_time_policy_2026.py \
+  --municipalities auditoria/2026/evidencias/municipios-2t.json --output "$run_root/time-policy.json"
+cargo build --locked --release --bin audit_2026 --bin audit_logs_2026 --bin tsepack
+target/release/audit_2026 --manifest "$run_root/bu-input.json" \
+  --time-policy "$run_root/time-policy.json" --output "$run_root/president.json" \
+  --sections-output "$run_root/sections.csv"
+python3 scripts/check_audit_2026.py --report "$run_root/president.json" \
+  --official "$official" --output "$run_root/comparison.json"
+python3 - "$run_root" <<'PY'
+import sys,json,hashlib,pathlib,subprocess
+root=pathlib.Path(sys.argv[1]); path=root/'sections.csv'; data=path.read_bytes()
+receipt={'format_version':1,'path':str(path),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),
+         'scope':'Projeção semântica; não é restauração byte a byte do BU original.'}
+(root/'sections-export.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+env={'format_version':1,'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+     'git_status':subprocess.check_output(['git','status','--porcelain'],text=True),
+     'rustc':subprocess.check_output(['rustc','--version','--verbose'],text=True),'python':sys.version,
+     'curl':subprocess.check_output(['curl','--version'],text=True),
+     'binary_sha256':{n:hashlib.sha256(pathlib.Path('target/release',n).read_bytes()).hexdigest()
+                      for n in ['audit_2026','audit_logs_2026','tsepack']}}
+(root/'environment.json').write_text(json.dumps(env,sort_keys=True,indent=2)+'\n')
+PY
+correspondence=$(python3 - "$catalog" "$source_root" <<'PY'
+import sys,json,pathlib,re
+items=json.loads(pathlib.Path(sys.argv[1]).read_text())['items']
+selected=[i for i in items if re.search(r'/CEFT_2t_ZZ_\d+\.zip$',i['url'])]
+if len(selected)!=1:raise ValueError('correspondência ZZ ausente ou ambígua')
+print(pathlib.Path(sys.argv[2])/selected[0]['path'])
+PY
+)
+python3 scripts/reconcile_coverage_2026.py --sections "$run_root/sections.csv" \
+  --export-receipt "$run_root/sections-export.json" --source-manifest "$run_root/bu-input.json" \
+  --report "$run_root/president.json" --official "$official" --output "$run_root/coverage.json" \
+  --correspondence-zip "$correspondence"
+# Código diferente de zero continua explícito. Diagnóstico científico é
+# preservado; falha de estrutura/fluxo será reprovada também pelo coletor.
+logs_code=0
+python3 scripts/run_logs_2026.py --root "$source_root" --catalog "$catalog" \
+  --sections "$run_root/sections.csv" --export-receipt "$run_root/sections-export.json" \
+  --policy "$run_root/time-policy.json" \
+  --zero-sections auditoria/2026/evidencias/registros-exterior-sem-cargo.json \
+  --out-root "$run_root/logs" || logs_code=$?
+python3 scripts/collect_logs_2026.py --directories "$run_root"/logs/?? \
+  --official "$official" --output "$run_root/log-input.json"
+aggregate_code=0
+target/release/audit_logs_2026 --aggregate-manifest "$run_root/log-input.json" \
+  --output "$run_root/log-national.json" || aggregate_code=$?
+package_code=0
+python3 scripts/package_buweb_audit_2026.py --input "$run_root/csv" \
+  --expected-manifest "$run_root/bu-input.json" --output "$run_root/compressed-buweb" \
+  --source tse-dados-abertos:buweb-2026-2t-csv || package_code=$?
+python3 - "$run_root" "$logs_code" "$aggregate_code" "$package_code" <<'PY'
+import sys,json,pathlib,hashlib
+root=pathlib.Path(sys.argv[1]); files={}
+for path in sorted(root.rglob('*')):
+ if path.is_file():
+  h=hashlib.sha256()
+  with path.open('rb') as stream:
+   for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+  files[str(path.relative_to(root))]={'bytes':path.stat().st_size,'sha256':h.hexdigest()}
+(root/'artifacts.json').write_text(json.dumps({'format_version':1,'logs_exit_code':int(sys.argv[2]),
+  'aggregate_exit_code':int(sys.argv[3]),'package_exit_code':int(sys.argv[4]),'files':files},sort_keys=True,indent=2)+'\n')
+PY
+if [[ "$package_code" -ne 0 ]]; then
+  echo "Empacotamento/restauração reprovado; consulte compressed-buweb/package-run.json." >&2
+  exit 1
+fi
+if [[ "$logs_code" -ne 0 || "$aggregate_code" -ne 0 ]]; then
+  echo "Artefatos gerados com diagnóstico de logs; sem conciliação integral. Consulte log-national.json." >&2
+  exit 1
+fi
+echo "Aquisição, integridade, BU e logs conciliados. Artefatos em $run_root"

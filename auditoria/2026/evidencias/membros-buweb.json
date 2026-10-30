@@ -1,0 +1,450 @@
+[
+  {
+    "all_members": [
+      {
+        "bytes": 7787974,
+        "crc32": "379c292c",
+        "name": "bweb_2t_AC_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "35c1f1676e04d0824eb57df158f40d3c1e943926fd4754933a9d2863ccf06e1b",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 12121461,
+        "crc32": "705c045f",
+        "name": "bweb_2t_AL_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "c42eb06a14d00901c1e2023560eb561933c11837cbf992a70228fd7a389e6be1",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 27702556,
+        "crc32": "f1f298d1",
+        "name": "bweb_2t_AM_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "c6312af9d25533203e6b0c660f6e48d072cf86f03c952f5af51565503ebb2167",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 3056017,
+        "crc32": "731325e0",
+        "name": "bweb_2t_AP_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "56e4ac4f714d84f1592b3507eb63a632439abf37601cb22eea8a1d1a0bfa4a4a",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 60634146,
+        "crc32": "62637d02",
+        "name": "bweb_2t_BA_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "b7da4dd73937c74a76e1d5307550085760ba0c1b1be1073f575d9f29afee553c",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 40143027,
+        "crc32": "29ce9ae3",
+        "name": "bweb_2t_CE_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "e06473e8f738e7d323d31261c2b4f785f5b09671847390fa0dd31a40847466cf",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 24424285,
+        "crc32": "58b30c8b",
+        "name": "bweb_2t_DF_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "da7ea3674e771acc7a7780ba7220f82d1c88458186c6a6e86df71e7e425ce2d4",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 34889872,
+        "crc32": "7dfd0249",
+        "name": "bweb_2t_ES_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "54d636f7d22d51824a1245fa12aeebe679f7eddf0189ac5d0d4a9a2335d2c5cb",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 26992772,
+        "crc32": "53a136dd",
+        "name": "bweb_2t_GO_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "f2c29ffbf465dbaf82a9d26e7ae040d20cddc914a1ef8d225410650aaff1f308",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 29265535,
+        "crc32": "92a2160b",
+        "name": "bweb_2t_MA_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "38b2a6180190729dfece31f1d22d30ebce257467e539277d678d67089ea1a9dd",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 90084704,
+        "crc32": "8a469391",
+        "name": "bweb_2t_MG_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "56a96873e0c03508d0a58060a09ef8f8660aa80e8fd36289fd3b25c1c71b7839",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 11819925,
+        "crc32": "286bd5ce",
+        "name": "bweb_2t_MS_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "c47916ff1aca6d5c6d991d2687f67e9f09e9a1dbd16e3fcf855f7602923677e9",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 13675646,
+        "crc32": "a6d0fb90",
+        "name": "bweb_2t_MT_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "5303d588838ed3b40499f86b0758237da1eb1b594449550f753fdecb152bd569",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 33481174,
+        "crc32": "6a513688",
+        "name": "bweb_2t_PA_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "f50720b4ef7a99f1167bff6ac24959b035901e586514a4d4b15f5538fd12073b",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 18289946,
+        "crc32": "48b02ffb",
+        "name": "bweb_2t_PB_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "07cac4be3e1ab49386eee5e9ba72b5aaf6626f9479775459c614d423d5642350",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PB_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 36788510,
+        "crc32": "1d20e935",
+        "name": "bweb_2t_PE_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "9c917e885a2d068821f226f1524cf063bb623acc809ec37d1387f3b05df80508",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 16738697,
+        "crc32": "9e41e033",
+        "name": "bweb_2t_PI_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "d0fd3ff93cc97ef0e2ae35dc3e6a1a54ce73ad6b9e299cbf676d27007d1c38b3",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 46790542,
+        "crc32": "576a75d6",
+        "name": "bweb_2t_PR_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "32e8a0bfc7e9fe76db9ce0e4bc3cfd39eff4ef46ca376d98764f605cfed2147f",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 65654095,
+        "crc32": "4295ed95",
+        "name": "bweb_2t_RJ_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "d13abd46e8f365900f65c94dbc6ccd334a7ff65e2c759a24f5ebd13f4b0aceb5",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 28189615,
+        "crc32": "e438ab9f",
+        "name": "bweb_2t_RN_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "cf48f4e878bace44e0b3f1ab0c133e0fd59970ca9fc6f317141a9cef7f28d423",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RN_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 7610801,
+        "crc32": "8ddfc448",
+        "name": "bweb_2t_RO_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "dec6d43ae423a66722b50fda80e6dfc4378482fc141a390bfca367fd9549ede3",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 2339778,
+        "crc32": "bfd18107",
+        "name": "bweb_2t_RR_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "6554fcbd0c55cf90abf970cb83125bfe7b35e748d676fe6fe60bdbca0a4262af",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 47289327,
+        "crc32": "f3e442e2",
+        "name": "bweb_2t_RS_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "e4e7fff8d09e588246f5e55750e78cdfe7e4de995361bcd11ad3e7445538e9e3",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 29698108,
+        "crc32": "3ace29fd",
+        "name": "bweb_2t_SC_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "6f169b88a07858e920b3c9e974f3ae5238f36dfe6e6d138a1758764c5b4de697",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 10064205,
+        "crc32": "83bfba95",
+        "name": "bweb_2t_SE_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "4dfc5ee64ed4f6e71aedc133afc4e0376eaa5dcd9c0545ab9aa29d320a77fc0a",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SE_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 181487605,
+        "crc32": "bfeefca4",
+        "name": "bweb_2t_SP_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "ffadfa193e68261e2e8aa667b3075e6bc8172b0b6629c752d3b8cf680ac10c4e",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 15196303,
+        "crc32": "a37c8f51",
+        "name": "bweb_2t_TO_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "f2dfdafb28d13aae5958ad6d04f604442c10456d6819b84a21a1f52a49db0f6d",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip"
+  },
+  {
+    "all_members": [
+      {
+        "bytes": 2179102,
+        "crc32": "be10507d",
+        "name": "bweb_2t_ZZ_261020260742.csv"
+      },
+      {
+        "bytes": 207085,
+        "crc32": "6d50843c",
+        "name": "_leiame-boletimurnaweb.pdf"
+      }
+    ],
+    "zip_sha256": "f088ff08053c1d95ff069f644fed434d290c87f2d9281ac3a9fac0a953cbc558",
+    "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ZZ_261020260742.zip"
+  }
+]
