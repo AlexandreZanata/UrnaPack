@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "observed_at_utc": "2026-10-30T09:05:28.002297+00:00",
+  "scope": "Conferência adicional com catálogo fixado em clone limpo. Aquisição, verificação integral, CRC, BU e cobertura concluídos; repetição dos logs e inventário final ainda em andamento neste registro. Não declarar esta execução integral concluída.",
+  "presidential_fields_equal_except_source_members": true,
+  "files": {
+    "acquisition.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/acquisition.json",
+      "bytes": 1764809,
+      "sha256": "652a6ecabebbad15778b3501e840f9208d5c1b743d58d7a0f6754f385a7bb7a4"
+    },
+    "verification.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/verification.json",
+      "bytes": 1764811,
+      "sha256": "0b27bd3e793520bab3670912f2147f7c0e78583d2f9e63a357f2b4dac5d5d4d5"
+    },
+    "zip-integrity.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/zip-integrity.json",
+      "bytes": 460019,
+      "sha256": "edf9066297a8fc1c6a3d30096c156855dcd614fa959fda2d81c4a799e5a4c62e"
+    },
+    "president.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/president.json",
+      "bytes": 40077,
+      "sha256": "b846bc5c34ba45e38f4a11adc4bd83024d49722ae4b730244e88aaa5df058552"
+    },
+    "comparison.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/comparison.json",
+      "bytes": 7472,
+      "sha256": "853f863890f92fe36427fc3bd3d412b5fd4a909795e79e7b21859b390dffaaff"
+    },
+    "coverage.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/coverage.json",
+      "bytes": 58097,
+      "sha256": "46d6de61302c8a303fb5cc89df76a399ff814dbb8cdc8806af8a0abfe00fe5f3"
+    },
+    "environment.json": {
+      "path": "/data/urnapack/auditoria-2026/reproducao-integral-3/environment.json",
+      "bytes": 1267,
+      "sha256": "869a095d8e66eb3c3750633bc4f62e5bf6204533b4d0d04fb44c0d68cf6f688d"
+    }
+  }
+}

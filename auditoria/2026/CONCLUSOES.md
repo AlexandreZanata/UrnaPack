@@ -52,6 +52,13 @@ pacote de log esperado ausente em SP, cuja seção tem 268 comparecimentos.
 Todos esses casos e seus hashes estão documentados. Não foram descartados
 para fazer o resultado fechar e não lhes foi atribuída causa sem evidência.
 
+Nas 14 domésticas, oito diferem em eleitor computado; nas outras seis,
+esse contador coincide com o BU, mas o pacote contém linhas fora do leiaute,
+inclusive em histórico de outra data. Por exemplo, BA/39870/0133/0184 tem
+228 comparecimentos e 413 eventos, com repetições detectadas; MA/08893/0047/0609
+tem 224 e 188. Contar eventos de log é diferente de demonstrar votos
+acrescentados ou perdidos.
+
 Os 34.050 eventos de eleitor computado após 17h, nas seções conciliadas,
 dão sustentação à ordem de grandeza “34 mil”. A outra métrica, confirmação
 para Presidente, produz 33.865. Como a conciliação nacional não é completa,

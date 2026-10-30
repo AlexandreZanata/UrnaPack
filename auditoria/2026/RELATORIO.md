@@ -313,11 +313,37 @@ registro em outro sistema. Essa chave ausente é adicional às 41 presentes
 com diagnóstico. Esses números não são as 41 seções não instaladas do
 resultado nacional, que pertencem a outro universo.
 
+Das 14 domésticas, **oito** diferem na contagem de eleitor computado e
+**seis** têm essa contagem igual ao BU, mas são reprovadas pelo controle de
+linhas malformadas. O controle é conservador e examina também o histórico
+contido no pacote: há linhas problemáticas em trechos do primeiro turno.
+Não se deve apresentar todas as 14 como divergência de votos no segundo turno.
+
+Exemplos dos contadores preservados: **BA/39870/0133/0184** tem 228
+comparecimentos no BU e 413 eventos de eleitor computado; há 370 linhas
+relevantes repetidas no controle, que inclui dois tipos distintos de evento.
+Isso não equivale a 370 votos adicionais. **MA/08893/0047/0609** tem
+224 comparecimentos e 188 eventos desse tipo. Em **PB/21750/0002/0254**,
+há 304 comparecimentos, 303 eventos de eleitor computado e 304 confirmações
+para Presidente: a diferença entre as métricas é parte da investigação,
+não uma demonstração de voto perdido.
+
 Nas seções conciliadas, os eventos de **eleitor computado** somam
 **128.231.650**. Depois de 17:00:00 BRT nominal há **34.050** eventos; depois
 de 19:00:00, **11**. O evento distinto de **confirmação para Presidente**
 produz **33.865** e **11**, respectivamente. Não se somam as duas métricas.
 Os logs não informam em quem cada eleitor votou.
+
+Um exemplo verificável mostra a diferença entre os registros:
+**PE/30015/0004/0215**, Fernando de Noronha, tem 224 comparecimentos e
+`DT_ENCERRAMENTO=2026-10-25 20:10:48` no BU web. O log reconcilia os
+224 eventos de eleitor computado, dos quais **zero** estão após 17h BRT
+nominal. Portanto, atribuir os 224 ao período posterior às 17h a partir do
+encerramento produziria uma classificação diferente da contagem de eventos.
+As duas linhas completas e os hashes dos CSVs estão em
+[exemplo-encerramento-e-eventos.json](evidencias/exemplo-encerramento-e-eventos.json),
+e os arquivos estão no pacote de resultados. Isso não determina a causa
+do intervalo nem certifica os relógios físicos.
 
 O programa publica um intervalo conservador para eleitor computado após
 17h: **34.050 a 38.474**. O limite superior acrescenta todo o comparecimento
