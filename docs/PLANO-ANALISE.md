@@ -87,10 +87,13 @@ seus próprios controles. Explicabilidade e falsificação são transversais.
 
 ## A6 — Execução e relatório reproduzíveis
 
-Planejar extensão do binário existente com `tsepack analyze`; ainda não
-implementada. Cada execução registrará hashes de datasets/tabelas auxiliares,
-versões de esquema/parser/código, parâmetros, seleção/exclusões, denominadores,
-sementes quando aplicáveis, limitações e verificações executadas.
+`tsepack analyze` foi implementado na Etapa 5A para o perfil
+`mt-2026-t1-bweb-v1`; contrato, controles e saídas estão em
+`spec/analyze-v1.md` e `docs/ETAPA-5A.md`. Cada execução registra hashes de
+fonte/view, membro/ordinal, snapshot, versões de esquema/parser/código,
+parâmetros, exclusões, denominadores, limitações e verificações executadas.
+O validador canônico externo (`scripts/validate_bweb.py`) continua sendo uma
+verificação separada nesta versão.
 
 Relatórios JSON/CSV/HTML versionados devem separar qualidade dos dados,
 reconciliação determinística e achados estatísticos. Estado parcial precisa
