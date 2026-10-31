@@ -207,24 +207,42 @@ pub fn features(k: usize, n: usize) -> [u64; FEATURE_COUNT] {
     v[16 + (n - k) % 10] = 1;
     v
 }
-pub fn chi_square(observed: &[f64], expected: &[f64]) -> f64 {
-    observed
+pub fn chi_square(observed: &[f64], expected: &[f64]) -> Result<f64> {
+    ensure!(
+        observed.len() == expected.len(),
+        "número de classes divergente"
+    );
+    ensure!(
+        observed
+            .iter()
+            .chain(expected)
+            .all(|v| v.is_finite() && *v >= 0.0),
+        "frequência inválida"
+    );
+    ensure!(
+        observed
+            .iter()
+            .zip(expected)
+            .all(|(o, e)| *e > 0.0 || *o == 0.0),
+        "expectativa numérica zero com observação positiva; revisar suporte/underflow"
+    );
+    Ok(observed
         .iter()
         .zip(expected)
         .map(|(o, e)| if *e > 0.0 { (o - e).powi(2) / e } else { 0.0 })
-        .sum()
+        .sum())
 }
 pub fn reference_statistics(
     counts: &[f64; FEATURE_COUNT],
     expected: &[f64; FEATURE_COUNT],
-) -> [f64; 8] {
+) -> Result<[f64; 8]> {
     let mut s = [0.0; 8];
     for i in 0..6 {
         s[i] = (counts[i] - expected[i]).abs();
     }
-    s[6] = chi_square(&counts[6..16], &expected[6..16]);
-    s[7] = chi_square(&counts[16..26], &expected[16..26]);
-    s
+    s[6] = chi_square(&counts[6..16], &expected[6..16])?;
+    s[7] = chi_square(&counts[16..26], &expected[16..26])?;
+    Ok(s)
 }
 
 #[derive(Clone)]
@@ -484,6 +502,20 @@ mod tests {
     fn monte_carlo_never_claims_zero() {
         assert_eq!(monte_carlo_p(0, 999), 0.001);
         assert_eq!(monte_carlo_p(999, 999), 1.0);
+    }
+
+    #[test]
+    fn chi_square_never_silently_drops_positive_mass_in_zero_expected_bin() {
+        assert!(chi_square(&[1.0], &[0.0])
+            .unwrap_err()
+            .to_string()
+            .contains("zero"));
+        assert!(chi_square(&[1.0, 2.0], &[1.0]).is_err());
+        assert!(chi_square(&[f64::NAN], &[1.0]).is_err());
+    }
+    #[test]
+    fn chi_square_accepts_empty_support_cells_with_both_counts_zero() {
+        assert_eq!(chi_square(&[0.0, 3.0], &[0.0, 2.0]).unwrap(), 0.5);
     }
     #[test]
     fn injected_association_detected_and_reproducible() {

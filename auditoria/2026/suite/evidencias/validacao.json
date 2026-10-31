@@ -1,8 +1,8 @@
 {
   "format_version": 1,
-  "scope": "Verificação do código final e suas fixtures; logs completos distribuídos no pacote. Resultados sintéticos não são contagens eleitorais.",
-  "rust_tests_passed": 116,
-  "python_tests_passed": 161,
+  "scope": "Verificação atual após guarda explícita de suporte numérico; parâmetros e formatos científicos preservados. A validação anterior permanece no pacote original e no histórico Git.",
+  "rust_tests_passed": 118,
+  "python_tests_passed": 162,
   "selftest_scenarios_passed": 9,
   "clippy_exit_code": 0,
   "repo_validation_exit_code": 0,
@@ -50,6 +50,18 @@
     "selftest.log": {
       "bytes": 284,
       "sha256": "83bd5cae5e8bdf963a091777a5409f87bd87b1ccbf381a41a2cd1e98140e141f"
+    },
+    "rust-suporte.log": {
+      "bytes": 12928,
+      "sha256": "5446e1b622babc598775467bf408fca80073413b8cc5d8d129d5fe8e05463ec2"
+    },
+    "python-suporte.log": {
+      "bytes": 5066,
+      "sha256": "ecd7887faa367d169df5ad86ea7e7f01d615435a15d6ebdcf0c6f8f87a06925c"
+    },
+    "clippy-suporte.log": {
+      "bytes": 149,
+      "sha256": "495efa52663b47eb5f7b1de2e4b825a3933155e1bf95e206b720e106eefe5729"
     }
   },
   "source_files": {
@@ -86,8 +98,8 @@
       "sha256": "94bec6bd032047b6de3e7fb5a7e768bde784562bce904bca0d84e94e3cb1a72e"
     },
     "scripts/check_statistical_suite_2026.py": {
-      "bytes": 18310,
-      "sha256": "876986a96322e8bfef323926bc28667302fad58e622dca4cd73b2755e5d6d45a"
+      "bytes": 18680,
+      "sha256": "a87f0c06ac8a31f78d583b4aee13a9134a76d781540ad1f2ca70d59e72a63ec2"
     },
     "scripts/collect_logs_2026.py": {
       "bytes": 2075,
@@ -266,8 +278,8 @@
       "sha256": "7430f3b760a494c7b0c11418ab8856b3a0afa4d35415b1fa9278783bd558b096"
     },
     "scripts/test_statistical_suite.py": {
-      "bytes": 11995,
-      "sha256": "ba34f1edb6a073fd2a93726329fd404aa67f8d3d52c068774b9e1c33259b1cb9"
+      "bytes": 12643,
+      "sha256": "6f84c6df8e66c46e2ab08864ba660b01bc873922c4d93b8b722e04b6b9aa1166"
     },
     "scripts/test_validate.py": {
       "bytes": 7830,
@@ -326,8 +338,8 @@
       "sha256": "7fae549a3c3b9f73714e9b08ede0bcf923b9959a359264e2c6755b5b1e98c014"
     },
     "src/bin/statistical_suite_2026.rs": {
-      "bytes": 34112,
-      "sha256": "76a4ee396297e63d8bc454123057e001ba7c5e7f38ef681e72bf99ace8ea9cf9"
+      "bytes": 34127,
+      "sha256": "00d730d13f3a418c9566cb0c1dc4695a4a5fab4dd7c5c355b03e99cc92c90b25"
     },
     "src/bweb.rs": {
       "bytes": 14954,
@@ -370,8 +382,8 @@
       "sha256": "13712a3967b21cfa78e271ee488052800576067edf6efb90ff395a4aa7745d17"
     },
     "src/statistics.rs": {
-      "bytes": 19419,
-      "sha256": "dc157d2bb612cae83885c2e132aa27d34cfc1eabff01e51398cb3825ee5b6083"
+      "bytes": 20442,
+      "sha256": "cb06f535b7d469d415680af55346898fee68b339713540ac092778e5c155972c"
     },
     "src/traverse.rs": {
       "bytes": 5301,
@@ -589,5 +601,10 @@
       "bytes": 7785,
       "sha256": "b5f57da1f1006713f7846b6674f43a11862768c38ce44fa66dea6f75fcfb9f82"
     }
+  },
+  "prior_validation_snapshot": {
+    "bytes": 22213,
+    "sha256": "0e6afabd993b4564e5b587a6d318daea4bad83932aaa5fe4303df790901d4e62",
+    "git_revision": "dc50a3819fe9bdf1d660aa67f536499d169ae5b6"
   }
 }

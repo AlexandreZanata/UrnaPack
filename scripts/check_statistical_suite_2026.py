@@ -277,6 +277,10 @@ def check(protocol, sections, directory):
     reference = report['predictive_reference']
     expected = reference['expected_counts']
     def statistics(values):
+        if len(values) != 26 or len(expected) != 26 or any(not math.isfinite(v) or v < 0 for v in expected):
+            raise ValueError('classes/expectativas preditivas inválidas')
+        if any(expected[i] == 0 and values[i] > 0 for i in range(6, 26)):
+            raise ValueError('expectativa numérica zero com observação positiva; revisar suporte/underflow')
         return [abs(values[i]-expected[i]) for i in range(6)]+[
             sum((values[i]-expected[i])**2/expected[i] for i in range(start, start+10) if expected[i] > 0) for start in (6, 16)]
     observed_statistics = statistics(observed)

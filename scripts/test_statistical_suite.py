@@ -98,6 +98,18 @@ class StatisticalCheckerTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'correlação residual'):
             checker.check(self.protocol, self.sections, result)
 
+    def test_zero_expected_digit_with_positive_observed_mass_fails(self):
+        destination = self.base/self._testMethodName
+        shutil.copytree(self.result, destination)
+        p = destination/'report.json'
+        report = json.loads(p.read_bytes())
+        counts = report['predictive_reference']['observed_counts']
+        index = next(i for i in range(6, 26) if counts[i] > 0)
+        report['predictive_reference']['expected_counts'][index] = 0
+        p.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, 'expectativa numérica zero'):
+            checker.check(self.protocol, self.sections, destination)
+
     def test_existing_receipt_is_preserved(self):
         receipt = self.base/'existing-receipt'
         receipt.write_bytes(b'synthetic existing bytes')

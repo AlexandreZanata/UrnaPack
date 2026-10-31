@@ -54,6 +54,9 @@ PIT discreto usa `F(k-1)+U*P(k)`. Réplicas congelam o ajuste por seção e
 preservam seus válidos; independência entre seções é pressuposta. As caudas
 de referência não incorporam refit/variabilidade dos parâmetros. Dígitos
 finais são confrontados com esse modelo, nunca automaticamente com uniforme.
+No qui-quadrado de dígitos, classes excedentes, frequências inválidas ou
+expectativa numérica zero com massa observada positiva reprovam explicitamente;
+nenhuma classe é ignorada. Zero simultâneo de observado/esperado contribui zero.
 Grade exata de 5% inclui 0% e 100%, usa aritmética inteira, sem arredondar.
 
 Associações usam resíduos de x e y após retirar a média do estrato, com igual

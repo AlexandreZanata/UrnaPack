@@ -715,11 +715,11 @@ fn run(mut args: Args) -> Result<()> {
     write_scores(&args.output.join("section_scores.csv"), &rows, &scores)?;
     let descriptive = descriptive(&rows, &ufs, &args.output)?;
     let observed = observed_counts(&rows);
-    let obs_stats = stats::reference_statistics(&observed.map(|x| x as f64), &expected);
+    let obs_stats = stats::reference_statistics(&observed.map(|x| x as f64), &expected)?;
     let sim_stats: Vec<_> = simulated
         .iter()
         .map(|c| stats::reference_statistics(&c.map(|x| x as f64), &expected))
-        .collect();
+        .collect::<Result<_>>()?;
     let reference_p: Vec<f64> = (0..8)
         .map(|j| {
             stats::monte_carlo_p(
