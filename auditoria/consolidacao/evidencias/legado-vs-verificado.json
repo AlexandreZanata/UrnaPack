@@ -1,0 +1,719 @@
+{
+  "format_version": 1,
+  "scope": "ZIPs legados relidos e associados por SHA-256 aos downloads oficiais fixados; caminhos/aliases preservados.",
+  "all_legacy_zip_bytes_match_fresh_downloads": false,
+  "sources": [
+    {
+      "path": "/data/urnapack/brutos/2000/MT/votacao_secao_2000_MT.zip",
+      "bytes": 2432893,
+      "sha256": "600b033086d3bb9c33cf6b51b511c0fddae20d4aee3081e0b82c808981302b74",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2000_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2002/MT/votacao_secao_2002_MT.zip",
+      "bytes": 4042387,
+      "sha256": "a18d15420362ce7f5b6da34ce36ee34b908ab25b80b5982a284607b78a5fdde3",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2002_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2004/MT/votacao_secao_2004_MT.zip",
+      "bytes": 1572382,
+      "sha256": "7701fe47d94016ef75206c56043a67a28ac278280c41d696e5fd410490f4366a",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2004_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2006/MT/votacao_secao_2006_MT.zip",
+      "bytes": 4742972,
+      "sha256": "30ae0b10e28729d8d62fbb6087aff09fd4e99de6db80fc10e07f8b807ee9ee12",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2006_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2008/MT/votacao_secao_2008_MT.zip",
+      "bytes": 4814814,
+      "sha256": "d289aa1879c87548a4b06639526740f7a66af9a7168d91eaadbece1855f04c0e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2008_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2010/MT/votacao_secao_2010_MT.zip",
+      "bytes": 4851600,
+      "sha256": "e36b1a10aa9e2847dc461b84ad9545521ea1ef47fc4649acd177cadd1327c4db",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2010_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/bweb_1t_MT_10102012014547.zip",
+      "bytes": 7922403,
+      "sha256": "cdddb4360e5fafbdcd7b069c803f4a5513d88d254919f02fe72571717ce2ac17",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/bweb_2t_MT_30102012172126.zip",
+      "bytes": 275906,
+      "sha256": "6aaad99c9ee7e51fe2c2915aa1487a70960552117b71d09d06dbd98e4778ce8d",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/ceft_1t_MT_10102012022215.zip",
+      "bytes": 486539,
+      "sha256": "dd9ed864d8a3b059bdb5b9fd6e114b8a167af296aa1914181915eed4eb62172b",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/ceft_2t_MT_30102012185205.zip",
+      "bytes": 82947,
+      "sha256": "fdaca7cd30dc7f1e7a22f4067556b54102f9b69507a4d5bc3716097c1b9df63b",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/cesp_1t_MT_07102012152147.zip",
+      "bytes": 586490,
+      "sha256": "6cac41b8591ae6fb86ad2172c827df04b40852d7e7f0a496f9e8542d3f348e27",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/cesp_2t_MT_28102012143145.zip",
+      "bytes": 441341,
+      "sha256": "85362b26065d553993638ba22be8ba62b6198eb2869cea8ce91e9b91de830e92",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2012/MT/votacao_secao_2012_MT.zip",
+      "bytes": 4685841,
+      "sha256": "d08c6b573a1110d0d220cf6c3ec606f39c1202af4b802078d3c1474c5bdfdb3b",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2012_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/bweb_1t_MT_14102014134508.zip",
+      "bytes": 8708716,
+      "sha256": "e9785f8aff25e30f555df6ae6c5cca8e9c8bc6dd1ae63d55ce47e99e788a728d",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/bweb_2t_MT_28102014123633.zip",
+      "bytes": 520378,
+      "sha256": "106cd57464d5fe1df378010c851702325212dec60f8256caaf7c41f1cfc6a7d4",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/ceft_1t_MT_08102014100909.zip",
+      "bytes": 344380,
+      "sha256": "8138efc7ff86243221daf24d56643effb2a90363e17ad548096af3ed173c5657",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/ceft_2t_MT_27102014134250.zip",
+      "bytes": 346607,
+      "sha256": "ecac354aebed02c968807fd016b4a796f45527e92df42a5ea08fb69de74fad31",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/cesp_1t_MT_04102014171955.zip",
+      "bytes": 239494,
+      "sha256": "fffad3769b58908c56cd49ab1da9d08b9575a3fe3e2d3ee9e9a9320c88fc41ba",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/cesp_1t_MT_05102014153222.zip",
+      "bytes": 239631,
+      "sha256": "a4af3a48722b7d9cedd5f75faec96a88f09d5aa3e1cccc2543b88808b3db62b8",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/cesp_2t_MT_25102014153251.zip",
+      "bytes": 238786,
+      "sha256": "be9b77d4414ce17c45db2303f870de9b2d9502ecf683939e2ead74101e196770",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/cesp_2t_MT_26102014151223.zip",
+      "bytes": 238759,
+      "sha256": "9b57647d2f0a80def1ea1f47a1fe5de2f24af60ee45eff29f162fc5490f4089d",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2014/MT/votacao_secao_2014_MT.zip",
+      "bytes": 5497115,
+      "sha256": "bfb580dc44c1b5e12e936639013fa9c6b7433c69486512c1ae76211f96c28136",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2014_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/bweb_1t_MT_04102016185209.zip",
+      "bytes": 7013522,
+      "sha256": "67026f26ff4344718a84fd22dfd09d6d6ba41a91880cb242381ba20cf130fbc6",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/bweb_2t_MT_31102016133938.zip",
+      "bytes": 162090,
+      "sha256": "dbb613c6d1fe257b015931005601455eb16c57d97778b0d91e341f7a1b49d67e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/ceft_1t_MT_04102016143702.zip",
+      "bytes": 391156,
+      "sha256": "ee3cea35416f4285072a0378b66dee03ddd67a0531bf3921fb50b1c928f6c2f2",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/ceft_2t_MT_01112016175234.zip",
+      "bytes": 117581,
+      "sha256": "69c80696d20cb04e5ef478c0fdd3893b62565bf2242efe1c5e71745169ddf1b1",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/cesp_1t_MT_01102016182806.zip",
+      "bytes": 395470,
+      "sha256": "e6c7959430e58ee6ee54d3e4e1fb31a3f9eba6de3343bd6a01dc35bf3e09d980",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/cesp_1t_MT_02102016161405.zip",
+      "bytes": 395596,
+      "sha256": "08cd549c43062db7cef6d058b56ddc103426712d1ee5658eae9076952c332365",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/cesp_2t_MT_29102016140850.zip",
+      "bytes": 244240,
+      "sha256": "ca967d2a7529ba711eaedc513cfdb92d71b994150eb00559cd9bea93d5e5ce0e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/cesp_2t_MT_30102016134132.zip",
+      "bytes": 244230,
+      "sha256": "a47f60d6b8b4192881141b3b5460a1eb9d9df9fc4b1e46def08b0e9ad10238da",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2016/MT/votacao_secao_2016_MT.zip",
+      "bytes": 13091945,
+      "sha256": "48784d8c91d366dd63c58e3f4452ca69c5b08375a573513fe57a864731ac0f82",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2016_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/BWEB_1t_MT_101020181938.zip",
+      "bytes": 19064877,
+      "sha256": "9d45919df869dc69e93a25bffcc2b429d11809a4e8a9014257403e546451ed8e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/BWEB_2t_MT_301020181744.zip",
+      "bytes": 949104,
+      "sha256": "3ea3dafb6403460ed34e0465ae3d63b7554d0d8e585216f1d5f572fe7972befb",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CEFT_1t_MT_111020180053.zip",
+      "bytes": 590239,
+      "sha256": "32e000f9b0b065ee32fcfac90980ed57e0eb44cd4587686d880ec4e8a36f7124",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CEFT_2t_MT_301020182242.zip",
+      "bytes": 592674,
+      "sha256": "4b448e0501afb8706b60055b0bde79bc0108dbf6d40910a53b27ae1490c19464",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CESP_1t_MT_061020181529.zip",
+      "bytes": 391642,
+      "sha256": "750c5fa5593797db188366eb6c014ef129e75cfefc7dbdcd1f78374e9ff08988",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CESP_1t_MT_071020181541.zip",
+      "bytes": 392093,
+      "sha256": "f7d33f8c7a4191bb760dcf1006376d97977ccd0af30c5d7eaaf349a8a3cc753d",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CESP_2t_MT_271020181441.zip",
+      "bytes": 391800,
+      "sha256": "14521f64b048ace519383d2dabfa148620e1e4ec1840b8a11dbfa902562d83ae",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/CESP_2t_MT_281020181447.zip",
+      "bytes": 391989,
+      "sha256": "0683f2c92457c77ce14f1ae0aa02b8b93e1e1726c45c1c64a7879beb9eb73598",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2018/MT/votacao_secao_2018_MT.zip",
+      "bytes": 23166003,
+      "sha256": "16342cf83dec151b732cb25c35b133ea09865f0fbd4a0a03a9ae3140daf9bccb",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2018_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CEFT_1t_MT_171120201645.zip",
+      "bytes": 677388,
+      "sha256": "b758f2c0a12a06948474d638d2324024ea5c49353efc111be42660f424ff3d3d",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CEFT_2t_MT_011220201430.zip",
+      "bytes": 370406,
+      "sha256": "4b226e6c38ebbc736857662c3b653d8dea4de3858781804a0f1a603b0da604ee",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CESP_1t_MT_141120201340.zip",
+      "bytes": 1124197,
+      "sha256": "55657638214de6817129984e5d38413bea3dd84a2ede49f4bd7b38897b6358ab",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CESP_1t_MT_151120201330.zip",
+      "bytes": 1124232,
+      "sha256": "8a5848f6d4a12228ee28155ad9d8f52761b334809ba9e77b58221abdfa308d9c",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CESP_2t_MT_281120201335.zip",
+      "bytes": 965652,
+      "sha256": "b8e2517203adeca89adcc6f5a6320a85927235c4bf3a4ecdd7830fd5a7b4eafa",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/CESP_2t_MT_291120201333.zip",
+      "bytes": 965545,
+      "sha256": "aac204332ec1825606222eeea5a343d7f46df2ddada91dd616fbef1b3c3f0b2e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/bweb_1t_MT_181120201549.zip",
+      "bytes": 13671904,
+      "sha256": "7c3cec2892a17e934be011e94b29d077eb6c0d538601a43ed3078fd65f04bc9c",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/bweb_2t_MT_301120201245.zip",
+      "bytes": 434677,
+      "sha256": "7e548e6a850b0810c77dad9db174dddb4761f76a4a1c3a1bb219ff0fa19ad797",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2020/MT/votacao_secao_2020_MT.zip",
+      "bytes": 27996996,
+      "sha256": "c6d8415317693b970a72a252cf7071d2312efd8e7bf5fccc895304e045115d94",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2020_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CEFT_1t_MT_041020221233.zip",
+      "bytes": 733093,
+      "sha256": "1e68e83527dc65b10cbb9af8ce288110076547b64ce8c2ef7cfc0a8e4182e88c",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CEFT_2t_MT_311020221100.zip",
+      "bytes": 734934,
+      "sha256": "a592020d70162a6f4abcdc114d89f6d6c21850aeeeb2a0406e9fb84bbe158e73",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CESP_1t_MT_011020221232.zip",
+      "bytes": 878393,
+      "sha256": "5830992ffbd7c6c40e655d21ab45379790eed81892db3587f2b2758fb4ac5f9f",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CESP_1t_MT_021020221215.zip",
+      "bytes": 878572,
+      "sha256": "3ba7b693cd1c80a1051eb95f007af5b8fcc4b43b4d73088c3c565e04ee9199b1",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CESP_2t_MT_291020221210.zip",
+      "bytes": 882846,
+      "sha256": "4222f1dcfff9dd83483d6c9c9818187bb8ec9794db21799d205f23cd1194bfbd",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/CESP_2t_MT_301020221145.zip",
+      "bytes": 882758,
+      "sha256": "f0a4bae5cef5605ec1727210f13b2db47ec52e48102fd8df9efd59fe94afbf5f",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/bu_imgbu_logjez_rdv_vscmr_2022_1t_MT.zip",
+      "bytes": 1129937176,
+      "sha256": "01d2724102ac39690daae3f814198d279d2b562ce8c78f12c4b5553acd2b66ca",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_1t_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/bu_imgbu_logjez_rdv_vscmr_2022_2t_MT.zip",
+      "bytes": 1405328655,
+      "sha256": "61fad6ff8c40d84736eae97272c0fd26b76cf5bdb04a2d1ce366d65947823543",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_2t_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/bweb_1t_MT_051020221321.zip",
+      "bytes": 17735163,
+      "sha256": "daffbed0b20a7b2edccc717dd8d205d21d779acf2307f4feed787f2ada32ceb2",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/bweb_2t_MT_311020221535.zip",
+      "bytes": 1081503,
+      "sha256": "1db6887cc30124724be3cd75fdd2d923f78545e4cd0f1bd3fbb2b7c2f80dbef2",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2022/MT/votacao_secao_2022_MT.zip",
+      "bytes": 34570017,
+      "sha256": "371117d76ec7f115e4575fab2d08a819df611dff08f1ecdc975640709da62f74",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2022_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CEFT_1t_MT_071020241530.zip",
+      "bytes": 641855,
+      "sha256": "7e0726c3496f64a628c0d4bdc72050440cda48e1817ef41b6b49426c4f87df29",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CEFT_2t_MT_281020240835.zip",
+      "bytes": 256543,
+      "sha256": "b9925e711b7d62816a39b3ca9200635f34fb5c7c7e6664247d8b86bf66104c8c",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CESP_1t_MT_051020241322.zip",
+      "bytes": 749157,
+      "sha256": "e2efc4daaf729409b40de5e3bad42bd87447c79281aa3d3cefbc98b53f0204de",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CESP_1t_MT_061020241406.zip",
+      "bytes": 751203,
+      "sha256": "a71c58ec3a595c48d4b8c04cff0d095183af8714f47e67e36631018ddb312982",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CESP_2t_MT_261020241121.zip",
+      "bytes": 436844,
+      "sha256": "6af7ff4f575650bb41b3eb854f5be94253583c5ba19a3f4ddbcbd2b3b18da5cf",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/CESP_2t_MT_271020241127.zip",
+      "bytes": 438025,
+      "sha256": "e2aeba3bfe4d8aee3f12718929ad0531fe751cde7a6a0abc883f8a0403dd9914",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/Relatorio_Resultado_Totalizacao_2024_MT.zip",
+      "bytes": 106532981,
+      "sha256": "8c6ec5ac4276932f46d45c2a6ecf511cd6b39c1602852af6f57468144050b739",
+      "verified_source_urls": []
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/bu_imgbu_logjez_rdv_vscmr_2024_1t_MT.zip",
+      "bytes": 1115573252,
+      "sha256": "4e48b03a4231ed6449b8cf2f565fa90666ed9b3f4cf50c53ea81f0969a2e365e",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_1t_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/bu_imgbu_logjez_rdv_vscmr_2024_2t_MT.zip",
+      "bytes": 254355955,
+      "sha256": "dc9ee3a3fae2d4ac3d4d23df3ea896fbe967f8e7b2e394c93e9aed511739ef66",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_2t_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/bweb_1t_MT_091020241636.zip",
+      "bytes": 42242077,
+      "sha256": "e01c3fc77adf60bd894519be1f5d13f1a1d8cbfcb9d886c335bf9badafd07783",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/bweb_2t_MT_281020241046.zip",
+      "bytes": 496524,
+      "sha256": "d0d22e70ea2946f9044563cc5934ddfdc74c39e4f30c1ea944c50aaf772b6b52",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/log_gedai_1t_MT_051020241525.zip",
+      "bytes": 2940306,
+      "sha256": "025318715b17b37890b81ea1f8b4aa6e42a8e5115df7e6f4b8a17549712fe6e2",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/log_gedai_1t_MT_061020241203.zip",
+      "bytes": 2950348,
+      "sha256": "67e2975badd1e932ba2ec0b6adc97d616655decdba4d6102bbd355495f551c27",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/log_gedai_2t_MT_261020241105.zip",
+      "bytes": 589204,
+      "sha256": "93d497b40b518c5bdf901f9c625fe83f2a5f674eb7f7083e4a306b236b8245ca",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/log_gedai_2t_MT_271020241119.zip",
+      "bytes": 595649,
+      "sha256": "57035c6a6edfb3605d78a05791fdc22b0a93d5b9870a04519732ecae69b971a1",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2024/MT/votacao_secao_2024_MT.zip",
+      "bytes": 26078892,
+      "sha256": "4d84497edbd8944c2a8f84b4c6c6c04b3d106ca399afe4e6eb6c23bdb535662a",
+      "verified_source_urls": []
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/CESP_2t_MT_241020261231.zip",
+      "bytes": 759147,
+      "sha256": "9bfbf58fe7064905957c8f624333738cfbdd519837de8115853fa3858cd788ec",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/CESP_2t_MT_251020261345.zip",
+      "bytes": 770327,
+      "sha256": "ce0e667a800773f84c3978c7551899727f4aa73ea9869b14ef7a5630f6c1e1c1",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "bytes": 738586,
+      "sha256": "753ef1b266e2fd62579bd6d72325ee05873081ef1069ad03aadbbedcbd1c04f0",
+      "verified_source_urls": []
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/log_gedai_1t_MT_031020261345.zip",
+      "bytes": 3371834,
+      "sha256": "abebcd22771486b75b6ffa2bbdec0dd884314e42979bdeb7234ef749a70687d6",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/log_gedai_1t_MT_041020261441.zip",
+      "bytes": 3398820,
+      "sha256": "5711a0cdd5e4ad6ae2f97e93be34476b70ae562f93b1d8b29d7f2a3e2f71cf10",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/log_gedai_2t_MT_241020261329.zip",
+      "bytes": 3447351,
+      "sha256": "1bf460612e13f383ed53eeab9c7e39651900fee15ed9b15e833704aa28c04896",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/MT/log_gedai_2t_MT_251020261327.zip",
+      "bytes": 3459283,
+      "sha256": "ca5f885282c6b0d4b1146b3644ab10afafd251d93adfbdc6d2da75c636be0f37",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/CEFT_1t_MT_051020261049.zip",
+      "bytes": 774217,
+      "sha256": "7aa7fe6aa471f04b5f8720a4b8efde99b192024189505a60a4a0f67fdc01f788",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/CESP_1t_MT_031020261534.zip",
+      "bytes": 634466,
+      "sha256": "899748087718202370c246e4c00c7ee9302789fcc41501399749b8284c77e160",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/CESP_1t_MT_041020261259.zip",
+      "bytes": 769686,
+      "sha256": "6ae69a5320eb39ad3ce8695d3af35dc3791b75972cdbaf4449cc375c81061723",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "bytes": 738586,
+      "sha256": "cd26fbabffeb0aafc49ef51fd53ddb7cb8dffbcfe662428fd5913b8bc982277d",
+      "verified_source_urls": []
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip",
+      "bytes": 1537057359,
+      "sha256": "d4951725238d4da83e02bc83ea35ae0cd82d85b6e4ce2c93b83a579782118c25",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/bweb_1t_MT_051020261403.zip",
+      "bytes": 63492478,
+      "sha256": "610eda446fb6bab25f29ceea31adf8f91acf68db14a179228516d11c0fac226f",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip"
+      ]
+    },
+    {
+      "path": "/data/urnapack/brutos/2026/t1/MT/votacao_secao_2026_MT.zip",
+      "bytes": 31060799,
+      "sha256": "3d91f38b185070a085e0e168de501a14f0b2bdbf072a5122e3456b2ea78a1acd",
+      "verified_source_urls": [
+        "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_MT.zip"
+      ]
+    }
+  ]
+}

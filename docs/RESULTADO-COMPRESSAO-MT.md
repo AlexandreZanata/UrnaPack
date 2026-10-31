@@ -112,6 +112,9 @@ python3 scripts/compression_stage.py restore-view \
 
 O arquivo local v2 fecha o vínculo criptográfico do seu recibo. Publicação no
 manifesto de distribuição antigo continua bloqueada e não foi executada.
-Liberação analítica, joins, seções agregadas e modelos profissionais permanecem
-na Etapa 5; expansão nacional na Etapa 6. As garantias aqui são de preservação,
-reprodução e controles descritos, sem conclusão sobre autenticidade eleitoral.
+A Etapa 5A executou a análise descritiva do BU web de MT 2026 t1 a partir deste
+cache; votos e contexto foram aprovados, enquanto contagem de seções físicas
+(`DS_SECOES_AGREGADAS`), joins/reconciliação, comparação entre turnos e modelos
+permanecem bloqueados ou não executados. Ver `docs/ETAPA-5A.md`. Expansão
+nacional na Etapa 6. As garantias aqui são de preservação, reprodução e
+controles descritos, sem conclusão sobre autenticidade eleitoral.

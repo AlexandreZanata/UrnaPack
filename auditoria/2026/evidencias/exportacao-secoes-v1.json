@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "artifact_kind": "audit_section_export",
+  "path": "/data/urnapack/auditoria-2026/secoes-presidente-2t-v1-verificado.csv",
+  "bytes": 47457542,
+  "sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+  "source_manifest_sha256": "9afcc5042375f12e43da7a0d9ee40a93ccec1c68db08d4180e76fada29c3a5b4",
+  "code_sha256": "e6b3b3678a7cc2ab394b3ed86ab5deb6c5aab0b9a9c247ac2395f6b07e5adcbc",
+  "command": "target/release/audit_2026 --manifest auditoria/2026/evidencias/entrada-buweb-2t.json --output /tmp/urnapack-2026-atomic-report.json --sections-output /data/urnapack/auditoria-2026/secoes-presidente-2t-v1-verificado.csv",
+  "guarantee": "transformação semântica por seção, não CSV original; campos selecionados e zeros de categorias ausentes explicitados no contrato"
+}

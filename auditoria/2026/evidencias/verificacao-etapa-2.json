@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "recorded_at_utc": "2026-10-29T12:26:26.593512+00:00",
+  "code_sha256": "e6b3b3678a7cc2ab394b3ed86ab5deb6c5aab0b9a9c247ac2395f6b07e5adcbc",
+  "real_input_manifest_sha256": "9afcc5042375f12e43da7a0d9ee40a93ccec1c68db08d4180e76fada29c3a5b4",
+  "report_sha256": "bd66c2174428150b7fb885d5d13817d98e56459150bf691468c376a29f68a59a",
+  "rerun_report_sha256": "bd66c2174428150b7fb885d5d13817d98e56459150bf691468c376a29f68a59a",
+  "identical_report_bytes": true,
+  "correction": "validação numérica de identificadores foi movida para depois da seleção presidencial; dois registros reais com cargo -1 são preservados e contados fora desse recorte. A validação acrescida na primeira publicação rejeitava a fonte ZZ. Os totais publicados anteriormente foram reproduzidos sem mudança após a correção.",
+  "section_export_sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999",
+  "initial_publication_commit": "2fddeec6b5b35bc3f55c2a9fe5864413ac346a76",
+  "download_and_audit_complete": false,
+  "clean_index_validation": {
+    "cargo_fmt_exit": 0,
+    "cargo_clippy_all_targets_exit": 0,
+    "cargo_test_all_targets_exit": 0,
+    "rust_tests_passed": 65,
+    "python_unittest_exit": 0,
+    "python_tests_run": 100,
+    "repo_validator_exit": 0,
+    "validator_self_test_exit": 0,
+    "log": "testes-etapa-2.txt"
+  }
+}

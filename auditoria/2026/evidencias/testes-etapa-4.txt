@@ -1,0 +1,72 @@
+$ unittest completo da árvore isolada
+exit=0
+
+............................./tmp/urnapack-audit-review3/scripts/test_fetch_source.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmphngc_d69/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:241: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpr341t87p/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:152: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpi_0xxcpv/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:172: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp7nobjbkn/out/fetch-run.json' mode='r' encoding='utf-8'>
+  receipt = json.load(open(os.path.join(out, "fetch-run.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..../tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpokcay8fs/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/urnapack-audit-review3/scripts/test_fetch_source.py:296: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpa0ppv0yi/victim'>
+  victim=os.path.join(tmp,"victim");open(victim,"wb").write(PAYLOAD[:100])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...............ERRO: falha de publicação injetada
+.........../home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.txt'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+...........ERRO: falha injetada
+ERRO: escrever diagnóstico/recibo: falha injetada
+......preparado MT: 1613 bytes CSV
+.preparado MT: 1613 bytes CSV
+................./home/iiii/.pyenv/versions/3.12.2/lib/python3.12/zipfile/__init__.py:1598: UserWarning: Duplicate name: 'a.csv'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+.../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:128: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpzbazx6hd/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:138: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpzxt04n_9/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:108: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp4ox8fycr/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:118: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpaem52mw9/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:81: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpeyel5y6n/r.json' mode='r' encoding='utf-8'>
+  rep = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./tmp/urnapack-audit-review3/scripts/test_validate_bweb.py:160: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpbm21h5dt/b.csv'>
+  z.writestr("bweb.csv", open(csv_path, "rb").read())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.
+----------------------------------------------------------------------
+Ran 112 tests in 14.916s
+
+OK
+
+$ validação do repositório
+exit=0
+
+
+$ cenários de falha
+exit=0
+
+PASS manifesto correto aprova
+PASS hash incorreto reprova
+PASS arquivo ausente reprova
+PASS versão incompatível reprova
+PASS pacote truncado reprova
+PASS acima do limite reprova
+PASS índice duplicado reprova
+PASS nome inválido rejeitado
+PASS nome válido aceito
+
+9/9 cenários OK

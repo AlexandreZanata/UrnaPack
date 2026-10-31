@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "scope": "Exemplo individual de distinção entre encerramento e eventos de eleitor computado; não é estimativa populacional. Junção semântica por UF/município/zona/seção.",
+  "section_key": "PE/30015/0004/0215",
+  "bu_projection_row_all_fields": {
+    "ANO_ELEICAO": "2026",
+    "CD_PLEITO": "3221",
+    "CD_ELEICAO": "6258",
+    "NR_TURNO": "2",
+    "SG_UF": "PE",
+    "CD_MUNICIPIO": "30015",
+    "NR_ZONA": "4",
+    "NR_SECAO": "215",
+    "CD_CARGO_PERGUNTA": "1",
+    "NR_LOCAL_VOTACAO": "1015",
+    "NR_URNA_EFETIVADA": "2379253",
+    "DT_ENCERRAMENTO": "2026-10-25 20:10:48",
+    "CD_TIPO_URNA": "1",
+    "QT_APTOS": "393",
+    "QT_COMPARECIMENTO": "224",
+    "QT_ABSTENCOES": "169",
+    "QT_ELEI_BIOM_SEM_HABILITACAO": "14",
+    "VOTOS_13": "116",
+    "VOTOS_22": "103",
+    "VOTOS_BRANCOS": "3",
+    "VOTOS_NULOS": "2"
+  },
+  "log_section_row_all_fields": {
+    "section_key": "PE/30015/0004/0215",
+    "expected_turnout": "224",
+    "completed_electors": "224",
+    "president_confirmations": "224",
+    "completed_after_17_brt": "0",
+    "president_after_17_brt": "0",
+    "duplicate_relevant_lines": "0",
+    "matched": "true"
+  },
+  "files_in_result_bundle": {
+    "sections.csv": {
+      "bytes": 47457542,
+      "sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999"
+    },
+    "logs/PE/sections.csv": {
+      "bytes": 899514,
+      "sha256": "efae8446d8556517fc1e8a2d8dc99d2f5328e65aaef5c7bce8fee6826664651a"
+    }
+  },
+  "time_policy_sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba",
+  "limitations": "Contagem de eventos sob relógio nominal; não certifica calibração física ou causa do intervalo entre os registros."
+}

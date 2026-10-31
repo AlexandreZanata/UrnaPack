@@ -1,0 +1,150 @@
+{
+  "base_git_revision": "812de2c444eccfc496034a859ca5b846a84fb980",
+  "code_tested_in_isolated_tree": true,
+  "files": {
+    "auditoria/2026/README.md": {
+      "bytes": 9879,
+      "sha256": "3de0f5f9dd96bbc1f507291c0e202d21a58af7bcc2b529649f770793721db919"
+    },
+    "auditoria/2026/RELATORIO.md": {
+      "bytes": 20479,
+      "sha256": "333f05e3deb59751927ce00b31477fd6ec654691307d03e352132d44205108a5"
+    },
+    "auditoria/2026/evidencias/encerramento-normalizado.json": {
+      "bytes": 1391,
+      "sha256": "29a983b3d0f3aecbb4ee4b2d552eb05e8b175be99d256253ec834705d7794a67"
+    },
+    "auditoria/2026/evidencias/experimento-ranges.json": {
+      "bytes": 537,
+      "sha256": "fb7461f555bcf059269d19420bde631f950822f4ee61672cc0a43592cb4f32aa"
+    },
+    "auditoria/2026/evidencias/experimento-transferencia.json": {
+      "bytes": 1604,
+      "sha256": "de0c273d34c03c989ec74dbaecc6a1c73887b872ef91c4e69802f27dc0ca439a"
+    },
+    "auditoria/2026/evidencias/politica-relogio-nominal-2026.json": {
+      "bytes": 1672,
+      "sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba"
+    },
+    "auditoria/2026/evidencias/web/busca-institucional-complementar.json": {
+      "bytes": 686,
+      "sha256": "c3a8b40d78008dca7d5317e1e8555ea0fc7084dddb696b4e966f1e5943cf4bdb"
+    },
+    "auditoria/2026/resultados/presidente-2t-normalizado.json": {
+      "bytes": 39881,
+      "sha256": "5d2d1ed1aa40b257a952a197c7c242445a21f765f82c84fbdfeb7eee8d4d89a4"
+    },
+    "scripts/acquire_2026.py": {
+      "bytes": 19719,
+      "sha256": "3c0865e76c4b6395fa71637af59b0542476cb5ac3a7a6badc2b38eb9b3b81ff8"
+    },
+    "scripts/build_time_policy_2026.py": {
+      "bytes": 3572,
+      "sha256": "36ebcf38dfe848deeba7fbba727c467921bb071224f2f0708eaa0253f6d2fb94"
+    },
+    "scripts/collect_logs_2026.py": {
+      "bytes": 2075,
+      "sha256": "3b7be009b60e91cd883bd47d658aec58ca4a2bc8a8c5d24c11daeab0b6c944ea"
+    },
+    "scripts/curl_transport.py": {
+      "bytes": 3764,
+      "sha256": "7aea97524dcce31daa9bdd6d0900cbdb5935a4ec3f8ae14884b6878da97cc092"
+    },
+    "scripts/import_logs_2026.py": {
+      "bytes": 13876,
+      "sha256": "c7b6f79e38b3a02b69e4980f3d6335df7a20fb7c621fd7bc42e51df6ce0594ea"
+    },
+    "scripts/limits.env": {
+      "bytes": 3167,
+      "sha256": "aee8a48073b19a179adbdb4f077affdd4ce9b81c10d74491a1d9a5a365e75ed0"
+    },
+    "scripts/pin_catalog_2026.py": {
+      "bytes": 2028,
+      "sha256": "c98e6ef534150f32fea3c849f6877657673a7274bb8b473f39b3a499c4d66094"
+    },
+    "scripts/reproduce_audit_2026.sh": {
+      "bytes": 4614,
+      "sha256": "d84b6072769b9df7e308ca38ffc6db08c97680308b173732134b2aeb9683f97b"
+    },
+    "scripts/run_logs_2026.py": {
+      "bytes": 3087,
+      "sha256": "11e6b0550070b5934ace77137cfdc8c13e3e34af36d16d700d92f7bbb70b363b"
+    },
+    "scripts/test_acquire_2026.py": {
+      "bytes": 9842,
+      "sha256": "954ce1cd17ff375d6db14ed5862702bb78016c8fb318136b5464cc54c47828ce"
+    },
+    "scripts/test_curl_transport.py": {
+      "bytes": 2153,
+      "sha256": "bf498f9635967a66284bb044a29b945f6a98cd017209e9d1d22521b8bb61caa6"
+    },
+    "scripts/test_import_logs_2026.py": {
+      "bytes": 6229,
+      "sha256": "f60ea63bb877be42d6aae793ee7f77f302493c033ac94a1836dcd561526d4155"
+    },
+    "spec/audit-2026-v1.md": {
+      "bytes": 6947,
+      "sha256": "221f616b9a2c839ef4dd1c21ce1b29610581fb96eb6f22f2c96bbbe397fb0242"
+    },
+    "spec/audit-logs-2026-v1.md": {
+      "bytes": 6283,
+      "sha256": "2a8cecc9d6bee63d8f5ede5218ee101cdf2e6e2bb6b0fd077c98989bfc1ecc52"
+    },
+    "src/audit_io.rs": {
+      "bytes": 1360,
+      "sha256": "d1af98307a107ed7a27183852b271f459822c61e6db6e6a5cadbd14e4aae39d3"
+    },
+    "src/bin/audit_2026.rs": {
+      "bytes": 28582,
+      "sha256": "817eabc940aca5708fdad2ff0bd922e247a0b9b105a9a1f3f4294b11b576b3f5"
+    },
+    "src/bin/audit_logs_2026.rs": {
+      "bytes": 37524,
+      "sha256": "7fae549a3c3b9f73714e9b08ede0bcf923b9959a359264e2c6755b5b1e98c014"
+    },
+    "tests/audit_logs_2026.rs": {
+      "bytes": 3337,
+      "sha256": "6e03c9bdcfd5d4376bab4e5780ca59dee7ec8571b91dcc0e5d5c07589ffd7e3c"
+    },
+    "tests/fixtures/audit-2026/README.md": {
+      "bytes": 851,
+      "sha256": "332558bd9c33712c03c572e3201601a2bbae2f7ef20ae5b4517b57c65fa00387"
+    },
+    "tests/fixtures/audit-2026/coverage-synthetic.json": {
+      "bytes": 775,
+      "sha256": "f135d1fe37249ce27d5296015ad57e0e915c0eee190765a8b06bd692995ac947"
+    },
+    "tests/fixtures/audit-2026/hashes.json": {
+      "bytes": 934,
+      "sha256": "7102a2552b0d7c7ae7f11a52388d2631a59af829af482de620f99f875e1b31f7"
+    },
+    "tests/fixtures/audit-2026/log-frame-synthetic.json": {
+      "bytes": 961,
+      "sha256": "3cf7739be96cb7f62d6f8863c9a62df7d6bd0266baad6fb3f0848200accbca91"
+    },
+    "tests/fixtures/audit-2026/log-policy-synthetic.json": {
+      "bytes": 109,
+      "sha256": "1bf82db793d8c65a0c2398072a282b7a6862b4c221f7779b390d86049c68f80c"
+    },
+    "tests/fixtures/audit-2026/log-sections-synthetic.csv": {
+      "bytes": 67,
+      "sha256": "97273e90f5eca742c5137daf91ad2f5d8304331f2ff6278aa46cbd32d102fd76"
+    },
+    "tests/fixtures/audit-2026/logd-synthetic.dat": {
+      "bytes": 648,
+      "sha256": "41245eadc5a2ebee5ea38ba59741da20778ce8ea14c894853bb7d51c23ddba83"
+    },
+    "tests/fixtures/audit-2026/logs-synthetic.zip": {
+      "bytes": 511,
+      "sha256": "c57816b1a0058b71b458a52a94f846a6ee19907e249de048a6f6463cae25e690"
+    },
+    "tests/fixtures/audit-2026/synthetic.csv": {
+      "bytes": 1613,
+      "sha256": "e586b1cee52d7c54ff35e9098909e833ef69a139f67e7973a213a8382ce0181a"
+    }
+  },
+  "format_version": 1,
+  "python_tests_passed": 109,
+  "recorded_at_utc": "2026-10-29T14:53:44.802974+00:00",
+  "rust_tests_passed": 75
+}

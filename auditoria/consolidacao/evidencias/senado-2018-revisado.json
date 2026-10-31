@@ -1,0 +1,26 @@
+{
+  "exemplos_divergentes": [],
+  "format_version": 2,
+  "par_regular_297": {
+    "bu_grupos": 7247,
+    "bu_member": "bweb_1t_MT_101020182002.csv",
+    "bu_votos": 3514736,
+    "bu_zip": "/data/urnapack/brutos/2018/MT/BWEB_1t_MT_101020181938.zip",
+    "bu_zip_sha256": "9d45919df869dc69e93a25bffcc2b429d11809a4e8a9014257403e546451ed8e",
+    "grupos_comuns": 7247,
+    "grupos_divergentes": 0,
+    "somente_bu": 0,
+    "somente_vot": 0,
+    "vot_grupos": 7247,
+    "vot_member": "votacao_secao_2018_MT.csv",
+    "vot_votos": 3514736,
+    "vot_zip": "/data/urnapack/brutos/2018/MT/votacao_secao_2018_MT.zip",
+    "vot_zip_sha256": "16342cf83dec151b732cb25c35b133ea09865f0fbd4a0a03a9ae3140daf9bccb"
+  },
+  "success": true,
+  "suplementar_438_observacao": {
+    "bu_status": "não conciliada nesta execução; ver inspeção documentada do BU 2020 em inspect_2020_bweb_quoting.py",
+    "vot_grupos": 6624,
+    "vot_votos": 1725489
+  }
+}

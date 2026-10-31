@@ -1,0 +1,264 @@
+   Compiling tsepack v0.2.0 (/data/urnapack/consolidacao-2026-10-30/candidato-final)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.44s
+     Running unittests src/lib.rs (target/debug/deps/tsepack-e2e0238cb3ec65e1)
+
+running 4 tests
+test hash::tests::vetor_conhecido_sha256 ... ok
+test hash::tests::arquivo_vazio_tem_hash_conhecido ... ok
+test analyze::resource_tests::record_limit_stops_reading_the_fixture_instead_of_scanning_the_remaining_rows ... ok
+test manifest::tests::manifesto_ordena_caminhos_com_hash_real ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/audit_2026.rs (target/debug/deps/audit_2026-223a79ef115d4cc6)
+
+running 7 tests
+test tests::correlations_and_ties ... ok
+test tests::exact_boundaries_and_bad_date ... ok
+test tests::strict_extremes_and_empty_denominator ... ok
+test tests::failed_publication_keeps_partial_without_final_file ... ok
+test tests::nominal_clock_uses_municipality_override_and_preserves_totals ... ok
+test tests::out_of_scope_negative_cargo_is_counted_without_losing_presidential_rows ... ok
+test tests::section_export_preserves_keys_and_counts_once ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/audit_logs_2026.rs (target/debug/deps/audit_logs_2026-24aa378967ca615a)
+
+running 8 tests
+test tests::bounded_line_rejects_before_consuming_excessive_record ... ok
+test tests::counts_synthetic_fixture_bytes_at_strict_time_boundary_and_excludes_other_day ... ok
+test tests::duplicate_events_are_counted_and_block_reconciliation ... ok
+test tests::missing_expected_section_prevents_success_even_when_present_section_matches ... ok
+test tests::other_internal_section_is_counted_separately_instead_of_assigned_by_filename ... ok
+test tests::repeated_bodies_are_preserved_and_current_day_duplicates_block_success ... ok
+test tests::malformed_line_is_hashed_and_blocks_section_without_stopping_coverage ... ok
+test tests::changed_hash_and_interrupted_stream_fail ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/tsepack-94c44312ef631ed1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/analyze.rs (target/debug/deps/analyze-d40231b2c32eb8ac)
+
+running 22 tests
+test perfil_desconhecido_e_rejeitado_sem_inferencia ... ok
+test saida_existente_ou_sobreposta_e_recusada_sem_residuo ... ok
+test overflow_de_votos_reprova ... ok
+test fora_do_escopo_bloqueia_votos_e_contexto ... ok
+test contexto_divergente_bloqueia_contexto_sem_arbitrar ... ok
+análise: 1 registros; votos=indisponível; status=failed; erros=3
+saída: /data/urnapack/auditoria-2026/testes-tmp/.tmp3qQWej/invalid
+analyze: controles obrigatórios reprovaram; consulte quality.json e REPORT.md
+test recibo_de_falha_tem_schema_unificado ... ok
+test categoria_desconhecida_entra_na_cobertura_e_bloqueia_interpretacao ... ok
+test hash_divergente_reprova_sem_aprovar ... ok
+test cli_retorna_exit_nao_zero_quando_controle_obrigatorio_reprova ... ok
+test contexto_repetido_conta_uma_vez_e_preserva_zeros ... ok
+test conflito_de_nome_municipal_bloqueia_cobertura_territorial ... ok
+test data_invalida_reprova_lexico ... ok
+test view_com_payload_adulterado_reprova ... ok
+test truncada_e_cabecalho_divergente_nao_aprovam ... ok
+test view_with_excessive_declared_expansion_is_refused_before_decoding ... ok
+test secoes_agregadas_bloqueiam_contagem_fisica_sem_falhar_o_resto ... ok
+test view_com_membro_divergente_reprova_com_mismatch ... ok
+test duplicata_repetida_e_conflito_sao_distintos ... ok
+test view_verifica_payload_sha_membro_e_ordinal ... ok
+test segunda_execucao_reproduz_resultados_e_qualidade ... ok
+test campo_excessivo_falha_explicitamente ... ok
+{
+  "artifact_kind": "bweb_independent_check",
+  "checks": [
+    {
+      "check": "csv_sha256",
+      "detail": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+      "ok": true
+    },
+    {
+      "check": "records",
+      "detail": "8",
+      "ok": true
+    },
+    {
+      "check": "source_hash",
+      "detail": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+      "ok": true
+    },
+    {
+      "check": "header",
+      "detail": "45 campos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office",
+      "detail": "2 cargos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office_category",
+      "detail": "6 grupos",
+      "ok": true
+    },
+    {
+      "check": "votes_by_office_municipality",
+      "detail": "7 grupos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office",
+      "detail": "2 cargos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office_municipality",
+      "detail": "3 grupos",
+      "ok": true
+    },
+    {
+      "check": "context_by_office_zone",
+      "detail": "3 grupos",
+      "ok": true
+    },
+    {
+      "check": "keys",
+      "detail": "duplicatas=0",
+      "ok": true
+    },
+    {
+      "check": "context",
+      "detail": "grupos=4",
+      "ok": true
+    },
+    {
+      "check": "coverage",
+      "detail": "municípios=2 zonas=2 contextos=4 conflitos_nome=0",
+      "ok": true
+    },
+    {
+      "check": "sentinels",
+      "detail": "6 colunas",
+      "ok": true
+    },
+    {
+      "check": "ds_secoes_agregadas",
+      "detail": "1 valores, overflow=0",
+      "ok": true
+    }
+  ],
+  "csv": "/data/urnapack/consolidacao-2026-10-30/candidato-final/tests/fixtures/analyze/mt-valid.csv",
+  "csv_sha256": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+  "errors": [],
+  "format_version": 1,
+  "records": 8,
+  "success": true
+}
+analyze_check: OK (8 registros, 15 verificações)
+test verificador_independente_confere_fixture_sintetica ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/audit_2026.rs (target/debug/deps/audit_2026-9a03963ccbf9e897)
+
+running 4 tests
+test duplicate_occurrence_is_not_silently_removed ... ok
+test changed_repeated_context_fails ... ok
+test wrong_hash_exits_nonzero_without_report ... ok
+test sums_context_once_and_checks_exact_percent_boundary ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/audit_logs_2026.rs (target/debug/deps/audit_logs_2026-b0c216758df5b4f6)
+
+running 1 test
+test cli_checks_hashes_and_produces_verified_stream_receipt ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/bweb_pack.rs (target/debug/deps/bweb_pack-4ddf09454afa3482)
+
+running 13 tests
+test relatorio_escalar_nao_sobrescreve_e_permite_denominador_vazio ... ok
+test quoting_ou_newline_diferente_reprova_sem_saida ... ok
+test saida_resolve_symlink_antes_de_pai ... ok
+test hash_de_origem_errado_reprova_no_pack_e_no_unpack ... ok
+test limites_de_comprimento_sao_aplicados_antes_de_alocar ... ok
+test saida_dentro_do_pacote_e_arquivo_extra_reprovam ... ok
+test reversivel_com_duplicatas_zeros_aspas_e_multilinhas ... ok
+test legado_com_hash_e_legado_sem_hash_sao_distintos ... ok
+test truncado_ou_residuo_mesmo_com_hash_atualizado_reprova_sem_parcial ... ok
+test checkpoint_retomavel_reconfere_binario_e_origem ... ok
+test caminhos_metadados_e_campos_desconhecidos_reprovam ... ok
+test checkpoint_recalcula_taxas_e_rejeita_fronteiras_de_coluna_falsas ... ok
+test verificador_python_funciona_tambem_com_otimizacao ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.34s
+
+     Running tests/compression.rs (target/debug/deps/compression-189b2508e6cd8243)
+
+running 9 tests
+test decoder_restores_a_fixture_produced_with_brotli_v8_byte_for_byte ... ok
+test origem_duplicada_tar_desconhecido_e_campos_extras_reprovam ... ok
+test arquivo_por_fonte_preserva_conteudos_iguais_e_reprova_selecao_duplicada ... ok
+test arquivo_padrao_deterministico_restaura_e_vincula_recibo ... ok
+test q2_nao_soma_contexto_por_votavel_e_detecta_divergencia ... ok
+xz: /data/urnapack/auditoria-2026/testes-tmp/.tmpy3HZRy/xz-6.encoded: Unexpected end of input
+test decoder_falha_em_truncamento_e_tamanho_excedido ... ok
+test optimize_e_restore_cli_executam_verificacao_real ... ok
+test codecs_conferem_bytes_e_recusam_hash_errado_sem_promover ... ok
+test dicionario_treinado_e_multiplos_blocos_reconstroem_todos_os_bytes ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s
+
+     Running tests/determinismo.rs (target/debug/deps/determinismo-8f156e9d0c224ac7)
+
+running 2 tests
+test manifesto_e_deterministico ... ok
+test benchmark_round_trip_zstd ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integracao.rs (target/debug/deps/integracao-f5a4a9e3a1928152)
+
+running 29 tests
+test caminhos_windows_e_nul_reprovam_sem_depender_do_host ... ok
+test caminho_repetido_reprova ... ok
+test diretorio_vazio_nao_utf8_e_rejeitado ... ok
+test inventario_nao_gera_caminho_que_verify_rejeita ... ok
+test erro_de_leitura_por_permissao_propaga ... ok
+test manifesto_vazio_reprova ... ok
+test raiz_inexistente_reprova ... ok
+test origem_v1_congelado_carrega ... ok
+test origem_rejeita_campo_desconhecido ... ok
+test migracao_v1_para_v2_preserva_arquivos ... ok
+test raiz_nao_diretorio_reprova ... ok
+test raiz_vazia_tem_inventario_explicito ... ok
+test origem_rejeita_versao_nao_suportada ... ok
+test symlink_no_arquivo_verificado_reprova ... ok
+test origem_v2_escrita_por_padrao ... ok
+test cli_inspect_reprova_raiz_inexistente ... ok
+test arquivo_ausente_e_detectado ... ok
+test link_legitimo_da_raiz_e_resolvido ... ok
+test corrupcao_mesmo_tamanho_reprova_com_hash_mismatch ... ok
+test corrupcao_e_detectada ... ok
+test truncado_reprova_com_size_mismatch ... ok
+test travessia_e_caminhos_invalidos_reprovam ... ok
+test manifest_round_trip_e_verify_ok ... ok
+test versao_incompativel_reprova_com_erro ... ok
+test cli_verify_reprova_hash_e_versao_com_exit_nao_zero ... ok
+test benchmark_pack_columns_consistente ... ok
+test arquivo_especial_fifo_reprova_build ... ok
+test symlink_interno_reprova_build ... ok
+test cli_verify_aprova_fonte_valida ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests tsepack
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

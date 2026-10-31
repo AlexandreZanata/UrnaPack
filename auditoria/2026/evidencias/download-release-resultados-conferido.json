@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "observed_at_utc": "2026-10-30T08:38:38.154137+00:00",
+  "source_release": "https://github.com/AlexandreZanata/UrnaPack/releases/tag/audit-2026-buweb-v1",
+  "release_was_draft": true,
+  "status": "matched",
+  "files": {
+    "resultados-auditoria-2026.zip": {
+      "bytes": 75908091,
+      "sha256": "fccbfd93edd7a5d3a3080f2eb2af606c01256dac6c12bf8072330b90f05b288a"
+    },
+    "pacote-resultados-logs-2026.json": {
+      "bytes": 27092,
+      "sha256": "2486f2edbdf0c8dd150ddfaaa8e074f5df4309ad313408ac51a9fe5f3dfa3f60"
+    },
+    "RELATORIO.md": {
+      "bytes": 26051,
+      "sha256": "7c73a11da211295a0d78e8589a1570f97789b45aff7036905e55337218a9daea"
+    },
+    "CONCLUSOES.md": {
+      "bytes": 4607,
+      "sha256": "11589080747f5023ba50a808fcc832a3a18e2cd51279bcc62a603a1ad80bc5df"
+    }
+  }
+}

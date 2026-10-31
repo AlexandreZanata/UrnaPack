@@ -1,0 +1,75 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "bweb_2t_RR_",
+  "finished_at_utc": "2026-10-29T11:23:47.115187+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 158,
+      "finished_at_utc": "2026-10-29T11:17:40.511280+00:00",
+      "http_head": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=93600",
+        "Cache-Control": "max-age=38123",
+        "Connection": "close",
+        "Content-Length": "158",
+        "Content-Type": "application/zip",
+        "Date": "Thu, 29 Oct 2026 11:17:40 GMT",
+        "ETag": "\"9e-65ebd131a96e5\"",
+        "Last-Modified": "Mon, 26 Oct 2026 12:00:22 GMT"
+      },
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512",
+      "reverified_at_utc": "2026-10-29T11:23:45.219493+00:00",
+      "sha1": "f0bade6f4bc2e48a8e46e2e7dca280571b89ceec",
+      "sha256": "673cde9f9b087321da9f9107a7c3fee6b49f58f17e8df3151930c7328345e94b",
+      "sha512": "e64f759ca1e2d0e56242378bea736afbfe8c09cded3733b06c5eae6095ec0900200dc42686fbca573533df2a4ce1af0778c3adbc1592be04fca4de1b7eecbcd6",
+      "started_at_utc": "2026-10-29T11:17:40.245492+00:00",
+      "status": "reverified_local",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512"
+    },
+    {
+      "bytes": 500520,
+      "finished_at_utc": "2026-10-29T11:23:47.114522+00:00",
+      "http_head": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=93600",
+        "Cache-Control": "max-age=7987",
+        "Connection": "close",
+        "Content-Length": "500520",
+        "Content-Type": "application/zip",
+        "Date": "Thu, 29 Oct 2026 11:23:45 GMT",
+        "ETag": "\"7a328-65ebd16e39679\"",
+        "Last-Modified": "Mon, 26 Oct 2026 12:01:26 GMT"
+      },
+      "http_length_verification": "matched",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "official_checks": [
+        {
+          "algorithm": "sha512",
+          "expected": "3986628e101b7a9fc24ab5377e0ed8b2eb94fa735b5999aa408df37d3be91d1c4d8ab11c8bec03398dcc0005b76782617a5045cb170e0efafdeabd1602d6d4cf",
+          "sidecar_sha256": "673cde9f9b087321da9f9107a7c3fee6b49f58f17e8df3151930c7328345e94b",
+          "sidecar_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512",
+          "verified": true
+        }
+      ],
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip",
+      "sha1": "4f30614ec3f8fef27a60f087452fcb82cf679138",
+      "sha256": "6554fcbd0c55cf90abf970cb83125bfe7b35e748d676fe6fe60bdbca0a4262af",
+      "sha512": "3986628e101b7a9fc24ab5377e0ed8b2eb94fa735b5999aa408df37d3be91d1c4d8ab11c8bec03398dcc0005b76782617a5045cb170e0efafdeabd1602d6d4cf",
+      "started_at_utc": "2026-10-29T11:23:45.219848+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T11:23:45.218263+00:00"
+}

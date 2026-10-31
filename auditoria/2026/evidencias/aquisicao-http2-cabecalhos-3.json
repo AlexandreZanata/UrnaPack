@@ -1,0 +1,152 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 1,
+  "exclude": "",
+  "filter": "https://cdn.tse.jus.br/estatistica/sead/odsele/processual/processos_eleitorais_partes_2026.zip",
+  "finished_at_utc": "2026-10-29T15:09:22.230339+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "error": "ValueError: Content-Length HEAD/GET divergente",
+      "finished_at_utc": "2026-10-29T15:09:22.228198+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=43002",
+        "content-length": "8998629",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:22 GMT",
+        "etag": "\"894ee5-65ef6f0acbdc5\"",
+        "last-modified": "Thu, 29 Oct 2026 09:02:33 GMT"
+      },
+      "http_get_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 09:02:33 GMT"
+        ],
+        [
+          "etag",
+          "\"894ee5-65ef6f0acbdc5\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "8998629"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=43002"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:22 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_get_protocol": "HTTP/2 200",
+      "http_get_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 09:02:33 GMT\r\netag: \"894ee5-65ef6f0acbdc5\"\r\naccept-ranges: bytes\r\ncontent-length: 8998629\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=43002\r\ndate: Thu, 29 Oct 2026 15:09:22 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_get_status": 200,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/processual/processos_eleitorais_partes_2026.zip",
+      "http_head": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=14099",
+        "content-length": "8964237",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:09:21 GMT",
+        "etag": "\"88c88d-65ee2e276eabd\"",
+        "last-modified": "Wed, 28 Oct 2026 09:06:55 GMT"
+      },
+      "http_head_fields": [
+        [
+          "last-modified",
+          "Wed, 28 Oct 2026 09:06:55 GMT"
+        ],
+        [
+          "etag",
+          "\"88c88d-65ee2e276eabd\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "8964237"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=14099"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:09:21 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_head_protocol": "HTTP/2 200",
+      "http_head_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Wed, 28 Oct 2026 09:06:55 GMT\r\netag: \"88c88d-65ee2e276eabd\"\r\naccept-ranges: bytes\r\ncontent-length: 8964237\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=14099\r\ndate: Thu, 29 Oct 2026 15:09:21 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/processual/processos_eleitorais_partes_2026.zip",
+      "started_at_utc": "2026-10-29T15:09:21.818734+00:00",
+      "status": "error",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/processual/processos_eleitorais_partes_2026.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T15:09:21.816685+00:00",
+  "transport_requested": "curl"
+}

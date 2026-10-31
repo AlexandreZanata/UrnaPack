@@ -1,0 +1,64 @@
+{
+  "files": {
+    "auditoria/2026/README.md": {
+      "bytes": 13994,
+      "sha256": "11afcc9b1650dd0d5b3645a209ef33af9cf23a068188e5eb326c4bb0162aeea5"
+    },
+    "auditoria/2026/evidencias/compilacao-isolada-arquivo-2026.json": {
+      "bytes": 3482,
+      "sha256": "331ec782de4d8f278bdce7581b761b6447aae7385d3e27ffe3fd1bdf65a69c11"
+    },
+    "auditoria/2026/evidencias/implementacao-pacote-buweb-2t.json": {
+      "bytes": 355,
+      "sha256": "5114a367a95bb832f067245dcb848af96cdeb6bb280bafe5c85ff7e3a942c4d3"
+    },
+    "auditoria/2026/evidencias/pacote-buweb-2t-csv.json": {
+      "bytes": 10848,
+      "sha256": "b419a5ad5162bf273c32b08666efcaa11be241eae9dbe6cbd3414d684eeedcf4"
+    },
+    "auditoria/2026/evidencias/reproducao-offline-pacote-2026.json": {
+      "bytes": 1120,
+      "sha256": "d4bf7b3a439576827e081bcd3b3b1170095c2fa51770f85f2b44bac2f0e264e4"
+    },
+    "scripts/limits.env": {
+      "bytes": 3309,
+      "sha256": "15250b3808930aead5ac01824b265dcf8a6ea1c8f7d36facca6b8391baf8b249"
+    },
+    "scripts/package_buweb_audit_2026.py": {
+      "bytes": 7966,
+      "sha256": "9b15d07c4f87d9d4b4a4e7a0ae4458ad02375fff531255150931753ed2f621a7"
+    },
+    "scripts/relocate_audit_manifest_2026.py": {
+      "bytes": 2684,
+      "sha256": "d94c4aea2f57216be598c3df8261e79e22f14d182c6057fbd7b59945b20307df"
+    },
+    "scripts/reproduce_audit_2026.sh": {
+      "bytes": 5230,
+      "sha256": "ae6de7eb8cb5980f36147558025780011392823fdbf445c5f9f0f4913ad2926e"
+    },
+    "scripts/test_package_buweb_audit_2026.py": {
+      "bytes": 2865,
+      "sha256": "3351752450914eecddf63534fec8e37ceb2db2b8635b9d434fea9b2f95f8c905"
+    },
+    "scripts/test_relocate_audit_manifest_2026.py": {
+      "bytes": 1459,
+      "sha256": "7430f3b760a494c7b0c11418ab8856b3a0afa4d35415b1fa9278783bd558b096"
+    },
+    "scripts/test_verify_zip_integrity_2026.py": {
+      "bytes": 3311,
+      "sha256": "1ea5f0540621b09ca7b400d070ac24f35979a35ad3691d09c173c3823c4ea784"
+    },
+    "scripts/verify_zip_integrity_2026.py": {
+      "bytes": 6674,
+      "sha256": "a265538dd4db80cc4b54e7fd9b6adcade6c181e0cd1718a137f07a3a73ec7845"
+    },
+    "spec/audit-package-v1.md": {
+      "bytes": 2967,
+      "sha256": "31e31f5fe3001b0cc611f6869dbd0ece1770e882f8ee3dfc93dad007ac5e2acf"
+    }
+  },
+  "format_version": 1,
+  "python_tests_passed": 117,
+  "recorded_at_utc": "2026-10-29T16:39:28.627775+00:00",
+  "rust_tests_passed": 75
+}

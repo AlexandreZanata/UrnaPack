@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "scope": "Novo invólucro de resultados e documentação final. Rust inalterado nesta etapa. Todos os 120 testes Python aprovados com temporários no SSD de dados; validação do repositório aprovada.",
+  "files": {
+    "scripts/package_audit_results_2026.py": {
+      "bytes": 4820,
+      "sha256": "1facecde429dc5c7c1676347c14b166ba6c4af8f2d3f57ad0d08cf68fb4c671f"
+    },
+    "scripts/test_package_audit_results_2026.py": {
+      "bytes": 3131,
+      "sha256": "d61c681c2a433c435e58ab8960a6f20bd83332935d8575eb2f5046c512bb7c75"
+    },
+    "auditoria/2026/README.md": {
+      "bytes": 16344,
+      "sha256": "090c6bb084fc170e0f280742aba296abfdb4be67d959fa98797124b982f6f28a"
+    },
+    "auditoria/2026/RELATORIO.md": {
+      "bytes": 26051,
+      "sha256": "7c73a11da211295a0d78e8589a1570f97789b45aff7036905e55337218a9daea"
+    },
+    "auditoria/2026/CONCLUSOES.md": {
+      "bytes": 4607,
+      "sha256": "11589080747f5023ba50a808fcc832a3a18e2cd51279bcc62a603a1ad80bc5df"
+    },
+    "spec/audit-package-v1.md": {
+      "bytes": 3963,
+      "sha256": "2d9b3c80c5585907873269ea295d9f41d04806d2251c9dca6dadf25324de87eb"
+    }
+  },
+  "checks": {
+    "python_unittest": {
+      "exit_code": 0,
+      "bytes": 4854,
+      "sha256": "eeab7f435442c677fe4fd104ca665e7221d78676c07dc9fd5044b49a1cc4f305"
+    },
+    "validate_repo": {
+      "exit_code": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "prior_attempt": {
+    "exit_code": 1,
+    "reason": "Sete testes de aquisição reprovaram por espaço livre inferior ao mínimo central no SSD principal; proteção mantida. Execução repetida com TMPDIR no SSD /data.",
+    "bytes": 8368,
+    "sha256": "54987d723e0e0e5ae27799d9bd84d7efa0c33e118125959c3fc2b7a164301817"
+  }
+}

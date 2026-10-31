@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "scope": "experimento curto, uma execução por modalidade, 4 MiB iniciais do mesmo objeto oficial; não é taxa sustentada nem estimativa de término",
+  "source_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_SP.zip",
+  "range": "bytes 0-4194303",
+  "bytes": 4194304,
+  "sha256": "4ddae54292c8ade1f5d27a5d1264ea6f136a98816f63c4751a8eb378d2bdc41e",
+  "urllib_seconds": 3.38463211799899,
+  "curl_serial_seconds": 1.744785,
+  "curl_four_ranges_seconds": 1.6112476830003288,
+  "identical_bytes": true,
+  "serial_curl_http_code": 206,
+  "urllib_http_status": 206,
+  "http_headers_urllib": {
+    "Accept-Ranges": "bytes",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/zip",
+    "Access-Control-Allow-Headers": "*",
+    "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+    "Last-Modified": "Thu, 22 Oct 2026 20:52:29 GMT",
+    "ETag": "\"4b01b1ca1-65e740ab33d40\"",
+    "Cache-Control": "max-age=43021",
+    "Date": "Thu, 29 Oct 2026 12:28:27 GMT",
+    "Content-Range": "bytes 0-4194303/20134436001",
+    "Content-Length": "4194304",
+    "Connection": "close",
+    "Alt-Svc": "h3=\":443\"; ma=93600"
+  },
+  "curl_parallel_intervals": [
+    {
+      "status": 206,
+      "bytes": 1048576,
+      "seconds": 1.507836
+    },
+    {
+      "status": 206,
+      "bytes": 1048576,
+      "seconds": 1.52872
+    },
+    {
+      "status": 206,
+      "bytes": 1048576,
+      "seconds": 1.594047
+    },
+    {
+      "status": 206,
+      "bytes": 1048576,
+      "seconds": 1.531663
+    }
+  ]
+}

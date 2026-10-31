@@ -1,0 +1,165 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/despesa_documento_2026.zip",
+  "finished_at_utc": "2026-10-29T15:12:39.609531+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 17460661,
+      "finished_at_utc": "2026-10-29T15:12:39.608297+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=41740",
+        "content-length": "17460661",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:12:35 GMT",
+        "etag": "\"10a6db5-65ef5fb394b85\"",
+        "last-modified": "Thu, 29 Oct 2026 07:53:55 GMT"
+      },
+      "http_get_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 07:53:55 GMT"
+        ],
+        [
+          "etag",
+          "\"10a6db5-65ef5fb394b85\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "17460661"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=41740"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:12:35 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_get_protocol": "HTTP/2 200",
+      "http_get_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Thu, 29 Oct 2026 07:53:55 GMT\r\netag: \"10a6db5-65ef5fb394b85\"\r\naccept-ranges: bytes\r\ncontent-length: 17460661\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=41740\r\ndate: Thu, 29 Oct 2026 15:12:35 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_get_status": 200,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/despesa_documento_2026.zip",
+      "http_length_verification": "matched",
+      "http_metadata_fields": [
+        [
+          "last-modified",
+          "Thu, 29 Oct 2026 07:53:55 GMT"
+        ],
+        [
+          "etag",
+          "\"10a6db5-65ef5fb394b85\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=41741"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 15:12:34 GMT"
+        ],
+        [
+          "content-range",
+          "bytes 0-0/17460661"
+        ],
+        [
+          "content-length",
+          "1"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_metadata_protocol": "HTTP/2 206",
+      "http_metadata_range": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=41741",
+        "content-length": "1",
+        "content-range": "bytes 0-0/17460661",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 15:12:34 GMT",
+        "etag": "\"10a6db5-65ef5fb394b85\"",
+        "last-modified": "Thu, 29 Oct 2026 07:53:55 GMT"
+      },
+      "http_metadata_raw_headers_latin1": "HTTP/2 206 \r\nlast-modified: Thu, 29 Oct 2026 07:53:55 GMT\r\netag: \"10a6db5-65ef5fb394b85\"\r\naccept-ranges: bytes\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=41741\r\ndate: Thu, 29 Oct 2026 15:12:34 GMT\r\ncontent-range: bytes 0-0/17460661\r\ncontent-length: 1\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "metadata_method": "range",
+      "metadata_sample_sha256": "5c62e091b8c0565f1bafad0dad5934276143ae2ccef7a5381e8ada5b1a8d26d2",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/despesa_documento_2026.zip",
+      "sha1": "0564c48843a1d948aaa373211d61726381857cea",
+      "sha256": "3a71170eab5525f71a73a96cff134d9cee8695f22d9463044b55caae464540bb",
+      "sha512": "47ef6b71a051d836e050fc58c8a58ba710744556e6272ffc68e08076924374a1a1c03bb3c813f7045d8e0f72aa050a2655358505a7014d9a7f35cd7aa64163a7",
+      "started_at_utc": "2026-10-29T15:12:34.286991+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/despesa_documento_2026.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T15:12:34.285119+00:00",
+  "transport_requested": "curl"
+}

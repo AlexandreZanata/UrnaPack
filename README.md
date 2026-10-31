@@ -12,9 +12,24 @@ preservar a evidência e reproduzir análises dos dados das urnas brasileiras,
 
 > Etapa 4 concluída para o acervo local de MT: matriz de codecs, dicionários,
 > Parquet, consultas e restauração integral executadas. Arquivo FORENSIC local
-> v2 com recibo vinculado; cache BU web regenerável. A liberação analítica e
-> publicação continuam nas etapas seguintes.
-> [Resultados e garantias](docs/RESULTADO-COMPRESSAO-MT.md).
+> v2 com recibo vinculado; cache BU web regenerável.
+> Etapa 5A executada para o BU web de MT 2026 t1: análise descritiva aprovada,
+> com seções físicas bloqueadas e reconciliações pendentes.
+> [Resultados da compressão](docs/RESULTADO-COMPRESSAO-MT.md) ·
+> [Etapa 5A](docs/ETAPA-5A.md).
+
+Auditoria específica das quatro imagens sobre o segundo turno presidencial
+de 2026: [relatório](auditoria/2026/RELATORIO.md),
+[conclusões](auditoria/2026/CONCLUSOES.md) e
+[dados tratados comprimidos](https://github.com/AlexandreZanata/UrnaPack/releases/tag/audit-2026-buweb-v1).
+O catálogo nacional tem aquisição e integridade conferidas. Os diagnósticos
+dos logs permanecem explícitos; não há declaração de conciliação integral,
+fraude ou autenticidade eleitoral.
+
+As rotinas históricas revisadas têm contrato e comandos em
+[spec/historico-v2.md](spec/historico-v2.md).
+As evidências, validações e instruções para repetir a consolidação estão em
+[docs/CONSOLIDACAO-2026.md](docs/CONSOLIDACAO-2026.md).
 
 ## Planejamento e próxima entrega
 
@@ -25,6 +40,8 @@ preservar a evidência e reproduzir análises dos dados das urnas brasileiras,
   de catalogação para novos anos, turnos e abrangências.
 - [Plano analítico](docs/PLANO-ANALISE.md): validação por uso desde o MVP.
 - [Etapa 4](docs/ETAPA-4.md): experimento completo, custos e reprodução.
+- [Etapa 5A](docs/ETAPA-5A.md): validação analítica e análise descritiva do
+  BU web de MT 2026 t1; contrato em [spec/analyze-v1.md](spec/analyze-v1.md).
 
 Os documentos distinguem a base implementada das garantias planejadas.
 O mapeador está em `scripts/map_raw_data.py`; resultados e limites da revisão
@@ -51,6 +68,9 @@ estão em [Revisão da Etapa 1](docs/REVISAO-ETAPA-1.md).
   `restore` — restauração integral do arquivo FORENSIC.
 - `queries` — controles Q1/Q2 e seção/cargo de referência. A automação
   `scripts/compression_stage.py` compara as representações e gera o bundle mínimo.
+- `analyze` — validação e análise descritiva controlada do BU web de MT 2026 t1;
+  saídas JSON/CSV/Markdown com proveniência, controles e status por uso.
+  [Contrato](spec/analyze-v1.md) e [resultados](docs/ETAPA-5A.md).
 - `verify` — relê o manifesto de origem do disco, recalcula SHA-256 e
   aprova/reprova arquivos ausentes, truncados ou alterados. Emite JSON + texto;
   exit 1 em divergência detectada. As correções da Etapa 1 rejeitam versão

@@ -1,0 +1,164 @@
+{
+  "catalog_sha256": "a593b0e5813b1a848f11583cb3cb0c9c2fe9bf15ec5081ed469705140303bb1b",
+  "errors": 0,
+  "exclude": "",
+  "filter": "_2026_2t_SP.zip",
+  "finished_at_utc": "2026-10-29T18:06:32.970269+00:00",
+  "format_version": 1,
+  "items": [
+    {
+      "bytes": 25758064523,
+      "finished_at_utc": "2026-10-29T18:06:32.969045+00:00",
+      "http_get": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=36129",
+        "content-length": "8268732863",
+        "content-range": "bytes 17489331660-25758064522/25758064523",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 16:37:13 GMT",
+        "etag": "\"5ff4cdf8b-65ec3647fe180\"",
+        "last-modified": "Mon, 26 Oct 2026 19:32:38 GMT"
+      },
+      "http_get_fields": [
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "last-modified",
+          "Mon, 26 Oct 2026 19:32:38 GMT"
+        ],
+        [
+          "etag",
+          "\"5ff4cdf8b-65ec3647fe180\""
+        ],
+        [
+          "cache-control",
+          "max-age=36129"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 16:37:13 GMT"
+        ],
+        [
+          "content-range",
+          "bytes 17489331660-25758064522/25758064523"
+        ],
+        [
+          "content-length",
+          "8268732863"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_get_protocol": "HTTP/2 206",
+      "http_get_raw_headers_latin1": "HTTP/2 206 \r\naccept-ranges: bytes\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\nlast-modified: Mon, 26 Oct 2026 19:32:38 GMT\r\netag: \"5ff4cdf8b-65ec3647fe180\"\r\ncache-control: max-age=36129\r\ndate: Thu, 29 Oct 2026 16:37:13 GMT\r\ncontent-range: bytes 17489331660-25758064522/25758064523\r\ncontent-length: 8268732863\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "http_get_status": 206,
+      "http_get_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_SP.zip",
+      "http_head": {
+        "accept-ranges": "bytes",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "POST, GET, OPTIONS, DELETE",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=93600",
+        "cache-control": "max-age=43200",
+        "content-length": "25758064523",
+        "content-type": "application/zip",
+        "date": "Thu, 29 Oct 2026 16:37:12 GMT",
+        "etag": "\"5ff4cdf8b-65ec3647fe180\"",
+        "last-modified": "Mon, 26 Oct 2026 19:32:38 GMT"
+      },
+      "http_length_verification": "matched",
+      "http_metadata_fields": [
+        [
+          "last-modified",
+          "Mon, 26 Oct 2026 19:32:38 GMT"
+        ],
+        [
+          "etag",
+          "\"5ff4cdf8b-65ec3647fe180\""
+        ],
+        [
+          "accept-ranges",
+          "bytes"
+        ],
+        [
+          "content-length",
+          "25758064523"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "content-type",
+          "application/zip"
+        ],
+        [
+          "access-control-allow-headers",
+          "*"
+        ],
+        [
+          "access-control-allow-methods",
+          "POST, GET, OPTIONS, DELETE"
+        ],
+        [
+          "access-control-allow-origin",
+          "*"
+        ],
+        [
+          "cache-control",
+          "max-age=43200"
+        ],
+        [
+          "date",
+          "Thu, 29 Oct 2026 16:37:12 GMT"
+        ],
+        [
+          "alt-svc",
+          "h3=\":443\"; ma=93600"
+        ]
+      ],
+      "http_metadata_protocol": "HTTP/2 200",
+      "http_metadata_raw_headers_latin1": "HTTP/2 200 \r\nlast-modified: Mon, 26 Oct 2026 19:32:38 GMT\r\netag: \"5ff4cdf8b-65ec3647fe180\"\r\naccept-ranges: bytes\r\ncontent-length: 25758064523\r\naccess-control-allow-origin: *\r\ncontent-type: application/zip\r\naccess-control-allow-headers: *\r\naccess-control-allow-methods: POST, GET, OPTIONS, DELETE\r\naccess-control-allow-origin: *\r\ncache-control: max-age=43200\r\ndate: Thu, 29 Oct 2026 16:37:12 GMT\r\nalt-svc: h3=\":443\"; ma=93600\r\n\r\n",
+      "integrity_scope": "bytes e sidecar quando listado; assinatura digital não verificada",
+      "metadata_method": "head",
+      "official_checks": [],
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_SP.zip",
+      "sha1": "2a1c7430c558b96ba16666943d67a8979093e8fe",
+      "sha256": "3c3b4692e6c692a5aa301b300bbe7bd0aa7ecdb4f6e8bd72bc66c6dd7b7d933b",
+      "sha512": "50570339df9c1eff2030ef9e7dacb1d29adda066f88672e72fc48eb74f6b5e7490a1e97fb66a02625c8b8142c47609bbdd5c4d87493e9e5b3da72ec706ddeaf9",
+      "started_at_utc": "2026-10-29T16:37:12.195632+00:00",
+      "status": "downloaded",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_2t_SP.zip"
+    }
+  ],
+  "started_at_utc": "2026-10-29T16:37:12.190343+00:00",
+  "transport_requested": "curl"
+}

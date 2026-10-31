@@ -1,0 +1,1377 @@
+{
+  "format_version": 1,
+  "scope": "Presidente, 2026, segundo turno, CD_PLEITO=3221, CD_ELEICAO=6258; cobertura dada pelos membros listados",
+  "time_policy": "DT_ENCERRAMENTO lexical, sem ajuste de fuso. Cortes exatos em segundos: <=17:00:00; (17:00:00,17:15:59]; [17:16:00,18:59:59]; [19:00:00,23:59:59]. Não representa horário de cada voto.",
+  "source_members": [
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/AC/bweb_2t_AC_261020260742.csv",
+      "sha256": "30b79be4214eef80f9260c8a80586cd451e00a2b991c759fd7467e328b45f209",
+      "bytes": 7787974,
+      "uf": "AC",
+      "zip_sha256": "35c1f1676e04d0824eb57df158f40d3c1e943926fd4754933a9d2863ccf06e1b",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip",
+      "member": "bweb_2t_AC_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/AL/bweb_2t_AL_261020260742.csv",
+      "sha256": "028a81bd3667779d0350649ac35f3e20f2f965459755a80b066d313896510921",
+      "bytes": 12121461,
+      "uf": "AL",
+      "zip_sha256": "c42eb06a14d00901c1e2023560eb561933c11837cbf992a70228fd7a389e6be1",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip",
+      "member": "bweb_2t_AL_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/AM/bweb_2t_AM_261020260742.csv",
+      "sha256": "95432262fa28fa6f524da4e56540be28f4220901c1b87d5306f8a8e2f35166b2",
+      "bytes": 27702556,
+      "uf": "AM",
+      "zip_sha256": "c6312af9d25533203e6b0c660f6e48d072cf86f03c952f5af51565503ebb2167",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip",
+      "member": "bweb_2t_AM_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/AP/bweb_2t_AP_261020260742.csv",
+      "sha256": "71585c9cb0b01958bf214be1ec5d7d28a4e11a42a258ec0438a8a1c3a3ab09ea",
+      "bytes": 3056017,
+      "uf": "AP",
+      "zip_sha256": "56e4ac4f714d84f1592b3507eb63a632439abf37601cb22eea8a1d1a0bfa4a4a",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip",
+      "member": "bweb_2t_AP_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/BA/bweb_2t_BA_261020260742.csv",
+      "sha256": "c768be1e5757c28703e020a72a83fd52e91c2de0efb9a0e55afe715c82f69b16",
+      "bytes": 60634146,
+      "uf": "BA",
+      "zip_sha256": "b7da4dd73937c74a76e1d5307550085760ba0c1b1be1073f575d9f29afee553c",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip",
+      "member": "bweb_2t_BA_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/CE/bweb_2t_CE_261020260742.csv",
+      "sha256": "eca5dd5bc1e4aaa74e8481ce5c64695133fc54ef338811df087b53f20fc6703d",
+      "bytes": 40143027,
+      "uf": "CE",
+      "zip_sha256": "e06473e8f738e7d323d31261c2b4f785f5b09671847390fa0dd31a40847466cf",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip",
+      "member": "bweb_2t_CE_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/DF/bweb_2t_DF_261020260742.csv",
+      "sha256": "ccbad83c2426ce83d6df6fb97a5aeab16b45c4e722124dc8fb20ec19e990d15f",
+      "bytes": 24424285,
+      "uf": "DF",
+      "zip_sha256": "da7ea3674e771acc7a7780ba7220f82d1c88458186c6a6e86df71e7e425ce2d4",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip",
+      "member": "bweb_2t_DF_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/ES/bweb_2t_ES_261020260742.csv",
+      "sha256": "2f7d6242919bd6b41838a19206a1cc7a1dc0c3be05cd995650ae79cb7d0aae79",
+      "bytes": 34889872,
+      "uf": "ES",
+      "zip_sha256": "54d636f7d22d51824a1245fa12aeebe679f7eddf0189ac5d0d4a9a2335d2c5cb",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip",
+      "member": "bweb_2t_ES_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/GO/bweb_2t_GO_261020260742.csv",
+      "sha256": "2e6b7d0c9dcdaec64c9af8cee692706895096160def3775dc4628532778aa03a",
+      "bytes": 26992772,
+      "uf": "GO",
+      "zip_sha256": "f2c29ffbf465dbaf82a9d26e7ae040d20cddc914a1ef8d225410650aaff1f308",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip",
+      "member": "bweb_2t_GO_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/MA/bweb_2t_MA_261020260742.csv",
+      "sha256": "4585d748b35de19e2aa133966f0241e657cf193b19c1d90bbe64880b2c264dce",
+      "bytes": 29265535,
+      "uf": "MA",
+      "zip_sha256": "38b2a6180190729dfece31f1d22d30ebce257467e539277d678d67089ea1a9dd",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip",
+      "member": "bweb_2t_MA_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/MG/bweb_2t_MG_261020260742.csv",
+      "sha256": "93d50fbe417bb389e818c0dba0a196a9cc44dc8b42d6ec8da8960d055c5e8111",
+      "bytes": 90084704,
+      "uf": "MG",
+      "zip_sha256": "56a96873e0c03508d0a58060a09ef8f8660aa80e8fd36289fd3b25c1c71b7839",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip",
+      "member": "bweb_2t_MG_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/MS/bweb_2t_MS_261020260742.csv",
+      "sha256": "3de378ca3e4f519cc3878833900b8795d3258e837e4a1f085f8537c3b535dbf9",
+      "bytes": 11819925,
+      "uf": "MS",
+      "zip_sha256": "c47916ff1aca6d5c6d991d2687f67e9f09e9a1dbd16e3fcf855f7602923677e9",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip",
+      "member": "bweb_2t_MS_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/MT/bweb_2t_MT_261020260742.csv",
+      "sha256": "3cc567a99a8167e79678ab6107a4d773e5af0628364b3a9b5151cffe0ba9ec02",
+      "bytes": 13675646,
+      "uf": "MT",
+      "zip_sha256": "5303d588838ed3b40499f86b0758237da1eb1b594449550f753fdecb152bd569",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip",
+      "member": "bweb_2t_MT_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/PA/bweb_2t_PA_261020260742.csv",
+      "sha256": "d6008e76d3e70cc51c8c42c8bc185e479fb8fa64e47b2943e26026ea1e6cb6df",
+      "bytes": 33481174,
+      "uf": "PA",
+      "zip_sha256": "f50720b4ef7a99f1167bff6ac24959b035901e586514a4d4b15f5538fd12073b",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip",
+      "member": "bweb_2t_PA_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/PB/bweb_2t_PB_261020260742.csv",
+      "sha256": "c47bdd6196aabc3d1914180bb238df27b76d442f4feadeb788176d5662722141",
+      "bytes": 18289946,
+      "uf": "PB",
+      "zip_sha256": "07cac4be3e1ab49386eee5e9ba72b5aaf6626f9479775459c614d423d5642350",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PB_261020260742.zip",
+      "member": "bweb_2t_PB_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/PE/bweb_2t_PE_261020260742.csv",
+      "sha256": "142539e2c847d28f5878fafac04dc96c69dddfa98cb3feb59c255cfd0d5f89df",
+      "bytes": 36788510,
+      "uf": "PE",
+      "zip_sha256": "9c917e885a2d068821f226f1524cf063bb623acc809ec37d1387f3b05df80508",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip",
+      "member": "bweb_2t_PE_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/PI/bweb_2t_PI_261020260742.csv",
+      "sha256": "f32acf812df94797864f28f8711c5a3d51d3b2f7f497b666db5450f4f3ce326a",
+      "bytes": 16738697,
+      "uf": "PI",
+      "zip_sha256": "d0fd3ff93cc97ef0e2ae35dc3e6a1a54ce73ad6b9e299cbf676d27007d1c38b3",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip",
+      "member": "bweb_2t_PI_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/PR/bweb_2t_PR_261020260742.csv",
+      "sha256": "e6571f9d516f898f689feb4dfa237a6513d84b8ec869e96be40d10845bf10cd5",
+      "bytes": 46790542,
+      "uf": "PR",
+      "zip_sha256": "32e8a0bfc7e9fe76db9ce0e4bc3cfd39eff4ef46ca376d98764f605cfed2147f",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip",
+      "member": "bweb_2t_PR_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/RJ/bweb_2t_RJ_261020260742.csv",
+      "sha256": "24c04a47cf78af49ee1e14109c4a1f8579df46265533e56c9cb0b51acd944d94",
+      "bytes": 65654095,
+      "uf": "RJ",
+      "zip_sha256": "d13abd46e8f365900f65c94dbc6ccd334a7ff65e2c759a24f5ebd13f4b0aceb5",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip",
+      "member": "bweb_2t_RJ_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/RN/bweb_2t_RN_261020260742.csv",
+      "sha256": "3735522cf7200a7ab9bb9d617c0b0801c0fe8e597f9ba0df68e7f503f7a79a1a",
+      "bytes": 28189615,
+      "uf": "RN",
+      "zip_sha256": "cf48f4e878bace44e0b3f1ab0c133e0fd59970ca9fc6f317141a9cef7f28d423",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RN_261020260742.zip",
+      "member": "bweb_2t_RN_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/RO/bweb_2t_RO_261020260742.csv",
+      "sha256": "56a302d23f104573920f9b9c6d4ed942ae66386f771c4ac79ec04ed6403e9ce4",
+      "bytes": 7610801,
+      "uf": "RO",
+      "zip_sha256": "dec6d43ae423a66722b50fda80e6dfc4378482fc141a390bfca367fd9549ede3",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip",
+      "member": "bweb_2t_RO_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/RR/bweb_2t_RR_261020260742.csv",
+      "sha256": "59924db5046e173a23339bf68b382ed4a70140580944c5b91f33a4df3f82dbc0",
+      "bytes": 2339778,
+      "uf": "RR",
+      "zip_sha256": "6554fcbd0c55cf90abf970cb83125bfe7b35e748d676fe6fe60bdbca0a4262af",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip",
+      "member": "bweb_2t_RR_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/RS/bweb_2t_RS_261020260742.csv",
+      "sha256": "9bf457bab4ece14dd122725c6d9dd6010925b52c193381c8a4efd50297659082",
+      "bytes": 47289327,
+      "uf": "RS",
+      "zip_sha256": "e4e7fff8d09e588246f5e55750e78cdfe7e4de995361bcd11ad3e7445538e9e3",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip",
+      "member": "bweb_2t_RS_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/SC/bweb_2t_SC_261020260742.csv",
+      "sha256": "71532075ddb2289dc5fab21dd463209ff26193b524da0a0723974013084405ae",
+      "bytes": 29698108,
+      "uf": "SC",
+      "zip_sha256": "6f169b88a07858e920b3c9e974f3ae5238f36dfe6e6d138a1758764c5b4de697",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip",
+      "member": "bweb_2t_SC_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/SE/bweb_2t_SE_261020260742.csv",
+      "sha256": "605d3c8992f4d075f0a40d42aba47a9fc14a6cd5ae2e3521795ba1dc7303d394",
+      "bytes": 10064205,
+      "uf": "SE",
+      "zip_sha256": "4dfc5ee64ed4f6e71aedc133afc4e0376eaa5dcd9c0545ab9aa29d320a77fc0a",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SE_261020260742.zip",
+      "member": "bweb_2t_SE_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/SP/bweb_2t_SP_261020260742.csv",
+      "sha256": "1d9d9035f54dd96b1c2862d7bfa389e9c544d6a03a60a921dffc5c03c74530bb",
+      "bytes": 181487605,
+      "uf": "SP",
+      "zip_sha256": "ffadfa193e68261e2e8aa667b3075e6bc8172b0b6629c752d3b8cf680ac10c4e",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip",
+      "member": "bweb_2t_SP_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/TO/bweb_2t_TO_261020260742.csv",
+      "sha256": "b9e17132b06e50d081fc366f8a21da63d5cf654c29f6c86c9726e183db5cad28",
+      "bytes": 15196303,
+      "uf": "TO",
+      "zip_sha256": "f2dfdafb28d13aae5958ad6d04f604442c10456d6819b84a21a1f52a49db0f6d",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip",
+      "member": "bweb_2t_TO_261020260742.csv"
+    },
+    {
+      "path": "/data/urnapack/auditoria-2026/extraidos/buweb-2t/ZZ/bweb_2t_ZZ_261020260742.csv",
+      "sha256": "ed214c51d439f215eb7fb5bf88033c17a7afb65e7ed2f8f4152a85eca79cfd61",
+      "bytes": 2179102,
+      "uf": "ZZ",
+      "zip_sha256": "f088ff08053c1d95ff069f644fed434d290c87f2d9281ac3a9fac0a953cbc558",
+      "zip_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ZZ_261020260742.zip",
+      "member": "bweb_2t_ZZ_261020260742.csv"
+    }
+  ],
+  "records_all_cargos": 2088107,
+  "excluded_records_by_cargo": {
+    "-1": 2,
+    "3": 157002
+  },
+  "presidential": {
+    "sections": 499205,
+    "turnout": 128236074,
+    "biometric_not_enabled": 8632488,
+    "votes": {
+      "13": 64256232,
+      "22": 59826041,
+      "95": 1430496,
+      "96": 2723305
+    }
+  },
+  "by_uf": {
+    "AC": {
+      "sections": 2270,
+      "turnout": 453654,
+      "biometric_not_enabled": 22654,
+      "votes": {
+        "13": 144513,
+        "22": 287715,
+        "95": 5016,
+        "96": 16410
+      }
+    },
+    "AL": {
+      "sections": 7101,
+      "turnout": 1951632,
+      "biometric_not_enabled": 135874,
+      "votes": {
+        "13": 1152621,
+        "22": 744140,
+        "95": 16983,
+        "96": 37888
+      }
+    },
+    "AM": {
+      "sections": 8157,
+      "turnout": 2192059,
+      "biometric_not_enabled": 118955,
+      "votes": {
+        "13": 1145783,
+        "22": 975245,
+        "95": 18324,
+        "96": 52707
+      }
+    },
+    "AP": {
+      "sections": 1914,
+      "turnout": 429975,
+      "biometric_not_enabled": 19685,
+      "votes": {
+        "13": 222968,
+        "22": 198674,
+        "95": 3320,
+        "96": 5013
+      }
+    },
+    "BA": {
+      "sections": 35476,
+      "turnout": 9422047,
+      "biometric_not_enabled": 702255,
+      "votes": {
+        "13": 6485258,
+        "22": 2608761,
+        "95": 92721,
+        "96": 235307
+      }
+    },
+    "CE": {
+      "sections": 23765,
+      "turnout": 6024843,
+      "biometric_not_enabled": 429294,
+      "votes": {
+        "13": 4036124,
+        "22": 1819478,
+        "95": 56386,
+        "96": 112855
+      }
+    },
+    "DF": {
+      "sections": 6969,
+      "turnout": 1868280,
+      "biometric_not_enabled": 84114,
+      "votes": {
+        "13": 825224,
+        "22": 979542,
+        "95": 22386,
+        "96": 41128
+      }
+    },
+    "ES": {
+      "sections": 9844,
+      "turnout": 2409214,
+      "biometric_not_enabled": 151401,
+      "votes": {
+        "13": 1001965,
+        "22": 1294504,
+        "95": 33080,
+        "96": 79665
+      }
+    },
+    "GO": {
+      "sections": 15686,
+      "turnout": 4047280,
+      "biometric_not_enabled": 268656,
+      "votes": {
+        "13": 1585555,
+        "22": 2345334,
+        "95": 43214,
+        "96": 73177
+      }
+    },
+    "MA": {
+      "sections": 18093,
+      "turnout": 4127771,
+      "biometric_not_enabled": 259852,
+      "votes": {
+        "13": 2808231,
+        "22": 1229971,
+        "95": 30855,
+        "96": 58714
+      }
+    },
+    "MG": {
+      "sections": 52062,
+      "turnout": 13044203,
+      "biometric_not_enabled": 887910,
+      "votes": {
+        "13": 6351099,
+        "22": 6241786,
+        "95": 164141,
+        "96": 287177
+      }
+    },
+    "MS": {
+      "sections": 7106,
+      "turnout": 1594460,
+      "biometric_not_enabled": 115545,
+      "votes": {
+        "13": 628973,
+        "22": 927892,
+        "95": 14958,
+        "96": 22637
+      }
+    },
+    "MT": {
+      "sections": 8287,
+      "turnout": 2085334,
+      "biometric_not_enabled": 137579,
+      "votes": {
+        "13": 694167,
+        "22": 1351099,
+        "95": 15431,
+        "96": 24637
+      }
+    },
+    "PA": {
+      "sections": 20827,
+      "turnout": 4989573,
+      "biometric_not_enabled": 277373,
+      "votes": {
+        "13": 2690449,
+        "22": 2199940,
+        "95": 36501,
+        "96": 62683
+      }
+    },
+    "PB": {
+      "sections": 10712,
+      "turnout": 2743560,
+      "biometric_not_enabled": 199353,
+      "votes": {
+        "13": 1794059,
+        "22": 865210,
+        "95": 25943,
+        "96": 58348
+      }
+    },
+    "PE": {
+      "sections": 21418,
+      "turnout": 6126467,
+      "biometric_not_enabled": 399764,
+      "votes": {
+        "13": 4117513,
+        "22": 1832554,
+        "95": 56758,
+        "96": 119642
+      }
+    },
+    "PI": {
+      "sections": 10225,
+      "turnout": 2239830,
+      "biometric_not_enabled": 201641,
+      "votes": {
+        "13": 1653989,
+        "22": 525859,
+        "95": 16137,
+        "96": 43845
+      }
+    },
+    "PR": {
+      "sections": 27142,
+      "turnout": 7059339,
+      "biometric_not_enabled": 493321,
+      "votes": {
+        "13": 2566504,
+        "22": 4291444,
+        "95": 82572,
+        "96": 118819
+      }
+    },
+    "RJ": {
+      "sections": 37675,
+      "turnout": 10077449,
+      "biometric_not_enabled": 750301,
+      "votes": {
+        "13": 4565393,
+        "22": 5169033,
+        "95": 111682,
+        "96": 231341
+      }
+    },
+    "RN": {
+      "sections": 8115,
+      "turnout": 2232823,
+      "biometric_not_enabled": 180838,
+      "votes": {
+        "13": 1413596,
+        "22": 737409,
+        "95": 19939,
+        "96": 61879
+      }
+    },
+    "RO": {
+      "sections": 4698,
+      "turnout": 988489,
+      "biometric_not_enabled": 61938,
+      "votes": {
+        "13": 294446,
+        "22": 674382,
+        "95": 8361,
+        "96": 11300
+      }
+    },
+    "RR": {
+      "sections": 1519,
+      "turnout": 308597,
+      "biometric_not_enabled": 12646,
+      "votes": {
+        "13": 83505,
+        "22": 219675,
+        "95": 2176,
+        "96": 3241
+      }
+    },
+    "RS": {
+      "sections": 27547,
+      "turnout": 6889638,
+      "biometric_not_enabled": 582380,
+      "votes": {
+        "13": 2824552,
+        "22": 3874378,
+        "95": 89463,
+        "96": 101245
+      }
+    },
+    "SC": {
+      "sections": 17326,
+      "turnout": 4762303,
+      "biometric_not_enabled": 357632,
+      "votes": {
+        "13": 1418314,
+        "22": 3220071,
+        "95": 48674,
+        "96": 75244
+      }
+    },
+    "SE": {
+      "sections": 5923,
+      "turnout": 1466659,
+      "biometric_not_enabled": 102204,
+      "votes": {
+        "13": 989041,
+        "22": 433354,
+        "95": 13135,
+        "96": 31129
+      }
+    },
+    "SP": {
+      "sections": 103656,
+      "turnout": 27364389,
+      "biometric_not_enabled": 1632098,
+      "votes": {
+        "13": 12119274,
+        "22": 14139178,
+        "95": 389606,
+        "96": 716331
+      }
+    },
+    "TO": {
+      "sections": 4384,
+      "turnout": 954763,
+      "biometric_not_enabled": 47225,
+      "votes": {
+        "13": 442962,
+        "22": 467916,
+        "95": 8059,
+        "96": 35826
+      }
+    },
+    "ZZ": {
+      "sections": 1308,
+      "turnout": 381443,
+      "biometric_not_enabled": 0,
+      "votes": {
+        "13": 200154,
+        "22": 171497,
+        "95": 4675,
+        "96": 5117
+      }
+    }
+  },
+  "raw_clock_windows": {
+    "17h16m00s_ate_18h59m59s": {
+      "sections": 2472,
+      "turnout": 674799,
+      "biometric_not_enabled": 44939,
+      "votes": {
+        "13": 372470,
+        "22": 279102,
+        "95": 7419,
+        "96": 15808
+      }
+    },
+    "apos_17h00m00s_ate_17h15m59s": {
+      "sections": 458339,
+      "turnout": 118083058,
+      "biometric_not_enabled": 8000352,
+      "votes": {
+        "13": 59904055,
+        "22": 54310880,
+        "95": 1337757,
+        "96": 2530366
+      }
+    },
+    "ate_17h00m00s": {
+      "sections": 32025,
+      "turnout": 7619112,
+      "biometric_not_enabled": 469108,
+      "votes": {
+        "13": 2990292,
+        "22": 4433690,
+        "95": 64247,
+        "96": 130883
+      }
+    },
+    "desde_19h00m00s": {
+      "sections": 6342,
+      "turnout": 1858274,
+      "biometric_not_enabled": 118089,
+      "votes": {
+        "13": 988970,
+        "22": 802016,
+        "95": 21061,
+        "96": 46227
+      }
+    }
+  },
+  "raw_minute_windows": {
+    "17h01m00s_ate_17h15m59s": {
+      "sections": 339593,
+      "turnout": 88071750,
+      "biometric_not_enabled": 5845487,
+      "votes": {
+        "13": 45525188,
+        "22": 39627772,
+        "95": 1000084,
+        "96": 1918706
+      }
+    },
+    "17h16m00s_ate_18h59m59s": {
+      "sections": 2472,
+      "turnout": 674799,
+      "biometric_not_enabled": 44939,
+      "votes": {
+        "13": 372470,
+        "22": 279102,
+        "95": 7419,
+        "96": 15808
+      }
+    },
+    "ate_17h00m59s": {
+      "sections": 150771,
+      "turnout": 37630420,
+      "biometric_not_enabled": 2623973,
+      "votes": {
+        "13": 17369159,
+        "22": 19116798,
+        "95": 401920,
+        "96": 742543
+      }
+    },
+    "desde_19h00m00s": {
+      "sections": 6342,
+      "turnout": 1858274,
+      "biometric_not_enabled": 118089,
+      "votes": {
+        "13": 988970,
+        "22": 802016,
+        "95": 21061,
+        "96": 46227
+      }
+    }
+  },
+  "raw_strict_after_19": {
+    "sections": 6326,
+    "turnout": 1853265,
+    "biometric_not_enabled": 117672,
+    "votes": {
+      "13": 986430,
+      "22": 799733,
+      "95": 21004,
+      "96": 46098
+    }
+  },
+  "raw_after_19_by_uf": {
+    "AL": {
+      "sections": 2,
+      "turnout": 535,
+      "biometric_not_enabled": 57,
+      "votes": {
+        "13": 362,
+        "22": 154,
+        "95": 7,
+        "96": 12
+      }
+    },
+    "BA": {
+      "sections": 936,
+      "turnout": 290085,
+      "biometric_not_enabled": 16420,
+      "votes": {
+        "13": 201695,
+        "22": 77225,
+        "95": 2973,
+        "96": 8192
+      }
+    },
+    "DF": {
+      "sections": 17,
+      "turnout": 3842,
+      "biometric_not_enabled": 188,
+      "votes": {
+        "13": 1718,
+        "22": 1994,
+        "95": 53,
+        "96": 77
+      }
+    },
+    "ES": {
+      "sections": 2,
+      "turnout": 530,
+      "biometric_not_enabled": 39,
+      "votes": {
+        "13": 167,
+        "22": 338,
+        "95": 5,
+        "96": 20
+      }
+    },
+    "GO": {
+      "sections": 1,
+      "turnout": 309,
+      "biometric_not_enabled": 8,
+      "votes": {
+        "13": 79,
+        "22": 216,
+        "95": 3,
+        "96": 11
+      }
+    },
+    "MA": {
+      "sections": 3,
+      "turnout": 634,
+      "biometric_not_enabled": 58,
+      "votes": {
+        "13": 519,
+        "22": 104,
+        "95": 2,
+        "96": 9
+      }
+    },
+    "MG": {
+      "sections": 1,
+      "turnout": 96,
+      "biometric_not_enabled": 9,
+      "votes": {
+        "13": 78,
+        "22": 18
+      }
+    },
+    "PA": {
+      "sections": 8,
+      "turnout": 2285,
+      "biometric_not_enabled": 118,
+      "votes": {
+        "13": 1218,
+        "22": 995,
+        "95": 24,
+        "96": 48
+      }
+    },
+    "PB": {
+      "sections": 275,
+      "turnout": 83750,
+      "biometric_not_enabled": 7862,
+      "votes": {
+        "13": 42964,
+        "22": 38777,
+        "95": 686,
+        "96": 1323
+      }
+    },
+    "PE": {
+      "sections": 657,
+      "turnout": 197323,
+      "biometric_not_enabled": 10905,
+      "votes": {
+        "13": 125972,
+        "22": 65779,
+        "95": 1851,
+        "96": 3721
+      }
+    },
+    "PI": {
+      "sections": 7,
+      "turnout": 1584,
+      "biometric_not_enabled": 137,
+      "votes": {
+        "13": 1136,
+        "22": 406,
+        "95": 11,
+        "96": 31
+      }
+    },
+    "PR": {
+      "sections": 1,
+      "turnout": 285,
+      "biometric_not_enabled": 19,
+      "votes": {
+        "13": 93,
+        "22": 180,
+        "95": 4,
+        "96": 8
+      }
+    },
+    "RJ": {
+      "sections": 2805,
+      "turnout": 837298,
+      "biometric_not_enabled": 56379,
+      "votes": {
+        "13": 370026,
+        "22": 437760,
+        "95": 9245,
+        "96": 20267
+      }
+    },
+    "RN": {
+      "sections": 3,
+      "turnout": 891,
+      "biometric_not_enabled": 53,
+      "votes": {
+        "13": 527,
+        "22": 346,
+        "95": 5,
+        "96": 13
+      }
+    },
+    "RS": {
+      "sections": 2,
+      "turnout": 499,
+      "biometric_not_enabled": 37,
+      "votes": {
+        "13": 239,
+        "22": 251,
+        "95": 3,
+        "96": 6
+      }
+    },
+    "SE": {
+      "sections": 51,
+      "turnout": 13885,
+      "biometric_not_enabled": 854,
+      "votes": {
+        "13": 8775,
+        "22": 4657,
+        "95": 133,
+        "96": 320
+      }
+    },
+    "SP": {
+      "sections": 1571,
+      "turnout": 424443,
+      "biometric_not_enabled": 24946,
+      "votes": {
+        "13": 233402,
+        "22": 172816,
+        "95": 6056,
+        "96": 12169
+      }
+    }
+  },
+  "extremes": {
+    "unanimity_13": 106,
+    "unanimity_22": 4,
+    "above_90_13": 6816,
+    "above_90_22": 378,
+    "at_least_90_13": 6899,
+    "at_least_90_22": 384,
+    "no_valid_votes": 0,
+    "valid_votes_histogram": {
+      "1-10": 7,
+      "101-200": 80155,
+      "11-50": 732,
+      "201-400": 413185,
+      "51-100": 4792,
+      ">400": 334
+    }
+  },
+  "extremes_by_uf": {
+    "AC": {
+      "unanimity_13": 3,
+      "unanimity_22": 0,
+      "above_90_13": 22,
+      "above_90_22": 5,
+      "at_least_90_13": 22,
+      "at_least_90_22": 5,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1290,
+        "201-400": 927,
+        "51-100": 53
+      }
+    },
+    "AL": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 95,
+      "above_90_22": 0,
+      "at_least_90_13": 95,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 798,
+        "11-50": 6,
+        "201-400": 6201,
+        "51-100": 25,
+        ">400": 71
+      }
+    },
+    "AM": {
+      "unanimity_13": 30,
+      "unanimity_22": 0,
+      "above_90_13": 373,
+      "above_90_22": 13,
+      "at_least_90_13": 373,
+      "at_least_90_22": 14,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1179,
+        "11-50": 15,
+        "201-400": 6880,
+        "51-100": 82,
+        ">400": 1
+      }
+    },
+    "AP": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 31,
+      "above_90_22": 0,
+      "at_least_90_13": 32,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 685,
+        "11-50": 8,
+        "201-400": 1191,
+        "51-100": 30
+      }
+    },
+    "BA": {
+      "unanimity_13": 4,
+      "unanimity_22": 0,
+      "above_90_13": 1345,
+      "above_90_22": 3,
+      "at_least_90_13": 1361,
+      "at_least_90_22": 3,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 5968,
+        "11-50": 58,
+        "201-400": 29058,
+        "51-100": 391,
+        ">400": 1
+      }
+    },
+    "CE": {
+      "unanimity_13": 2,
+      "unanimity_22": 0,
+      "above_90_13": 662,
+      "above_90_22": 1,
+      "at_least_90_13": 675,
+      "at_least_90_22": 1,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 4465,
+        "11-50": 31,
+        "201-400": 18964,
+        "51-100": 305
+      }
+    },
+    "DF": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 1,
+      "above_90_22": 0,
+      "at_least_90_13": 1,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 603,
+        "11-50": 5,
+        "201-400": 6357,
+        "51-100": 4
+      }
+    },
+    "ES": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 9,
+      "above_90_22": 2,
+      "at_least_90_13": 10,
+      "at_least_90_22": 2,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1880,
+        "11-50": 13,
+        "201-400": 7867,
+        "51-100": 84
+      }
+    },
+    "GO": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 9,
+      "above_90_22": 0,
+      "at_least_90_13": 9,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 2000,
+        "11-50": 13,
+        "201-400": 13607,
+        "51-100": 66
+      }
+    },
+    "MA": {
+      "unanimity_13": 20,
+      "unanimity_22": 0,
+      "above_90_13": 1549,
+      "above_90_22": 0,
+      "at_least_90_13": 1569,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 5646,
+        "11-50": 55,
+        "201-400": 11957,
+        "51-100": 435
+      }
+    },
+    "MG": {
+      "unanimity_13": 2,
+      "unanimity_22": 0,
+      "above_90_13": 173,
+      "above_90_22": 6,
+      "at_least_90_13": 178,
+      "at_least_90_22": 6,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "1-10": 2,
+        "101-200": 10148,
+        "11-50": 115,
+        "201-400": 41111,
+        "51-100": 655,
+        ">400": 31
+      }
+    },
+    "MS": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 88,
+      "above_90_22": 0,
+      "at_least_90_13": 88,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1919,
+        "11-50": 5,
+        "201-400": 5139,
+        "51-100": 43
+      }
+    },
+    "MT": {
+      "unanimity_13": 5,
+      "unanimity_22": 0,
+      "above_90_13": 62,
+      "above_90_22": 48,
+      "at_least_90_13": 62,
+      "at_least_90_22": 48,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1457,
+        "11-50": 15,
+        "201-400": 6748,
+        "51-100": 67
+      }
+    },
+    "PA": {
+      "unanimity_13": 16,
+      "unanimity_22": 2,
+      "above_90_13": 457,
+      "above_90_22": 51,
+      "at_least_90_13": 463,
+      "at_least_90_22": 52,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 4350,
+        "11-50": 100,
+        "201-400": 15826,
+        "51-100": 551
+      }
+    },
+    "PB": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 130,
+      "above_90_22": 0,
+      "at_least_90_13": 133,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "1-10": 1,
+        "101-200": 1519,
+        "11-50": 6,
+        "201-400": 9134,
+        "51-100": 50,
+        ">400": 2
+      }
+    },
+    "PE": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 667,
+      "above_90_22": 0,
+      "at_least_90_13": 673,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1861,
+        "11-50": 12,
+        "201-400": 19482,
+        "51-100": 55,
+        ">400": 8
+      }
+    },
+    "PI": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 870,
+      "above_90_22": 1,
+      "at_least_90_13": 878,
+      "at_least_90_22": 1,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 3615,
+        "11-50": 18,
+        "201-400": 6380,
+        "51-100": 212
+      }
+    },
+    "PR": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 12,
+      "above_90_22": 31,
+      "at_least_90_13": 12,
+      "at_least_90_22": 31,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 2428,
+        "11-50": 20,
+        "201-400": 24479,
+        "51-100": 215
+      }
+    },
+    "RJ": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 1,
+      "above_90_22": 2,
+      "at_least_90_13": 1,
+      "at_least_90_22": 2,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 4507,
+        "11-50": 13,
+        "201-400": 32970,
+        "51-100": 152,
+        ">400": 33
+      }
+    },
+    "RN": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 35,
+      "above_90_22": 0,
+      "at_least_90_13": 36,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 906,
+        "11-50": 7,
+        "201-400": 7159,
+        "51-100": 40,
+        ">400": 3
+      }
+    },
+    "RO": {
+      "unanimity_13": 1,
+      "unanimity_22": 0,
+      "above_90_13": 16,
+      "above_90_22": 19,
+      "at_least_90_13": 16,
+      "at_least_90_22": 19,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1804,
+        "11-50": 8,
+        "201-400": 2861,
+        "51-100": 25
+      }
+    },
+    "RR": {
+      "unanimity_13": 8,
+      "unanimity_22": 0,
+      "above_90_13": 23,
+      "above_90_22": 7,
+      "at_least_90_13": 23,
+      "at_least_90_22": 7,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 658,
+        "11-50": 5,
+        "201-400": 837,
+        "51-100": 19
+      }
+    },
+    "RS": {
+      "unanimity_13": 2,
+      "unanimity_22": 2,
+      "above_90_13": 20,
+      "above_90_22": 116,
+      "at_least_90_13": 21,
+      "at_least_90_22": 120,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 4568,
+        "11-50": 62,
+        "201-400": 22261,
+        "51-100": 656
+      }
+    },
+    "SC": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 2,
+      "above_90_22": 61,
+      "at_least_90_13": 2,
+      "at_least_90_22": 61,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1527,
+        "11-50": 17,
+        "201-400": 15637,
+        "51-100": 145
+      }
+    },
+    "SE": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 95,
+      "above_90_22": 0,
+      "at_least_90_13": 96,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1092,
+        "11-50": 5,
+        "201-400": 4806,
+        "51-100": 20
+      }
+    },
+    "SP": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 15,
+      "above_90_22": 2,
+      "at_least_90_13": 16,
+      "at_least_90_22": 2,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "1-10": 1,
+        "101-200": 11292,
+        "11-50": 85,
+        "201-400": 91962,
+        "51-100": 316
+      }
+    },
+    "TO": {
+      "unanimity_13": 7,
+      "unanimity_22": 0,
+      "above_90_13": 40,
+      "above_90_22": 0,
+      "at_least_90_13": 40,
+      "at_least_90_22": 0,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "101-200": 1784,
+        "11-50": 6,
+        "201-400": 2530,
+        "51-100": 64
+      }
+    },
+    "ZZ": {
+      "unanimity_13": 0,
+      "unanimity_22": 0,
+      "above_90_13": 14,
+      "above_90_22": 10,
+      "at_least_90_13": 14,
+      "at_least_90_22": 10,
+      "no_valid_votes": 0,
+      "valid_votes_histogram": {
+        "1-10": 3,
+        "101-200": 206,
+        "11-50": 29,
+        "201-400": 854,
+        "51-100": 32,
+        ">400": 184
+      }
+    }
+  },
+  "biometric_correlation": {
+    "n": 499205,
+    "pearson": 0.06787291700408062,
+    "spearman": 0.04475412710598751,
+    "method": "Seções com comparecimento>0 e válidos>0; x=QT_ELEI_BIOM_SEM_HABILITACAO/comparecimento; y=votos13/(votos13+votos22). Sem pesos; Spearman com postos médios nos empates; sem p-valor."
+  },
+  "within_municipality_pearson": 0.011966792182584046,
+  "benford_first_digit_counts_13": [
+    303561,
+    46387,
+    4702,
+    8441,
+    14038,
+    21254,
+    27944,
+    34209,
+    38665
+  ],
+  "benford_first_digit_counts_22": [
+    308841,
+    35992,
+    14049,
+    17148,
+    19275,
+    21693,
+    24321,
+    27177,
+    30603
+  ],
+  "benford_expected_probabilities": [
+    0.3010299956639812,
+    0.17609125905568124,
+    0.12493873660829992,
+    0.09691001300805642,
+    0.07918124604762482,
+    0.06694678963061322,
+    0.05799194697768673,
+    0.05115252244738129,
+    0.04575749056067514
+  ],
+  "benford_scope": "Primeiro dígito dos votos nominais POSITIVOS por candidato/seção; zeros excluídos da distribuição de dígitos. Descrição, sem classificação de fraude.",
+  "closing_missing": 27,
+  "limitations": [
+    "Sem hipótese causal ou conclusão de fraude/autenticidade.",
+    "Fuso de DT_ENCERRAMENTO não estabelecido pelo dicionário: recorte lexical não equivale a corte nacional BRT.",
+    "Agregação de seção não identifica o candidato votado por eleitores sem habilitação biométrica.",
+    "Sem logs processados, não há contagem de votos efetivamente depositados após 17h.",
+    "Ruralidade/coação não podem ser inferidas destes percentuais; classificação geográfica exige fonte própria.",
+    "Correlação descritiva não reproduz estudo original sem base, filtros e código dele.",
+    "Assinaturas de BU/RDV/JWS e cadeia de certificados não verificadas neste relatório."
+  ]
+}

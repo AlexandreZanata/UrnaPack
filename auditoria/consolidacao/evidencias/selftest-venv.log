@@ -1,0 +1,11 @@
+PASS manifesto correto aprova
+PASS hash incorreto reprova
+PASS arquivo ausente reprova
+PASS versão incompatível reprova
+PASS pacote truncado reprova
+PASS acima do limite reprova
+PASS índice duplicado reprova
+PASS nome inválido rejeitado
+PASS nome válido aceito
+
+9/9 cenários OK

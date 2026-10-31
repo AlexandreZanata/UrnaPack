@@ -1,0 +1,23 @@
+{
+  "all_nonpath_report_fields_equal": true,
+  "files": {
+    "/data/urnapack/auditoria-2026/tratados/teste-offline-1/audit-input-local.json": {
+      "bytes": 14096,
+      "sha256": "3f91c591496b1595f73edec1b2aef9bebc5209d89b3bbcbac9d343a216974520"
+    },
+    "/data/urnapack/auditoria-2026/tratados/teste-offline-1/audit-input-local.json.receipt.json": {
+      "bytes": 385,
+      "sha256": "212be1cc9df84e1af1c9fcf22ce1bd5c24345bb4094a9898ab24ee9c6b5bf050"
+    },
+    "/data/urnapack/auditoria-2026/tratados/teste-offline-1/presidente-2t-normalizado.json": {
+      "bytes": 40301,
+      "sha256": "3f1531381c85b45a1f9b618724b56eaa25b2a0e29b77ee8bc77b755a964b9c6a"
+    }
+  },
+  "format_version": 1,
+  "recorded_at_utc": "2026-10-29T16:07:25.040571+00:00",
+  "restored_csv_files": 28,
+  "scope": "Resultado calculado a partir do asset extraído, restaurado e realocado; nenhuma leitura dos CSVs originais pelo audit_2026. Somente os paths de source_members diferem do relatório anterior.",
+  "source_asset_bytes": 67026472,
+  "source_asset_sha256": "367cef98a2238240920ada200c14de847b1617adbb035f74af160418f2d94e19"
+}

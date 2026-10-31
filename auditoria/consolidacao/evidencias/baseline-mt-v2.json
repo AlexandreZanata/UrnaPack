@@ -1,0 +1,192 @@
+{
+  "escopo": {
+    "aptos_total": 2637801,
+    "cargo": "1",
+    "comparecimento_total": 2052133,
+    "eleicao": "6257",
+    "grupos": 8287,
+    "p_hat": 0.777971120641777,
+    "turno": "1",
+    "zip": "/data/urnapack/brutos/2026/t1/MT/bweb_1t_MT_051020261403.zip"
+  },
+  "exemplos": [
+    {
+      "aptos": 364,
+      "comp": 236,
+      "municipio": "73709",
+      "p": 3.928339431524819e-09,
+      "secao": "343",
+      "zona": "43"
+    },
+    {
+      "aptos": 358,
+      "comp": 229,
+      "municipio": "73709",
+      "p": 4.579203682908428e-10,
+      "secao": "362",
+      "zona": "43"
+    },
+    {
+      "aptos": 366,
+      "comp": 317,
+      "municipio": "73709",
+      "p": 6.476503306585002e-05,
+      "secao": "375",
+      "zona": "43"
+    },
+    {
+      "aptos": 259,
+      "comp": 166,
+      "municipio": "73709",
+      "p": 1.6772996991321065e-07,
+      "secao": "70",
+      "zona": "43"
+    },
+    {
+      "aptos": 257,
+      "comp": 166,
+      "municipio": "73709",
+      "p": 5.201126629383879e-07,
+      "secao": "98",
+      "zona": "43"
+    },
+    {
+      "aptos": 274,
+      "comp": 191,
+      "municipio": "89788",
+      "p": 0.0016380589320144079,
+      "secao": "147",
+      "zona": "11"
+    },
+    {
+      "aptos": 392,
+      "comp": 271,
+      "municipio": "89788",
+      "p": 4.765479244417392e-05,
+      "secao": "156",
+      "zona": "11"
+    },
+    {
+      "aptos": 374,
+      "comp": 252,
+      "municipio": "89788",
+      "p": 1.7081289942488809e-06,
+      "secao": "159",
+      "zona": "11"
+    },
+    {
+      "aptos": 380,
+      "comp": 265,
+      "municipio": "89788",
+      "p": 0.00020014433603066095,
+      "secao": "36",
+      "zona": "11"
+    },
+    {
+      "aptos": 377,
+      "comp": 264,
+      "municipio": "89788",
+      "p": 0.0003593018921710378,
+      "secao": "37",
+      "zona": "11"
+    },
+    {
+      "aptos": 375,
+      "comp": 261,
+      "municipio": "89788",
+      "p": 0.00017180467497857066,
+      "secao": "38",
+      "zona": "11"
+    },
+    {
+      "aptos": 375,
+      "comp": 252,
+      "municipio": "89788",
+      "p": 1.0854215228839337e-06,
+      "secao": "39",
+      "zona": "11"
+    },
+    {
+      "aptos": 371,
+      "comp": 263,
+      "municipio": "89788",
+      "p": 0.0016960559257372942,
+      "secao": "40",
+      "zona": "11"
+    },
+    {
+      "aptos": 380,
+      "comp": 266,
+      "municipio": "89788",
+      "p": 0.0003238886137109098,
+      "secao": "41",
+      "zona": "11"
+    },
+    {
+      "aptos": 371,
+      "comp": 266,
+      "municipio": "89788",
+      "p": 0.005707896608239116,
+      "secao": "42",
+      "zona": "11"
+    },
+    {
+      "aptos": 364,
+      "comp": 262,
+      "municipio": "89788",
+      "p": 0.009101380489465072,
+      "secao": "43",
+      "zona": "11"
+    },
+    {
+      "aptos": 364,
+      "comp": 248,
+      "municipio": "89788",
+      "p": 1.2209302007626377e-05,
+      "secao": "44",
+      "zona": "11"
+    },
+    {
+      "aptos": 361,
+      "comp": 248,
+      "municipio": "89788",
+      "p": 4.196367145281599e-05,
+      "secao": "45",
+      "zona": "11"
+    },
+    {
+      "aptos": 361,
+      "comp": 243,
+      "municipio": "89788",
+      "p": 2.2498774818746625e-06,
+      "secao": "46",
+      "zona": "11"
+    },
+    {
+      "aptos": 367,
+      "comp": 248,
+      "municipio": "89788",
+      "p": 3.3348915604580753e-06,
+      "secao": "47",
+      "zona": "11"
+    }
+  ],
+  "flags_observados": 1667,
+  "format_version": 2,
+  "metodo": "binomial H0 por seção, p bilateral normal com continuidade, BH q=0.05",
+  "nota": "Atípicos sob baseline não concluem fraude/autenticidade.",
+  "source": {
+    "excluded_by_scope": 831247,
+    "member": "bweb_1t_MT_051020261403.csv",
+    "records": 891997,
+    "repeated_context_rows": 52463,
+    "selected_records": 60750,
+    "zip": {
+      "bytes": 63492478,
+      "sha1": "dd83511b6e3e5e95f15bb3871ed825e54d1688f3",
+      "sha256": "610eda446fb6bab25f29ceea31adf8f91acf68db14a179228516d11c0fac226f",
+      "sha512": "0b97fc665251f8a82d5b43938245bbc2b39b680c6053626abf5d94cc67b0105aed3d3c9bc97a6366507e7e409d81b8d5c1f5c15b2f95542e8d6e3e788818ab1d"
+    }
+  },
+  "synthetic_checks": "Separados em scripts/test_model_baseline_mt.py; não são dados eleitorais observados."
+}

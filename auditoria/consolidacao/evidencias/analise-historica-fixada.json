@@ -1,0 +1,22 @@
+{
+  "format_version": 1,
+  "success": false,
+  "analysis_exit_code": 1,
+  "zip_paths": 89,
+  "member_results": 125,
+  "errors": [
+    "/data/urnapack/mt-historico-verificado/fontes/cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip#bweb_1t_MT_181120201549.csv: ';' expected after '\"'"
+  ],
+  "source_catalog": {
+    "bytes": 131723,
+    "nonzip_resources_not_aggregated": 68,
+    "path": "/data/urnapack/consolidacao-2026-10-30/catalogo-historico-fixado.json",
+    "selected_zip_resources": 89,
+    "sha256": "d6dbd8bbfabc5ebbbeddd8f559bae5c088214fb868f96932df23bc4819916bf4"
+  },
+  "analysis_json": {
+    "bytes": 25622385,
+    "sha256": "313adb84c3d2dffaf7cce38aabd47d5fb00cda21f8d424690ed304fbe2b453db"
+  },
+  "scope": "Análise histórica integral do snapshot fixado recém-adquirido; um CSV 2020 malformado permanece reprovado, sem alteração dos bytes."
+}
