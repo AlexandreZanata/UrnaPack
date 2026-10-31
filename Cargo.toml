@@ -24,6 +24,7 @@ rayon = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha2 = "0.11"
+statrs = { version = "=0.18.0", default-features = false }
 tar = { version = "0.4.46", default-features = false }
 walkdir = "2"
 zstd = "0.14"

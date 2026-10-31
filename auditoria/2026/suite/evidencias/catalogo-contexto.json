@@ -1,0 +1,776 @@
+{
+  "format_version": 1,
+  "scope": "Subcatálogo de reprodução do seguimento exploratório: fontes contextuais, ZIPs BU das UFs com alertas e sidecars presentes. Não é o catálogo nacional integral.",
+  "selection_of_pinned_catalog_sha256": "ca8943d14ac5add3911850bea33dc44c8d548c18bc6d68b5b481ca424c269e9a",
+  "items": [
+    {
+      "expected_bytes": 1254611,
+      "expected_sha256": "35c1f1676e04d0824eb57df158f40d3c1e943926fd4754933a9d2863ccf06e1b",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AC - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "4753eb99-062b-484a-b569-04c51d039885"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "2410fd7170ef324d4f7a8f8a82d8ec10d09954bad22f45aef6f77d6ce284f435",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AC - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "0978b3fe-28cb-4dae-a1e4-848e70942b8e"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AC_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 1945168,
+      "expected_sha256": "c42eb06a14d00901c1e2023560eb561933c11837cbf992a70228fd7a389e6be1",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AL - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "35cb0003-abb1-4f19-a8ac-34da3148688d"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "b4ee31027919034ebad08181f9c248ebd39b890b8db2bb56300695f44b7f7f21",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AL - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "040dd085-60c0-49df-8045-01b4bb5b554d"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AL_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 4276454,
+      "expected_sha256": "c6312af9d25533203e6b0c660f6e48d072cf86f03c952f5af51565503ebb2167",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AM - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "94220270-b671-4ce7-bdd6-74e606dcd62c"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "584faac90aa40bb53edcaf0d6e4b4dbba552b4ca4620bf50439cde6421a2d0f4",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AM - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "ada010f5-cabf-4022-b5e5-db27ea84051c"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AM_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 596704,
+      "expected_sha256": "56e4ac4f714d84f1592b3507eb63a632439abf37601cb22eea8a1d1a0bfa4a4a",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AP - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "98212ac3-aaf9-4046-97a5-a26423eefeb3"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "598613cdc6393685d4e331c3538262da083d95cbf73c162d1e6f72b21c4a3684",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "AP - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "c56843ca-5096-4649-8965-27b0857db849"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_AP_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 9513048,
+      "expected_sha256": "b7da4dd73937c74a76e1d5307550085760ba0c1b1be1073f575d9f29afee553c",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "BA - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "cf6303d6-b988-4584-9592-0dcabef0d5c5"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "7a074c0270c8e41024f208cc0dc2fe4f14e5c9a15dc845246efafd9e7f336c64",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "BA - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "526a3494-0eca-4c74-82dc-0c21ffdb53bb"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_BA_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 6151144,
+      "expected_sha256": "e06473e8f738e7d323d31261c2b4f785f5b09671847390fa0dd31a40847466cf",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "CE - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "fc928d98-c341-497e-9f7e-0aaa06926fd3"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "8f97cebd421cd2dab454763458c1df865aaf97dac55d6c39e5c2a9ffaccd5013",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "CE - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "60454f02-cf8d-4dbf-ac00-b4516c36febd"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_CE_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 3846786,
+      "expected_sha256": "da7ea3674e771acc7a7780ba7220f82d1c88458186c6a6e86df71e7e425ce2d4",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "DF - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "81eede48-f4d7-4075-ad97-3858b8b2f920"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "26d157469ceb6bea7b1424463a21de1633b3892ef52bc3f83e003380561a9a0d",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "DF - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "b5acf802-e921-4d30-9e9f-48aa5e59924b"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_DF_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 5275706,
+      "expected_sha256": "54d636f7d22d51824a1245fa12aeebe679f7eddf0189ac5d0d4a9a2335d2c5cb",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "ES - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "6d629b42-413e-43ce-82f4-6c9990be0eed"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "3b443f13d253ba68e8d9a886b6026dc2971653179829b26e1a77cc56f4f8b07d",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "ES - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "1e4d7a14-6611-43e1-b273-fe884d55a920"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_ES_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 4248869,
+      "expected_sha256": "f2c29ffbf465dbaf82a9d26e7ae040d20cddc914a1ef8d225410650aaff1f308",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "GO - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "daf741dd-e688-4682-bafd-330b36257de5"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "faaae0ec85483f388875b31fb5ace09933f672bc99f411b77d41284431decb35",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "GO - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "552d8c8a-2e57-4344-8e6e-82871413c712"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_GO_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 4609442,
+      "expected_sha256": "38b2a6180190729dfece31f1d22d30ebce257467e539277d678d67089ea1a9dd",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MA - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "8d0d8a96-22ee-41d1-8ec6-10775813096f"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "82679099b8f0ad0ad4be79eccfeda8e658b12ddfd8170ba94044b6261e7516b5",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MA - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "6fe263be-2acf-48a8-8ffe-4192a23fc8a8"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MA_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 14071007,
+      "expected_sha256": "56a96873e0c03508d0a58060a09ef8f8660aa80e8fd36289fd3b25c1c71b7839",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MG - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "6c3e6458-fe4d-4af2-bef7-dc5861c2e525"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "87282557d70b6459dec2650d27ca905cde0ddb2c44b136752e071aa0dfee57fe",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MG - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "fb6db084-7a9b-4f4b-8937-5880e8eb0b81"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MG_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 1863398,
+      "expected_sha256": "c47916ff1aca6d5c6d991d2687f67e9f09e9a1dbd16e3fcf855f7602923677e9",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MS - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "d60fd644-1e3f-4170-81e9-c1e13a3636ac"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "c42aef43090b216e900d234bcbde4447e22ab5f5407b995476362209d5b76687",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MS - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "13e88e38-5c2d-435f-9299-c7f8bbf90be9"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MS_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 2204666,
+      "expected_sha256": "5303d588838ed3b40499f86b0758237da1eb1b594449550f753fdecb152bd569",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MT - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "4fc6a94d-94c8-4d03-91ff-72aefb954d33"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "82fd210522b9856c8ef6c71657990fa9439a972031feec21e493bbe6ba17c91e",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "MT - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "7a98af50-1dd6-4e31-a06a-f708865a5f9e"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_MT_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 5158441,
+      "expected_sha256": "f50720b4ef7a99f1167bff6ac24959b035901e586514a4d4b15f5538fd12073b",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PA - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "4d2aeaf2-4bf9-445a-9eb4-4eb211f634f6"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "d7261a00dd1783a20762888982898e8887334571aa4162035aa9238487a1b198",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PA - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "e1e6dd2f-b2f9-4fa6-b4b8-30c86c9ce6ef"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PA_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 5761723,
+      "expected_sha256": "9c917e885a2d068821f226f1524cf063bb623acc809ec37d1387f3b05df80508",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PE - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "7c11291c-59fe-464a-92d8-b82627bda1a7"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "664767a33485513d6777484695206ab64f020652d65b6d1be5a94f848780570a",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PE - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "837b010a-0514-4735-8b4e-b566e41f8437"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PE_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 2648710,
+      "expected_sha256": "d0fd3ff93cc97ef0e2ae35dc3e6a1a54ce73ad6b9e299cbf676d27007d1c38b3",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PI - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "2e89fb03-478f-43c8-97f6-3159b6dd7a79"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "a7a2e0a7047c107b03945d3efaa3f9bd0026c865453d825b5c0dad2839ad594a",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PI - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "a5185fd3-d0a9-4aa7-87f5-91d0a4b48775"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PI_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 7189112,
+      "expected_sha256": "32e8a0bfc7e9fe76db9ce0e4bc3cfd39eff4ef46ca376d98764f605cfed2147f",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PR - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "15a97b2a-1888-41d3-9683-4467cfed7d58"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "90a5be855060b05131dc29c43d8993bb193a4435923eb89af6eb9f0153067a5b",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "PR - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "751d9d96-4034-487e-bce6-3412a8414196"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_PR_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 10004912,
+      "expected_sha256": "d13abd46e8f365900f65c94dbc6ccd334a7ff65e2c759a24f5ebd13f4b0aceb5",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RJ - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "2f6eaf77-3abf-4abc-a6ab-f810a91457db"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "2224f997fb2a450ee48bd2e4f2d97747975b7ba721296cf7312567b47287d184",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RJ - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "83ff9fcb-4b59-43c4-8950-826752578a18"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RJ_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 1250142,
+      "expected_sha256": "dec6d43ae423a66722b50fda80e6dfc4378482fc141a390bfca367fd9549ede3",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RO - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "f5f40a47-72c3-450c-b8de-6b82c5b26896"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "2e3cb241fb15688d2845f379a4a3ec88e18b64d30be6400397ec96b8fec58221",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RO - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "674e7567-0b61-49f5-ba5b-eda0ad734da8"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RO_261020260742.zip.sha512"
+    },
+    {
+      "discovery": {
+        "method": "URL derivada do nome ZIP no sidecar oficial, submetida a HTTP e SHA-512 antes de uso",
+        "reason": "recurso CKAN intitulado RR Boletim aponta ao mesmo .sha512 do recurso Hash; ZIP não listado corretamente",
+        "source_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512"
+      },
+      "expected_bytes": 500520,
+      "expected_sha256": "6554fcbd0c55cf90abf970cb83125bfe7b35e748d676fe6fe60bdbca0a4262af",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip",
+      "references": [],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "673cde9f9b087321da9f9107a7c3fee6b49f58f17e8df3151930c7328345e94b",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RR - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "e54adb15-931b-462e-a506-7b6330dd2a9d"
+        },
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RR - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "3c8e2aec-5df5-4a6e-a632-eb9063d3414b"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RR_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 7410270,
+      "expected_sha256": "e4e7fff8d09e588246f5e55750e78cdfe7e4de995361bcd11ad3e7445538e9e3",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RS - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "8a087956-743e-4a09-8d1a-29dc5e3ed3b8"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "9d63878394147382f71ecb136b49d54e34812a658e0c7bfab447571a7a1a8d1b",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "RS - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "15ee266f-7e8f-4506-93a1-48c57fb47eed"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_RS_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 4487185,
+      "expected_sha256": "6f169b88a07858e920b3c9e974f3ae5238f36dfe6e6d138a1758764c5b4de697",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "SC - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "7c874499-a9dd-440e-9526-d46033e93625"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "55f4337ba5e83c1df034798b9f0fb7d01d69c423e6d9b38d99920c7e30ca9c96",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "SC - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "228c779f-e3d8-4b24-b81a-1debf3167b7f"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SC_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 28188300,
+      "expected_sha256": "ffadfa193e68261e2e8aa667b3075e6bc8172b0b6629c752d3b8cf680ac10c4e",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "SP - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "f6205a0c-a6af-4e94-abad-f82488590efb"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "3749eb4da530266b6e47566fbe03d579baa91cc073459644791c4e2f6b924ba4",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "SP - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "22bfac6c-ca6c-42db-9be9-923b6b81bae1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_SP_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 2383586,
+      "expected_sha256": "f2dfdafb28d13aae5958ad6d04f604442c10456d6819b84a21a1f52a49db0f6d",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "TO - Boletim de Urna - Segundo turno - 26.10.2026",
+          "resource_id": "3d632f58-de62-4412-87ac-5db598ea0c34"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "c6353eebc5e8bcf1908bfbd34b11a1a1f14e3b0dfb9e1a61ccc4a167e35e4454",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "metadata_modified": "2026-10-27T19:22:03.090436",
+          "name": "TO - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "04bf3228-418b-4e4b-a71a-73a30ccea610"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_2t_TO_261020260742.zip.sha512"
+    },
+    {
+      "expected_bytes": 397685,
+      "expected_sha256": "1b4b58ff774f61a6017059c7eb08e1a1671ae397515501e851be105b77b0c641",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_2t_ZZ_261020261201.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "metadata_modified": "2026-10-27T13:24:10.933939",
+          "name": "ZZ - Correspondência efetivada - Segundo turno - 26.10.2026",
+          "resource_id": "347f4905-2a72-492a-a599-291338f5ab55"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_2t_ZZ_261020261201.zip"
+    },
+    {
+      "expected_bytes": 158,
+      "expected_sha256": "7ec6a2c344a50564be9fa8c2e9121092e5deb4130bde4b4c610ff69c8b860369",
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_2t_ZZ_261020261201.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "metadata_modified": "2026-10-27T13:24:10.933939",
+          "name": "ZZ - Hash SHA2 - Segundo turno - 26.10.2026",
+          "resource_id": "81cd5c08-743a-4073-a06c-38b6096060cd"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_2t_ZZ_261020261201.zip.sha512"
+    },
+    {
+      "expected_bytes": 167493511,
+      "expected_sha256": "771ecfe5086b65c38943df9f694831dc5b94e0addd563517cd139fbd97642981",
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip",
+      "references": [
+        {
+          "dataset": "eleitorado-2026",
+          "format": "CSV",
+          "metadata_modified": "2026-09-11T17:51:11.985865",
+          "name": "Eleitorado por local de votação - 2026",
+          "resource_id": "300626b4-2b24-4d2e-b4fc-46b569cfffe5"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip"
+    }
+  ]
+}

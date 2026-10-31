@@ -1,0 +1,26 @@
+{
+  "format_version": 1,
+  "scope": "Fontes estaduais para contexto de escola; ligação por nome/município não identifica eleitores nem autentica votação. Não são entradas dos testes estatísticos.",
+  "sources": [
+    {
+      "url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/53767",
+      "observed_at_utc": "2026-10-31T23:26:54.224394+00:00",
+      "status": 200,
+      "final_url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/53767",
+      "content_type": "text/html; charset=UTF-8",
+      "file": "ato-escola-2022.html",
+      "bytes": 4686107,
+      "sha256": "9738a31c59263fd28444dae88e907acafb324653f900b34d95cc9101758215a6"
+    },
+    {
+      "url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/945981",
+      "observed_at_utc": "2026-10-31T23:26:55.620360+00:00",
+      "status": 200,
+      "final_url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/945981",
+      "content_type": "text/html; charset=UTF-8",
+      "file": "aviso-escola-2025.html",
+      "bytes": 4675218,
+      "sha256": "c46c638694eaf1138414da8e3c8f01d74a7a93a8d0b16b5c60bb96dc4c989eed"
+    }
+  ]
+}

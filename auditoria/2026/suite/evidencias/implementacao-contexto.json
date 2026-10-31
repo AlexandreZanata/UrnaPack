@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "scope": "Fontes exatas do seguimento pós-bateria. O núcleo foi executado em 45a3955327085f0912e9d339421ea5d793edb660; este seguimento não altera scores.",
+  "implementation_files": {
+    "scripts/contextualize_statistical_alerts_2026.py": {
+      "bytes": 15196,
+      "sha256": "e36ff817af7834f57f4677c68ebaa5087e2dac0d801fc3e6f53379518d7b4f71"
+    },
+    "scripts/check_statistical_suite_2026.py": {
+      "bytes": 18310,
+      "sha256": "876986a96322e8bfef323926bc28667302fad58e622dca4cd73b2755e5d6d45a"
+    },
+    "scripts/acquire_2026.py": {
+      "bytes": 22825,
+      "sha256": "12c7529ccaed86cf71a5a06bd4f590c335bee4029087b47b27c782a040012c2d"
+    },
+    "scripts/validate.py": {
+      "bytes": 17671,
+      "sha256": "4f08251888db94e1e78c4c773b2530bdb2dc77627e2a56f6cd64660e6aabff9d"
+    },
+    "scripts/limits.env": {
+      "bytes": 3795,
+      "sha256": "911c8c065d1bbd09cafba99e8896641d63db07720dfe6379b58923c4c8b2c430"
+    }
+  },
+  "output": {
+    "bytes": 2362869,
+    "sha256": "72fe34ae8b0865e4e761fe7f48e48b038cbed662f8716b3ff615c6cbfa5bba26"
+  },
+  "prior_extracted_vs_zip_cases_identical": true
+}

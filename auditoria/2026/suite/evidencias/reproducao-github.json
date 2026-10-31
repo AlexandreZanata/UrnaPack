@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "success": true,
+  "recorded_at_utc": "2026-10-31T23:40:43.792311+00:00",
+  "scope": "Reprodução integral com entradas restauradas do pacote baixado do GitHub. Comparação byte a byte dos nove artefatos científicos e do relatório gerado; report.json comparado integralmente após normalizar somente três caminhos de entrada. Não autentica votação física.",
+  "original_producer_git": "45a3955327085f0912e9d339421ea5d793edb660",
+  "repeat_producer_git": "dc50a3819fe9bdf1d660aa67f536499d169ae5b6",
+  "downloaded_asset": {
+    "bytes": 85434596,
+    "sha256": "f3d773d38cc4fddff4cc870444f1c275076c52bc84df65a1c0d82f068840ea8c",
+    "sha512": "1a5bf5db6ae71a39a0ef030feb750d71d8d754f9031a1b1ff33db8a0d1dc12ff0f9333073ff611330694362a6d52f8a0dd45f3fecbe24cc38b833cb277e55a5f",
+    "sha1": "2f18958db3272768e509d70071238879209d5b7e"
+  },
+  "package_members_verified": 59,
+  "scientific_files_byte_identical": [
+    {
+      "file": "associations.json",
+      "bytes": 126978,
+      "sha256": "86633c4a70d5995a700516ba48aa48514dca6d413b90368c7251d82298922ead"
+    },
+    {
+      "file": "models.json",
+      "bytes": 49710,
+      "sha256": "2f9b763ab560c958498d2e97b3073b42f1daaa9a8297ae7b39cba52190ee17fd"
+    },
+    {
+      "file": "permutations-municipality_size.csv",
+      "bytes": 24760377,
+      "sha256": "edce0a759a322ef881212add7ed12d0604fba9fdea167d9877c685c02d3b40bf"
+    },
+    {
+      "file": "permutations-municipality_zone_size.csv",
+      "bytes": 24762463,
+      "sha256": "06567a678508338c26a24d5f9ad74fe972060e5a6c9222a3413922b1f470feab"
+    },
+    {
+      "file": "permutations-voting_place_size.csv",
+      "bytes": 24699820,
+      "sha256": "8f71da360d05145a9e2683815aa5c29892a646ed8583a45f78cc452dd09ca244"
+    },
+    {
+      "file": "predictive_replicates.csv",
+      "bytes": 147621,
+      "sha256": "815a9abcb813c2a2ff2629c3a7769e132356f28d7d6b19eb11c674ca3a195b2b"
+    },
+    {
+      "file": "repeated_urn_identifiers.csv",
+      "bytes": 853,
+      "sha256": "6981f51c2ce94f90f55ab2fdc050070e0f2f9c06845f1fb65b35fb3bfe17933d"
+    },
+    {
+      "file": "repeated_vote_profiles.csv",
+      "bytes": 950110,
+      "sha256": "a678ca45947e7cc74ba7446a5704f5c2b54521137217806e757f70c766f3b5b9"
+    },
+    {
+      "file": "section_scores.csv",
+      "bytes": 150528041,
+      "sha256": "cc1989dbd5b4f219e95732178d345ba789321297ca687d479910982b763ecc06"
+    }
+  ],
+  "report_semantics_equal_except_input_paths": true,
+  "independent_checker_receipts_byte_identical": true,
+  "generated_report_markdown_byte_identical": true,
+  "repeat_artifacts_inventory": {
+    "bytes": 15604,
+    "sha256": "c49fa29b85eb835624fd85241c86044597c445bcc4c14dd266dea04780f600a6"
+  },
+  "repeat_independent_checker": {
+    "bytes": 2776,
+    "sha256": "eb6caddfaca6d22a414107587734e5f89b5738412f66f66fcc998eb477060e86"
+  },
+  "restoration_receipt": {
+    "bytes": 21210,
+    "sha256": "6218922cd78ff06d11f115ecac7d7468a0090ba8f48cb84676945f39154de150"
+  }
+}
