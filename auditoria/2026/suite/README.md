@@ -12,6 +12,13 @@ em `evidencias/`; CSVs completos e snapshots HTML estaduais ficam no pacote
 comprimido, com inventário e hashes. O núcleo foi executado na revisão
 `45a3955327085f0912e9d339421ea5d793edb660`.
 
+O pacote foi baixado do GitHub, seus 59 membros conferidos e a bateria
+integral repetida com as entradas restauradas. Os nove artefatos científicos,
+o relatório gerado e o recibo do conferidor coincidiram byte a byte;
+`report.json` coincidiu após normalizar somente os caminhos das três entradas.
+A [prova de reprodução](evidencias/reproducao-github.json) registra hashes e
+revisões. Isso verifica reprodução dos cálculos, sem autenticar votação física.
+
 ## Reproduzir
 
 Use clone Git em revisão fixa, Rust/Cargo, Python 3.12 e SSD com espaço livre.
