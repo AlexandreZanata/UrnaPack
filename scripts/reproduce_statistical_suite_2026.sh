@@ -40,10 +40,13 @@ python3 - "$stats_output" "$stats_target" <<'PY'
 from pathlib import Path
 import hashlib,json,subprocess,sys
 root=Path.cwd();out=Path(sys.argv[1]);target=Path(sys.argv[2]).resolve()
+sys.path.insert(0,str(root/'scripts'))
+from validate import load_limits
+buffer=load_limits(root)['IO_BUFFER_BYTES']
 def measure(path):
     h=hashlib.sha256();n=0
     with path.open('rb') as stream:
-        while chunk:=stream.read(1<<20):h.update(chunk);n+=len(chunk)
+        while chunk:=stream.read(buffer):h.update(chunk);n+=len(chunk)
     return {'bytes':n,'sha256':h.hexdigest()}
 paths=[p for p in out.rglob('*') if p.is_file() and not p.resolve().is_relative_to(target)]
 sources=subprocess.check_output(['git','ls-files','src','scripts','Cargo.toml','Cargo.lock','auditoria/2026/suite/protocolo.json'],text=True).splitlines()

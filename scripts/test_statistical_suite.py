@@ -1,6 +1,7 @@
 """Testes reais do conferidor independente com fixture identificada como sintética."""
 import csv
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -8,9 +9,13 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import zipfile
+from types import SimpleNamespace
 
 import check_statistical_suite_2026 as checker
 import render_statistical_suite_2026 as renderer
+import contextualize_statistical_alerts_2026 as contextualizer
+import compare_mt_presidential_profiles_2026 as temporal
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -124,6 +129,92 @@ class StatisticalCheckerTests(unittest.TestCase):
         result = subprocess.run(['bash', str(script), str(self.sections.parent), str(output)], capture_output=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual((output/'preserve').read_bytes(), b'synthetic preserved bytes')
+
+    def test_context_followup_preserves_unknown_fields_duplicates_and_absences(self):
+        path = ROOT/'tests/fixtures/statistical-suite/context-synthetic.json'
+        data = json.loads(path.read_bytes())
+        result = contextualizer.attach_metadata(data['alerts'], data['local_rows'], data['correspondence'])
+        self.assertEqual(len(result), 2)
+        first = result['MT/10000/0001/0001']
+        self.assertEqual(len(first['official_local_rows_all_fields']), 2)
+        self.assertEqual(first['official_local_rows_all_fields'][0]['UNKNOWN_FIELD'], 'preservar')
+        self.assertTrue(first['local_number_matches'])
+        second = result['MT/10000/0001/0002']
+        self.assertEqual(second['official_local_rows_all_fields'], [])
+        self.assertFalse(second['local_number_matches'])
+
+    def test_all_context_fixture_hashes_are_real(self):
+        base = ROOT/'tests/fixtures/statistical-suite'
+        manifest = json.loads((base/'manifest.json').read_bytes())
+        for name, expected in manifest['files'].items():
+            raw = (base/name).read_bytes()
+            self.assertEqual(len(raw), expected['bytes'])
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), expected['sha256'])
+
+    def test_context_csv_rejects_wrong_width_and_zip_crc(self):
+        data = json.loads((ROOT/'tests/fixtures/statistical-suite/context-synthetic.json').read_bytes())
+        rows = data['local_rows']['MT/10000/0001/0001']
+        text = io.StringIO(newline='')
+        writer = csv.DictWriter(text, list(rows[0]), delimiter=';')
+        writer.writeheader()
+        writer.writerows(rows)
+        raw = text.getvalue().encode('latin-1')
+        limits = {'MAX_ZIP_MEMBER_BYTES': len(raw)*2, 'MAX_CSV_RECORDS': 10}
+        def archive_bytes(body):
+            output = io.BytesIO()
+            with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_STORED) as archive:
+                archive.writestr('synthetic.csv', body)
+            return output.getvalue()
+        zipped = archive_bytes(raw)
+        with zipfile.ZipFile(io.BytesIO(zipped)) as archive:
+            evidence = []
+            parsed = list(contextualizer.csv_rows(archive, archive.infolist()[0], {'NR_LOCAL_VOTACAO'}, limits, evidence))
+            self.assertEqual([row for _, row in parsed], rows)
+            self.assertEqual(evidence[0]['sha256'], hashlib.sha256(raw).hexdigest())
+        with zipfile.ZipFile(io.BytesIO(archive_bytes(raw+b'extra;wrong;width;field\n'))) as archive:
+            with self.assertRaisesRegex(ValueError, 'largura'):
+                list(contextualizer.csv_rows(archive, archive.infolist()[0], {'NR_LOCAL_VOTACAO'}, limits, []))
+        changed = bytearray(zipped)
+        changed[changed.index(raw)+3] ^= 1
+        with zipfile.ZipFile(io.BytesIO(changed)) as archive:
+            with self.assertRaises(zipfile.BadZipFile):
+                list(contextualizer.csv_rows(archive, archive.infolist()[0], {'NR_LOCAL_VOTACAO'}, limits, []))
+
+    def test_context_bu_zip_checks_whole_zip_and_member_bytes(self):
+        raw = self.sections.read_bytes()
+        directory = self.base/'synthetic-bu-zip'
+        directory.mkdir()
+        path = directory/'synthetic.zip'
+        with zipfile.ZipFile(path, 'w') as archive:
+            archive.writestr('synthetic.csv', raw)
+        zipped = path.read_bytes()
+        actual = hashlib.sha256(zipped).hexdigest()
+        item = {'zip_url': 'synthetic:not-TSE', 'zip_sha256': actual, 'member': 'synthetic.csv', 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+        catalog = {'items': [{'url': item['zip_url'], 'path': path.name, 'expected_bytes': len(zipped), 'expected_sha256': actual}]}
+        limits = {'IO_BUFFER_BYTES': 1024, 'MAX_ZIP_MEMBERS': 10, 'MAX_ZIP_MEMBER_BYTES': len(raw)*2}
+        stream, measured = contextualizer.bu_text(item, SimpleNamespace(bu_zip_root=directory), catalog, limits)
+        with stream:
+            self.assertEqual(stream.read(), raw.decode('latin-1'))
+        self.assertEqual(measured['sha256'], item['sha256'])
+        wrong = dict(item, sha256=hashlib.sha256((ROOT/'tests/fixtures/statistical-suite/context-synthetic.json').read_bytes()).hexdigest())
+        with self.assertRaisesRegex(ValueError, 'membro BU bytes/SHA-256'):
+            contextualizer.bu_text(wrong, SimpleNamespace(bu_zip_root=directory), catalog, limits)
+
+    def test_temporal_control_preserves_equal_different_and_unmatched_profiles(self):
+        with self.sections.open(newline='') as stream:
+            rows = list(csv.DictReader(stream))
+        def profile(row):
+            return {'votes': [int(row[n]) for n in ('VOTOS_13', 'VOTOS_22', 'VOTOS_BRANCOS', 'VOTOS_NULOS')], 'turnout': int(row['QT_COMPARECIMENTO']), 'registered': int(row['QT_APTOS'])}
+        before = {str(i): profile(row) for i, row in enumerate(rows[:3])}
+        after = {str(i): profile(row) for i, row in enumerate(rows[:2])}
+        after['1']['votes'][0] += 1
+        after['1']['votes'][1] -= 1
+        after['extra'] = profile(rows[4])
+        result = temporal.compare_profiles(before, after)
+        self.assertEqual(result['shared_numeric_keys'], 2)
+        self.assertEqual(result['identical_four_vote_counts'], 1)
+        self.assertEqual(result['only_before'], ['2'])
+        self.assertEqual(result['only_after'], ['extra'])
 
 
 def math_exp(value):

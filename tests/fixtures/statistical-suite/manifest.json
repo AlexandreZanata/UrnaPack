@@ -4,6 +4,10 @@
     "synthetic.csv": {
       "bytes": 5969,
       "sha256": "b873dfd5b973ffb1dc2962f73f58f23d44ef18e276be22d4453fce0de4a3506e"
+    },
+    "context-synthetic.json": {
+      "bytes": 662,
+      "sha256": "d7ab685494cc7048b323ad29bd145d05fe1f3aad13252a9cc2061b7f16a36cb2"
     }
   },
   "purpose": "64 seções artificiais para testar parser, denominador zero, repetição de identificador/perfil e simetria dos candidatos; nenhum dado observado do TSE."

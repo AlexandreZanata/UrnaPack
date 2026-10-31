@@ -6,6 +6,12 @@ no Git antes da execução nova, com consciência da análise descritiva anterio
 Critérios bilaterais, candidatos simétricos, testes nulos e todos os resultados
 ficam preservados. Desvio de modelo não é probabilidade de fraude.
 
+Resultados medidos: [RELATORIO.md](RELATORIO.md); interpretação e seguimento
+de todos os alertas: [CONCLUSOES.md](CONCLUSOES.md). Os recibos pequenos estão
+em `evidencias/`; CSVs completos e snapshots HTML estaduais ficam no pacote
+comprimido, com inventário e hashes. O núcleo foi executado na revisão
+`45a3955327085f0912e9d339421ea5d793edb660`.
+
 ## Reproduzir
 
 Use clone Git em revisão fixa, Rust/Cargo, Python 3.12 e SSD com espaço livre.
@@ -25,6 +31,53 @@ executa o protocolo fixado, confere resultados em implementação independente
 e gera relatório e inventário SHA-256. `CARGO_TARGET_DIR` pode apontar para
 cache externo no SSD. O cache não é artefato científico. Caminhos e metadados
 de ambiente variam; compare dados, definições e resultados científicos.
+
+## Seguimentos adicionais, posteriores aos testes
+
+Para repetir o contexto de todos os alertas, o subcatálogo seleciona **51
+recursos e 302.735.050 bytes**: metadados de locais, CEFT ZZ e BU das UFs
+envolvidas, com sidecars. Não exige baixar o corpus nacional inteiro.
+
+```bash
+python3 scripts/acquire_2026.py fetch \
+  --catalog auditoria/2026/suite/evidencias/catalogo-contexto.json \
+  --root /data/urnapack/contexto-repeticao/fontes \
+  --receipt /data/urnapack/contexto-repeticao-aquisicao.json
+python3 scripts/contextualize_statistical_alerts_2026.py \
+  --result /data/urnapack/suite-estatistica-2026/execucao-1/results \
+  --catalog auditoria/2026/suite/evidencias/catalogo-contexto.json \
+  --root /data/urnapack/contexto-repeticao/fontes \
+  --bu-zip-root /data/urnapack/contexto-repeticao/fontes \
+  --bu-manifest auditoria/2026/evidencias/entrada-buweb-2t.json \
+  --output /data/urnapack/contexto-repeticao.json
+```
+
+`--result` pode apontar aos resultados descomprimidos do pacote. O seguimento
+relê todos os alertas, seus BU originais e as seções do mesmo local. Os campos
+cadastrais desconhecidos continuam nos registros exportados. Não reclassifica
+scores nem estima sua causa. O escopo de correspondências é CEFT ZZ; uma
+lista vazia em outra UF significa fora desse recorte, não dado inexistente.
+
+Para o controle temporal MT, basta adquirir o ZIP 2022 e seu sidecar:
+
+```bash
+python3 scripts/acquire_2026.py fetch \
+  --catalog auditoria/consolidacao/evidencias/catalogo-historico-fixado.json \
+  --match bweb_2t_MT_311020221535.zip \
+  --root /data/urnapack/temporal-repeticao/fontes \
+  --receipt /data/urnapack/temporal-repeticao-aquisicao.json
+python3 scripts/compare_mt_presidential_profiles_2026.py \
+  --historical-catalog auditoria/consolidacao/evidencias/catalogo-historico-fixado.json \
+  --root /data/urnapack/temporal-repeticao/fontes \
+  --result /data/urnapack/suite-estatistica-2026/execucao-1/results \
+  --output /data/urnapack/temporal-repeticao.json
+```
+
+Esse controle compara perfis em chaves numéricas comuns; não garante a mesma
+população entre anos e não procura cópias entre chaves diferentes. Os snapshots
+HTML dos documentos estaduais ficam no pacote comprimido; seus URLs, status,
+tamanhos e hashes estão em `evidencias/web/sources.json`. São contexto
+documental, sem participação nos testes estatísticos.
 
 ## Testes do código
 

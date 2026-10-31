@@ -1,0 +1,33 @@
+{
+  "kind": "synthetic_fixture_not_TSE",
+  "alerts": {
+    "MT/10000/0001/0001": {
+      "NR_LOCAL_VOTACAO": "1000"
+    },
+    "MT/10000/0001/0002": {
+      "NR_LOCAL_VOTACAO": "1001"
+    }
+  },
+  "local_rows": {
+    "MT/10000/0001/0001": [
+      {
+        "NR_LOCAL_VOTACAO": "1000",
+        "DS_TIPO_LOCAL": "SINTETICO",
+        "UNKNOWN_FIELD": "preservar"
+      },
+      {
+        "NR_LOCAL_VOTACAO": "1000",
+        "DS_TIPO_LOCAL": "SINTETICO",
+        "UNKNOWN_FIELD": "segunda referência"
+      }
+    ]
+  },
+  "correspondence": {
+    "MT/10000/0001/0001": [
+      {
+        "CD_ORIGEM_VOTO": "C",
+        "UNRECOGNIZED": "preservar"
+      }
+    ]
+  }
+}
