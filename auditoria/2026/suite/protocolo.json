@@ -1,0 +1,16 @@
+{
+  "format_version": 1,
+  "source_kind": "official_derived",
+  "scope": "Presidente Brasil 2026/t2, projeção semântica conferida de BU web; análise exploratória simétrica",
+  "sections": {"path": "/data/urnapack/auditoria-2026/reproducao-integral-3/sections.csv", "bytes": 47457542, "sha256": "259922561b38cb87c7847566ae667892272a6e103375ea3d817bfd1030339999"},
+  "time_policy": {"path": "auditoria/2026/evidencias/politica-relogio-nominal-2026.json", "bytes": 1672, "sha256": "9c36281efdc9389631ef83533f3c677c5a9e56ad60d6a061baccde74c3994eba"},
+  "log_report": {"path": "auditoria/2026/resultados/logs-nacional.json", "bytes": 165574, "sha256": "19ef93f103630216b15dd53bcdd788dbd6a085a9769192114d3690c63059b352"},
+  "permutations": 9999,
+  "predictive_replicates": 999,
+  "seed": 20261031,
+  "folds": 5,
+  "minimum_training_sections": 30,
+  "size_bin_width": 50,
+  "maximum_rho": 0.95,
+  "alpha": 0.05
+}
