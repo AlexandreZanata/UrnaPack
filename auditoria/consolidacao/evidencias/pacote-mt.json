@@ -1,0 +1,65 @@
+{
+  "files": {
+    "bundle.json": {
+      "bytes": 3921,
+      "sha256": "4e01dbbbee36d24a7ea689ae3dcb9dd3f92657776d008609697d47efd3c2c2b1"
+    },
+    "bweb-view-recipe.json": {
+      "bytes": 739,
+      "sha256": "fdaf0b976eeba3d1af39146f180d24daf709dd132173c05f08896603c3a098c4"
+    },
+    "forensic-mt/dataset.json": {
+      "bytes": 662,
+      "sha256": "bef2209a77fb94bd9bf1837bad919508191a3c644e410035e3a59c70ba6d9ddc"
+    },
+    "forensic-mt/execution.json": {
+      "bytes": 1502,
+      "sha256": "db5fb06bf4cd48f068f897d15be083679620c8357f3a80e7046ea8a13e9ca019"
+    },
+    "forensic-mt/payload.tar.encoded": {
+      "bytes": 1621319958,
+      "sha256": "de637c9ac817158ae4f4b146709feff6ff7dcdc19c7bd6a9c7599f257e80e1f1"
+    },
+    "forensic-mt/source-manifest.json": {
+      "bytes": 2727,
+      "sha256": "265c7d27f7ea6991819ba2ccf80e9b0285610f059fcfc3ffc896b3303cda5546"
+    },
+    "provenance/map.json.zst": {
+      "bytes": 4496,
+      "sha256": "f4f67e16ce3d242bb9debe6f2bef3e63791a374718499609944479e987ae7579"
+    },
+    "provenance/members.jsonl.zst": {
+      "bytes": 684353,
+      "sha256": "7eb521a5a58f36317c8107170fe7e837a37691fdb330d2ce2b2d7f974844b919"
+    },
+    "provenance/run.json.zst": {
+      "bytes": 414,
+      "sha256": "8e67e6c89522fea380a691fdb0273f0f4e13e7bf935e5e6b3ea7b282b374a0a5"
+    }
+  },
+  "format_version": 1,
+  "guarantee": "relative-paths-and-file-bytes",
+  "implementation_sha256": {
+    "acquire_2026.py": "12c7529ccaed86cf71a5a06bd4f590c335bee4029087b47b27c782a040012c2d",
+    "limits.env": "bc1a12a877b28dee9d6238b0f669b2b84b5b543acebff0d710d1af82a40af420",
+    "package_audit_results_2026.py": "5bc1e5e81dc3dad327a73885a8e23ac97e125d4016eb514a3afdacd9ae32551e",
+    "validate.py": "4f08251888db94e1e78c4c773b2530bdb2dc77627e2a56f6cd64660e6aabff9d"
+  },
+  "include": [
+    "bundle.json",
+    "bweb-view-recipe.json",
+    "forensic-mt",
+    "provenance"
+  ],
+  "limitations": "Os arquivos selecionados são artefatos derivados; empacotá-los sem perdas não restaura os dados originais dos quais foram calculados. Diretórios vazios e metadados do sistema de arquivos não são preservados.",
+  "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "release_asset": {
+    "bytes": 1622423708,
+    "file": "urnapack-mt-2026-comprimido.zip",
+    "sha1": "9b8a16a70b6d3087abdfd72b31730e42ca160d46",
+    "sha256": "37b2d2016dc9cf26b078eccc67ba377c78a2543e428c11cf99c82354e6b2aa4d",
+    "sha512": "3d270f8e8adf3a34ba3938029bd8d0259abb24ddbf2653b643b58af9a4d239a5a1d67d4e72e509ef6df9feaab78e8611af914ccd9f2c74d795f46b2e921808ec"
+  },
+  "scope": "Acervo MT de 13 arquivos originais processados por compressão reversível; não é o acervo nacional bruto. Restauração dos caminhos relativos e bytes; sem autenticação eleitoral.",
+  "success": true
+}

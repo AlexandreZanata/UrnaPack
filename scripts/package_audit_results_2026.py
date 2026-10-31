@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import sys
 import zipfile
@@ -28,7 +29,9 @@ def verify_bundle(path, records, buffer):
                 raise ValueError("bytes/SHA-256 de membro divergentes: " + name)
 
 
-def package(root, output, include, scope, limits):
+def package(root, output, include, scope, limits, filename="resultados-auditoria-2026.zip"):
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*\.zip", filename):
+        raise ValueError("nome de asset inválido")
     if output.resolve().is_relative_to(root.resolve()):
         raise ValueError("saída dentro da origem recusada")
     if not include or len(include) != len(set(include)):
@@ -61,7 +64,7 @@ def package(root, output, include, scope, limits):
         records = {name: {k: v for k, v in hashes(path, limits["IO_BUFFER_BYTES"]).items()
                           if k in ("bytes", "sha256")} for name, path in selected.items()}
         inventory = json.dumps(dict({k: v for k, v in receipt.items() if k != "success"}, files=records), ensure_ascii=False, sort_keys=True, indent=2).encode()+b"\n"
-        partial = output/"resultados-auditoria-2026.zip.partial"
+        partial = output/(filename+".partial")
         with zipfile.ZipFile(partial, "x", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
             for name, path in sorted(selected.items()):
                 archive.write(path, name)
@@ -69,9 +72,9 @@ def package(root, output, include, scope, limits):
         verify_bundle(partial, dict(records, **{INVENTORY: {"bytes": len(inventory), "sha256": hashlib.sha256(inventory).hexdigest()}}), limits["IO_BUFFER_BYTES"])
         if partial.stat().st_size > limits["MAX_RELEASE_ASSET_BYTES"]:
             raise ValueError("asset excede limite centralizado; parcial preservado")
-        final = output/"resultados-auditoria-2026.zip"
+        final = output/filename
         partial.rename(final)
-        receipt.update(success=True, files=records, release_asset=hashes(final, limits["IO_BUFFER_BYTES"]))
+        receipt.update(success=True, files=records, release_asset=dict(hashes(final, limits["IO_BUFFER_BYTES"]), file=filename))
     except Exception as exc:
         receipt["error"] = f"{type(exc).__name__}: {exc}"
     write_json(output/"package-results.json", receipt)
@@ -84,8 +87,9 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--include", nargs="+", required=True)
     parser.add_argument("--scope", required=True)
+    parser.add_argument("--name", default="resultados-auditoria-2026.zip")
     args = parser.parse_args()
-    report = package(args.input, args.output, args.include, args.scope, load_limits(Path(__file__).resolve().parents[1]))
+    report = package(args.input, args.output, args.include, args.scope, load_limits(Path(__file__).resolve().parents[1]), args.name)
     print(json.dumps({k: report.get(k) for k in ("success", "release_asset", "error")}, ensure_ascii=False))
     return 0 if report["success"] else 1
 

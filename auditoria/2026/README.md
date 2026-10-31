@@ -240,6 +240,13 @@ Metadados de caminho/ambiente podem variar entre máquinas; compare as
 definições, contagens e hashes dos dados, sem confundir equivalência semântica
 com igualdade byte a byte de todos os arquivos de proveniência.
 
+A repetição integral em clone limpo foi concluída e seus 257 artefatos foram
+relidos: [recibo final](evidencias/reproducao-integral-final.json). Os campos
+presidenciais e os relatórios por UF coincidiram com os resultados publicados.
+Os códigos de logs e consolidação continuam 1 pelos diagnósticos descritos;
+o empacotamento terminou com código 0. Aquisição e integridade não foram
+confundidas com aprovação científica da conciliação.
+
 ## Pacote comprimido dos CSVs usados na auditoria
 
 O primeiro pacote verificado contém os **28 CSVs originais de BU web t2**,

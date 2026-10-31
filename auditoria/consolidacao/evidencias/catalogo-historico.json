@@ -1,0 +1,2205 @@
+{
+  "format_version": 1,
+  "items": [
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de urna - Primeiro turno - 18.11.2020",
+          "resource_id": "2e699cb7-471d-44bf-aaaf-441579654232",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno -  18.11.2020",
+          "resource_id": "037b9af6-dc0f-4e38-8b7d-7eda47846a6b",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_1t_MT_181120201549.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de urna - Segundo turno - 30.11.2020",
+          "resource_id": "e19c3620-c165-4101-84f0-4bb74d455195",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 30.11.2020",
+          "resource_id": "7bdc5dd3-1768-4b40-a219-39fb70ae6b42",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/buweb/bweb_2t_MT_301120201245.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 17.11.2020 ",
+          "resource_id": "10978fac-f7f1-49da-bfc5-a6a14bec762a",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 17.11.2020",
+          "resource_id": "4ed8032f-5fd3-44e4-b79f-e7a760dbeb52",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_1t_MT_171120201645.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Segundo turno - 01.12.2020 ",
+          "resource_id": "b1d9062d-0df4-4045-a273-3e37d5a5fd59",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 01.12.2020",
+          "resource_id": "8cb9450a-b791-458c-a621-feba154035cf",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspefet/CEFT_2t_MT_011220201430.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 14.11.2020 ",
+          "resource_id": "13f26fb3-953d-4151-a3f7-e2b231bbedf9",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 14.11.2020",
+          "resource_id": "60655b20-6126-4232-a18e-e4b45da444e2",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_141120201340.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 15.11.2020",
+          "resource_id": "a08d3cb9-2b9e-48c3-b015-be6154999327",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 15.11.2020",
+          "resource_id": "066c4ab1-eb24-4b1d-ae00-e61e03ba7bfa",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_1t_MT_151120201330.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 28.11.2020 ",
+          "resource_id": "807d42d4-c273-450a-9ce6-07d5770d8f51",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 28.11.2020",
+          "resource_id": "d05f5a72-8f26-4f63-9632-03e7f23be716",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_281120201335.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 29.11.2020",
+          "resource_id": "b3093aa8-c4e5-45e8-88c2-fe4d0d4307db",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2020-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 29.11.2020",
+          "resource_id": "64226ff8-c055-4f27-8b63-1c988d8e8b4c",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/eleicoes2020/correspesp/CESP_2t_MT_291120201333.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-boletim-de-urna-1-turno",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Primeiro turno",
+          "resource_id": "8b1284e3-52d9-4039-bcb1-16de283d4afb",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-boletim-de-urna-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Primeiro turno",
+          "resource_id": "92990c68-22dd-46c5-af55-3630d6cd4aec",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_1t_MT_10102012014547.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-boletim-de-urna-1-turno",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Segundo turno",
+          "resource_id": "60370037-7c21-483f-8df9-aef35000e08c",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-boletim-de-urna-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Segundo turno",
+          "resource_id": "d432c26a-f1df-4fa4-bd79-d174bf9f432a",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/buweb/bweb_2t_MT_30102012172126.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Primeiro turno",
+          "resource_id": "1af33e54-4476-4d6b-b327-e59ab642d7f5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Correspondência efetivada - Primeiro turno",
+          "resource_id": "78a0bf78-1a43-46be-9065-fc8b50ed4571",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_1t_MT_10102012022215.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Segundo turno",
+          "resource_id": "295e704b-edf4-4587-9a55-aed020e02927",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Correspondência efetivada - Segundo turno",
+          "resource_id": "2729cffa-06db-4e17-832b-b2b3f4e11d95",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspefet/ceft_2t_MT_30102012185205.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Primeiro turno",
+          "resource_id": "52ed0481-79ee-49cd-8831-14fc8ea37aec",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Correspondência esperada - Primeiro turno",
+          "resource_id": "5f917ef9-2efe-420e-8464-f183cbd9aef2",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_1t_MT_07102012152147.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Segundo turno",
+          "resource_id": "b84f1d08-13be-42a1-b04a-4cccbc7efdf7",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2012-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Correspondência esperada - Segundo turno",
+          "resource_id": "f4057718-744d-4d3a-9143-9a836ae63cb1",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2012/correspesp/cesp_2t_MT_28102012143145.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-boletim-de-urna",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Primeiro turno - 14.10.2014",
+          "resource_id": "92b29cc4-f331-4e04-9f5c-4299ddb5a613",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA1 - Primeiro turno - 14.10.2014",
+          "resource_id": "ed2b7b53-65d3-4727-b20e-3563f06ca7ca",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_1t_MT_14102014134508.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-boletim-de-urna",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Segundo turno - 28.10.2014",
+          "resource_id": "9d6b3cdf-6b20-4fc7-b976-466702b6fb53",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA1 - Segundo turno - 28.10.2014",
+          "resource_id": "85e87b5f-b92a-4ccc-9663-cd277c7e66a8",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/buweb/bweb_2t_MT_28102014123633.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 8.10.2014",
+          "resource_id": "e35467ae-16c7-4c2b-9c08-271fcf2faa9e",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Primeiro turno - 8.10.2014",
+          "resource_id": "2bfce305-3ad9-4b27-930b-6a5d61bb65b1",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_1t_MT_08102014100909.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Segundo turno - 27.10.2014",
+          "resource_id": "361a84ce-f947-460e-9990-977cd0be7484",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Segundo turno - 27.10.2014",
+          "resource_id": "f6b031fd-dfa7-4087-ac54-a156b538c1a6",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspefet/ceft_2t_MT_27102014134250.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Primeiro turno - 4.10.2014",
+          "resource_id": "8b607576-5548-45ef-a9cc-a7000da00243",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Primeiro turno - 4.10.2014",
+          "resource_id": "9446b51b-f4e5-43fa-bd37-fe47d4a17323",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_04102014171955.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Primeiro turno - 5.10.2014",
+          "resource_id": "7eeed5b8-62a5-49da-9ad7-a9d73dffdb31",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Primeiro turno - 5.10.2014",
+          "resource_id": "e8fd92af-e556-4259-9c9f-bfe10f42f2b5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_1t_MT_05102014153222.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Segundo turno - 25.10.2014",
+          "resource_id": "4018acea-bf82-4640-adae-08b51f4fdd25",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Segundo turno - 25.10.2014",
+          "resource_id": "441b4c0e-86da-4308-b66f-090c4872a721",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_25102014153251.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Segundo turno - 26.10.2014",
+          "resource_id": "dbe42c11-af29-4c44-9ddd-8d67f1063bfd",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip.sha1",
+      "references": [
+        {
+          "dataset": "resultados-2014-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA1 - Segundo turno - 26.10.2014",
+          "resource_id": "235ccb9b-6082-4808-a1ff-9064ba181eb7",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip.sha1"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/correspesp/cesp_2t_MT_26102014151223.zip.sha1"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-boletim-de-urna",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Primeiro turno - 04.10.2016",
+          "resource_id": "1e86ca47-4293-41e3-89d5-f1554d5a8379",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 04.10.2016",
+          "resource_id": "eb5a9290-1ebb-4b1b-a8f8-148500f9145c",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_1t_MT_04102016185209.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-boletim-de-urna",
+          "format": "TXT",
+          "name": "MT - Boletim de urna - Segundo turno - 01.11.2016",
+          "resource_id": "2e2e2fdb-836a-4e85-a56d-995c9d040339",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 01.11.2016",
+          "resource_id": "86a0fbd3-e068-4ea4-aebe-b89f11c7e2aa",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/buweb/bweb_2t_MT_31102016133938.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 4.10.2016 ",
+          "resource_id": "d124baab-b7b0-4bc7-8860-caf17534c68f",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 4.10.2016",
+          "resource_id": "8105a3fb-5294-4c72-8784-2a90dae54e0c",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_1t_MT_04102016143702.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência efetivada - Segundo turno - 01.11.2016 ",
+          "resource_id": "5c7433a3-6ec4-4d3f-9564-7e143041c493",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 01.11.2016",
+          "resource_id": "65aa3392-5624-456d-b032-d4661ed93418",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspefet/ceft_2t_MT_01112016175234.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Primeiro turno - 1.10.2016",
+          "resource_id": "51417124-2d08-4b80-9edb-7b3f50cc58e1",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 1.10.2016",
+          "resource_id": "1b762c4a-e8de-47f0-9d0c-f520f82cbef8",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_01102016182806.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Primeiro turno - 2.10.2016",
+          "resource_id": "1d950acd-5f3f-4fc7-b85a-791f2416b5ab",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 2.10.2016",
+          "resource_id": "b6fb0deb-6c55-4780-a02a-aae88a9d78c4",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_1t_MT_02102016161405.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Segundo turno - 29.10.2016",
+          "resource_id": "d92c7ad7-6bfe-43a8-a530-935538678df2",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 29.10.2016",
+          "resource_id": "7e34a01e-4e52-4e85-ab9c-ac582c81b290",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_29102016140850.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "TXT",
+          "name": "MT - Correspondência esperada - Segundo turno - 30.10.2016",
+          "resource_id": "293da758-0b29-427c-9ebf-40ea1a0f69cb",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2016-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 30.10.2016",
+          "resource_id": "e56ede5c-2709-4e5e-890f-d357b6ff52db",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2016/correspesp/cesp_2t_MT_30102016134132.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de urna - Primeiro turno - 10.10.2018",
+          "resource_id": "40d57624-91c1-4e94-8711-7e344b60df47",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 10.10.2018",
+          "resource_id": "115fad3c-7727-43ce-9f6a-861a14ed3b21",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_1t_MT_101020181938.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de urna - Segundo turno - 31.10.2018",
+          "resource_id": "b02a32e8-6706-42b4-ae14-5a2179b89c9e",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 31.10.2018",
+          "resource_id": "27db9aba-979f-461f-848b-01b4a84014d8",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/buweb/BWEB_2t_MT_301020181744.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 10.10.2018",
+          "resource_id": "318015fc-31d5-4c3c-8add-932de7f8e213",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 10.10.2018",
+          "resource_id": "3f9bce6a-0a28-42ef-9bb3-61c1c9aefc6a",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/1t/CEFT_1t_MT_111020180053.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Segundo turno - 31.10.2018 ",
+          "resource_id": "128e2348-b19d-4ef7-b804-b6a0602cb34c",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 31.10.2018",
+          "resource_id": "bf4acf39-9f54-4221-832f-1b15288b9d70",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspefet/2t/CEFT_2t_MT_301020182242.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 6.10.2018",
+          "resource_id": "69e9325e-bf36-41a2-a4b2-d3df99a93574",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 6.10.2018",
+          "resource_id": "985b3668-a5c6-4ca8-8579-f46c4fbaa8f7",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_061020181529.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 7.10.2018",
+          "resource_id": "0b5f9bd2-a47f-4a83-9f2d-1d6325360159",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 7.10.2018",
+          "resource_id": "66946d18-cb7f-4f5c-9cc3-89afc99549b5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_1t_MT_071020181541.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 27.10.2018 ",
+          "resource_id": "0669bd1c-47d6-44f3-ab41-ccc311195dc2",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 27.10.2018",
+          "resource_id": "7794feec-8577-4737-ab8e-6208c5a2cdbc",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_271020181441.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 28.10.2018",
+          "resource_id": "2c06a563-78ef-4bc1-92b1-4138f196fee6",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2018-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 28.10.2018",
+          "resource_id": "a82b6962-6b08-4272-94bd-4a179d08f203",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/correspesp/CESP_2t_MT_281020181447.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_1t_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-arquivos-transmitidos-para-totalizacao",
+          "format": "ZIP",
+          "name": "MT - Arquivos transmitidos para totalização - Primeiro turno - 06.10.2022",
+          "resource_id": "f15e4d73-0de9-499c-bf2b-b218129322d4",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_1t_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_1t_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_2t_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-arquivos-transmitidos-para-totalizacao",
+          "format": "ZIP",
+          "name": "MT - Arquivos transmitidos para totalização - Segundo turno - 02.11.2022",
+          "resource_id": "5df0759c-c8dd-46ac-b2b2-b407e06f1bb1",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_2t_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2022_2t_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de Urna - Primeiro turno - 05.10.2022",
+          "resource_id": "fd6558d9-0e6f-43a6-9c24-b1c35e77bbe7",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 05.10.2022",
+          "resource_id": "9f7dbd3e-dd32-442a-a755-f5d8f54e2ff7",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de Urna - Segundo turno - 31.10.2022",
+          "resource_id": "097dc255-be50-4931-8caa-9eca9f08af7c",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 31.10.2022",
+          "resource_id": "4e7f430e-0bda-447b-aff2-1550fedff6ea",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 04.10.2022",
+          "resource_id": "bb9a2461-d2b6-4769-a772-89f1aedc2a9e",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 04.10.2022",
+          "resource_id": "67f32e0c-f519-4490-9cd9-21e3d72df660",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_1t_MT_041020221233.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Segundo turno - 31.10.2022",
+          "resource_id": "99e7ae56-82ae-4956-93e0-94c84be3af72",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 31.10.2022",
+          "resource_id": "d63b21c1-58f5-47ab-ab47-f106563bba82",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspefet/CEFT_2t_MT_311020221100.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 01.10.2022",
+          "resource_id": "4d9d0fa8-02da-4080-8af2-cfe6f9d72290",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 01.10.2022",
+          "resource_id": "0e196bc5-d832-4e4c-a344-93b6c0ad46a5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_011020221232.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 02.10.2022",
+          "resource_id": "b98c47d3-a485-4663-ab55-e9369f1f4c58",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 02.10.2022",
+          "resource_id": "3ee23f1d-5752-4342-ab16-f32c56922d8e",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_1t_MT_021020221215.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 29.10.2022",
+          "resource_id": "8fda8602-c828-401f-9b54-74e61b738526",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 29.10.2022",
+          "resource_id": "a840d1a7-7962-4649-a980-637bc751e1e8",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_291020221210.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 30.10.2022",
+          "resource_id": "b8cdac91-5594-4e3e-a017-35021bf4f8dd",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2022-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 30.10.2022",
+          "resource_id": "a55d719e-f7dc-47b3-bb93-c6c50338f687",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/correspesp/CESP_2t_MT_301020221145.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_1t_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-arquivos-transmitidos-para-totalizacao",
+          "format": "ZIP",
+          "name": "MT - Arquivos transmitidos para totalização - Primeiro turno",
+          "resource_id": "73071359-a47f-4929-923d-4c1ad16cc7c8",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_1t_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_1t_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_2t_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-arquivos-transmitidos-para-totalizacao",
+          "format": "ZIP",
+          "name": "MT - Arquivos transmitidos para totalização - Segundo turno",
+          "resource_id": "ff93f4c7-1fff-48b3-8e10-a38cdc3270f8",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_2t_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2024_2t_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de Urna - Primeiro turno - 06.10.2024",
+          "resource_id": "871ca473-9c25-4a7d-9132-ee5af74447f2",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 06.10.2024",
+          "resource_id": "6a93fe72-a23b-47ce-a46c-4c4c5ba25923",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_1t_MT_091020241636.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de Urna - Segundo turno - 27.10.2024",
+          "resource_id": "3e4b26fe-9632-47e6-a9ee-7361ce01fd28",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 27.10.2024",
+          "resource_id": "d7915a51-1ff9-4718-91ba-3a39b3b51469",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/buweb/bweb_2t_MT_281020241046.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 07.10.2024",
+          "resource_id": "5357eef3-a392-4995-912e-801f129d8ce7",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 07.10.2024",
+          "resource_id": "4f5427dc-0944-43d3-9b29-bf119c7be11c",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_1t_MT_071020241530.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Segundo turno - 28.10.2024",
+          "resource_id": "b1f51d0b-0c6c-4b09-9b8e-3263e9ec96b1",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 28.10.2024",
+          "resource_id": "094ac7c2-5f94-4c42-8650-7f49306c8e1e",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspefet/CEFT_2t_MT_281020240835.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 05.10.2024",
+          "resource_id": "942d15b6-9c3c-4589-a21e-20fb42a24421",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 05.10.2024",
+          "resource_id": "cec10523-d183-4533-b18e-98c550cd8cd5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_051020241322.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 06.10.2024",
+          "resource_id": "0d2d94a7-65e6-481e-b296-d4247734ad49",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 06.10.2024",
+          "resource_id": "fce904dc-8d68-4d5f-893d-e13139da66c5",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_1t_MT_061020241406.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 26.10.2024",
+          "resource_id": "551626e4-c5bf-4144-a2d8-df1cbc7bdf21",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 26.10.2024",
+          "resource_id": "bed3ba33-9a11-4aa0-a294-00892819b6f3",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_261020241121.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 27.10.2024",
+          "resource_id": "7c51c722-6346-4bf3-a587-f070e5276f57",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 27.10.2024",
+          "resource_id": "0066851e-50ee-4144-8bf6-42e1d95dc050",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/correspesp/CESP_2t_MT_271020241127.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Primeiro turno - 05.10.2024",
+          "resource_id": "d61c1740-f740-4f1b-a664-d3a2b3985c88",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 05.10.2024",
+          "resource_id": "c4683049-0072-4461-8a66-26dd869dc7d2",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_051020241525.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Primeiro turno - 06.10.2024",
+          "resource_id": "8bb54a53-c094-4ed6-923c-dbdf87d81ec4",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 06.10.2024",
+          "resource_id": "9832fe74-8f4e-44c5-acac-4d1003a07bce",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_1t_MT_061020241203.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Segundo turno - 26.10.2024",
+          "resource_id": "bb509f5b-a271-4abf-a614-5ee4fee05431",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 26.10.2024",
+          "resource_id": "a948977e-1757-4a1a-b1bc-5781608d554b",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_261020241105.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Segundo turno - 27.10.2024",
+          "resource_id": "cc6490f4-8ad8-4c44-aa9e-a1f08c846241",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 27.10.2024",
+          "resource_id": "de7502da-5278-4d7c-86ce-0b30165efe09",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024/logsgedai/log_gedai_2t_MT_271020241119.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-arquivos-transmitidos-para-totalizacao",
+          "format": "ZIP",
+          "name": "MT - Arquivos transmitidos para totalização - Primeiro turno",
+          "resource_id": "3b171c34-84b1-4bb3-b2b8-a66c55794133",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "CSV",
+          "name": "MT - Boletim de Urna - Primeiro turno - 05.10.2026",
+          "resource_id": "8cc4cad8-fc91-4f3b-97ce-4b0af8f02393",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-boletim-de-urna",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 05.10.2026",
+          "resource_id": "3a10ed0c-7b55-4432-9da7-afd61f9cc7d9",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb/bweb_1t_MT_051020261403.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência efetivada - Primeiro turno - 05.10.2026",
+          "resource_id": "8aee2082-e403-4419-ae5e-c2dce33af95c",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 05.10.2026",
+          "resource_id": "bc69e2ce-cd17-43c8-950d-6f4e44554a19",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspefet/CEFT_1t_MT_051020261049.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 03.10.2026",
+          "resource_id": "963dbde7-4a69-4d43-8260-381fa5f0f7ee",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Hash SHA2 - Primeiro turno - 03.10.2026",
+          "resource_id": "4dc01dbd-a4ad-43aa-9522-7002f2b42f9f",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_031020261534.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Primeiro turno - 04.10.2026",
+          "resource_id": "ad907c53-a4b5-4809-96a0-c7dad9ef68c6",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-1-turno",
+          "format": "CSV",
+          "name": "MT - Hash SHA2 - Primeiro turno - 04.10.2026",
+          "resource_id": "5186e402-dd1b-474d-bd92-47e6af0a5d90",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_1t_MT_041020261259.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 24.10.2026",
+          "resource_id": "2b56bb1d-5d6b-4e05-b8d5-059b46a0d680",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 24.10.2026",
+          "resource_id": "8118ec03-d73f-4238-81d4-90ac746bbad7",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_241020261231.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "CSV",
+          "name": "MT - Correspondência esperada - Segundo turno - 25.10.2026",
+          "resource_id": "5f8be707-b621-498e-9c78-f29d1239a67b",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-correspondencias-esperadas-e-efetivadas-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 25.10.2026",
+          "resource_id": "64a11cca-7b00-4300-941e-fd99d27b24d8",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/correspesp/CESP_2t_MT_251020261345.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Primeiro turno - 03.10.2026",
+          "resource_id": "4d3e11bd-1de2-4e3f-9630-f38954e8b7a8",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Primeiro turno - 03.10.2026",
+          "resource_id": "4c5d0261-4777-4252-8c10-36f354097038",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_031020261345.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "CSV",
+          "name": "MT - Log Gedai - Primeiro turno - 04.10.2026",
+          "resource_id": "81ad586c-dfbd-4f22-ba8b-3913253416f4",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno",
+          "format": "CSV",
+          "name": "MT - Hash SHA2 - Primeiro turno - 04.10.2026",
+          "resource_id": "7d9bdd35-86e0-436e-8384-0c5450d5a203",
+          "turno_hint": "1",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_1t_MT_041020261441.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Segundo turno - 24.10.2026",
+          "resource_id": "c9b49970-1476-4cc2-a95d-15e2c6b1db5f",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 24.10.2026",
+          "resource_id": "84f40973-a3ea-4fa5-b82b-862fe96b76ed",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_241020261329.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "ZIP",
+          "name": "MT - Log Gedai - Segundo turno - 25.10.2026",
+          "resource_id": "a17d080b-449d-4fc0-8aa5-676e8a4f45bd",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip.sha512",
+      "references": [
+        {
+          "dataset": "resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno",
+          "format": "",
+          "name": "MT - Hash SHA2 - Segundo turno - 25.10.2026",
+          "resource_id": "cba0ecd0-c266-4b02-82e7-c423d26ac492",
+          "turno_hint": "2",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip.sha512"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/logsgedai/log_gedai_2t_MT_251020261327.zip.sha512"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024",
+          "format": "CSV",
+          "name": "MT - Relatório de Totalização - 2024",
+          "resource_id": "dbc9bb35-dabb-42ac-bf6e-1fef05cd2966",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026",
+          "format": "PDF",
+          "name": "MT - Relatório de Totalização - 2026",
+          "resource_id": "2523f992-3819-4faf-b841-0083cd15cfe5",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2000_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2000",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2000",
+          "resource_id": "085eeb96-205b-428a-98cd-aca4c1bdc149",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2000_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2000_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2002_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2002",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2002",
+          "resource_id": "f9c888d5-81f9-45be-910b-3dafdc930ba9",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2002_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2002_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2004_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2004",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2004",
+          "resource_id": "c775e2a8-ed2e-4c17-829a-d46f8876614a",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2004_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2004_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2006_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2006",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2006",
+          "resource_id": "f03e1fa6-3465-4bdc-b15f-5516bdc45655",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2006_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2006_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2008_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2008",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2008",
+          "resource_id": "4a15acec-638d-447b-afcc-73ee7b6a3752",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2008_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2008_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2010_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2010",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2010",
+          "resource_id": "f1fc7093-6853-44e1-81a4-672eeeaba691",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2010_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2010_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2012_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2012",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2012",
+          "resource_id": "ca92e1ab-159c-47e2-bb47-a33cc01c7b90",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2012_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2012_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2014_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2014",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2014",
+          "resource_id": "e8621e5b-df2a-4356-bf90-d3c8ca61fa74",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2014_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2014_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2016_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2016",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2016",
+          "resource_id": "a9d9e8f5-5667-4a27-87a6-64c943c4f7e3",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2016_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2016_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2018_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2018",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2018",
+          "resource_id": "f3aebc7e-3626-492a-8783-4c40086453cf",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2018_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2018_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2020_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2020",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2020",
+          "resource_id": "e0c874ba-26e1-4824-bb5a-f4efe3663e20",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2020_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2020_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2022_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2022",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2022",
+          "resource_id": "8e25cbdf-426c-4d0c-92cb-5310f1f0e475",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2022_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2022_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2024",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2024",
+          "resource_id": "6a0c2759-e560-46f2-94f9-72881a00ab47",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_MT.zip"
+    },
+    {
+      "path": "cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_MT.zip",
+      "references": [
+        {
+          "dataset": "resultados-2026",
+          "format": "CSV",
+          "name": "MT - Votação por seção eleitoral - 2026",
+          "resource_id": "77ec8635-5130-466b-a488-41358db47b8c",
+          "turno_hint": "",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_MT.zip"
+        }
+      ],
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_MT.zip"
+    }
+  ],
+  "scope": "recorte explícito do inventário histórico MT; referências compartilhadas preservadas",
+  "source_inventory_sha256": "fda216c74c9fb9123012ab88d9ac767e72f50308624590b6e6958ee6ed69d331"
+}

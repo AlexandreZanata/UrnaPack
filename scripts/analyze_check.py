@@ -405,6 +405,8 @@ def main(argv=None):
     parser.add_argument("--expected-sha256", default=None)
     parser.add_argument("--output", default=None)
     args = parser.parse_args(argv)
+    if args.output and (Path(args.output).exists() or Path(args.output).is_symlink()):
+        raise ValueError("saída existente; preserve a verificação anterior")
     limits = load_limits()
     checks = []
     observed_sha = sha256_file(args.csv)
@@ -704,7 +706,8 @@ def main(argv=None):
     }
     output = json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
     if args.output:
-        Path(args.output).write_text(output, encoding="utf-8")
+        with Path(args.output).open("x", encoding="utf-8") as stream:
+            stream.write(output)
     else:
         print(output, end="")
     if not success:

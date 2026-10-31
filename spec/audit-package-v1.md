@@ -67,3 +67,10 @@ e comparados com os bytes selecionados; divergência ou excesso do limite
 central de asset reprova, preservando o parcial. A compactação conserva
 os arquivos derivados selecionados; não recupera informação que sua
 transformação analítica já não continha.
+
+`--name` permite nome ASCII simples terminado em `.zip`, sem componentes
+de caminho; o padrão anterior permanece. O nome também fica no recibo
+externo. A opção identifica outros acervos processados sem misturar seus
+escopos ou criar outro formato binário. O teto central de asset fica
+estritamente abaixo de 2 GiB e comporta o arquivo MT comprimido existente;
+o tamanho é conferido nos bytes efetivamente gerados.

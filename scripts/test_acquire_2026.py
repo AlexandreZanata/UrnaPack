@@ -34,6 +34,14 @@ class Response(io.BytesIO):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_official_absolute_posix_name_is_metadata_and_cannot_traverse_or_name_another_file(self):
+        digest=hashlib.sha512(FIXTURE.read_bytes()).hexdigest()
+        body=(digest+"  /aplic/sead/odsele/out/bu_web/synthetic.csv\n").encode()
+        self.assertEqual(official_digest(body,"synthetic.csv","sha512"),digest)
+        for named in ("/aplic/../synthetic.csv","/aplic//synthetic.csv","/aplic/other.csv","../synthetic.csv"):
+            with self.assertRaises(ValueError):
+                official_digest((digest+"  "+named+"\n").encode(),"synthetic.csv","sha512")
+
     def test_one_byte_range_metadata_is_explicit_and_checks_total_then_full_bytes(self):
         body = FIXTURE.read_bytes()
         calls = []

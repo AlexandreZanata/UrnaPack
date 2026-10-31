@@ -18,6 +18,19 @@ preservar a evidência e reproduzir análises dos dados das urnas brasileiras,
 > [Resultados da compressão](docs/RESULTADO-COMPRESSAO-MT.md) ·
 > [Etapa 5A](docs/ETAPA-5A.md).
 
+Auditoria específica das quatro imagens sobre o segundo turno presidencial
+de 2026: [relatório](auditoria/2026/RELATORIO.md),
+[conclusões](auditoria/2026/CONCLUSOES.md) e
+[dados tratados comprimidos](https://github.com/AlexandreZanata/UrnaPack/releases/tag/audit-2026-buweb-v1).
+O catálogo nacional tem aquisição e integridade conferidas. Os diagnósticos
+dos logs permanecem explícitos; não há declaração de conciliação integral,
+fraude ou autenticidade eleitoral.
+
+As rotinas históricas revisadas têm contrato e comandos em
+[spec/historico-v2.md](spec/historico-v2.md).
+As evidências, validações e instruções para repetir a consolidação estão em
+[docs/CONSOLIDACAO-2026.md](docs/CONSOLIDACAO-2026.md).
+
 ## Planejamento e próxima entrega
 
 - [Plano refinado](docs/PLANO.md): etapas, contratos e critérios de saída.

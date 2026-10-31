@@ -27,6 +27,7 @@ import json
 import os
 import sys
 import zipfile
+from acquire_2026 import safe_path, relative_url, check_pinned
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -66,7 +67,9 @@ def fingerprint(header):
 
 
 def analyze_member(zf, info, limits):
-    raw = zf.read(info.filename)
+    if info.file_size > int(limits["MAX_ZIP_MEMBER_BYTES"]):
+        raise ValueError("MAX_ZIP_MEMBER_BYTES excedido")
+    raw = zf.read(info)
     member_sha = hashlib.sha256(raw).hexdigest()
     text = io.TextIOWrapper(io.BytesIO(raw), encoding="latin-1", newline="")
     reader = csv.reader(text, delimiter=";", quotechar='"', doublequote=True, strict=True)
@@ -74,7 +77,12 @@ def analyze_member(zf, info, limits):
         header = next(reader)
     except StopIteration:
         return {"member": info.filename, "error": "csv_vazio", "records": 0}
+    if len(header) != len(set(header)) or len(header) > int(limits["MAX_CSV_FIELDS"]):
+        raise ValueError("cabeçalho duplicado ou excessivo")
     cols = {name: idx for idx, name in enumerate(header)}
+    if "QT_VOTOS" in cols and (not {"CD_ELEICAO", "NR_TURNO", "NR_VOTAVEL"}.issubset(cols)
+            or not ({"CD_CARGO", "CD_CARGO_PERGUNTA"} & set(cols))):
+        raise ValueError("votos sem identificadores suficientes; agregação bloqueada")
     result = {
         "member": info.filename,
         "header": header,
@@ -112,11 +120,10 @@ def analyze_member(zf, info, limits):
 
     for row in reader:
         if len(row) != len(header):
-            flags["linhas_com_n_colunas_divergente"] += 1
-            continue
+            raise ValueError("largura divergente; agregação do membro bloqueada")
         result["records"] += 1
         if result["records"] > int(limits["MAX_CSV_RECORDS"]):
-            return {**result, "error": "MAX_CSV_RECORDS excedido"}
+            raise ValueError("MAX_CSV_RECORDS excedido; agregação bloqueada")
         get = lambda name: row[cols[name]] if name in cols else ""
 
         if "NR_TURNO" in cols:
@@ -134,13 +141,13 @@ def analyze_member(zf, info, limits):
             try:
                 votos = int(get("QT_VOTOS"))
                 if votos < 0:
-                    flags["qt_votos_negativo"] += 1
+                    raise ValueError("QT_VOTOS negativo")
                 else:
                     turno = get("NR_TURNO") or "?"
                     eleicao = get("CD_ELEICAO") or "?"
                     votes_by_eleicao[(eleicao, turno, cargo or "?")] += votos
             except ValueError:
-                flags["qt_votos_nao_numerico"] += 1
+                raise ValueError("QT_VOTOS inválido; agregação bloqueada")
 
         # contexto aritmético
         if result["has_context"]:
@@ -149,8 +156,9 @@ def analyze_member(zf, info, limits):
                 comp = int(get("QT_COMPARECIMENTO"))
                 abst = int(get("QT_ABSTENCOES"))
             except ValueError:
-                flags["contexto_nao_numerico"] += 1
-                continue
+                raise ValueError("contexto não numérico; agregação bloqueada")
+            if min(aptos, comp, abst) < 0:
+                raise ValueError("contexto negativo; agregação bloqueada")
             if comp + abst == aptos:
                 arithmetic_ok += 1
             else:
@@ -165,7 +173,7 @@ def analyze_member(zf, info, limits):
         interpretable = result["has_qt_votos"] or result["has_context"]
         if occ_fields and interpretable:
             key = tuple(get(c) for c in occ_fields)
-            digest = hashlib.sha256(b"\x00".join(v.encode("latin-1", "replace") for v in row)).hexdigest()
+            digest = hashlib.sha256(json.dumps(row, ensure_ascii=True, separators=(",", ":")).encode("ascii")).hexdigest()
             if key in occurrences:
                 dup += 1
                 if occurrences[key] == digest:
@@ -174,6 +182,8 @@ def analyze_member(zf, info, limits):
                     conf += 1
             else:
                 occurrences[key] = digest
+                if len(occurrences) > int(limits["MAX_BWEB_OCCURRENCE_KEYS"]):
+                    raise ValueError("MAX_BWEB_OCCURRENCE_KEYS excedido")
 
         # contexto uma vez por grupo
         if ctx_fields and result["has_context"]:
@@ -182,6 +192,8 @@ def analyze_member(zf, info, limits):
             current = (get("QT_APTOS"), get("QT_COMPARECIMENTO"), get("QT_ABSTENCOES"))
             if entry is None:
                 contexts[key] = {"context": current, "votes": 0}
+                if len(contexts) > int(limits["MAX_BWEB_OCCURRENCE_KEYS"]):
+                    raise ValueError("limite de contextos excedido")
             else:
                 if entry["context"] != current:
                     ctx_div += 1
@@ -235,21 +247,46 @@ def analyze_member(zf, info, limits):
         "grupos_votos_igual_dobro_comparecimento": votos_dobro_comp_grupos,
         "grupos_votos_maior_aptos": votos_maior_aptos,
         "flags": dict(sorted(flags.items())),
+        "aggregation_complete": True,
+        "quality_approved": arithmetic_fail == 0 and dup == 0 and ctx_div == 0,
     })
     return result
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--brutos", default="/data/urnapack/brutos")
-    parser.add_argument("--output", default="relatorios-locais/mt-historico")
+    source = parser.add_mutually_exclusive_group()
+    source.add_argument("--brutos")
+    source.add_argument("--catalog", type=Path)
+    parser.add_argument("--root", type=Path)
+    parser.add_argument("--output", default="relatorios-locais/mt-historico-v2")
     args = parser.parse_args()
     limits = load_limits()
     out_dir = Path(args.output)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=False)
 
     files = []
-    for year_dir in sorted(Path(args.brutos).glob("[12]*")):
+    fixed_by_path = {}
+    catalog_reference = None
+    if args.catalog:
+        if args.root is None:
+            raise ValueError("--catalog exige --root")
+        raw_catalog=args.catalog.read_bytes();fixed=json.loads(raw_catalog)
+        if fixed.get("format_version")!=1 or len({i["url"] for i in fixed["items"]})!=len(fixed["items"]):
+            raise ValueError("catálogo inválido/duplicado")
+        for item in fixed["items"]:
+            if relative_url(item["url"])!=item["path"] or not {"expected_bytes","expected_sha256"}.issubset(item):
+                raise ValueError("catálogo sem fixação ou caminho divergente")
+            if item["url"].lower().endswith(".zip"):
+                path=safe_path(args.root,item["path"])
+                if path in fixed_by_path:
+                    raise ValueError("colisão de caminho no catálogo")
+                fixed_by_path[path]=item;files.append(path)
+        catalog_reference={"path":str(args.catalog),"bytes":len(raw_catalog),"sha256":hashlib.sha256(raw_catalog).hexdigest(),
+            "selected_zip_resources":len(files),"nonzip_resources_not_aggregated":len(fixed["items"])-len(files)}
+    elif args.root is not None:
+        raise ValueError("--root exige --catalog")
+    for year_dir in ([] if args.catalog else sorted(Path(args.brutos or "/data/urnapack/brutos").glob("[12]*"))):
         mt = year_dir / "MT"
         legacy = year_dir / "t1" / "MT"
         for base in (mt, legacy):
@@ -259,27 +296,33 @@ def main():
                 if path.suffixes[-2:] == [".zip", ".sha512"] or path.name.endswith((".sha512", ".sha1")):
                     continue
                 files.append(path)
-    # remove duplicatas byte-identicas (2026 legado vs novo)
+    # Caminhos repetidos por conteúdo continuam no relatório, com alias explícito.
     seen_sha = {}
     unique = []
     for path in files:
         try:
             digest = sha256_file(str(path))
+            if path in fixed_by_path:
+                check_pinned(fixed_by_path[path],{"bytes":path.stat().st_size,"sha256":digest})
         except OSError as exc:
             print(f"leitura {path}: {exc}", file=sys.stderr)
             return 2
         if digest in seen_sha:
-            print(f"duplicado byte-identico ignorado: {path} (= {seen_sha[digest]})")
-            continue
+            print(f"conteúdo repetido preservado: {path} (= {seen_sha[digest]})")
         seen_sha[digest] = str(path)
         unique.append(path)
 
-    report = {"files": [], "errors": []}
+    report = {"format_version": 2, "files": [], "errors": [], "archive_members": [], "success": False,
+              "source_catalog":catalog_reference}
+    if not unique:
+        report["errors"].append("nenhum ZIP selecionado; não aprovar execução vazia")
     for path in unique:
         try:
             zip_sha = sha256_file(str(path))
             size = path.stat().st_size
-        except OSError as exc:
+            if size > int(limits["MAX_SOURCE_FILE_BYTES"]):
+                raise ValueError("MAX_SOURCE_FILE_BYTES excedido")
+        except (OSError, ValueError) as exc:
             report["errors"].append(f"{path}: {exc}")
             continue
         try:
@@ -288,12 +331,21 @@ def main():
             report["errors"].append(f"{path}: zip inválido ({exc})")
             continue
         with zf:
-            for info in zf.infolist():
+            infos = zf.infolist()
+            report["archive_members"].append({"zip": str(path), "zip_sha256": zip_sha,
+                "members": [{"ordinal": n, "name": i.filename, "bytes": i.file_size, "crc32": f"{i.CRC:08x}"} for n, i in enumerate(infos)]})
+            if len(infos) > int(limits["MAX_ZIP_MEMBERS"]) or len({i.filename for i in infos}) != len(infos):
+                report["errors"].append(f"{path}: índice excessivo ou nomes repetidos; sem selecionar membro por nome")
+                continue
+            for info in infos:
                 if info.is_dir() or not info.filename.lower().endswith((".csv", ".txt")):
                     continue
                 # .txt antigos sem cabeçalho: cataloga sem interpretar como votacao/bweb
                 if info.filename.lower().endswith(".txt"):
-                    raw = zf.read(info.filename)
+                    if info.file_size > int(limits["MAX_ZIP_MEMBER_BYTES"]):
+                        report["errors"].append(f"{path}#{info.filename}: tamanho excedido")
+                        continue
+                    raw = zf.read(info)
                     report["files"].append({
                         "zip": str(path),
                         "zip_sha256": zip_sha,
@@ -313,15 +365,18 @@ def main():
                     continue
                 member.update({"zip": str(path), "zip_sha256": zip_sha, "zip_bytes": size})
                 report["files"].append(member)
+                if member.get("error") or member.get("quality_approved") is False:
+                    report["errors"].append(f"{path}#{info.filename}: controles do membro reprovados")
                 print(f"{path.name}#{info.filename}: {member.get('records')} registros")
 
+    report["success"] = not report["errors"]
     with open(out_dir / "analysis.json", "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, sort_keys=True, indent=2)
         fh.write("\n")
     # REPORT.md legível
     lines = ["# MT 2000-2026 — descritiva e inconsistências observadas", "",
              "Sem conclusão de fraude/autenticidade. Flags são observações que exigem confronto com fonte/documentação.",
-             "", f"Arquivos ZIP únicos: {len(unique)}; membros analisados: {len(report['files'])}.",
+             "", f"Arquivos ZIP selecionados (inclusive conteúdo repetido): {len(unique)}; membros analisados: {len(report['files'])}.",
              "", "| arquivo | membro | registros | turnos | cargos | municípios | aritmética falha | duplicatas | ctx divergentes | votos≠comp grupos |",
              "|---|---|---:|---|---|---:|---:|---:|---:|---:|"]
     for item in sorted(report["files"], key=lambda x: (x.get("zip", ""), x.get("member", ""))):
@@ -345,7 +400,7 @@ def main():
               "- `votos≠comp` fora dessa regra, aritmética `aptos≠comp+abst`, duplicatas e divergências de contexto são observações que exigem confronto com fonte/documentação; nenhuma conclui fraude/autenticidade.",
               "- Segundo turno parcial conforme acervo; ausência no disco não prova inexistência no universo."]
     (out_dir / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"OK: {len(report['files'])} membros, erros={len(report['errors'])}")
+    print(f"Diagnóstico: {len(report['files'])} membros, erros={len(report['errors'])}")
     return 1 if report["errors"] else 0
 
 

@@ -1,0 +1,47 @@
+{
+  "format_version": 1,
+  "observed_at_utc": "2026-10-31T22:11:41.598638+00:00",
+  "status": "completed_with_log_diagnostics",
+  "scope": "Execução integral em clone limpo; todos os artefatos do inventário foram relidos e seus bytes/SHA-256 conferidos. Os códigos científicos de logs/consolidação permanecem 1; empacotamento 0. Não certifica autenticidade eleitoral.",
+  "git_revision": "5bece27996a07773dfd9b2b29f020ed86c484033",
+  "presidential_fields_equal_except_source_members": true,
+  "per_uf_log_reports_equal": true,
+  "logs_exit_code": 1,
+  "aggregate_exit_code": 1,
+  "package_exit_code": 0,
+  "verified_artifact_files": 257,
+  "files": {
+    "artifacts.json": {
+      "bytes": 38639,
+      "sha256": "09de4d3edadfc02579e0b8c8043794710cb9c782b1a005497e46d12449fb6e5f"
+    },
+    "verification.json": {
+      "bytes": 1764811,
+      "sha256": "0b27bd3e793520bab3670912f2147f7c0e78583d2f9e63a357f2b4dac5d5d4d5"
+    },
+    "zip-integrity.json": {
+      "bytes": 460019,
+      "sha256": "edf9066297a8fc1c6a3d30096c156855dcd614fa959fda2d81c4a799e5a4c62e"
+    },
+    "president.json": {
+      "bytes": 40077,
+      "sha256": "b846bc5c34ba45e38f4a11adc4bd83024d49722ae4b730244e88aaa5df058552"
+    },
+    "coverage.json": {
+      "bytes": 58097,
+      "sha256": "46d6de61302c8a303fb5cc89df76a399ff814dbb8cdc8806af8a0abfe00fe5f3"
+    },
+    "log-national.json": {
+      "bytes": 165574,
+      "sha256": "edb0b4b3b8c7201960e97940a998fd61b858d64617fe0095ca9df0cf0621c680"
+    },
+    "environment.json": {
+      "bytes": 1267,
+      "sha256": "869a095d8e66eb3c3750633bc4f62e5bf6204533b4d0d04fb44c0d68cf6f688d"
+    },
+    "compressed-buweb/package-run.json": {
+      "bytes": 11233,
+      "sha256": "00ca8a23ab618b0331b9eb31c977dcba9871c96f0fcb5164afa7a2b854b4fdd6"
+    }
+  }
+}

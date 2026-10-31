@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "scope": "Fixture sintética, não dados TSE: CSV de tests/fixtures/analyze comprimido pelo produtor Brotli 8.0.4 para teste de compatibilidade com o decoder atualizado.",
+  "source": {
+    "bytes": 3999,
+    "sha256": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381",
+    "file": "../analyze/mt-valid.csv"
+  },
+  "encoded": {
+    "bytes": 720,
+    "sha256": "bd7f70a18a7ccfb3db1a8147eab593ddff74fe2c57de5d6637414fc3a90cfd91",
+    "file": "payload.br"
+  },
+  "producer_git_revision": "1787e7ca42a6b357d94b8ae372f8c87ebf68ac4c",
+  "producer_binary_sha256": "90bde555547843f341add0379c76f9d0706f979890e753bd43a2f30e9eab2753",
+  "brotli_crate_version": "8.0.4",
+  "codec": "brotli-5"
+}

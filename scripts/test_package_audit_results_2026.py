@@ -28,6 +28,13 @@ class ResultPackageTests(unittest.TestCase):
                 self.assertEqual(set(archive.namelist()), {"synthetic.csv", "_inventory.json"})
                 archive.extract("synthetic.csv", root/"restored")
             self.assertEqual((root/"restored/synthetic.csv").read_bytes(), BODY)
+            named = package(source, root/"named", ["synthetic.csv"], "synthetic-fixture-not-TSE", LIMITS, "mt-fixture.zip")
+            self.assertTrue(named["success"])
+            self.assertEqual(named["release_asset"]["file"],"mt-fixture.zip")
+            self.assertTrue((root/"named/mt-fixture.zip").is_file())
+            with self.assertRaisesRegex(ValueError,"nome de asset"):
+                package(source, root/"unsafe", ["synthetic.csv"], "synthetic-fixture-not-TSE", LIMITS, "../unsafe.zip")
+            self.assertFalse((root/"unsafe").exists())
             changed = root/"changed.zip"
             with zipfile.ZipFile(changed, "w") as archive:
                 archive.writestr("synthetic.csv", BODY+b"changed")

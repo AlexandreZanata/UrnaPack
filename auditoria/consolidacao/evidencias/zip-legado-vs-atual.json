@@ -1,0 +1,1640 @@
+{
+  "format_version": 1,
+  "scope": "Compara todos os membros, inclusive nomes e ordem, dos quatro ZIPs legados sem igualdade SHA-256 com o snapshot atual. Diferença de ZIP não implica diferença de votos.",
+  "sources": [
+    {
+      "legacy": {
+        "path": "/data/urnapack/brutos/2024/MT/Relatorio_Resultado_Totalizacao_2024_MT.zip",
+        "bytes": 106532981,
+        "sha256": "8c6ec5ac4276932f46d45c2a6ecf511cd6b39c1602852af6f57468144050b739",
+        "verified_source_urls": []
+      },
+      "fresh_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_MT.zip",
+      "fresh_bytes": 106532981,
+      "fresh_sha256": "5e9aca17e607c86b60b21e37fbd4844f0d3e64b60a5642b57ba12d2b4480c4f8",
+      "legacy_members": [
+        {
+          "name": "619_MT_CANARANA_2024_T1.pdf",
+          "bytes": 800768,
+          "sha256": "63892004078576cf6b0ebad1718592a313efa01ade4bd6cc4e486b3d25804e1a"
+        },
+        {
+          "name": "619_MT_RIBEIRÃOZINHO_2024_T1.pdf",
+          "bytes": 506700,
+          "sha256": "761d6f8e5a52853f7fd7acd6a586b664e3418b8867b848c29495c3643ba4d178"
+        },
+        {
+          "name": "619_MT_PONTES-E-LACERDA_2024_T1.pdf",
+          "bytes": 919343,
+          "sha256": "2c14736f8e9dabd639c1a20318574e9ec42268321f3094f45ef1fa89b28a433d"
+        },
+        {
+          "name": "619_MT_VALE-DE-SÃO-DOMINGOS_2024_T1.pdf",
+          "bytes": 659177,
+          "sha256": "154298a784884185cfe1fddadafb45f18892956e0be0d0aec9d33e43fb791c0e"
+        },
+        {
+          "name": "619_MT_NOVA-XAVANTINA_2024_T1.pdf",
+          "bytes": 774846,
+          "sha256": "da71ebe171ee45c08fd1dbaeff1951b78db77f091217386a0bb6a6af29f66050"
+        },
+        {
+          "name": "619_MT_PONTAL-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 597432,
+          "sha256": "5a5774a6c0d3a269facc04d5540008277333a2f86304d7fa2dd621bc6ed4f217"
+        },
+        {
+          "name": "619_MT_CHAPADA-DOS-GUIMARÃES_2024_T1.pdf",
+          "bytes": 780955,
+          "sha256": "c814d985ec943b2687bf4319838b278d63a0f4d228660cab62b5f016c57e7553"
+        },
+        {
+          "name": "619_MT_NOVA-MARINGÁ_2024_T1.pdf",
+          "bytes": 661468,
+          "sha256": "4df9a8c2e86ee3ce5b81a15c9b37b13b6199d428d7ed3bd7904b182eb1a1eeb7"
+        },
+        {
+          "name": "619_MT_TABAPORÃ_2024_T1.pdf",
+          "bytes": 822364,
+          "sha256": "235e9337ca5c8eb0f0e2671ded932438e055e2a07121b55b995f24e26759a73a"
+        },
+        {
+          "name": "619_MT_NOVO-MUNDO_2024_T1.pdf",
+          "bytes": 686301,
+          "sha256": "92ad271c8be358d80a31a78cc5ebcf999271ab8d37966b31f4a37fa29436b305"
+        },
+        {
+          "name": "619_MT_SANTA-CRUZ-DO-XINGU_2024_T1.pdf",
+          "bytes": 549573,
+          "sha256": "fbc215fa8cdaaea24c5252dee0c2de4df7526d76a80bee0347f7314d44103bb4"
+        },
+        {
+          "name": "619_MT_COLÍDER_2024_T1.pdf",
+          "bytes": 923451,
+          "sha256": "40c7957477f0768c21308ae74085fd291432516a407ccf0a0297299d23db4057"
+        },
+        {
+          "name": "619_MT_CASTANHEIRA_2024_T1.pdf",
+          "bytes": 619457,
+          "sha256": "9a3b81bf03884227b1ddb7bb5ff59ff6218868ab8ef9f85db38912590d726dbc"
+        },
+        {
+          "name": "619_MT_CÁCERES_2024_T1.pdf",
+          "bytes": 1173537,
+          "sha256": "2101eba478580bcfddeb1f1f296ef2cd84940f4834ea63355bd9674e3aec71c1"
+        },
+        {
+          "name": "619_MT_COMODORO_2024_T1.pdf",
+          "bytes": 736209,
+          "sha256": "733e713e050b56799dc64dbefdd078a915385c758b29db6eaad40c8874f760d2"
+        },
+        {
+          "name": "619_MT_PONTE-BRANCA_2024_T1.pdf",
+          "bytes": 504167,
+          "sha256": "285ecc80cb4492c0c9bcea3081948b051cef69feeef2162d3228e30466bf99dc"
+        },
+        {
+          "name": "619_MT_SÃO-PEDRO-DA-CIPA_2024_T1.pdf",
+          "bytes": 593169,
+          "sha256": "19094786973f4a6d0754a5175af7b167ad6fd876d018fbf4068656cef0c2f998"
+        },
+        {
+          "name": "619_MT_CAMPINÁPOLIS_2024_T1.pdf",
+          "bytes": 687565,
+          "sha256": "05d571a502f695a60e8a729dd9e8370da0effe4bfc9d31887d725016fd9dbd56"
+        },
+        {
+          "name": "619_MT_UNIÃO-DO-SUL_2024_T1.pdf",
+          "bytes": 595980,
+          "sha256": "702d088a5832f686b3582412ad9c872c7206e83d0c9826bc446653c6d929cf1e"
+        },
+        {
+          "name": "619_MT_GUIRATINGA_2024_T1.pdf",
+          "bytes": 774734,
+          "sha256": "75fb33791a124feab94c6fc58d426637d636f61706db2dd6b5f37ed6da02ecfd"
+        },
+        {
+          "name": "619_MT_TORIXORÉU_2024_T1.pdf",
+          "bytes": 534021,
+          "sha256": "a17723776d10c7778999953e9629d8bc7b091c93c952dfa274e68b84e688d2f8"
+        },
+        {
+          "name": "619_MT_FELIZ-NATAL_2024_T1.pdf",
+          "bytes": 684645,
+          "sha256": "981d37623bf2c33e48730fdf94ba02efd09981137b572b7392301cb4da58ff53"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DOS-QUATRO-MARCOS_2024_T1.pdf",
+          "bytes": 824898,
+          "sha256": "1d5be3e3fe961802049a0e09ae8875954afd880e29360f1152fb85e158634778"
+        },
+        {
+          "name": "619_MT_CAMPO-VERDE_2024_T1.pdf",
+          "bytes": 915468,
+          "sha256": "b8aaba8211f589dfa8f310b803f9dc43105a174d3274a4f22f11179192a0d71b"
+        },
+        {
+          "name": "619_MT_PARANAÍTA_2024_T1.pdf",
+          "bytes": 661098,
+          "sha256": "bca0337f5ca149c32a994af39105d705a11bb836c36bbf6554d959f1e70cbd65"
+        },
+        {
+          "name": "619_MT_ACORIZAL_2024_T1.pdf",
+          "bytes": 551349,
+          "sha256": "5bc35720be640ec597156c20df0e21b07f5e3b92b96bf62297965328fcbac926"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-POVO_2024_T1.pdf",
+          "bytes": 596343,
+          "sha256": "106340938df6e33ee6ed13f84d320264193842cf724fd248c6d80b1624ef515d"
+        },
+        {
+          "name": "619_MT_COLNIZA_2024_T1.pdf",
+          "bytes": 846060,
+          "sha256": "2d90e7da714347e983f53b90a4b67bc0ed214a9b526fce77bc7e3ee3bb61656f"
+        },
+        {
+          "name": "619_MT_DOM-AQUINO_2024_T1.pdf",
+          "bytes": 748064,
+          "sha256": "ba6e37e39fb03bcb7159c2dc18ed4207d85b577b2303be4b8d4b455e04e673ed"
+        },
+        {
+          "name": "619_MT_SÃO-FÉLIX-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 774814,
+          "sha256": "544cfe41556e5068281cad4eba1bc14dc855b828a035ffc9a272ef306613691a"
+        },
+        {
+          "name": "619_MT_JANGADA_2024_T1.pdf",
+          "bytes": 747950,
+          "sha256": "8974184d4583236382ac0301b2629bf43ee0ac5159218c4d4a07792f23586cfe"
+        },
+        {
+          "name": "619_MT_LUCIARA_2024_T1.pdf",
+          "bytes": 619688,
+          "sha256": "a07e88c1528dc8e34a213fca051fb7f4efb14bbc3d623db5267ecdf5080c1ba7"
+        },
+        {
+          "name": "619_MT_PLANALTO-DA-SERRA_2024_T1.pdf",
+          "bytes": 685423,
+          "sha256": "e148fa0933362daaca3c0fed4d7d4f9725e9de881ab4992c866715f67b99c7d3"
+        },
+        {
+          "name": "619_MT_VILA-BELA-DA-SANTÍSSIMA-TRINDADE_2024_T1.pdf",
+          "bytes": 825871,
+          "sha256": "71d3fb27968de9724d51e25b1a19e58d7acfec2a862919499a395a46cf712567"
+        },
+        {
+          "name": "619_MT_JAURU_2024_T1.pdf",
+          "bytes": 625128,
+          "sha256": "cb02524edcd4bd634ee898c4719e8995e5aeccf174da5c9f40c9c7cf4414f1b9"
+        },
+        {
+          "name": "619_MT_GENERAL-CARNEIRO_2024_T1.pdf",
+          "bytes": 640984,
+          "sha256": "3e9ce2f386c4c59fd401046bb8df2a62d552009d08ee2b9e795e55a3e7ce213f"
+        },
+        {
+          "name": "619_MT_NOVA-UBIRATÃ_2024_T1.pdf",
+          "bytes": 773465,
+          "sha256": "1ee72fde19c8ec1848b9181272729831d4e9391429e7fa156b2588c1d746696b"
+        },
+        {
+          "name": "619_MT_JUÍNA_2024_T1.pdf",
+          "bytes": 849013,
+          "sha256": "d9db857ee53c16fd52f84e3eebbec5466f5ba91939004f3d642f231fef3589be"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-XINGU_2024_T1.pdf",
+          "bytes": 617505,
+          "sha256": "55654c1d672530f5db3737e28b4348cda0b01201b7973c1ea8f0252c9d0b6406"
+        },
+        {
+          "name": "619_MT_CAMPOS-DE-JÚLIO_2024_T1.pdf",
+          "bytes": 619965,
+          "sha256": "b6e57bb6e5587903dc210fee332e972b24a71a5bc2e744bc90bf985eefb7820c"
+        },
+        {
+          "name": "619_MT_NOVA-MONTE-VERDE_2024_T1.pdf",
+          "bytes": 746875,
+          "sha256": "5da7df6b6ba6119be03e2a851a8d7300ff8a5d000c2d103a1f7e520e30fdf414"
+        },
+        {
+          "name": "619_MT_PEDRA-PRETA_2024_T1.pdf",
+          "bytes": 913481,
+          "sha256": "328428e341658006379d36217ee5cb93ac8d530bd6a4cbc3d0675603e60ae9d2"
+        },
+        {
+          "name": "619_MT_APIACÁS_2024_T1.pdf",
+          "bytes": 594082,
+          "sha256": "4d55c62e2464f2922c2d4875cda1d65322ea0d588ef33c9395cd5a9c3e4c642f"
+        },
+        {
+          "name": "619_MT_FIGUEIRÓPOLIS-D'OESTE_2024_T1.pdf",
+          "bytes": 573582,
+          "sha256": "53d80b8fff68c5705fe270b63e979788e831eae19ab721ba00276a64de036429"
+        },
+        {
+          "name": "619_MT_NOSSA-SENHORA-DO-LIVRAMENTO_2024_T1.pdf",
+          "bytes": 754269,
+          "sha256": "b83bffee5287681abf29338be23eb3279c64eb3d42963845ccbb86cb9ea1b20b"
+        },
+        {
+          "name": "619_MT_BRASNORTE_2024_T1.pdf",
+          "bytes": 714627,
+          "sha256": "76acc29dbeeca26d06d9148df812746b0befb46071c96a91dac4c04f3c1909ff"
+        },
+        {
+          "name": "619_MT_SERRA-NOVA-DOURADA_2024_T1.pdf",
+          "bytes": 570723,
+          "sha256": "9aa695d62f65532aa072c72333ab8b9f39c583d02aee1067add081dcaaa80fec"
+        },
+        {
+          "name": "619_MT_JUARA_2024_T1.pdf",
+          "bytes": 756166,
+          "sha256": "0ecdcdbf18fbd2d4679dbe212482a41ef1aa814218e8f04e0762ab1e79a4d091"
+        },
+        {
+          "name": "619_MT_ALTO-BOA-VISTA_2024_T1.pdf",
+          "bytes": 618351,
+          "sha256": "f072d8b4ec0cb1d55545fc5f14bd84139c0b7d571c3e40895a19bdfe65f17006"
+        },
+        {
+          "name": "619_MT_POCONÉ_2024_T1.pdf",
+          "bytes": 895867,
+          "sha256": "d8cd58c3a1d5c55bca094e04050d60d2d71d37abbb80735df4e27c3d375ddcc0"
+        },
+        {
+          "name": "619_MT_IPIRANGA-DO-NORTE_2024_T1.pdf",
+          "bytes": 592395,
+          "sha256": "ad845f920e48ef1a93808b2bb32b026c3f42fd7b9d7501db6c0d1b305803db1b"
+        },
+        {
+          "name": "619_MT_CONFRESA_2024_T1.pdf",
+          "bytes": 958603,
+          "sha256": "3acb268bd777c1e7a60a1cb29e045a959bb06fe4f5067d45cffb35b0157eb98a"
+        },
+        {
+          "name": "619_MT_BOM-JESUS-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 550406,
+          "sha256": "d56656555162b85562ba84bb9f91eb4d796a179167d360a92eb4a361bb5472b2"
+        },
+        {
+          "name": "619_MT_ALTO-TAQUARI_2024_T1.pdf",
+          "bytes": 726930,
+          "sha256": "70a1e44ef96b98c07534c729bdb43003921b5cb70ff27c2d16017419bee86481"
+        },
+        {
+          "name": "619_MT_SANTO-ANTÔNIO-DO-LEVERGER_2024_T1.pdf",
+          "bytes": 783629,
+          "sha256": "6da6358c217c636225cb217f40699f7a035d00ea31def641c393049651a18b28"
+        },
+        {
+          "name": "619_MT_ARENÁPOLIS_2024_T1.pdf",
+          "bytes": 731065,
+          "sha256": "97ab5a7623814d8a303de928aa2382c43365fe937a5582f00aa9aa3fc251290c"
+        },
+        {
+          "name": "619_MT_GUARANTÃ-DO-NORTE_2024_T1.pdf",
+          "bytes": 877735,
+          "sha256": "2f705f747ae05c956dbb3276fc8e8dea36f94be88896c02c6bba59dbac496d9c"
+        },
+        {
+          "name": "619_MT_SANTO-ANTÔNIO-DO-LESTE_2024_T1.pdf",
+          "bytes": 112836,
+          "sha256": "8ec4617eceb6531c778a61249efac40a4f6ad51ee0bed287337de3a2cc22dbe1"
+        },
+        {
+          "name": "619_MT_MARCELÂNDIA_2024_T1.pdf",
+          "bytes": 484789,
+          "sha256": "9cf48421a97816a852fe24305a8975e7c2a22f3b53c75b76867fae32729fc245"
+        },
+        {
+          "name": "619_MT_NORTELÂNDIA_2024_T1.pdf",
+          "bytes": 710563,
+          "sha256": "e2d4081f27a50085ce3f9e9321de23197d1de6c422ff1b447f76146fb3e55a31"
+        },
+        {
+          "name": "619_MT_NOVA-BRASILÂNDIA_2024_T1.pdf",
+          "bytes": 577398,
+          "sha256": "2fa89a664dbda14efce9d8600e2b0c47e5a0f03fb7c39c99599200744495b2dc"
+        },
+        {
+          "name": "619_MT_CLÁUDIA_2024_T1.pdf",
+          "bytes": 713041,
+          "sha256": "d56b7ca5c7f9e1f0017da4a041b6285cfce1a1d4f517615f56663c4d7df5298d"
+        },
+        {
+          "name": "619_MT_TANGARÁ-DA-SERRA_2024_T1.pdf",
+          "bytes": 1030912,
+          "sha256": "0c43d5be918b01bf738219d9d37755c61d421755340117b06d5f020d6a0462be"
+        },
+        {
+          "name": "619_MT_RIO-BRANCO_2024_T1.pdf",
+          "bytes": 663683,
+          "sha256": "8e49b7e065e266f4275674552b026f0500b57c0dce814db38cfc5ef80f8de1e6"
+        },
+        {
+          "name": "619_MT_NOVA-NAZARÉ_2024_T1.pdf",
+          "bytes": 620409,
+          "sha256": "d24454fdbd0933e5e51f6483492905e7b7715b62d294f07ea35e33ed5f7b5593"
+        },
+        {
+          "name": "619_MT_GAÚCHA-DO-NORTE_2024_T1.pdf",
+          "bytes": 818663,
+          "sha256": "d4aa2847da9d7b6e199c670ba7486932f8f6deee27c3d4dbabfca704a70fda30"
+        },
+        {
+          "name": "619_MT_ITIQUIRA_2024_T1.pdf",
+          "bytes": 822321,
+          "sha256": "113ab43c5ef02406d81f6b036566c39968b4745ac0836ae0e3c043503040a5a6"
+        },
+        {
+          "name": "619_MT_BARRA-DO-BUGRES_2024_T1.pdf",
+          "bytes": 962939,
+          "sha256": "62f558f78d1e1a42f0269b818d9dcf5ad63d77c5e282a55c86bdcac12568fa8c"
+        },
+        {
+          "name": "619_MT_ARIPUANÃ_2024_T1.pdf",
+          "bytes": 906893,
+          "sha256": "98d0b7ae5f81ae8f66502f78f401e756b6c52d4b64ecc1f24d4f1b50aef02b2b"
+        },
+        {
+          "name": "619_MT_JACIARA_2024_T1.pdf",
+          "bytes": 798815,
+          "sha256": "cd06d407acca3b7dd48c1de571f1af160f46fb5ead53c37b167ff25a26ac4308"
+        },
+        {
+          "name": "619_MT_VÁRZEA-GRANDE_2024_T1.pdf",
+          "bytes": 1652961,
+          "sha256": "a0c87d07964d8446af0171c3d5dfdc8040009d179483021d79650a310e2e96f3"
+        },
+        {
+          "name": "619_MT_VERA_2024_T1.pdf",
+          "bytes": 773110,
+          "sha256": "05c2f0283f44d8aed8f0df59dc890bdded0c6bf0c2387825f81e814a62b8e96b"
+        },
+        {
+          "name": "619_MT_SANTA-CARMEM_2024_T1.pdf",
+          "bytes": 528319,
+          "sha256": "b065dd1e2b73ac886bb6225ca144c60d08d809ec2eaaf71174ace5cb56105f83"
+        },
+        {
+          "name": "619_MT_SALTO-DO-CÉU_2024_T1.pdf",
+          "bytes": 595539,
+          "sha256": "6caee9b67e452cbe09a2075f2bc86a3fbd0ceb693c90396d815374c47fb41f03"
+        },
+        {
+          "name": "619_MT_PORTO-ALEGRE-DO-NORTE_2024_T1.pdf",
+          "bytes": 689396,
+          "sha256": "0fbf368fb0c23ce5caba954095ed93b3825b173fe00cfb01bd394221d0899625"
+        },
+        {
+          "name": "619_MT_VILA-RICA_2024_T1.pdf",
+          "bytes": 798698,
+          "sha256": "84ac9f409edaae7a84682f31290d9a077b8591a9588f721e2f7da26e4002df66"
+        },
+        {
+          "name": "619_MT_BARRA-DO-GARÇAS_2024_T1.pdf",
+          "bytes": 1135322,
+          "sha256": "08c982759ba42517b3dac1525dce6f6d278a8b658960275937ec307fccdd5a5a"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-RIO-CLARO_2024_T1.pdf",
+          "bytes": 775222,
+          "sha256": "febc68629a1563422ff5483396080ba227e00ba92ecd1afdfe478832b41c2ff8"
+        },
+        {
+          "name": "619_MT_CONQUISTA-D'OESTE_2024_T1.pdf",
+          "bytes": 662247,
+          "sha256": "85c657f0cce779b63745b51f8d883e46182c8f7138d27641335a5a25df2db7f1"
+        },
+        {
+          "name": "619_MT_LAMBARI-D'OESTE_2024_T1.pdf",
+          "bytes": 639556,
+          "sha256": "b84f4b7a40b1b4cd497a6f2e439f63d08a92c70475748a40ed14eb39a759e745"
+        },
+        {
+          "name": "619_MT_ITAÚBA_2024_T1.pdf",
+          "bytes": 684406,
+          "sha256": "facdc6df8b5ca6a4e5a03bb7937d6b5e075037b3ca95f364fb93baf85142b847"
+        },
+        {
+          "name": "619_MT_SAPEZAL_2024_T1.pdf",
+          "bytes": 869422,
+          "sha256": "46d5d9a280559da2fdca2d7ee45670f849b7406459ec818b89e3c81718620b79"
+        },
+        {
+          "name": "619_MT_NOVA-BANDEIRANTES_2024_T1.pdf",
+          "bytes": 887879,
+          "sha256": "b063fafb717f5d2a6c2aed05784ff010d0d47a241b8960c5cc7401e5c563eec6"
+        },
+        {
+          "name": "619_MT_RONDONÓPOLIS_2024_T1.pdf",
+          "bytes": 1626303,
+          "sha256": "ebdd64afff453ca72aaafaf416cc4648a755fab9111c0bbd83e5b9d26d57a381"
+        },
+        {
+          "name": "619_MT_RESERVA-DO-CABAÇAL_2024_T1.pdf",
+          "bytes": 572161,
+          "sha256": "ecbf665d57e4bbe8e13bb808df6444a6ae200443b75b90c42fd3409e169443c0"
+        },
+        {
+          "name": "619_MT_QUERÊNCIA_2024_T1.pdf",
+          "bytes": 892240,
+          "sha256": "c3cb01191626bc35a0e1a18a79699e2a1069d270e5aff71b6b8d6b3c9e814a53"
+        },
+        {
+          "name": "619_MT_NOBRES_2024_T1.pdf",
+          "bytes": 780085,
+          "sha256": "a72eb71ce7043a0108395adfd7f717d93ef80293ba3a43a134a7685c668f7c1f"
+        },
+        {
+          "name": "619_MT_ALTO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 818257,
+          "sha256": "b144c94165c6b05cd81adf89940e44a5b0dfeda261b65a80e74dfc03bc517b90"
+        },
+        {
+          "name": "619_MT_INDIAVAÍ_2024_T1.pdf",
+          "bytes": 527160,
+          "sha256": "46051cbe221cb4f64e9fa35ae7e50913198c77053c94a7016e75c1a736ee0ef4"
+        },
+        {
+          "name": "619_MT_ALTA-FLORESTA_2024_T1.pdf",
+          "bytes": 944873,
+          "sha256": "6e8634a27abd9a6a92104dc7a0c3305d7b7771a3d64c870626e85603f228aae5"
+        },
+        {
+          "name": "619_MT_JURUENA_2024_T1.pdf",
+          "bytes": 757847,
+          "sha256": "ae674d6f90d690482bfd0befea8753bd9a14bcb0cc1867a6e71e726ec4233cb8"
+        },
+        {
+          "name": "619_MT_SINOP_2024_T1.pdf",
+          "bytes": 1215708,
+          "sha256": "ecc7689af2baf5322c07ada23cb750df71b024e283da2bf5679728e6dcba08b3"
+        },
+        {
+          "name": "619_MT_ITANHANGÁ_2024_T1.pdf",
+          "bytes": 619679,
+          "sha256": "b4ed4b41e28b6268d0ba398a7ad2a00c4844bc8caae5a435cea873d71edd8cb2"
+        },
+        {
+          "name": "619_MT_PARANATINGA_2024_T1.pdf",
+          "bytes": 819106,
+          "sha256": "bcd9f66e72866a7b62ac41943e78bd580a3bcfc858abaf7074b2f6450062723f"
+        },
+        {
+          "name": "619_MT_NOVA-CANAÃ-DO-NORTE_2024_T1.pdf",
+          "bytes": 687029,
+          "sha256": "214aeaf50fd79f9d6a6ebc4d5aace7d7b6d5ff4848e382f0c5030a074544fe7b"
+        },
+        {
+          "name": "619_MT_PRIMAVERA-DO-LESTE_2024_T1.pdf",
+          "bytes": 1183751,
+          "sha256": "d002eaf7061f83ba3d86474f78cb1c7484f3df336d2ef19905908cf340f6de24"
+        },
+        {
+          "name": "619_MT_CUIABÁ_2024_T1.pdf",
+          "bytes": 2180942,
+          "sha256": "9dd92865fb34775811a1bf5a1540b3c81e0765f04e15c381c127d873930e992d"
+        },
+        {
+          "name": "619_MT_JUSCIMEIRA_2024_T1.pdf",
+          "bytes": 728841,
+          "sha256": "8f789cf4d30402d430a36684f078a7deacf5bf4b05fc365fe90f8a64b1541907"
+        },
+        {
+          "name": "619_MT_SORRISO_2024_T1.pdf",
+          "bytes": 1036352,
+          "sha256": "42be2a3095869ae16f5eb4e3f90f3863a4ae0ae9885aba47d7ef360e0e90c781"
+        },
+        {
+          "name": "619_MT_ROSÁRIO-OESTE_2024_T1.pdf",
+          "bytes": 811323,
+          "sha256": "fa7b3a31450457b0f48a08ca1c9a25d3d956d4e9ad9eaceeaeedf2e9736cb5d5"
+        },
+        {
+          "name": "619_MT_NOVA-OLÍMPIA_2024_T1.pdf",
+          "bytes": 801967,
+          "sha256": "1b2c214db139a22fac0348c9e23c24ee9689c952b3466c720fb9d0e44ebdba15"
+        },
+        {
+          "name": "619_MT_ARAPUTANGA_2024_T1.pdf",
+          "bytes": 803869,
+          "sha256": "21b3d37408fc6a201757d352cd58a86d7d9ee6826db14b97741ef4748af02fda"
+        },
+        {
+          "name": "619_MT_BARÃO-DE-MELGAÇO_2024_T1.pdf",
+          "bytes": 688421,
+          "sha256": "474a3d3c6d6c2e8a878a2c6f6839e8cfd6c68c574a0b43cb54f0cb13124ca308"
+        },
+        {
+          "name": "619_MT_PORTO-ESPERIDIÃO_2024_T1.pdf",
+          "bytes": 797686,
+          "sha256": "34f7bf6d6a7d8112f4f27c5c195b11d6366790400bb5ccb4b905598e0e628ed2"
+        },
+        {
+          "name": "619_MT_NOVA-SANTA-HELENA_2024_T1.pdf",
+          "bytes": 572545,
+          "sha256": "538837f60fa93963d81a915b12b7da30519d367f255a1e2f3d054c7df44b9f4b"
+        },
+        {
+          "name": "619_MT_PORTO-DOS-GAÚCHOS_2024_T1.pdf",
+          "bytes": 685814,
+          "sha256": "dc404733fa6cc27be3295ef15e2c0b92c5dc7fcb69ef9f9917ee85fb8b2b9cd8"
+        },
+        {
+          "name": "619_MT_CARLINDA_2024_T1.pdf",
+          "bytes": 774000,
+          "sha256": "76492f0a428621c72f1afcff9b22091d5e195c229ceacf4cf44381662263e58d"
+        },
+        {
+          "name": "619_MT_CURVELÂNDIA_2024_T1.pdf",
+          "bytes": 681162,
+          "sha256": "95fb59ddbda963a31247b6fb570a533749f91703d2a3ebad84fef64b62690d10"
+        },
+        {
+          "name": "619_MT_NOVA-MARILÂNDIA_2024_T1.pdf",
+          "bytes": 637582,
+          "sha256": "f3d481819e885792a230a28bc3a648ebb9229e2d7b9cccce61fea0f572197abd"
+        },
+        {
+          "name": "619_MT_DIAMANTINO_2024_T1.pdf",
+          "bytes": 828035,
+          "sha256": "90ec338ba65daac76f8ab6284333272e5c590e077c9d761234dffa3538eae0bf"
+        },
+        {
+          "name": "619_MT_MIRASSOL-D'OESTE_2024_T1.pdf",
+          "bytes": 890336,
+          "sha256": "b70ea636a6021d5b769bedc5a2f9576023a8b4fb44df11e8e059ff910dbb4f48"
+        },
+        {
+          "name": "619_MT_ÁGUA-BOA_2024_T1.pdf",
+          "bytes": 864993,
+          "sha256": "997d46aa7f3eda865087a7821662ec5d3f8960ef46cf1632542884bf363fdb6a"
+        },
+        {
+          "name": "619_MT_TERRA-NOVA-DO-NORTE_2024_T1.pdf",
+          "bytes": 582734,
+          "sha256": "1ac0fc96fbc6d3fab2d214bc6d24e9b23b58490a43cd8d328a3c6a5dcb6d079f"
+        },
+        {
+          "name": "619_MT_COCALINHO_2024_T1.pdf",
+          "bytes": 707892,
+          "sha256": "fc05664ff44fa922e675a275a345d0eef5d8947dc44e5dd7442ed5f736ac87cc"
+        },
+        {
+          "name": "619_MT_POXORÉU_2024_T1.pdf",
+          "bytes": 829105,
+          "sha256": "dcd1f063e18c3e8deb7098e51b83977bb972046d630ee87eecf4bda9910413f6"
+        },
+        {
+          "name": "619_MT_BOA-ESPERANÇA-DO-NORTE_2024_T1.pdf",
+          "bytes": 658956,
+          "sha256": "ab3a6478aeae0b2e1d78c50cc1188f9d402b6c274c32be38e11726f5762f98cb"
+        },
+        {
+          "name": "619_MT_ARAGUAINHA_2024_T1.pdf",
+          "bytes": 570081,
+          "sha256": "7c130ca26af35afcd6460ca97bfef48058bedc8966ecc1fe9f717e45a555ded2"
+        },
+        {
+          "name": "619_MT_NOVA-LACERDA_2024_T1.pdf",
+          "bytes": 729393,
+          "sha256": "4282a15ae9fe2affb5f21a563e6740dbd7d8338bc18835f758e99ada07c1a9dc"
+        },
+        {
+          "name": "619_MT_PORTO-ESTRELA_2024_T1.pdf",
+          "bytes": 662381,
+          "sha256": "b2ac294c7c12ac58505710915fd0d4d325e19d2ef7410063632e7695bd392604"
+        },
+        {
+          "name": "619_MT_ALTO-PARAGUAI_2024_T1.pdf",
+          "bytes": 664284,
+          "sha256": "799f02df379dfa3d403a249a314d03b89a695c0978d73e3712fa326c9f6e1123"
+        },
+        {
+          "name": "619_MT_PEIXOTO-DE-AZEVEDO_2024_T1.pdf",
+          "bytes": 964689,
+          "sha256": "c95ed907453938c9d990910d6b6f85299a2831dd31a82f1a571adab38e592751"
+        },
+        {
+          "name": "619_MT_SANTA-RITA-DO-TRIVELATO_2024_T1.pdf",
+          "bytes": 573316,
+          "sha256": "a290e0c9d550f9d7a63bd17ec2e0b2a5e541c26625204c74c9468d8b2d2d0b73"
+        },
+        {
+          "name": "619_MT_TAPURAH_2024_T1.pdf",
+          "bytes": 705420,
+          "sha256": "78839d118a1a0cd8946e5e3e4efa6a60b5509e401bb8fba89763f53c69950171"
+        },
+        {
+          "name": "619_MT_RONDOLÂNDIA_2024_T1.pdf",
+          "bytes": 593581,
+          "sha256": "acd680ed27010fe7361690d75fd639da9d60632873e31e09188f6a311010a2b4"
+        },
+        {
+          "name": "619_MT_SANTO-AFONSO_2024_T1.pdf",
+          "bytes": 549816,
+          "sha256": "2916635bacdc62103b43f996dfa6e9d94fbf050e0daf01974065211ad1a78ca0"
+        },
+        {
+          "name": "619_MT_MATUPÁ_2024_T1.pdf",
+          "bytes": 706359,
+          "sha256": "812bbbd0286a7855f42669e377934408074d2ef41bd7f54843518034933c627e"
+        },
+        {
+          "name": "619_MT_DENISE_2024_T1.pdf",
+          "bytes": 617788,
+          "sha256": "8020cf256ce899d308560defb4a7d4023035581ee878a0d3605b2a0cf3e1d272"
+        },
+        {
+          "name": "619_MT_TESOURO_2024_T1.pdf",
+          "bytes": 484831,
+          "sha256": "d4b8a2ad92095b34ae876e53ae6257631ac360d064fde416673bb2a0c6e8f3ae"
+        },
+        {
+          "name": "619_MT_GLÓRIA-D'OESTE_2024_T1.pdf",
+          "bytes": 639192,
+          "sha256": "7e9057a0b327be8b4db945ce251938bbe658eb2ac61b09f1a0cdbec120dd7898"
+        },
+        {
+          "name": "619_MT_NOVO-SÃO-JOAQUIM_2024_T1.pdf",
+          "bytes": 578639,
+          "sha256": "094d9ffec731751b72a83ef042d9a313a63f8bbcdbb11cf27d536d77835cb02b"
+        },
+        {
+          "name": "619_MT_CAMPO-NOVO-DO-PARECIS_2024_T1.pdf",
+          "bytes": 957103,
+          "sha256": "9fb18a603fa9025a1e9f99464acb19343d5f9dca586a0366f2259577250da436"
+        },
+        {
+          "name": "619_MT_LUCAS-DO-RIO-VERDE_2024_T1.pdf",
+          "bytes": 845446,
+          "sha256": "8d0e836fc1f9343cda89516283f3afba02b61d1d89f148a62df57844e3c19410"
+        },
+        {
+          "name": "619_MT_NOVO-HORIZONTE-DO-NORTE_2024_T1.pdf",
+          "bytes": 600545,
+          "sha256": "d72e5a596914643293dc34b4ec974b49fc779cb03b224a86ee6c3b3699064101"
+        },
+        {
+          "name": "619_MT_SANTA-TEREZINHA_2024_T1.pdf",
+          "bytes": 552363,
+          "sha256": "7c28e36396014031df3831e353ff40d977242426f78083042e0e860724d4d4d9"
+        },
+        {
+          "name": "619_MT_ALTO-GARÇAS_2024_T1.pdf",
+          "bytes": 636730,
+          "sha256": "1b19b7452d6377afd0ee52d71d367029762c87dc1bfd4e0ae93a580e637c6ac3"
+        },
+        {
+          "name": "619_MT_CANABRAVA-DO-NORTE_2024_T1.pdf",
+          "bytes": 683038,
+          "sha256": "bfae16838f86f7bed5d33d475bcfbe99a96a908ce16cc89c4674c43cc250e3cd"
+        },
+        {
+          "name": "619_MT_COTRIGUAÇU_2024_T1.pdf",
+          "bytes": 603054,
+          "sha256": "ecf352bf02ee587b6536f8ea153a5b5f4b1457437876b5cecd0e251d20b4aa86"
+        },
+        {
+          "name": "619_MT_NOVA-MUTUM_2024_T1.pdf",
+          "bytes": 820879,
+          "sha256": "920885cdc3b59ea6c1a37796687d014cf61ad559ed93becf2e2a1e14c3eef698"
+        },
+        {
+          "name": "619_MT_NOVA-GUARITA_2024_T1.pdf",
+          "bytes": 598850,
+          "sha256": "fd62e234ec72b9b73e66de61f566dd75918cb7ad476987e139b2792263afbdb7"
+        },
+        {
+          "name": "619_MT_RIBEIRÃO-CASCALHEIRA_2024_T1.pdf",
+          "bytes": 884532,
+          "sha256": "b794a784ebdd1957ae23a540f7e3a2f31efda7f67bfb41300dc2288032a0aaa2"
+        },
+        {
+          "name": "619_MT_ARAGUAIANA_2024_T1.pdf",
+          "bytes": 594457,
+          "sha256": "4551194d3c89e52413a8108acf7fca786648d053434f084b46e9d371d83ea28c"
+        },
+        {
+          "name": "619_MT_NOVO-SANTO-ANTÔNIO_2024_T1.pdf",
+          "bytes": 571386,
+          "sha256": "d6281337aa34eebedd8c47a1b1c1faa4dd0786ff70a61fd681bf3501b7fed249"
+        },
+        {
+          "name": "620_MT_CUIABÁ_2024_T2.pdf",
+          "bytes": 268006,
+          "sha256": "dd8cf889fa9b60fc3c5e74fe28d81df45a204b090ebb34115dc72228bc820b11"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "fresh_members": [
+        {
+          "name": "619_MT_CANARANA_2024_T1.pdf",
+          "bytes": 800768,
+          "sha256": "63892004078576cf6b0ebad1718592a313efa01ade4bd6cc4e486b3d25804e1a"
+        },
+        {
+          "name": "619_MT_RIBEIRÃOZINHO_2024_T1.pdf",
+          "bytes": 506700,
+          "sha256": "761d6f8e5a52853f7fd7acd6a586b664e3418b8867b848c29495c3643ba4d178"
+        },
+        {
+          "name": "619_MT_PONTES-E-LACERDA_2024_T1.pdf",
+          "bytes": 919343,
+          "sha256": "2c14736f8e9dabd639c1a20318574e9ec42268321f3094f45ef1fa89b28a433d"
+        },
+        {
+          "name": "619_MT_VALE-DE-SÃO-DOMINGOS_2024_T1.pdf",
+          "bytes": 659177,
+          "sha256": "154298a784884185cfe1fddadafb45f18892956e0be0d0aec9d33e43fb791c0e"
+        },
+        {
+          "name": "619_MT_NOVA-XAVANTINA_2024_T1.pdf",
+          "bytes": 774846,
+          "sha256": "da71ebe171ee45c08fd1dbaeff1951b78db77f091217386a0bb6a6af29f66050"
+        },
+        {
+          "name": "619_MT_PONTAL-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 597432,
+          "sha256": "5a5774a6c0d3a269facc04d5540008277333a2f86304d7fa2dd621bc6ed4f217"
+        },
+        {
+          "name": "619_MT_CHAPADA-DOS-GUIMARÃES_2024_T1.pdf",
+          "bytes": 780955,
+          "sha256": "c814d985ec943b2687bf4319838b278d63a0f4d228660cab62b5f016c57e7553"
+        },
+        {
+          "name": "619_MT_NOVA-MARINGÁ_2024_T1.pdf",
+          "bytes": 661468,
+          "sha256": "4df9a8c2e86ee3ce5b81a15c9b37b13b6199d428d7ed3bd7904b182eb1a1eeb7"
+        },
+        {
+          "name": "619_MT_TABAPORÃ_2024_T1.pdf",
+          "bytes": 822364,
+          "sha256": "235e9337ca5c8eb0f0e2671ded932438e055e2a07121b55b995f24e26759a73a"
+        },
+        {
+          "name": "619_MT_NOVO-MUNDO_2024_T1.pdf",
+          "bytes": 686301,
+          "sha256": "92ad271c8be358d80a31a78cc5ebcf999271ab8d37966b31f4a37fa29436b305"
+        },
+        {
+          "name": "619_MT_SANTA-CRUZ-DO-XINGU_2024_T1.pdf",
+          "bytes": 549573,
+          "sha256": "fbc215fa8cdaaea24c5252dee0c2de4df7526d76a80bee0347f7314d44103bb4"
+        },
+        {
+          "name": "619_MT_COLÍDER_2024_T1.pdf",
+          "bytes": 923451,
+          "sha256": "40c7957477f0768c21308ae74085fd291432516a407ccf0a0297299d23db4057"
+        },
+        {
+          "name": "619_MT_CASTANHEIRA_2024_T1.pdf",
+          "bytes": 619457,
+          "sha256": "9a3b81bf03884227b1ddb7bb5ff59ff6218868ab8ef9f85db38912590d726dbc"
+        },
+        {
+          "name": "619_MT_CÁCERES_2024_T1.pdf",
+          "bytes": 1173537,
+          "sha256": "2101eba478580bcfddeb1f1f296ef2cd84940f4834ea63355bd9674e3aec71c1"
+        },
+        {
+          "name": "619_MT_COMODORO_2024_T1.pdf",
+          "bytes": 736209,
+          "sha256": "733e713e050b56799dc64dbefdd078a915385c758b29db6eaad40c8874f760d2"
+        },
+        {
+          "name": "619_MT_PONTE-BRANCA_2024_T1.pdf",
+          "bytes": 504167,
+          "sha256": "285ecc80cb4492c0c9bcea3081948b051cef69feeef2162d3228e30466bf99dc"
+        },
+        {
+          "name": "619_MT_SÃO-PEDRO-DA-CIPA_2024_T1.pdf",
+          "bytes": 593169,
+          "sha256": "19094786973f4a6d0754a5175af7b167ad6fd876d018fbf4068656cef0c2f998"
+        },
+        {
+          "name": "619_MT_CAMPINÁPOLIS_2024_T1.pdf",
+          "bytes": 687565,
+          "sha256": "05d571a502f695a60e8a729dd9e8370da0effe4bfc9d31887d725016fd9dbd56"
+        },
+        {
+          "name": "619_MT_UNIÃO-DO-SUL_2024_T1.pdf",
+          "bytes": 595980,
+          "sha256": "702d088a5832f686b3582412ad9c872c7206e83d0c9826bc446653c6d929cf1e"
+        },
+        {
+          "name": "619_MT_GUIRATINGA_2024_T1.pdf",
+          "bytes": 774734,
+          "sha256": "75fb33791a124feab94c6fc58d426637d636f61706db2dd6b5f37ed6da02ecfd"
+        },
+        {
+          "name": "619_MT_TORIXORÉU_2024_T1.pdf",
+          "bytes": 534021,
+          "sha256": "a17723776d10c7778999953e9629d8bc7b091c93c952dfa274e68b84e688d2f8"
+        },
+        {
+          "name": "619_MT_FELIZ-NATAL_2024_T1.pdf",
+          "bytes": 684645,
+          "sha256": "981d37623bf2c33e48730fdf94ba02efd09981137b572b7392301cb4da58ff53"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DOS-QUATRO-MARCOS_2024_T1.pdf",
+          "bytes": 824898,
+          "sha256": "1d5be3e3fe961802049a0e09ae8875954afd880e29360f1152fb85e158634778"
+        },
+        {
+          "name": "619_MT_CAMPO-VERDE_2024_T1.pdf",
+          "bytes": 915468,
+          "sha256": "b8aaba8211f589dfa8f310b803f9dc43105a174d3274a4f22f11179192a0d71b"
+        },
+        {
+          "name": "619_MT_PARANAÍTA_2024_T1.pdf",
+          "bytes": 661098,
+          "sha256": "bca0337f5ca149c32a994af39105d705a11bb836c36bbf6554d959f1e70cbd65"
+        },
+        {
+          "name": "619_MT_ACORIZAL_2024_T1.pdf",
+          "bytes": 551349,
+          "sha256": "5bc35720be640ec597156c20df0e21b07f5e3b92b96bf62297965328fcbac926"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-POVO_2024_T1.pdf",
+          "bytes": 596343,
+          "sha256": "106340938df6e33ee6ed13f84d320264193842cf724fd248c6d80b1624ef515d"
+        },
+        {
+          "name": "619_MT_COLNIZA_2024_T1.pdf",
+          "bytes": 846060,
+          "sha256": "2d90e7da714347e983f53b90a4b67bc0ed214a9b526fce77bc7e3ee3bb61656f"
+        },
+        {
+          "name": "619_MT_DOM-AQUINO_2024_T1.pdf",
+          "bytes": 748064,
+          "sha256": "ba6e37e39fb03bcb7159c2dc18ed4207d85b577b2303be4b8d4b455e04e673ed"
+        },
+        {
+          "name": "619_MT_SÃO-FÉLIX-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 774814,
+          "sha256": "544cfe41556e5068281cad4eba1bc14dc855b828a035ffc9a272ef306613691a"
+        },
+        {
+          "name": "619_MT_JANGADA_2024_T1.pdf",
+          "bytes": 747950,
+          "sha256": "8974184d4583236382ac0301b2629bf43ee0ac5159218c4d4a07792f23586cfe"
+        },
+        {
+          "name": "619_MT_LUCIARA_2024_T1.pdf",
+          "bytes": 619688,
+          "sha256": "a07e88c1528dc8e34a213fca051fb7f4efb14bbc3d623db5267ecdf5080c1ba7"
+        },
+        {
+          "name": "619_MT_PLANALTO-DA-SERRA_2024_T1.pdf",
+          "bytes": 685423,
+          "sha256": "e148fa0933362daaca3c0fed4d7d4f9725e9de881ab4992c866715f67b99c7d3"
+        },
+        {
+          "name": "619_MT_VILA-BELA-DA-SANTÍSSIMA-TRINDADE_2024_T1.pdf",
+          "bytes": 825871,
+          "sha256": "71d3fb27968de9724d51e25b1a19e58d7acfec2a862919499a395a46cf712567"
+        },
+        {
+          "name": "619_MT_JAURU_2024_T1.pdf",
+          "bytes": 625128,
+          "sha256": "cb02524edcd4bd634ee898c4719e8995e5aeccf174da5c9f40c9c7cf4414f1b9"
+        },
+        {
+          "name": "619_MT_GENERAL-CARNEIRO_2024_T1.pdf",
+          "bytes": 640984,
+          "sha256": "3e9ce2f386c4c59fd401046bb8df2a62d552009d08ee2b9e795e55a3e7ce213f"
+        },
+        {
+          "name": "619_MT_NOVA-UBIRATÃ_2024_T1.pdf",
+          "bytes": 773465,
+          "sha256": "1ee72fde19c8ec1848b9181272729831d4e9391429e7fa156b2588c1d746696b"
+        },
+        {
+          "name": "619_MT_JUÍNA_2024_T1.pdf",
+          "bytes": 849013,
+          "sha256": "d9db857ee53c16fd52f84e3eebbec5466f5ba91939004f3d642f231fef3589be"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-XINGU_2024_T1.pdf",
+          "bytes": 617505,
+          "sha256": "55654c1d672530f5db3737e28b4348cda0b01201b7973c1ea8f0252c9d0b6406"
+        },
+        {
+          "name": "619_MT_CAMPOS-DE-JÚLIO_2024_T1.pdf",
+          "bytes": 619965,
+          "sha256": "b6e57bb6e5587903dc210fee332e972b24a71a5bc2e744bc90bf985eefb7820c"
+        },
+        {
+          "name": "619_MT_NOVA-MONTE-VERDE_2024_T1.pdf",
+          "bytes": 746875,
+          "sha256": "5da7df6b6ba6119be03e2a851a8d7300ff8a5d000c2d103a1f7e520e30fdf414"
+        },
+        {
+          "name": "619_MT_PEDRA-PRETA_2024_T1.pdf",
+          "bytes": 913481,
+          "sha256": "328428e341658006379d36217ee5cb93ac8d530bd6a4cbc3d0675603e60ae9d2"
+        },
+        {
+          "name": "619_MT_APIACÁS_2024_T1.pdf",
+          "bytes": 594082,
+          "sha256": "4d55c62e2464f2922c2d4875cda1d65322ea0d588ef33c9395cd5a9c3e4c642f"
+        },
+        {
+          "name": "619_MT_FIGUEIRÓPOLIS-D'OESTE_2024_T1.pdf",
+          "bytes": 573582,
+          "sha256": "53d80b8fff68c5705fe270b63e979788e831eae19ab721ba00276a64de036429"
+        },
+        {
+          "name": "619_MT_NOSSA-SENHORA-DO-LIVRAMENTO_2024_T1.pdf",
+          "bytes": 754269,
+          "sha256": "b83bffee5287681abf29338be23eb3279c64eb3d42963845ccbb86cb9ea1b20b"
+        },
+        {
+          "name": "619_MT_BRASNORTE_2024_T1.pdf",
+          "bytes": 714627,
+          "sha256": "76acc29dbeeca26d06d9148df812746b0befb46071c96a91dac4c04f3c1909ff"
+        },
+        {
+          "name": "619_MT_SERRA-NOVA-DOURADA_2024_T1.pdf",
+          "bytes": 570723,
+          "sha256": "9aa695d62f65532aa072c72333ab8b9f39c583d02aee1067add081dcaaa80fec"
+        },
+        {
+          "name": "619_MT_JUARA_2024_T1.pdf",
+          "bytes": 756166,
+          "sha256": "0ecdcdbf18fbd2d4679dbe212482a41ef1aa814218e8f04e0762ab1e79a4d091"
+        },
+        {
+          "name": "619_MT_ALTO-BOA-VISTA_2024_T1.pdf",
+          "bytes": 618351,
+          "sha256": "f072d8b4ec0cb1d55545fc5f14bd84139c0b7d571c3e40895a19bdfe65f17006"
+        },
+        {
+          "name": "619_MT_POCONÉ_2024_T1.pdf",
+          "bytes": 895867,
+          "sha256": "d8cd58c3a1d5c55bca094e04050d60d2d71d37abbb80735df4e27c3d375ddcc0"
+        },
+        {
+          "name": "619_MT_IPIRANGA-DO-NORTE_2024_T1.pdf",
+          "bytes": 592395,
+          "sha256": "ad845f920e48ef1a93808b2bb32b026c3f42fd7b9d7501db6c0d1b305803db1b"
+        },
+        {
+          "name": "619_MT_CONFRESA_2024_T1.pdf",
+          "bytes": 958603,
+          "sha256": "3acb268bd777c1e7a60a1cb29e045a959bb06fe4f5067d45cffb35b0157eb98a"
+        },
+        {
+          "name": "619_MT_BOM-JESUS-DO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 550406,
+          "sha256": "d56656555162b85562ba84bb9f91eb4d796a179167d360a92eb4a361bb5472b2"
+        },
+        {
+          "name": "619_MT_ALTO-TAQUARI_2024_T1.pdf",
+          "bytes": 726930,
+          "sha256": "70a1e44ef96b98c07534c729bdb43003921b5cb70ff27c2d16017419bee86481"
+        },
+        {
+          "name": "619_MT_SANTO-ANTÔNIO-DO-LEVERGER_2024_T1.pdf",
+          "bytes": 783629,
+          "sha256": "6da6358c217c636225cb217f40699f7a035d00ea31def641c393049651a18b28"
+        },
+        {
+          "name": "619_MT_ARENÁPOLIS_2024_T1.pdf",
+          "bytes": 731065,
+          "sha256": "97ab5a7623814d8a303de928aa2382c43365fe937a5582f00aa9aa3fc251290c"
+        },
+        {
+          "name": "619_MT_GUARANTÃ-DO-NORTE_2024_T1.pdf",
+          "bytes": 877735,
+          "sha256": "2f705f747ae05c956dbb3276fc8e8dea36f94be88896c02c6bba59dbac496d9c"
+        },
+        {
+          "name": "619_MT_SANTO-ANTÔNIO-DO-LESTE_2024_T1.pdf",
+          "bytes": 112836,
+          "sha256": "8ec4617eceb6531c778a61249efac40a4f6ad51ee0bed287337de3a2cc22dbe1"
+        },
+        {
+          "name": "619_MT_MARCELÂNDIA_2024_T1.pdf",
+          "bytes": 484789,
+          "sha256": "9cf48421a97816a852fe24305a8975e7c2a22f3b53c75b76867fae32729fc245"
+        },
+        {
+          "name": "619_MT_NORTELÂNDIA_2024_T1.pdf",
+          "bytes": 710563,
+          "sha256": "e2d4081f27a50085ce3f9e9321de23197d1de6c422ff1b447f76146fb3e55a31"
+        },
+        {
+          "name": "619_MT_NOVA-BRASILÂNDIA_2024_T1.pdf",
+          "bytes": 577398,
+          "sha256": "2fa89a664dbda14efce9d8600e2b0c47e5a0f03fb7c39c99599200744495b2dc"
+        },
+        {
+          "name": "619_MT_CLÁUDIA_2024_T1.pdf",
+          "bytes": 713041,
+          "sha256": "d56b7ca5c7f9e1f0017da4a041b6285cfce1a1d4f517615f56663c4d7df5298d"
+        },
+        {
+          "name": "619_MT_TANGARÁ-DA-SERRA_2024_T1.pdf",
+          "bytes": 1030912,
+          "sha256": "0c43d5be918b01bf738219d9d37755c61d421755340117b06d5f020d6a0462be"
+        },
+        {
+          "name": "619_MT_RIO-BRANCO_2024_T1.pdf",
+          "bytes": 663683,
+          "sha256": "8e49b7e065e266f4275674552b026f0500b57c0dce814db38cfc5ef80f8de1e6"
+        },
+        {
+          "name": "619_MT_NOVA-NAZARÉ_2024_T1.pdf",
+          "bytes": 620409,
+          "sha256": "d24454fdbd0933e5e51f6483492905e7b7715b62d294f07ea35e33ed5f7b5593"
+        },
+        {
+          "name": "619_MT_GAÚCHA-DO-NORTE_2024_T1.pdf",
+          "bytes": 818663,
+          "sha256": "d4aa2847da9d7b6e199c670ba7486932f8f6deee27c3d4dbabfca704a70fda30"
+        },
+        {
+          "name": "619_MT_ITIQUIRA_2024_T1.pdf",
+          "bytes": 822321,
+          "sha256": "113ab43c5ef02406d81f6b036566c39968b4745ac0836ae0e3c043503040a5a6"
+        },
+        {
+          "name": "619_MT_BARRA-DO-BUGRES_2024_T1.pdf",
+          "bytes": 962939,
+          "sha256": "62f558f78d1e1a42f0269b818d9dcf5ad63d77c5e282a55c86bdcac12568fa8c"
+        },
+        {
+          "name": "619_MT_ARIPUANÃ_2024_T1.pdf",
+          "bytes": 906893,
+          "sha256": "98d0b7ae5f81ae8f66502f78f401e756b6c52d4b64ecc1f24d4f1b50aef02b2b"
+        },
+        {
+          "name": "619_MT_JACIARA_2024_T1.pdf",
+          "bytes": 798815,
+          "sha256": "cd06d407acca3b7dd48c1de571f1af160f46fb5ead53c37b167ff25a26ac4308"
+        },
+        {
+          "name": "619_MT_VÁRZEA-GRANDE_2024_T1.pdf",
+          "bytes": 1652961,
+          "sha256": "a0c87d07964d8446af0171c3d5dfdc8040009d179483021d79650a310e2e96f3"
+        },
+        {
+          "name": "619_MT_VERA_2024_T1.pdf",
+          "bytes": 773110,
+          "sha256": "05c2f0283f44d8aed8f0df59dc890bdded0c6bf0c2387825f81e814a62b8e96b"
+        },
+        {
+          "name": "619_MT_SANTA-CARMEM_2024_T1.pdf",
+          "bytes": 528319,
+          "sha256": "b065dd1e2b73ac886bb6225ca144c60d08d809ec2eaaf71174ace5cb56105f83"
+        },
+        {
+          "name": "619_MT_SALTO-DO-CÉU_2024_T1.pdf",
+          "bytes": 595539,
+          "sha256": "6caee9b67e452cbe09a2075f2bc86a3fbd0ceb693c90396d815374c47fb41f03"
+        },
+        {
+          "name": "619_MT_PORTO-ALEGRE-DO-NORTE_2024_T1.pdf",
+          "bytes": 689396,
+          "sha256": "0fbf368fb0c23ce5caba954095ed93b3825b173fe00cfb01bd394221d0899625"
+        },
+        {
+          "name": "619_MT_VILA-RICA_2024_T1.pdf",
+          "bytes": 798698,
+          "sha256": "84ac9f409edaae7a84682f31290d9a077b8591a9588f721e2f7da26e4002df66"
+        },
+        {
+          "name": "619_MT_BARRA-DO-GARÇAS_2024_T1.pdf",
+          "bytes": 1135322,
+          "sha256": "08c982759ba42517b3dac1525dce6f6d278a8b658960275937ec307fccdd5a5a"
+        },
+        {
+          "name": "619_MT_SÃO-JOSÉ-DO-RIO-CLARO_2024_T1.pdf",
+          "bytes": 775222,
+          "sha256": "febc68629a1563422ff5483396080ba227e00ba92ecd1afdfe478832b41c2ff8"
+        },
+        {
+          "name": "619_MT_CONQUISTA-D'OESTE_2024_T1.pdf",
+          "bytes": 662247,
+          "sha256": "85c657f0cce779b63745b51f8d883e46182c8f7138d27641335a5a25df2db7f1"
+        },
+        {
+          "name": "619_MT_LAMBARI-D'OESTE_2024_T1.pdf",
+          "bytes": 639556,
+          "sha256": "b84f4b7a40b1b4cd497a6f2e439f63d08a92c70475748a40ed14eb39a759e745"
+        },
+        {
+          "name": "619_MT_ITAÚBA_2024_T1.pdf",
+          "bytes": 684406,
+          "sha256": "facdc6df8b5ca6a4e5a03bb7937d6b5e075037b3ca95f364fb93baf85142b847"
+        },
+        {
+          "name": "619_MT_SAPEZAL_2024_T1.pdf",
+          "bytes": 869422,
+          "sha256": "46d5d9a280559da2fdca2d7ee45670f849b7406459ec818b89e3c81718620b79"
+        },
+        {
+          "name": "619_MT_NOVA-BANDEIRANTES_2024_T1.pdf",
+          "bytes": 887879,
+          "sha256": "b063fafb717f5d2a6c2aed05784ff010d0d47a241b8960c5cc7401e5c563eec6"
+        },
+        {
+          "name": "619_MT_RONDONÓPOLIS_2024_T1.pdf",
+          "bytes": 1626303,
+          "sha256": "ebdd64afff453ca72aaafaf416cc4648a755fab9111c0bbd83e5b9d26d57a381"
+        },
+        {
+          "name": "619_MT_RESERVA-DO-CABAÇAL_2024_T1.pdf",
+          "bytes": 572161,
+          "sha256": "ecbf665d57e4bbe8e13bb808df6444a6ae200443b75b90c42fd3409e169443c0"
+        },
+        {
+          "name": "619_MT_QUERÊNCIA_2024_T1.pdf",
+          "bytes": 892240,
+          "sha256": "c3cb01191626bc35a0e1a18a79699e2a1069d270e5aff71b6b8d6b3c9e814a53"
+        },
+        {
+          "name": "619_MT_NOBRES_2024_T1.pdf",
+          "bytes": 780085,
+          "sha256": "a72eb71ce7043a0108395adfd7f717d93ef80293ba3a43a134a7685c668f7c1f"
+        },
+        {
+          "name": "619_MT_ALTO-ARAGUAIA_2024_T1.pdf",
+          "bytes": 818257,
+          "sha256": "b144c94165c6b05cd81adf89940e44a5b0dfeda261b65a80e74dfc03bc517b90"
+        },
+        {
+          "name": "619_MT_INDIAVAÍ_2024_T1.pdf",
+          "bytes": 527160,
+          "sha256": "46051cbe221cb4f64e9fa35ae7e50913198c77053c94a7016e75c1a736ee0ef4"
+        },
+        {
+          "name": "619_MT_ALTA-FLORESTA_2024_T1.pdf",
+          "bytes": 944873,
+          "sha256": "6e8634a27abd9a6a92104dc7a0c3305d7b7771a3d64c870626e85603f228aae5"
+        },
+        {
+          "name": "619_MT_JURUENA_2024_T1.pdf",
+          "bytes": 757847,
+          "sha256": "ae674d6f90d690482bfd0befea8753bd9a14bcb0cc1867a6e71e726ec4233cb8"
+        },
+        {
+          "name": "619_MT_SINOP_2024_T1.pdf",
+          "bytes": 1215708,
+          "sha256": "ecc7689af2baf5322c07ada23cb750df71b024e283da2bf5679728e6dcba08b3"
+        },
+        {
+          "name": "619_MT_ITANHANGÁ_2024_T1.pdf",
+          "bytes": 619679,
+          "sha256": "b4ed4b41e28b6268d0ba398a7ad2a00c4844bc8caae5a435cea873d71edd8cb2"
+        },
+        {
+          "name": "619_MT_PARANATINGA_2024_T1.pdf",
+          "bytes": 819106,
+          "sha256": "bcd9f66e72866a7b62ac41943e78bd580a3bcfc858abaf7074b2f6450062723f"
+        },
+        {
+          "name": "619_MT_NOVA-CANAÃ-DO-NORTE_2024_T1.pdf",
+          "bytes": 687029,
+          "sha256": "214aeaf50fd79f9d6a6ebc4d5aace7d7b6d5ff4848e382f0c5030a074544fe7b"
+        },
+        {
+          "name": "619_MT_PRIMAVERA-DO-LESTE_2024_T1.pdf",
+          "bytes": 1183751,
+          "sha256": "d002eaf7061f83ba3d86474f78cb1c7484f3df336d2ef19905908cf340f6de24"
+        },
+        {
+          "name": "619_MT_CUIABÁ_2024_T1.pdf",
+          "bytes": 2180942,
+          "sha256": "9dd92865fb34775811a1bf5a1540b3c81e0765f04e15c381c127d873930e992d"
+        },
+        {
+          "name": "619_MT_JUSCIMEIRA_2024_T1.pdf",
+          "bytes": 728841,
+          "sha256": "8f789cf4d30402d430a36684f078a7deacf5bf4b05fc365fe90f8a64b1541907"
+        },
+        {
+          "name": "619_MT_SORRISO_2024_T1.pdf",
+          "bytes": 1036352,
+          "sha256": "42be2a3095869ae16f5eb4e3f90f3863a4ae0ae9885aba47d7ef360e0e90c781"
+        },
+        {
+          "name": "619_MT_ROSÁRIO-OESTE_2024_T1.pdf",
+          "bytes": 811323,
+          "sha256": "fa7b3a31450457b0f48a08ca1c9a25d3d956d4e9ad9eaceeaeedf2e9736cb5d5"
+        },
+        {
+          "name": "619_MT_NOVA-OLÍMPIA_2024_T1.pdf",
+          "bytes": 801967,
+          "sha256": "1b2c214db139a22fac0348c9e23c24ee9689c952b3466c720fb9d0e44ebdba15"
+        },
+        {
+          "name": "619_MT_ARAPUTANGA_2024_T1.pdf",
+          "bytes": 803869,
+          "sha256": "21b3d37408fc6a201757d352cd58a86d7d9ee6826db14b97741ef4748af02fda"
+        },
+        {
+          "name": "619_MT_BARÃO-DE-MELGAÇO_2024_T1.pdf",
+          "bytes": 688421,
+          "sha256": "474a3d3c6d6c2e8a878a2c6f6839e8cfd6c68c574a0b43cb54f0cb13124ca308"
+        },
+        {
+          "name": "619_MT_PORTO-ESPERIDIÃO_2024_T1.pdf",
+          "bytes": 797686,
+          "sha256": "34f7bf6d6a7d8112f4f27c5c195b11d6366790400bb5ccb4b905598e0e628ed2"
+        },
+        {
+          "name": "619_MT_NOVA-SANTA-HELENA_2024_T1.pdf",
+          "bytes": 572545,
+          "sha256": "538837f60fa93963d81a915b12b7da30519d367f255a1e2f3d054c7df44b9f4b"
+        },
+        {
+          "name": "619_MT_PORTO-DOS-GAÚCHOS_2024_T1.pdf",
+          "bytes": 685814,
+          "sha256": "dc404733fa6cc27be3295ef15e2c0b92c5dc7fcb69ef9f9917ee85fb8b2b9cd8"
+        },
+        {
+          "name": "619_MT_CARLINDA_2024_T1.pdf",
+          "bytes": 774000,
+          "sha256": "76492f0a428621c72f1afcff9b22091d5e195c229ceacf4cf44381662263e58d"
+        },
+        {
+          "name": "619_MT_CURVELÂNDIA_2024_T1.pdf",
+          "bytes": 681162,
+          "sha256": "95fb59ddbda963a31247b6fb570a533749f91703d2a3ebad84fef64b62690d10"
+        },
+        {
+          "name": "619_MT_NOVA-MARILÂNDIA_2024_T1.pdf",
+          "bytes": 637582,
+          "sha256": "f3d481819e885792a230a28bc3a648ebb9229e2d7b9cccce61fea0f572197abd"
+        },
+        {
+          "name": "619_MT_DIAMANTINO_2024_T1.pdf",
+          "bytes": 828035,
+          "sha256": "90ec338ba65daac76f8ab6284333272e5c590e077c9d761234dffa3538eae0bf"
+        },
+        {
+          "name": "619_MT_MIRASSOL-D'OESTE_2024_T1.pdf",
+          "bytes": 890336,
+          "sha256": "b70ea636a6021d5b769bedc5a2f9576023a8b4fb44df11e8e059ff910dbb4f48"
+        },
+        {
+          "name": "619_MT_ÁGUA-BOA_2024_T1.pdf",
+          "bytes": 864993,
+          "sha256": "997d46aa7f3eda865087a7821662ec5d3f8960ef46cf1632542884bf363fdb6a"
+        },
+        {
+          "name": "619_MT_TERRA-NOVA-DO-NORTE_2024_T1.pdf",
+          "bytes": 582734,
+          "sha256": "1ac0fc96fbc6d3fab2d214bc6d24e9b23b58490a43cd8d328a3c6a5dcb6d079f"
+        },
+        {
+          "name": "619_MT_COCALINHO_2024_T1.pdf",
+          "bytes": 707892,
+          "sha256": "fc05664ff44fa922e675a275a345d0eef5d8947dc44e5dd7442ed5f736ac87cc"
+        },
+        {
+          "name": "619_MT_POXORÉU_2024_T1.pdf",
+          "bytes": 829105,
+          "sha256": "dcd1f063e18c3e8deb7098e51b83977bb972046d630ee87eecf4bda9910413f6"
+        },
+        {
+          "name": "619_MT_BOA-ESPERANÇA-DO-NORTE_2024_T1.pdf",
+          "bytes": 658956,
+          "sha256": "ab3a6478aeae0b2e1d78c50cc1188f9d402b6c274c32be38e11726f5762f98cb"
+        },
+        {
+          "name": "619_MT_ARAGUAINHA_2024_T1.pdf",
+          "bytes": 570081,
+          "sha256": "7c130ca26af35afcd6460ca97bfef48058bedc8966ecc1fe9f717e45a555ded2"
+        },
+        {
+          "name": "619_MT_NOVA-LACERDA_2024_T1.pdf",
+          "bytes": 729393,
+          "sha256": "4282a15ae9fe2affb5f21a563e6740dbd7d8338bc18835f758e99ada07c1a9dc"
+        },
+        {
+          "name": "619_MT_PORTO-ESTRELA_2024_T1.pdf",
+          "bytes": 662381,
+          "sha256": "b2ac294c7c12ac58505710915fd0d4d325e19d2ef7410063632e7695bd392604"
+        },
+        {
+          "name": "619_MT_ALTO-PARAGUAI_2024_T1.pdf",
+          "bytes": 664284,
+          "sha256": "799f02df379dfa3d403a249a314d03b89a695c0978d73e3712fa326c9f6e1123"
+        },
+        {
+          "name": "619_MT_PEIXOTO-DE-AZEVEDO_2024_T1.pdf",
+          "bytes": 964689,
+          "sha256": "c95ed907453938c9d990910d6b6f85299a2831dd31a82f1a571adab38e592751"
+        },
+        {
+          "name": "619_MT_SANTA-RITA-DO-TRIVELATO_2024_T1.pdf",
+          "bytes": 573316,
+          "sha256": "a290e0c9d550f9d7a63bd17ec2e0b2a5e541c26625204c74c9468d8b2d2d0b73"
+        },
+        {
+          "name": "619_MT_TAPURAH_2024_T1.pdf",
+          "bytes": 705420,
+          "sha256": "78839d118a1a0cd8946e5e3e4efa6a60b5509e401bb8fba89763f53c69950171"
+        },
+        {
+          "name": "619_MT_RONDOLÂNDIA_2024_T1.pdf",
+          "bytes": 593581,
+          "sha256": "acd680ed27010fe7361690d75fd639da9d60632873e31e09188f6a311010a2b4"
+        },
+        {
+          "name": "619_MT_SANTO-AFONSO_2024_T1.pdf",
+          "bytes": 549816,
+          "sha256": "2916635bacdc62103b43f996dfa6e9d94fbf050e0daf01974065211ad1a78ca0"
+        },
+        {
+          "name": "619_MT_MATUPÁ_2024_T1.pdf",
+          "bytes": 706359,
+          "sha256": "812bbbd0286a7855f42669e377934408074d2ef41bd7f54843518034933c627e"
+        },
+        {
+          "name": "619_MT_DENISE_2024_T1.pdf",
+          "bytes": 617788,
+          "sha256": "8020cf256ce899d308560defb4a7d4023035581ee878a0d3605b2a0cf3e1d272"
+        },
+        {
+          "name": "619_MT_TESOURO_2024_T1.pdf",
+          "bytes": 484831,
+          "sha256": "d4b8a2ad92095b34ae876e53ae6257631ac360d064fde416673bb2a0c6e8f3ae"
+        },
+        {
+          "name": "619_MT_GLÓRIA-D'OESTE_2024_T1.pdf",
+          "bytes": 639192,
+          "sha256": "7e9057a0b327be8b4db945ce251938bbe658eb2ac61b09f1a0cdbec120dd7898"
+        },
+        {
+          "name": "619_MT_NOVO-SÃO-JOAQUIM_2024_T1.pdf",
+          "bytes": 578639,
+          "sha256": "094d9ffec731751b72a83ef042d9a313a63f8bbcdbb11cf27d536d77835cb02b"
+        },
+        {
+          "name": "619_MT_CAMPO-NOVO-DO-PARECIS_2024_T1.pdf",
+          "bytes": 957103,
+          "sha256": "9fb18a603fa9025a1e9f99464acb19343d5f9dca586a0366f2259577250da436"
+        },
+        {
+          "name": "619_MT_LUCAS-DO-RIO-VERDE_2024_T1.pdf",
+          "bytes": 845446,
+          "sha256": "8d0e836fc1f9343cda89516283f3afba02b61d1d89f148a62df57844e3c19410"
+        },
+        {
+          "name": "619_MT_NOVO-HORIZONTE-DO-NORTE_2024_T1.pdf",
+          "bytes": 600545,
+          "sha256": "d72e5a596914643293dc34b4ec974b49fc779cb03b224a86ee6c3b3699064101"
+        },
+        {
+          "name": "619_MT_SANTA-TEREZINHA_2024_T1.pdf",
+          "bytes": 552363,
+          "sha256": "7c28e36396014031df3831e353ff40d977242426f78083042e0e860724d4d4d9"
+        },
+        {
+          "name": "619_MT_ALTO-GARÇAS_2024_T1.pdf",
+          "bytes": 636730,
+          "sha256": "1b19b7452d6377afd0ee52d71d367029762c87dc1bfd4e0ae93a580e637c6ac3"
+        },
+        {
+          "name": "619_MT_CANABRAVA-DO-NORTE_2024_T1.pdf",
+          "bytes": 683038,
+          "sha256": "bfae16838f86f7bed5d33d475bcfbe99a96a908ce16cc89c4674c43cc250e3cd"
+        },
+        {
+          "name": "619_MT_COTRIGUAÇU_2024_T1.pdf",
+          "bytes": 603054,
+          "sha256": "ecf352bf02ee587b6536f8ea153a5b5f4b1457437876b5cecd0e251d20b4aa86"
+        },
+        {
+          "name": "619_MT_NOVA-MUTUM_2024_T1.pdf",
+          "bytes": 820879,
+          "sha256": "920885cdc3b59ea6c1a37796687d014cf61ad559ed93becf2e2a1e14c3eef698"
+        },
+        {
+          "name": "619_MT_NOVA-GUARITA_2024_T1.pdf",
+          "bytes": 598850,
+          "sha256": "fd62e234ec72b9b73e66de61f566dd75918cb7ad476987e139b2792263afbdb7"
+        },
+        {
+          "name": "619_MT_RIBEIRÃO-CASCALHEIRA_2024_T1.pdf",
+          "bytes": 884532,
+          "sha256": "b794a784ebdd1957ae23a540f7e3a2f31efda7f67bfb41300dc2288032a0aaa2"
+        },
+        {
+          "name": "619_MT_ARAGUAIANA_2024_T1.pdf",
+          "bytes": 594457,
+          "sha256": "4551194d3c89e52413a8108acf7fca786648d053434f084b46e9d371d83ea28c"
+        },
+        {
+          "name": "619_MT_NOVO-SANTO-ANTÔNIO_2024_T1.pdf",
+          "bytes": 571386,
+          "sha256": "d6281337aa34eebedd8c47a1b1c1faa4dd0786ff70a61fd681bf3501b7fed249"
+        },
+        {
+          "name": "620_MT_CUIABÁ_2024_T2.pdf",
+          "bytes": 268006,
+          "sha256": "dd8cf889fa9b60fc3c5e74fe28d81df45a204b090ebb34115dc72228bc820b11"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "member_names_and_bytes_equal": true
+    },
+    {
+      "legacy": {
+        "path": "/data/urnapack/brutos/2024/MT/votacao_secao_2024_MT.zip",
+        "bytes": 26078892,
+        "sha256": "4d84497edbd8944c2a8f84b4c6c6c04b3d106ca399afe4e6eb6c23bdb535662a",
+        "verified_source_urls": []
+      },
+      "fresh_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_MT.zip",
+      "fresh_bytes": 26098926,
+      "fresh_sha256": "474ad880b866ca4f996ae48c9a6c8dd2b9e6618913d6cf7503d940d4a226b381",
+      "legacy_members": [
+        {
+          "name": "votacao_secao_2024_MT.csv",
+          "bytes": 181124466,
+          "sha256": "cfecf5495c41651bb75e0007e8675df99c2ef4031dd8cdea617f14804eaef591"
+        },
+        {
+          "name": "leiame.pdf",
+          "bytes": 192420,
+          "sha256": "fcd228746d87ef3509694de515e362aa12913afd1b2dc9ab2279bad31713f861"
+        }
+      ],
+      "fresh_members": [
+        {
+          "name": "votacao_secao_2024_MT.csv",
+          "bytes": 181124466,
+          "sha256": "40c45b014ab7ad0011abb68c97e36a607698aab7a089f24ee237f05dc53953dc"
+        },
+        {
+          "name": "leiame.pdf",
+          "bytes": 192420,
+          "sha256": "fcd228746d87ef3509694de515e362aa12913afd1b2dc9ab2279bad31713f861"
+        }
+      ],
+      "member_names_and_bytes_equal": false,
+      "csv_comparison": {
+        "method": "CSV estrito Latin-1, delimitador ponto-e-vírgula, comparação de registros na ordem; nenhuma coluna ignorada",
+        "records_each": 622036,
+        "different_records": 621964,
+        "different_values_per_column": {
+          "SG_UE": 563247,
+          "NM_UE": 563247,
+          "CD_MUNICIPIO": 563247,
+          "NM_MUNICIPIO": 563247,
+          "NR_ZONA": 598438,
+          "NR_SECAO": 620717,
+          "NR_VOTAVEL": 618665,
+          "NM_VOTAVEL": 620379,
+          "QT_VOTOS": 491953,
+          "NR_LOCAL_VOTACAO": 607188,
+          "SQ_CANDIDATO": 617640,
+          "NM_LOCAL_VOTACAO": 620875,
+          "DS_LOCAL_VOTACAO_ENDERECO": 620874,
+          "CD_CARGO": 81254,
+          "DS_CARGO": 81254,
+          "NR_TURNO": 9994,
+          "CD_ELEICAO": 9994,
+          "DT_ELEICAO": 9994
+        },
+        "header_equal": true,
+        "multiset_method": "SHA-256 de cada lista completa de campos serializada em JSON ASCII compacto, incluindo multiplicidade de duplicatas; sem ignorar campos",
+        "record_multiset_equal": true,
+        "only_legacy_records_counting_multiplicity": 0,
+        "only_fresh_records_counting_multiplicity": 0
+      }
+    },
+    {
+      "legacy": {
+        "path": "/data/urnapack/brutos/2026/MT/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+        "bytes": 738586,
+        "sha256": "753ef1b266e2fd62579bd6d72325ee05873081ef1069ad03aadbbedcbd1c04f0",
+        "verified_source_urls": []
+      },
+      "fresh_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "fresh_bytes": 738586,
+      "fresh_sha256": "27e74bc38bfe76fc3e1dd90bd20855567c4fdc3890abd30031e1d99c32e68a5a",
+      "legacy_members": [
+        {
+          "name": "6257_MT_MATO-GROSSO_2026_T1_PRESIDENTE.pdf",
+          "bytes": 156781,
+          "sha256": "3d61204662338de5f854cc3cd151826ae47650b78c885d085a7256c41c428cc2"
+        },
+        {
+          "name": "6259_MT_MATO-GROSSO_2026_T1.pdf",
+          "bytes": 356078,
+          "sha256": "dbabc45fb8def0d9031439e132bfd6ca1e86525bfb56e0140a7a2c5ee9fbbe25"
+        },
+        {
+          "name": "6258_MT_MATO-GROSSO_2026_T2_PRESIDENTE.pdf",
+          "bytes": 158406,
+          "sha256": "2cc6fa97cc5391db12906830ad6d99e920f6691d7406cc7e4617497af88052c8"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "fresh_members": [
+        {
+          "name": "6257_MT_MATO-GROSSO_2026_T1_PRESIDENTE.pdf",
+          "bytes": 156781,
+          "sha256": "3d61204662338de5f854cc3cd151826ae47650b78c885d085a7256c41c428cc2"
+        },
+        {
+          "name": "6259_MT_MATO-GROSSO_2026_T1.pdf",
+          "bytes": 356078,
+          "sha256": "dbabc45fb8def0d9031439e132bfd6ca1e86525bfb56e0140a7a2c5ee9fbbe25"
+        },
+        {
+          "name": "6258_MT_MATO-GROSSO_2026_T2_PRESIDENTE.pdf",
+          "bytes": 158406,
+          "sha256": "2cc6fa97cc5391db12906830ad6d99e920f6691d7406cc7e4617497af88052c8"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "member_names_and_bytes_equal": true
+    },
+    {
+      "legacy": {
+        "path": "/data/urnapack/brutos/2026/t1/MT/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+        "bytes": 738586,
+        "sha256": "cd26fbabffeb0aafc49ef51fd53ddb7cb8dffbcfe662428fd5913b8bc982277d",
+        "verified_source_urls": []
+      },
+      "fresh_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "fresh_bytes": 738586,
+      "fresh_sha256": "27e74bc38bfe76fc3e1dd90bd20855567c4fdc3890abd30031e1d99c32e68a5a",
+      "legacy_members": [
+        {
+          "name": "6257_MT_MATO-GROSSO_2026_T1_PRESIDENTE.pdf",
+          "bytes": 156781,
+          "sha256": "3d61204662338de5f854cc3cd151826ae47650b78c885d085a7256c41c428cc2"
+        },
+        {
+          "name": "6259_MT_MATO-GROSSO_2026_T1.pdf",
+          "bytes": 356078,
+          "sha256": "dbabc45fb8def0d9031439e132bfd6ca1e86525bfb56e0140a7a2c5ee9fbbe25"
+        },
+        {
+          "name": "6258_MT_MATO-GROSSO_2026_T2_PRESIDENTE.pdf",
+          "bytes": 158406,
+          "sha256": "2cc6fa97cc5391db12906830ad6d99e920f6691d7406cc7e4617497af88052c8"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "fresh_members": [
+        {
+          "name": "6257_MT_MATO-GROSSO_2026_T1_PRESIDENTE.pdf",
+          "bytes": 156781,
+          "sha256": "3d61204662338de5f854cc3cd151826ae47650b78c885d085a7256c41c428cc2"
+        },
+        {
+          "name": "6259_MT_MATO-GROSSO_2026_T1.pdf",
+          "bytes": 356078,
+          "sha256": "dbabc45fb8def0d9031439e132bfd6ca1e86525bfb56e0140a7a2c5ee9fbbe25"
+        },
+        {
+          "name": "6258_MT_MATO-GROSSO_2026_T2_PRESIDENTE.pdf",
+          "bytes": 158406,
+          "sha256": "2cc6fa97cc5391db12906830ad6d99e920f6691d7406cc7e4617497af88052c8"
+        },
+        {
+          "name": "_leiame.pdf",
+          "bytes": 66743,
+          "sha256": "f4930f43cf0bd5d7e56e8b5961b27daf75603c7e1b3c53774c5418300354ac07"
+        }
+      ],
+      "member_names_and_bytes_equal": true
+    }
+  ]
+}

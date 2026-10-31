@@ -117,8 +117,17 @@ def official_digest(body, filename, algorithm):
         if not line.strip():
             continue
         match = re.fullmatch(r"([0-9a-fA-F]{%d})(?:\s+\*?(.+))?" % length, line.strip())
-        if not match or (match[2] is not None and match[2] != filename):
+        if not match:
             raise ValueError("sidecar inválido ou nome divergente")
+        named = match[2]
+        if named is not None and named != filename:
+            # Sidecars oficiais de 2020 registram caminho POSIX do publicador.
+            # É metadado: nunca vira caminho de leitura/escrita local.
+            parts = named.split("/")
+            if (not named.startswith("/") or len(parts) < 2 or
+                    any(part in ("", ".", "..") for part in parts[1:]) or
+                    "\\" in named or "\0" in named or parts[-1] != filename):
+                raise ValueError("sidecar inválido ou nome divergente")
         matches.append(match[1].lower())
     if len(matches) != 1:
         raise ValueError("sidecar deve conter exatamente um digest")

@@ -106,6 +106,10 @@ Limites centrais (`scripts/limits.env`) aplicados também na análise:
 `MAX_ANALYZE_DISTINCT_VALUES`. Excesso falha explicitamente com exit ≠ 0,
 sem truncamento silencioso.
 
+`MAX_SOURCE_FILE_BYTES` vale para CSV físico, objetos e tamanho expandido
+declarado de uma view. A leitura é interrompida ao exceder `MAX_CSV_RECORDS`;
+o restante não é tratado como processado nem a execução parcial como aprovada.
+
 Padrões lexicais verificam formato e faixas básicas (dia 01-31, mês 01-12,
 hora 00-23, minuto/segundo 00-59, ano 1900-2100; cargas sem `..` nem ponto
 nas bordas). Validação semântica completa de calendário não é executada.
@@ -179,4 +183,6 @@ para produção.
 
 Esta versão não compara turnos, não reconcilia fontes, não interpreta
 `DS_SECOES_AGREGADAS`, não declara fraude/autenticidade, não usa ML e não
-publica dados. O segundo turno do acervo local é parcial e não é analisado.
+publica dados. O segundo turno do corpus MT legado desta etapa era parcial
+e não é analisado por este perfil. A auditoria nacional presidencial t2 em
+`auditoria/2026/` é um fluxo específico separado, com contrato próprio.

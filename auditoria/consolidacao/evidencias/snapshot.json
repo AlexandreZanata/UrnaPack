@@ -1,0 +1,123 @@
+{
+  "format_version": 1,
+  "scope": "Alterações anteriores preservadas antes da consolidação; patch dos rastreados e cópias exatas dos não rastreados.",
+  "base_revision": "ac38f28cd4a7806b1eb130eb667d9d675848d88d",
+  "patch": {
+    "bytes": 12628,
+    "sha256": "a565db172eef7be1f84efa8377af9641c9a86239c152e25bc181efc84cfa408b"
+  },
+  "untracked_files": {
+    "docs/ANALISE-MT-2000-2026.md": {
+      "bytes": 6261,
+      "sha256": "4d50db5bc881a1b364f99e666f2a4b5e24e656a2cb14aae4527d9aa23dae8e14"
+    },
+    "docs/ETAPA-5A.md": {
+      "bytes": 11176,
+      "sha256": "bb5e5d990705b95ed2bd9057722033a0e9006e2f619c26b8d757af4055d73ddd"
+    },
+    "scripts/analyze_check.py": {
+      "bytes": 26966,
+      "sha256": "b751612a5a5f282d3639a3e83d994fb9e2abd1ba61a6f99cd9ad989df793c19f"
+    },
+    "scripts/analyze_mt_historico.py": {
+      "bytes": 15218,
+      "sha256": "4252920d045b1c4c1fb54ebd664593ccb5e53322abe0ae8bf7eba3ac21dfdedb"
+    },
+    "scripts/fetch_mt_historico.py": {
+      "bytes": 5923,
+      "sha256": "191ef4659c82e905fc9d2569afb0b2e491866e15f7ac4ac4fdbd4224e3a3f9c1"
+    },
+    "scripts/inspect_2020_bweb_quoting.py": {
+      "bytes": 2578,
+      "sha256": "8a5cd07473af6ac2990199cb16220ddc0703605ed3da1dbaa7132d419769664e"
+    },
+    "scripts/inventory_mt_2000_2026.json": {
+      "bytes": 59626,
+      "sha256": "fda216c74c9fb9123012ab88d9ac767e72f50308624590b6e6958ee6ed69d331"
+    },
+    "scripts/inventory_mt_historico.py": {
+      "bytes": 3019,
+      "sha256": "88881a510c08090d6f52d6916eaf5df5b71b64512a2bd368a901d6f794c313e1"
+    },
+    "scripts/model_baseline_mt.py": {
+      "bytes": 5295,
+      "sha256": "7e83cfd560a3e4a3791acd82b3269950f63c571d9b7d51f61e426c9d6353c176"
+    },
+    "scripts/reconcile_senado_2018.py": {
+      "bytes": 4667,
+      "sha256": "e79c9f5c44144d1729310554ff96a45bae13a8993032924e699c42a4797052de"
+    },
+    "scripts/test_analyze_check.py": {
+      "bytes": 2610,
+      "sha256": "5b47a33892129a1ce71c3e3b8eb658e04806eb119b21255adad33ba1db8d813d"
+    },
+    "scripts/test_analyze_mt_historico.py": {
+      "bytes": 4189,
+      "sha256": "fff446d78f6c8860d734a710786d1d60b1654673d21c92ee89ec8f1355addb06"
+    },
+    "scripts/test_model_baseline_mt.py": {
+      "bytes": 1302,
+      "sha256": "2049800afe785fc22121387f9c7740ebb193b2b0c79544733d3701f70a0910c7"
+    },
+    "scripts/test_pendentes.py": {
+      "bytes": 1045,
+      "sha256": "4a99910910e73f7e35ec30ae9d003d80dd6d8e397747485e177a45fe2ca6e030"
+    },
+    "spec/analyze-v1.md": {
+      "bytes": 9509,
+      "sha256": "36a46f08e7c771ac59aa13c181c429a676fd4fc00726d8f1b3769b86fb6c347b"
+    },
+    "src/analyze.rs": {
+      "bytes": 113342,
+      "sha256": "99283a332650978f84a965c0476ce4c7ef928dc89dd627bf0c8e104e36a4878f"
+    },
+    "tests/analyze.rs": {
+      "bytes": 23837,
+      "sha256": "79fbea9471cd20f5dc094b20df94d349b1c225bfccd768fa0b4d2b64fb38069b"
+    },
+    "tests/fixtures/analyze/README.md": {
+      "bytes": 1733,
+      "sha256": "0c1f13d4f576c1fb2bc09d5a24ffe0945f088af1c55bccc637836216e4cc4eec"
+    },
+    "tests/fixtures/analyze/header-bad.csv": {
+      "bytes": 1095,
+      "sha256": "a8bf847071c8be6b98a49cd6549c4fa35f8c48b81683dcfda0a91a31234f8cbc"
+    },
+    "tests/fixtures/analyze/mt-agregadas.csv": {
+      "bytes": 3998,
+      "sha256": "52e95667f2368323a3c385b38861c137b0e34c2db4625ab1f473661e9b2b4b59"
+    },
+    "tests/fixtures/analyze/mt-context-divergent.csv": {
+      "bytes": 1529,
+      "sha256": "1aef3c046aaf7f061d11573a0257b856d39fc1c176583111a4e8a816269f5835"
+    },
+    "tests/fixtures/analyze/mt-duplicate-conflict.csv": {
+      "bytes": 1529,
+      "sha256": "73ed99bf2e4e2cc76a3468fccddfd81b7c9018c1ddf90c1abda6bb8e81728987"
+    },
+    "tests/fixtures/analyze/mt-duplicate-exact.csv": {
+      "bytes": 1529,
+      "sha256": "29d6258bd78afdc429c7fb20f456260416af4a7fe4c6ae5a5af9ebcbe42568b2"
+    },
+    "tests/fixtures/analyze/mt-out-of-scope.csv": {
+      "bytes": 1101,
+      "sha256": "d09660bb615e90d56cf404aed7f96f87febe4911084e59412dc429148ae4a18e"
+    },
+    "tests/fixtures/analyze/mt-overflow.csv": {
+      "bytes": 1567,
+      "sha256": "0064b7e25243bf54ce11ba6a51145401ec2d2c907d8fbc2426f467957f322e2d"
+    },
+    "tests/fixtures/analyze/mt-truncated.csv": {
+      "bytes": 1098,
+      "sha256": "a4ee8805d72ca6c5ff2272495f20d136c1a7492ec63825e2b70a922e05c7b73f"
+    },
+    "tests/fixtures/analyze/mt-unknown-category.csv": {
+      "bytes": 1109,
+      "sha256": "b505e5526f4d8bd77abb013db061ab004c6dd3b1adc97a80fd955bf26b76552d"
+    },
+    "tests/fixtures/analyze/mt-valid.csv": {
+      "bytes": 3999,
+      "sha256": "7fab350089ebbe67dbd881dec3f6b942e214e26950e081604463b3b7fb745381"
+    }
+  }
+}

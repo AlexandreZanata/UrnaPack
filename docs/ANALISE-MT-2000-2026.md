@@ -1,6 +1,6 @@
 # Análise MT 2000-2026 — descritiva e inconsistências observadas
 
-Metodologia em `scripts/analyze_mt_historico.py` (stdlib, streaming Latin-1,
+Metodologia em `scripts/analyze_mt_historico.py` (stdlib, leitura limitada por membro, Latin-1,
 `;`), testes em `scripts/test_analyze_mt_historico.py`. Sem deduplicação, sem
 conversão de identificadores, sem soma de eleitores entre cargos. Nenhuma
 conclusão de fraude/autenticidade; flags exigem confronto com fonte e
@@ -36,7 +36,7 @@ documentação oficial.
   lidos (2018, 2022, 2024, 2026 t1/t2; 2020 t2).
 - Chave de ocorrência e igualdade de contexto (bweb/votação): 0 duplicatas,
   0 divergências em bweb e votação (CESP/CEFT fora do escopo dessas chaves).
-- `bweb_1t_MT_181120201545.zip#bweb_1t_MT_181120201549.csv` (2020 t1, 322 MB):
+- `bweb_1t_MT_181120201549.zip#bweb_1t_MT_181120201549.csv` (2020 t1, 322 MB):
   erro de quoting `';' expected after '"'` após 59.082 registros — bytes
   preservados, membro excluído da agregação, votação 2020 t1 (593.064 regs)
   cobre o pleito.
@@ -78,9 +78,12 @@ Parser estrito reprova após 59.082 íntegros; bytes preservados.
 
 Baseline comparecimento (`scripts/model_baseline_mt.py`, 2026 t1 cargo 1
 Presidente, 8.287 grupos, `p_hat=0,777971` igual à Etapa 5A): binomial H0 +
-BH q=0,05 flagra 1.667 grupos (20%) — sobre-dispersão esperada entre seções,
-não anomalia; calibração nula 0 flags e falsificação 10/10 OK
-(`model-comparecimento-2026t1.json`). Modelo mais rico (beta-binomial por
+BH q=0,05 registra 1.667 flags no relatório histórico. Esses flags descrevem
+incompatibilidade com a hipótese homogênea; não validam um indicador de
+fraude ou identificam a causa. Os casos de calibração/injeção são sintéticos,
+separados dos dados observados na revisão v2, que exige SHA-256 esperado da
+fonte e confere o contexto repetido. Contrato e reprodução em
+[spec/historico-v2.md](../spec/historico-v2.md). Modelo mais rico (beta-binomial por
 município/zona) só com ganho demonstrado.
 
 ## Série votação por seção (QT_VOTOS por ano/turno/cargo)
@@ -102,8 +105,10 @@ município/zona) só com ganho demonstrado.
 | 2024 | 1 | 11:1.958.974, 13:1.958.974; 2: 11:330.537 |
 | 2026 | 1 | 3:2.049.718, 5:4.099.436 (2×), 6:2.049.718, 7:2.049.718 |
 
-Senador 2× (2002, 2010, 2018-BU, 2026) reflete 2 vagas; 2018-votação destoa
-(≈2,98×) — ver divergência acima. Municipais t2 restritos a 1 município
+Senador 2× (2002, 2010, 2018-BU, 2026) reflete 2 vagas. O total bruto de
+2018-votação mistura eleições 297 e 438; separada a regular, os votos
+conferem com BU. A razão de aproximadamente 2,98 não é divergência do mesmo
+universo. Municipais t2 restritos a 1 município
 (2020 t2, 2024 t2: só capital) — cobertura observada, não completude.
 
 ## Limites e próximos passos

@@ -1,0 +1,280 @@
+{
+  "files": {
+    "ANALISE-MT-2000-2026.md": {
+      "bytes": 6640,
+      "sha256": "aeb8a3c371624ab70db0ec4d8cf7ca9e2ca19e8efbfc927cc15c60756e921793"
+    },
+    "CONSOLIDACAO-2026.md": {
+      "bytes": 8121,
+      "sha256": "605aced38c4db18ae3b9bb23eb37949eb8e58ed3fd16778682f76476bff5de4e"
+    },
+    "ETAPA-5A.md": {
+      "bytes": 11176,
+      "sha256": "bb5e5d990705b95ed2bd9057722033a0e9006e2f619c26b8d757af4055d73ddd"
+    },
+    "RESULTADO-COMPRESSAO-MT.md": {
+      "bytes": 5661,
+      "sha256": "0386ac5bdffe27d464e03b50d3d596389d09b35b6880423bebeaf493376e2309"
+    },
+    "analise-historica-fixada-v2/REPORT.md": {
+      "bytes": 15062,
+      "sha256": "40cde2f7ef0e0f87f30265c5c9b194057d799646d9bd25cf54dbab0990c7efd2"
+    },
+    "analise-historica-fixada-v2/analysis.json": {
+      "bytes": 25622385,
+      "sha256": "313adb84c3d2dffaf7cce38aabd47d5fb00cda21f8d424690ed304fbe2b453db"
+    },
+    "analise-historica-v2/REPORT.md": {
+      "bytes": 15012,
+      "sha256": "55bd0900cca9386ed4fe6cd00b2d7b821532acece78745fdcfd14a10e3522f31"
+    },
+    "analise-historica-v2/analysis.json": {
+      "bytes": 25606623,
+      "sha256": "ec9edc77625a720dfe4cb51975acf7f9feba0cb83eb5d9d892c6397fa79d77b9"
+    },
+    "evidencias/analise-historica-fixada.json": {
+      "bytes": 875,
+      "sha256": "fd560132a0bb11124b1a403faa33771ec7bef78e374e4e0d4c846b758e0df742"
+    },
+    "evidencias/analyze-real.log": {
+      "bytes": 191,
+      "sha256": "fe6b79b5eea45d4978f508e5604532546e43b367fc050b8c953b0254ae0d529f"
+    },
+    "evidencias/baseline-mt-v2.json": {
+      "bytes": 4226,
+      "sha256": "695be0f0f8121f0edc415a3598f94422758c4540188dac794cf4e8f47a393aa6"
+    },
+    "evidencias/catalogo-historico-fixado.json": {
+      "bytes": 131723,
+      "sha256": "d6dbd8bbfabc5ebbbeddd8f559bae5c088214fb868f96932df23bc4819916bf4"
+    },
+    "evidencias/catalogo-historico.json": {
+      "bytes": 106883,
+      "sha256": "750102f6f75074384f36e3be2eda2ddd43c30ac1d6f708142995644bac6bf131"
+    },
+    "evidencias/clippy.log": {
+      "bytes": 157,
+      "sha256": "e2a05545878fd1a7856c9966588e290b79abb310784db25d3216bbddf98864b2"
+    },
+    "evidencias/fmt.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidencias/inspecao-2020-revisada.json": {
+      "bytes": 2145,
+      "sha256": "be07bb17aa11449144bc97b1c77fb9a6776d79ae00001abf906522792fbe6aa8"
+    },
+    "evidencias/legado-vs-verificado.json": {
+      "bytes": 30840,
+      "sha256": "ddb3d2b1adb19f0cc3b66bb0815dc867a11dbce659868ac20ff69a3fc7a83b2d"
+    },
+    "evidencias/pacote-mt.json": {
+      "bytes": 2816,
+      "sha256": "ca617736acb9ac5d8aad5e22e45d6abf26944118a1d66b0edf2b27e79caa2f1d"
+    },
+    "evidencias/python-environment.txt": {
+      "bytes": 191,
+      "sha256": "5b40c20e8178cf95a00a98cae2142276e5e8cecb82d00c13c9b77602c933d5a5"
+    },
+    "evidencias/python-venv.log": {
+      "bytes": 5147,
+      "sha256": "cae03daeafa49d8c18bd1f7f450b3c778587b8b92d53c5b24f909115a2fd1be9"
+    },
+    "evidencias/repo-venv.log": {
+      "bytes": 54,
+      "sha256": "a6477abfb14b39c9972d89b033f607e5fba1f00c1fee7dd358c57160d2d9be69"
+    },
+    "evidencias/restauracao-mt-conferida.json": {
+      "bytes": 2619,
+      "sha256": "dc64085379204ff4fa6f0f48d390c650c5d93127055a15a07cfe76308d30f8bf"
+    },
+    "evidencias/rust.log": {
+      "bytes": 10600,
+      "sha256": "033de05c67971af4f9c0e4c9fd85001a2111c53c49b4ae73c5da0e8bad02df7a"
+    },
+    "evidencias/selftest-venv.log": {
+      "bytes": 284,
+      "sha256": "83bd5cae5e8bdf963a091777a5409f87bd87b1ccbf381a41a2cd1e98140e141f"
+    },
+    "evidencias/senado-2018-revisado.json": {
+      "bytes": 934,
+      "sha256": "efa2af1930c2f5b1ec6ccde3f24573076e2ffef369d37c35a8d00017f04a288c"
+    },
+    "evidencias/snapshot.json": {
+      "bytes": 4675,
+      "sha256": "8df7d7fd59f6569fd54212b4a0d60a9cac648693664ed6cd3cb827642889257a"
+    },
+    "evidencias/validacao-codigo.json": {
+      "bytes": 21878,
+      "sha256": "018dc67ab8e87dec060fa4a86a875a52e0123436b0a443fe17e0f87e2924e72a"
+    },
+    "evidencias/verificacao-historica-final.json": {
+      "bytes": 830296,
+      "sha256": "f237e5a2c4401c2f684c391dcb7e3bfc4ea601a007900a18e03af0cfe25a5225"
+    },
+    "evidencias/zip-legado-vs-atual.json": {
+      "bytes": 62246,
+      "sha256": "f21304628798ae37fe027ce441eb3a0eddf52a1a74b03f571b5ab8de2775e28d"
+    },
+    "historico-v2.md": {
+      "bytes": 4581,
+      "sha256": "77acde946df9828bfc3699073af566d2550ae729a00002fcc1781860ed735ac7"
+    },
+    "mt-analyze-audited/REPORT.md": {
+      "bytes": 4483,
+      "sha256": "002d79bf7634153c7ccbb05340359b8cd677fdcdeea7f3c153d15d8f2a3e6de5"
+    },
+    "mt-analyze-audited/context_by_office.csv": {
+      "bytes": 529,
+      "sha256": "a4210b10fa249a86c06fae52c5210ac70057631ce8b26d7d4016c6089967174c"
+    },
+    "mt-analyze-audited/context_by_office_municipality.csv": {
+      "bytes": 53459,
+      "sha256": "82a66ffdbf5ed40ce3bf4dfa871e4c6c8bd01d28a0b154de9504b38af71084ab"
+    },
+    "mt-analyze-audited/context_by_office_zone.csv": {
+      "bytes": 56655,
+      "sha256": "0e03b7cea2f64ac604b5d805bb948ad4f0370c5366d8389aa97bfdfe1aaa78cc"
+    },
+    "mt-analyze-audited/independent-check.json": {
+      "bytes": 2110,
+      "sha256": "16e82837507b076745dd82c4b98928e8db1fe5d664d358e37e07766139dbee57"
+    },
+    "mt-analyze-audited/quality.json": {
+      "bytes": 45722,
+      "sha256": "e5648e761b3bf6ffb7b6332df4aca1b66840ff2f58792b67205f80a1f21e26c5"
+    },
+    "mt-analyze-audited/results.json": {
+      "bytes": 1617658,
+      "sha256": "3d65daf6f691ca72b2d3f7c2502a4564d802483d4f0eeb2c5aefdf57cf7992a5"
+    },
+    "mt-analyze-audited/run.json": {
+      "bytes": 3096,
+      "sha256": "2d8e65ef7f48310c82f0360051806db0496b30fd49fffaf4c2278398f7d82ce5"
+    },
+    "mt-analyze-audited/votes_by_office.csv": {
+      "bytes": 138,
+      "sha256": "7b4044fe0a45b868fd7f927d569f69a16452cb225dae96ae013f71879cc92d3b"
+    },
+    "mt-analyze-audited/votes_by_office_municipality.csv": {
+      "bytes": 179850,
+      "sha256": "43e3c656065600b66ecfe7bfbc12d3b4a1489cdf56bc8339829738fb73b34d5d"
+    },
+    "reproducao-nacional-3/artifacts.json": {
+      "bytes": 38639,
+      "sha256": "09de4d3edadfc02579e0b8c8043794710cb9c782b1a005497e46d12449fb6e5f"
+    },
+    "reproducao-nacional-3/coverage.json": {
+      "bytes": 58097,
+      "sha256": "46d6de61302c8a303fb5cc89df76a399ff814dbb8cdc8806af8a0abfe00fe5f3"
+    },
+    "reproducao-nacional-3/environment.json": {
+      "bytes": 1267,
+      "sha256": "869a095d8e66eb3c3750633bc4f62e5bf6204533b4d0d04fb44c0d68cf6f688d"
+    },
+    "reproducao-nacional-3/log-national.json": {
+      "bytes": 165574,
+      "sha256": "edb0b4b3b8c7201960e97940a998fd61b858d64617fe0095ca9df0cf0621c680"
+    },
+    "reproducao-nacional-3/president.json": {
+      "bytes": 40077,
+      "sha256": "b846bc5c34ba45e38f4a11adc4bd83024d49722ae4b730244e88aaa5df058552"
+    },
+    "reproducao-nacional-3/recibo-final.json": {
+      "bytes": 1785,
+      "sha256": "cd70c71e193a52e9dd19ab0f84aa9d70255ad9147e338c491adb2bccf8bbd927"
+    },
+    "reproducao-nacional-3/verification.json": {
+      "bytes": 1764811,
+      "sha256": "0b27bd3e793520bab3670912f2147f7c0e78583d2f9e63a357f2b4dac5d5d4d5"
+    },
+    "reproducao-nacional-3/zip-integrity.json": {
+      "bytes": 460019,
+      "sha256": "edf9066297a8fc1c6a3d30096c156855dcd614fa959fda2d81c4a799e5a4c62e"
+    },
+    "validacao-final/analyze-real.log": {
+      "bytes": 191,
+      "sha256": "fe6b79b5eea45d4978f508e5604532546e43b367fc050b8c953b0254ae0d529f"
+    },
+    "validacao-final/clippy.log": {
+      "bytes": 157,
+      "sha256": "e2a05545878fd1a7856c9966588e290b79abb310784db25d3216bbddf98864b2"
+    },
+    "validacao-final/dependencies.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validacao-final/fmt.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validacao-final/historico-fixado.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "validacao-final/historico-fixado.log": {
+      "bytes": 5979,
+      "sha256": "5b0ec38dd33b3be6d333566e5431ad3d6ed8ca88ad5ffe7ba0c0746efc47ee40"
+    },
+    "validacao-final/pacote-mt.log": {
+      "bytes": 388,
+      "sha256": "d7cff9e902fa991dce9785b596445a9d18992ec9d400a8a5528b719266365972"
+    },
+    "validacao-final/python-environment.txt": {
+      "bytes": 191,
+      "sha256": "5b40c20e8178cf95a00a98cae2142276e5e8cecb82d00c13c9b77602c933d5a5"
+    },
+    "validacao-final/python-venv.log": {
+      "bytes": 5147,
+      "sha256": "cae03daeafa49d8c18bd1f7f450b3c778587b8b92d53c5b24f909115a2fd1be9"
+    },
+    "validacao-final/python.log": {
+      "bytes": 6962,
+      "sha256": "471292159819d842c19a515bea76cf2f1e60aaa84b86700de59ae36771e576eb"
+    },
+    "validacao-final/repo-venv.log": {
+      "bytes": 54,
+      "sha256": "a6477abfb14b39c9972d89b033f607e5fba1f00c1fee7dd358c57160d2d9be69"
+    },
+    "validacao-final/rust.log": {
+      "bytes": 10600,
+      "sha256": "033de05c67971af4f9c0e4c9fd85001a2111c53c49b4ae73c5da0e8bad02df7a"
+    },
+    "validacao-final/selftest-venv.log": {
+      "bytes": 284,
+      "sha256": "83bd5cae5e8bdf963a091777a5409f87bd87b1ccbf381a41a2cd1e98140e141f"
+    }
+  },
+  "format_version": 1,
+  "guarantee": "relative-paths-and-file-bytes",
+  "implementation_sha256": {
+    "acquire_2026.py": "12c7529ccaed86cf71a5a06bd4f590c335bee4029087b47b27c782a040012c2d",
+    "limits.env": "bc1a12a877b28dee9d6238b0f669b2b84b5b543acebff0d710d1af82a40af420",
+    "package_audit_results_2026.py": "5bc1e5e81dc3dad327a73885a8e23ac97e125d4016eb514a3afdacd9ae32551e",
+    "validate.py": "4f08251888db94e1e78c4c773b2530bdb2dc77627e2a56f6cd64660e6aabff9d"
+  },
+  "include": [
+    "analise-historica-v2",
+    "analise-historica-fixada-v2",
+    "mt-analyze-audited",
+    "validacao-final",
+    "evidencias",
+    "reproducao-nacional-3",
+    "CONSOLIDACAO-2026.md",
+    "ANALISE-MT-2000-2026.md",
+    "RESULTADO-COMPRESSAO-MT.md",
+    "ETAPA-5A.md",
+    "historico-v2.md"
+  ],
+  "limitations": "Os arquivos selecionados são artefatos derivados; empacotá-los sem perdas não restaura os dados originais dos quais foram calculados. Diretórios vazios e metadados do sistema de arquivos não são preservados.",
+  "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "release_asset": {
+    "bytes": 5626370,
+    "file": "resultados-consolidacao-2026.zip",
+    "sha1": "a877d8ab42b0dc83ea813f2fd3dfd633fe106b23",
+    "sha256": "31654c0c9da3e705e48643e394f724d31b030c6576127dc20d3cb2b6fa78958d",
+    "sha512": "39fe539fcd507fcdec7133631e7703b95311ce718c2e4fea08fc821d5b946cd6d87642320023095058a059849f53fe6fb70531faad982099d44f5b0c6cbeb445"
+  },
+  "scope": "Resultados derivados da consolidação: histórico MT legado e snapshot fixado, análise MT, testes, recibos e repetição nacional. Não inclui fontes brutas nem corpus nacional de logs. Compactação reversível das saídas selecionadas; análises são transformações semânticas.",
+  "success": true
+}

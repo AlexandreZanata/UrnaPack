@@ -1,0 +1,76 @@
+{
+  "format_version": 1,
+  "success": true,
+  "scope": "Releitura independente dos 13 arquivos restaurados pelo binário consolidado; identidade de caminhos relativos e bytes, sem autenticação eleitoral.",
+  "source_manifest": {
+    "bytes": 2727,
+    "sha256": "265c7d27f7ea6991819ba2ccf80e9b0285610f059fcfc3ffc896b3303cda5546"
+  },
+  "files": [
+    {
+      "path": "t1/MT/CEFT_1t_MT_051020261049.zip",
+      "bytes": 774217,
+      "sha256": "7aa7fe6aa471f04b5f8720a4b8efde99b192024189505a60a4a0f67fdc01f788"
+    },
+    {
+      "path": "t1/MT/CEFT_1t_MT_051020261049.zip.sha512",
+      "bytes": 158,
+      "sha256": "0c94a612b76d4e8a4216300e7eb5abe5b3694a29d103b301ed69ad6c949a6fce"
+    },
+    {
+      "path": "t1/MT/CESP_1t_MT_031020261534.zip",
+      "bytes": 634466,
+      "sha256": "899748087718202370c246e4c00c7ee9302789fcc41501399749b8284c77e160"
+    },
+    {
+      "path": "t1/MT/CESP_1t_MT_031020261534.zip.sha512",
+      "bytes": 158,
+      "sha256": "50bdf23badeb7ed8e4bebef49201e24d133535a47528bfca0f101e6bd96ed9c9"
+    },
+    {
+      "path": "t1/MT/CESP_1t_MT_041020261259.zip",
+      "bytes": 769686,
+      "sha256": "6ae69a5320eb39ad3ce8695d3af35dc3791b75972cdbaf4449cc375c81061723"
+    },
+    {
+      "path": "t1/MT/CESP_1t_MT_041020261259.zip.sha512",
+      "bytes": 158,
+      "sha256": "17921a404d5ccc4b8b63479135f0fa9b266c3f46e38ca9705cc85efef4c6f507"
+    },
+    {
+      "path": "t1/MT/Relatorio_Resultado_Totalizacao_2026_MT.zip",
+      "bytes": 738586,
+      "sha256": "cd26fbabffeb0aafc49ef51fd53ddb7cb8dffbcfe662428fd5913b8bc982277d"
+    },
+    {
+      "path": "t1/MT/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip",
+      "bytes": 1537057359,
+      "sha256": "d4951725238d4da83e02bc83ea35ae0cd82d85b6e4ce2c93b83a579782118c25"
+    },
+    {
+      "path": "t1/MT/bweb_1t_MT_051020261403.zip",
+      "bytes": 63492478,
+      "sha256": "610eda446fb6bab25f29ceea31adf8f91acf68db14a179228516d11c0fac226f"
+    },
+    {
+      "path": "t1/MT/bweb_1t_MT_051020261403.zip.sha512",
+      "bytes": 158,
+      "sha256": "2fab8e2172a4f5d1df5b33fcf8db0d30a1f131af7aab31b44a3f4818b51b596a"
+    },
+    {
+      "path": "t1/MT/votacao_secao_2026_MT.zip",
+      "bytes": 31060799,
+      "sha256": "3d91f38b185070a085e0e168de501a14f0b2bdbf072a5122e3456b2ea78a1acd"
+    },
+    {
+      "path": "t2/MT/CESP_2t_MT_241020261231.zip",
+      "bytes": 759147,
+      "sha256": "9bfbf58fe7064905957c8f624333738cfbdd519837de8115853fa3858cd788ec"
+    },
+    {
+      "path": "t2/MT/CESP_2t_MT_241020261231.zip.sha512",
+      "bytes": 158,
+      "sha256": "2848bc7d3cdf0b644d27b145d430e280577563f5fc3461652d40cebafbb648c5"
+    }
+  ]
+}
