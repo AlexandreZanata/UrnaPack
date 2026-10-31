@@ -541,29 +541,7 @@ fn report(
 fn write_sections(path: &std::path::Path, sections: &HashMap<String, Section>) -> Result<()> {
     publish_file(path, |file| {
         let mut writer = csv::Writer::from_writer(file);
-        writer.write_record([
-            "ANO_ELEICAO",
-            "CD_PLEITO",
-            "CD_ELEICAO",
-            "NR_TURNO",
-            "SG_UF",
-            "CD_MUNICIPIO",
-            "NR_ZONA",
-            "NR_SECAO",
-            "CD_CARGO_PERGUNTA",
-            "NR_LOCAL_VOTACAO",
-            "NR_URNA_EFETIVADA",
-            "DT_ENCERRAMENTO",
-            "CD_TIPO_URNA",
-            "QT_APTOS",
-            "QT_COMPARECIMENTO",
-            "QT_ABSTENCOES",
-            "QT_ELEI_BIOM_SEM_HABILITACAO",
-            "VOTOS_13",
-            "VOTOS_22",
-            "VOTOS_BRANCOS",
-            "VOTOS_NULOS",
-        ])?;
+        writer.write_record(tsepack::statistics::SECTION_HEADER)?;
         let mut ordered: Vec<_> = sections.iter().collect();
         ordered.sort_by(|a, b| a.0.cmp(b.0));
         for (key, section) in ordered {

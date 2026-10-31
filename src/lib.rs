@@ -14,6 +14,7 @@ pub mod hash;
 pub mod inspect;
 pub mod manifest;
 pub mod queries;
+pub mod statistics;
 pub mod traverse;
 pub mod verify;
 

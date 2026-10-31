@@ -1,0 +1,10 @@
+{
+  "kind": "synthetic_fixture_not_TSE",
+  "files": {
+    "synthetic.csv": {
+      "bytes": 5969,
+      "sha256": "b873dfd5b973ffb1dc2962f73f58f23d44ef18e276be22d4453fce0de4a3506e"
+    }
+  },
+  "purpose": "64 seções artificiais para testar parser, denominador zero, repetição de identificador/perfil e simetria dos candidatos; nenhum dado observado do TSE."
+}

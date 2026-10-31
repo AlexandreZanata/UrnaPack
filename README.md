@@ -31,6 +31,10 @@ As rotinas históricas revisadas têm contrato e comandos em
 As evidências, validações e instruções para repetir a consolidação estão em
 [docs/CONSOLIDACAO-2026.md](docs/CONSOLIDACAO-2026.md).
 
+A [bateria estatística exploratória](auditoria/2026/suite/README.md) amplia
+o confronto com modelos geográficos, ajuste fora do fold, permutações,
+correção por múltiplos testes e checagens simétricas dos candidatos.
+
 ## Planejamento e próxima entrega
 
 - [Plano refinado](docs/PLANO.md): etapas, contratos e critérios de saída.
