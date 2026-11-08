@@ -1,11 +1,43 @@
 #!/usr/bin/env python3
 """Regressões do baseline binomial (sintético, sem dados reais)."""
 import unittest
+from pathlib import Path
+import tempfile
+import zipfile
+import csv
+import io
+import hashlib
 
 import model_baseline_mt as model
 
 
 class TestBaseline(unittest.TestCase):
+    def test_context_repetition_checked_and_duplicates_rejected(self):
+        body = (Path(__file__).resolve().parents[1]/"tests/fixtures/analyze/mt-valid.csv").read_bytes()
+        rows = list(csv.DictReader(io.StringIO(body.decode("latin1")), delimiter=";"))
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/"synthetic-not-TSE.zip"
+            def save(records):
+                s = io.StringIO(); w = csv.DictWriter(s, fieldnames=list(rows[0]), delimiter=";", lineterminator="\r\n")
+                w.writeheader();w.writerows(records)
+                with zipfile.ZipFile(path, "w") as z:
+                    z.writestr("synthetic.csv",s.getvalue().encode("latin1"))
+            save(rows)
+            metadata = {}
+            groups = model.load_groups(path, cargo="7", eleicao="6259", metadata=metadata)
+            self.assertEqual(sum(n for n,k in groups.values()),10)
+            self.assertEqual(metadata["repeated_context_rows"],3)
+            self.assertEqual(metadata["zip"]["sha256"],hashlib.sha256(path.read_bytes()).hexdigest())
+            with self.assertRaisesRegex(ValueError,"SHA-256"):
+                model.load_groups(path,expected_sha256=hashlib.sha256(body).hexdigest())
+            changed = [dict(r) for r in rows]
+            changed[1]["QT_APTOS"]="11"
+            with self.assertRaisesRegex(ValueError,"contexto divergente"):
+                save(changed);model.load_groups(path,cargo="7",eleicao="6259")
+            save(rows+[rows[0]])
+            with self.assertRaisesRegex(ValueError,"duplicada"):
+                model.load_groups(path,cargo="7",eleicao="6259")
+
     def test_p_valor_extremo_e_nulo(self):
         # n=100, p=0.5: k=50 deve ter p alto; k=100 deve ter p ~0
         self.assertGreater(model.two_sided_p(50, 100, 0.5), 0.5)

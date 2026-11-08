@@ -1,0 +1,51 @@
+{
+  "fmt": {
+    "command": [
+      "cargo",
+      "fmt",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  "clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--offline",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0
+  },
+  "test": {
+    "command": [
+      "cargo",
+      "test",
+      "--offline"
+    ],
+    "exit_code": 0
+  },
+  "python": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "note": "Test binary path temporarily mapped to the existing build directory; no source change."
+  },
+  "rust_totals": {
+    "passed": 99,
+    "failed": 0,
+    "ignored": 0
+  },
+  "python_tests_run": 147,
+  "raw_logs_preserved_locally": true
+}

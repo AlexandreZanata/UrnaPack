@@ -4,6 +4,12 @@ import csv
 import io
 import unittest
 import zipfile
+from pathlib import Path
+import tempfile
+from unittest.mock import patch
+import json
+import hashlib
+from contextlib import redirect_stdout
 
 import analyze_mt_historico as hist
 
@@ -27,6 +33,56 @@ VOT23 = ["DT_GERACAO", "HH_GERACAO", "ANO_ELEICAO", "CD_TIPO_ELEICAO", "NM_TIPO_
 
 
 class TestHistorico(unittest.TestCase):
+    def test_fixed_catalog_checks_actual_source_before_aggregating(self):
+        rows=[["31/01/2022","16:47:38","2000","2","Eleição Ordinária","1","2000001","synthetic-not-TSE","01/10/2000","M","MT","91910","AGUA BOA","91910","AGUA BOA","30","1","11","Prefeito","12","SYNTHETIC","100","-3"]]
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);sources=root/"sources";path=sources/"cdn.tse.jus.br/synthetic_MT_2000.zip";path.parent.mkdir(parents=True)
+            with make_zip(rows,VOT23) as z:
+                body=z.fp.getvalue()
+            path.write_bytes(body)
+            item={"url":"https://cdn.tse.jus.br/synthetic_MT_2000.zip","path":str(path.relative_to(sources)),"expected_bytes":len(body),"expected_sha256":hashlib.sha256(body).hexdigest()}
+            catalog=root/"catalog.json";catalog.write_text(json.dumps({"format_version":1,"items":[item]}))
+            output=root/"good"
+            args=["analyze_mt_historico.py","--catalog",str(catalog),"--root",str(sources),"--output",str(output)]
+            with patch("sys.argv",args),redirect_stdout(io.StringIO()):
+                self.assertEqual(hist.main(),0)
+            report=json.loads((output/"analysis.json").read_text())
+            self.assertEqual(report["source_catalog"]["selected_zip_resources"],1)
+            self.assertEqual(report["files"][0]["records"],1)
+            item["expected_sha256"]=hashlib.sha256(body+b"different").hexdigest()
+            catalog.write_text(json.dumps({"format_version":1,"items":[item]}))
+            with patch("sys.argv",args[:-1]+[str(root/"bad")]),self.assertRaisesRegex(ValueError,"snapshot fixado"):
+                hist.main()
+            self.assertFalse((root/"bad/analysis.json").exists())
+
+    def test_wrong_width_duplicate_header_and_negative_votes_fail(self):
+        base = ["x"]*len(VOT23)
+        base[VOT23.index("QT_VOTOS")]="-1"
+        for rows, header in (([base[:-1]],VOT23),([base],VOT23),( [base],VOT23[:-1]+[VOT23[0]])):
+            with make_zip(rows,header) as z:
+                with self.assertRaises(ValueError):
+                    hist.analyze_member(z,z.infolist()[0],hist.load_limits())
+
+    def test_main_empty_input_fails_and_identical_sources_are_both_preserved(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp);source=root/"sources";source.mkdir()
+            output = root/"empty"
+            with patch("sys.argv",["analyze_mt_historico.py","--brutos",str(source),"--output",str(output)]),redirect_stdout(io.StringIO()):
+                self.assertEqual(hist.main(),1)
+            self.assertFalse(json.loads((output/"analysis.json").read_text())["success"])
+            folder=source/"2000/MT";folder.mkdir(parents=True)
+            rows=[["31/01/2022","16:47:38","2000","2","Eleição Ordinária","1","2000001","synthetic-not-TSE","01/10/2000","M","MT","91910","AGUA BOA","91910","AGUA BOA","30","1","11","Prefeito","12","SYNTHETIC","100","-3"]]
+            with make_zip(rows,VOT23) as z:
+                body=z.fp.getvalue()
+            (folder/"synthetic-a.zip").write_bytes(body);(folder/"synthetic-b.zip").write_bytes(body)
+            output=root/"both"
+            with patch("sys.argv",["analyze_mt_historico.py","--brutos",str(source),"--output",str(output)]),redirect_stdout(io.StringIO()):
+                self.assertEqual(hist.main(),0)
+            report=json.loads((output/"analysis.json").read_text())
+            self.assertEqual(len(report["files"]),2)
+            self.assertEqual(len(report["archive_members"]),2)
+            self.assertEqual(report["files"][0]["zip_sha256"],report["files"][1]["zip_sha256"])
+
     def test_votacao_23_soma_sem_contexto(self):
         rows = [
             ["31/01/2022", "16:47:38", "2000", "2", "Eleição Ordinária", "1", "2000001",

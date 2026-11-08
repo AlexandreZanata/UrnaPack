@@ -2,6 +2,7 @@
 """Regressões do verificador independente da Etapa 5A (stdlib, sem Rust)."""
 
 import unittest
+import tempfile
 from pathlib import Path
 
 import analyze_check
@@ -10,6 +11,14 @@ FIXTURES = Path(__file__).resolve().parent.parent / "tests/fixtures/analyze"
 
 
 class TestAnalyzeCheck(unittest.TestCase):
+    def test_existing_receipt_is_preserved_before_any_recalculation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)/"existing.json";before=b"synthetic-existing-receipt-not-TSE"
+            output.write_bytes(before)
+            with self.assertRaisesRegex(ValueError,"saída existente"):
+                analyze_check.main(["--csv","absent.csv","--results","absent-results.json","--quality","absent-quality.json","--output",str(output)])
+            self.assertEqual(output.read_bytes(),before)
+
     def check(self, name):
         _, _, checker = analyze_check.parse_csv(
             FIXTURES / name, analyze_check.load_limits()

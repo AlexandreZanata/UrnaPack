@@ -391,6 +391,38 @@ fn perfil_desconhecido_e_rejeitado_sem_inferencia() {
 }
 
 #[test]
+fn view_with_excessive_declared_expansion_is_refused_before_decoding() {
+    let dir = tempfile::tempdir().unwrap();
+    let source = fixture("mt-valid.csv");
+    let view = dir.path().join("synthetic-view");
+    fs::create_dir(&view).unwrap();
+    let payload = view.join("payload.encoded");
+    let measured = tsepack::codec::compress(&source, &payload, "zstd-3", None).unwrap();
+    let raw = fs::read(&source).unwrap();
+    // Mutação negativa deliberada do tamanho declarado; os hashes são dos bytes reais.
+    let descriptor = serde_json::json!({
+        "artifact_kind":"bweb_storage_view", "format_version":1,
+        "guarantee":"exact-csv-member-bytes", "kind":"csv-codec",
+        "source":{"bytes":tsepack::limits::get("MAX_SOURCE_FILE_BYTES").unwrap()+1,
+                  "sha256":tsepack::hash::sha256_bytes(&raw),"records":records(&raw)},
+        "encoded":{"file":"payload.encoded","bytes":measured.output_bytes,
+                   "sha256":measured.encoded_sha256},"codec":"zstd-3"
+    });
+    fs::write(
+        view.join("view.json"),
+        serde_json::to_vec(&descriptor).unwrap(),
+    )
+    .unwrap();
+    let out = dir.path().join("out");
+    let error = analyze::run(&view, &out, &profile_for(&source))
+        .err()
+        .expect("expansão excessiva deve reprovar");
+    assert!(error.to_string().contains("MAX_SOURCE_FILE_BYTES"));
+    assert!(out.join("run.json").is_file());
+    assert!(!out.join("results.json").exists());
+}
+
+#[test]
 fn view_com_membro_divergente_reprova_com_mismatch() {
     let dir = tempfile::tempdir().unwrap();
     let source = fixture("mt-valid.csv");

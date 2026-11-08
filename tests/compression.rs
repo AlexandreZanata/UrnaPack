@@ -3,6 +3,38 @@ const RAW: &[u8] = include_bytes!("fixtures/bweb/reversible.csv");
 const QUERIES: &[u8] = include_bytes!("fixtures/bweb/queries.csv");
 
 #[test]
+fn decoder_restores_a_fixture_produced_with_brotli_v8_byte_for_byte() {
+    let folder = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/brotli-v8");
+    let metadata: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(folder.join("manifest.json")).unwrap()).unwrap();
+    let encoded = folder.join(metadata["encoded"]["file"].as_str().unwrap());
+    let source = folder.join(metadata["source"]["file"].as_str().unwrap());
+    assert_eq!(
+        tsepack::hash::sha256_file(&encoded).unwrap(),
+        metadata["encoded"]["sha256"]
+    );
+    assert_eq!(
+        tsepack::hash::sha256_file(&source).unwrap(),
+        metadata["source"]["sha256"]
+    );
+    let dir = tempfile::tempdir().unwrap();
+    let output = dir.path().join("restored.csv");
+    tsepack::codec::decompress(
+        &encoded,
+        &output,
+        "brotli-5",
+        None,
+        metadata["source"]["sha256"].as_str().unwrap(),
+        metadata["source"]["bytes"].as_u64().unwrap(),
+    )
+    .unwrap();
+    assert_eq!(
+        std::fs::read(&output).unwrap(),
+        std::fs::read(&source).unwrap()
+    );
+}
+
+#[test]
 fn codecs_conferem_bytes_e_recusam_hash_errado_sem_promover() {
     let tmp = tempfile::tempdir().unwrap();
     let source = tmp.path().join("source");

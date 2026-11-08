@@ -15,7 +15,7 @@ use std::path::{Path, PathBuf};
 use std::time::{Instant, SystemTime, UNIX_EPOCH};
 
 pub const ANALYSIS_CONTRACT_VERSION: u32 = 1;
-pub const ANALYSIS_CODE_VERSION: &str = "0.2.0-etapa5a";
+pub const ANALYSIS_CODE_VERSION: &str = "0.2.0-etapa5a-audited";
 pub const PROFILE_ID: &str = "mt-2026-t1-bweb-v1";
 pub const HEADER_FINGERPRINT_SHA256: &str =
     "c93ec8fe8f0ad3403b583e77ea166ac7c9db29246f79a0fdd27dfa30e48372c8";
@@ -2633,7 +2633,12 @@ fn parse_stream<R: Read>(hashing: HashingReader<R>, state: &mut State) -> (Hashi
             if state.header_ok {
                 loop {
                     match reader.read_byte_record(&mut record) {
-                        Ok(true) => state.accept(&record),
+                        Ok(true) => {
+                            state.accept(&record);
+                            if state.rows > state.max_csv_records {
+                                break;
+                            }
+                        }
                         Ok(false) => {
                             complete = true;
                             break;
@@ -2708,6 +2713,9 @@ fn safe_object_name(name: &str) -> bool {
 }
 
 fn checked_view_object(root: &Path, object: &ViewObject) -> Result<PathBuf> {
+    if object.bytes > crate::limits::get("MAX_SOURCE_FILE_BYTES")? {
+        bail!("MAX_SOURCE_FILE_BYTES excedido no objeto de view");
+    }
     if !safe_object_name(&object.file) {
         bail!("nome de objeto de view inválido");
     }
@@ -2761,6 +2769,9 @@ fn evaluate_view(path: &Path, profile: &AnalysisProfile) -> Result<Evaluation> {
     let descriptor_bytes = std::fs::read(&descriptor_path)?;
     let descriptor_sha256 = crate::hash::sha256_bytes(&descriptor_bytes);
     let descriptor: ViewDescriptor = serde_json::from_slice(&descriptor_bytes)?;
+    if descriptor.source.bytes > crate::limits::get("MAX_SOURCE_FILE_BYTES")? {
+        bail!("MAX_SOURCE_FILE_BYTES excedido na expansão da view");
+    }
     if descriptor.artifact_kind != "bweb_storage_view"
         || descriptor.format_version != 1
         || descriptor.guarantee != "exact-csv-member-bytes"
@@ -3418,4 +3429,22 @@ pub fn run(input: &Path, output: &Path, profile: &AnalysisProfile) -> Result<Ana
         votes_total: evaluation.votes_total,
         error_count: evaluation.error_count,
     })
+}
+
+#[cfg(test)]
+mod resource_tests {
+    use super::*;
+
+    #[test]
+    fn record_limit_stops_reading_the_fixture_instead_of_scanning_the_remaining_rows() {
+        let bytes = include_bytes!("../tests/fixtures/analyze/mt-valid.csv");
+        let profile = profile_mt_2026_t1_bweb_v1();
+        let mut state = State::new(profile, "synthetic-test", None, None, None).unwrap();
+        state.max_csv_records = 1;
+        let (_, complete) =
+            parse_stream(HashingReader::new(std::io::Cursor::new(bytes)), &mut state);
+        assert!(!complete);
+        assert_eq!(state.rows, 2);
+        assert!(state.checks["records"].failures > 0);
+    }
 }
