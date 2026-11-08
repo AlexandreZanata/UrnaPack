@@ -1,7 +1,7 @@
 //! tsepack — CLI de compressão e verificação.
 //!
 //! Implementados: inspect, benchmark, verify, pack/unpack, codec, archive,
-//! optimize, restore e queries (+ manifesto via inspect --manifest).
+//! optimize, restore, queries e analyze (+ manifesto via inspect --manifest).
 //! Descoberta, download integrado, auditoria e relatório genérico ainda
 //! retornam erro explícito de "não implementado nesta base"
 //! (ver docs/PLANO.md para a fase de cada um). Nenhum comando
@@ -70,6 +70,15 @@ enum Cmd {
         input: PathBuf,
         #[arg(long)]
         output: PathBuf,
+    },
+    /// Análise descritiva controlada do BU web de MT (Etapa 5A).
+    Analyze {
+        #[arg(long)]
+        input: PathBuf,
+        #[arg(long)]
+        output: PathBuf,
+        #[arg(long, default_value = "mt-2026-t1-bweb-v1")]
+        profile: String,
     },
     /// Lista conjuntos oficiais conhecidos (Fase 1; nesta base: só registra a limitação).
     Discover {
@@ -271,6 +280,33 @@ fn main() -> Result<()> {
             }
             let result = tsepack::queries::run(&input)?;
             std::fs::write(output, serde_json::to_vec_pretty(&result)?)?;
+        }
+        Cmd::Analyze {
+            input,
+            output,
+            profile,
+        } => {
+            let Some(selected) = tsepack::analyze::profile_for_id(&profile) else {
+                bail!(
+                    "analyze: perfil não suportado: {profile} (suportado: {})",
+                    tsepack::analyze::PROFILE_ID
+                );
+            };
+            let outcome = tsepack::analyze::run(&input, &output, &selected)?;
+            println!(
+                "análise: {} registros; votos={}; status={}; erros={}",
+                outcome.records,
+                outcome.votes_total.as_deref().unwrap_or("indisponível"),
+                outcome.status,
+                outcome.error_count
+            );
+            println!("saída: {}", outcome.output.display());
+            if !outcome.approved {
+                eprintln!(
+                    "analyze: controles obrigatórios reprovaram; consulte quality.json e REPORT.md"
+                );
+                std::process::exit(1);
+            }
         }
         Cmd::Discover { year } => {
             bail!("discover: não implementado nesta versão. Ano solicitado: {year}. Veja docs/PLANO.md.");

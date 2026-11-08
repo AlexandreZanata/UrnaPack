@@ -1,9 +1,11 @@
 //! tsepack — biblioteca de compressão e verificação.
 //!
 //! Escopo da base: proveniência (hash + manifesto), inspeção,
-//! baselines em streaming, pacote BU web, arquivos FORENSIC e consultas de controle.
-//! O pacote é experimental; os demais parsers e a liberação analítica são futuros.
+//! baselines em streaming, pacote BU web, arquivos FORENSIC, consultas de
+//! controle e análise descritiva controlada de MT 2026 t1.
+//! O pacote é experimental; outros parsers e a expansão nacional são futuros.
 
+pub mod analyze;
 pub mod archive;
 pub mod benchmark;
 pub mod bweb;

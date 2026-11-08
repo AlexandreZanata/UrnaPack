@@ -77,7 +77,9 @@ EOF. Evidências têm teto, contagens totais de erros permanecem explícitas.
   `QT_ABSTENCOES = QT_APTOS − QT_COMPARECIMENTO` e `QT_COMPARECIMENTO ≤ QT_APTOS`.
   Divergência reprova com ordinal.
 
-## Regras de agregação (para a Etapa 5, sem executar aqui)
+## Regras de agregação (implementadas na Etapa 5A no perfil MT t1)
+
+O contrato executável da análise está em `spec/analyze-v1.md`.
 
 - `QT_VOTOS` soma por votável/grupo declarado; nunca somar `QT_APTOS` ou
   `QT_COMPARECIMENTO` por linha de votável (medidas de contexto repetidas).

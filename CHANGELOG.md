@@ -1,5 +1,21 @@
 # Changelog
 
+## Não lançado — Etapa 5A (MT 2026 t1)
+
+- `tsepack analyze` com contrato analítico v1 e perfil `mt-2026-t1-bweb-v1`:
+  validação de fonte/view, snapshot, hash, escopo, inteiros/overflow,
+  aritmética de contexto, chaves, duplicatas, contexto e categorias.
+- Análise descritiva de votos e contexto em JSON/CSV/Markdown, sem somar
+  contextos de cargos diferentes e sem deduplicar ocorrências.
+- Verificador independente `scripts/analyze_check.py`, fixtures sintéticas e
+  documentação em `docs/ETAPA-5A.md` e `spec/analyze-v1.md`.
+- Revisão: `MAX_CSV_RECORDS`/`MAX_FIELD_BYTES` aplicados no Rust, saída
+  atômica via `Stage`, `run.json` de falha com mesmo schema, verificação
+  `mismatch` para view fora do perfil, faixas de data/hora, teto em
+  `DS_SECOES_AGREGADAS` (`values_overflow`), conflito de `NM_MUNICIPIO`
+  bloqueia cobertura territorial, registro de perfis e determinismo de
+  CSVs/`REPORT.md` testado.
+
 ## v0.2.0 — 28/10/2026
 
 - Compressão em streaming com ZSTD, XZ e Brotli, round-trip obrigatório,

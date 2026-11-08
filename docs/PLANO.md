@@ -13,8 +13,10 @@ revisadas com correções em `docs/REVISAO-ETAPAS-2-4.md`. G3 passou no membro C
 de MT; **G4 concluído para o corpus local baixado**, com resultados em
 `docs/RESULTADO-COMPRESSAO-MT.md`. Arquivo local v2 fecha o vínculo criptográfico
 de execução e implementa `optimize`/`restore`. O manifesto de distribuição v2
-antigo continua bloqueado para publicação; liberação analítica, expansão
-nacional e distribuição permanecem nas etapas seguintes.
+antigo continua bloqueado para publicação. A Etapa 5A foi executada para o BU
+web de MT 2026 t1 (votos e contexto aprovados; seções físicas bloqueadas e
+reconciliações pendentes), com resultados em `docs/ETAPA-5A.md`; expansão nacional,
+reconciliação, modelos e distribuição permanecem nas etapas seguintes.
 Um plano ou status declarado não constitui evidência de execução.
 
 Documentos de execução:
@@ -25,6 +27,8 @@ Documentos de execução:
   para documentar novos anos, turnos, abrangências e variantes.
 - `docs/ARQUITETURA.md` e `docs/VERIFICACAO.md`: contratos e garantias.
 - `docs/PLANO-ANALISE.md`: liberação por uso e dependências analíticas.
+- `docs/ETAPA-5A.md`: execução, resultados e limites da análise descritiva de
+  MT 2026 t1; contrato em `spec/analyze-v1.md`.
 
 ## Contratos que orientam todas as etapas
 
@@ -130,6 +134,10 @@ requisito; formato próprio só avança com oportunidade demonstrada. Nenhuma ta
 é prometida antecipadamente; manter stored pode ser o melhor resultado válido.
 
 ## Etapa 5 — Validação analítica do MVP de MT
+
+**Parcialmente executada (5A, 28/10/2026).** O BU web de MT 2026 t1 teve
+contrato, controles e análise descritiva aprovados; comparação entre turnos,
+reconciliação e modelos continuam pendentes. Ver `docs/ETAPA-5A.md`.
 
 - Aplicar `docs/PLANO-ANALISE.md` ao escopo com dependências completas.
 - Verificar contexto repetido, cardinalidades de joins, correspondências,
